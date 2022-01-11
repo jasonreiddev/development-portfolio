@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 const Container = styled.div`
   text-align: center;
 `;
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <Head>

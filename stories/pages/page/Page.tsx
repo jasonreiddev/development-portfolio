@@ -1,10 +1,8 @@
-import { PageStyles } from "./Page.styles";
-
-import { Header } from "../../components/header/Header";
-import "./page.css";
+import { PageStyles } from "./page.styles";
+import { Header } from "../../components/Header/Header";
 
 interface PageProps {
-  user?: {};
+  user?: Record<string, never>;
   onLogin: () => void;
   onLogout: () => void;
   onCreateAccount: () => void;
@@ -15,7 +13,7 @@ export const Page = ({
   onLogin,
   onLogout,
   onCreateAccount,
-}: PageProps) => (
+}: PageProps): JSX.Element => (
   <PageStyles>
     <Header
       user={user}
@@ -45,7 +43,7 @@ export const Page = ({
       <ul>
         <li>
           Use a higher-level connected component. Storybook helps you compose
-          such data from the "args" of child component stories
+          such data from the &quot;args&quot; of child component stories
         </li>
         <li>
           Assemble data in the page component from your services. You can mock

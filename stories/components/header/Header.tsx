@@ -1,8 +1,8 @@
-import { Button } from "../button/Button";
+import { Button } from "../Button/Button";
 import { HeaderStyles } from "./Header.styles";
 
 interface HeaderProps {
-  user?: {};
+  user?: Record<string, never>;
   onLogin: () => void;
   onLogout: () => void;
   onCreateAccount: () => void;
@@ -13,7 +13,7 @@ export const Header = ({
   onLogin,
   onLogout,
   onCreateAccount,
-}: HeaderProps) => (
+}: HeaderProps): JSX.Element => (
   <HeaderStyles>
     <div className="wrapper">
       <div>
