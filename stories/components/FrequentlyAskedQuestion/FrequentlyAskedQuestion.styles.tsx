@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FrequentlyAskedQuestionStyles = styled.details`
   font-size: 1rem;

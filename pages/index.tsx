@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import { Landing } from '../stories/pages/landing/landing';
 import { GlobalStyles } from '../styles/GlobalStyles';
 

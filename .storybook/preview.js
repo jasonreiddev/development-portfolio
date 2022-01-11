@@ -1,4 +1,6 @@
-import { GlobalStyles } from '../GlobalStyles';
+import * as nextImage from 'next/image';
+
+import { GlobalStyles } from '../styles/GlobalStyles';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,14 +12,6 @@ export const parameters = {
   },
 };
 
-// workaround https://stackoverflow.com/questions/67409774/cant-properly-set-up-next-config-storybook-to-get-images-from-url
-import * as nextImage from 'next/image';
-
-Object.defineProperty(nextImage, 'default', {
-  configurable: true,
-  value: (props) => <img {...props} />,
-});
-
 export const decorators = [
   (Story) => (
     <>
@@ -26,3 +20,9 @@ export const decorators = [
     </>
   ),
 ];
+
+// workaround https://stackoverflow.com/questions/67409774/cant-properly-set-up-next-config-storybook-to-get-images-from-url
+Object.defineProperty(nextImage, 'default', {
+  configurable: true,
+  value: (props) => <img {...props} />,
+});

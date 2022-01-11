@@ -1,5 +1,6 @@
 {
-  "cSpell.words": ["picsum"],
+  "cSpell.words": ["nextjs", "picsum", "Vercel", "Viewports"],
+  "cSpell.ignorePaths": ["yarn.lock", "settings.json", "package-lock.json"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }

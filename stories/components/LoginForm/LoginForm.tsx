@@ -1,4 +1,4 @@
-import { LoginFormStyles } from "./LoginForm.styles";
+import { LoginFormStyles } from './LoginForm.styles';
 
 export interface LoginFormProps {
   placeHolder: string;
@@ -9,9 +9,9 @@ export interface LoginFormProps {
 }
 
 export const LoginForm = ({
-  placeHolder = "me@you.com",
-  type = "email",
-  PasswordPlaceHolder = "Enter your password",
+  placeHolder = 'me@you.com',
+  type = 'email',
+  PasswordPlaceHolder = 'Enter your password',
   showPassword = false,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   handleSubmit = function (): void {},
@@ -27,7 +27,7 @@ export const LoginForm = ({
         <input
           className="input"
           placeholder={PasswordPlaceHolder}
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? 'text' : 'password'}
         />
       </label>
       <button type="submit">Log In</button>

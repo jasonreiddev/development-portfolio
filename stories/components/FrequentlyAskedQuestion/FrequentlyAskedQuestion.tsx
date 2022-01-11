@@ -1,4 +1,4 @@
-import { FrequentlyAskedQuestionStyles } from "./FrequentlyAskedQuestion.styles";
+import { FrequentlyAskedQuestionStyles } from './FrequentlyAskedQuestion.styles';
 
 export interface FrequentlyAskedQuestionProps {
   question: string;

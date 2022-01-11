@@ -1,5 +1,6 @@
-import { ContactCardStyles } from "./ContactCard.styles";
-import Image from "next/image";
+import Image from 'next/image';
+
+import { ContactCardStyles } from './ContactCard.styles';
 
 export interface ContactCardProps {
   avatarSrc: string;
@@ -7,11 +8,7 @@ export interface ContactCardProps {
   email: string;
 }
 
-export const ContactCard = ({
-  avatarSrc,
-  name,
-  email,
-}: ContactCardProps): JSX.Element => {
+export const ContactCard = ({ avatarSrc, name, email }: ContactCardProps): JSX.Element => {
   return (
     <ContactCardStyles>
       <Image alt="" src={avatarSrc} className="avatar" />
