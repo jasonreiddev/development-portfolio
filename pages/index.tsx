@@ -1,12 +1,8 @@
-import Head from "next/head";
-import styled, { createGlobalStyle } from "styled-components";
+import Head from 'next/head';
+import styled from 'styled-components';
+import { GlobalStyles } from '../styles/GlobalStyles';
 // import Post, { IPost } from "../components/Post/Post";
-const GlobalStyle = createGlobalStyle`
- h1 {
-   font-size: 4rem;
-   color: rgba(250, 200, 150, 0.8);
- }
-`;
+
 const Container = styled.div`
   text-align: center;
 `;
@@ -22,7 +18,7 @@ export default function Home(): JSX.Element {
         post={{ id: 0, title: "Hey, I'm title", body: "Hello, I'm the body" }}
       /> */}
       <Container>
-        <GlobalStyle />
+        <GlobalStyles />
         <h1>Hello, world!</h1>
       </Container>
     </>

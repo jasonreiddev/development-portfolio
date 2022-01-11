@@ -1,17 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ButtonStyles = styled.button`
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: var(--font-weight-bold);
   border: 0;
-  border-radius: 3em;
+  border-radius: var(--border-radius);
   cursor: pointer;
   display: inline-block;
   line-height: 1;
 
   &.primary {
     color: white;
-    background-color: #1ea7fd;
+    background-color: var(--color-primary);
   }
 
   &.secondary {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LoginFormStyles = styled.form`
   width: max-content;
@@ -23,12 +23,12 @@ export const LoginFormStyles = styled.form`
   }
 
   input:focus {
-    outline: 3px auto blue;
+    outline: 3px auto var(--color-primary);
     outline-offset: 2px;
     border-color: transparent;
   }
 
-  button[type="submit"] {
+  button[type='submit'] {
     display: block;
     margin-top: 40px;
     width: 100%;
@@ -42,9 +42,9 @@ export const LoginFormStyles = styled.form`
     border-radius: 3px;
   }
 
-  button[type="submit"]:focus {
-    outline: 3px auto blue;
-    background: blue;
+  button[type='submit']:focus {
+    outline: 3px auto var(--color-primary);
+    background: var(--color-primary);
     outline-offset: 2px;
   }
 `;
