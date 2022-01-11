@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const PageStyles = styled.article`
+export const LandingStyles = styled.article`
   section {
-    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 24px;
     padding: 48px 20px;
@@ -11,7 +11,7 @@ export const PageStyles = styled.article`
     color: #333;
   }
 
-  section h2 {
+  section h1 {
     font-weight: 900;
     font-size: 32px;
     line-height: 1;
