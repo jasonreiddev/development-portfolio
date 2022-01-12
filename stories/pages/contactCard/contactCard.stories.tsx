@@ -16,6 +16,11 @@ Jason.args = {
   ...ContactCardStories.Jason.args,
 };
 
+export const JasonNoBackground = Template.bind({});
+JasonNoBackground.args = {
+  ...ContactCardStories.Jason.args,
+};
+
 export const Jake = Template.bind({});
 Jake.args = {
   backgroundColor: 'rgba(25, 255, 0, 0.5)',

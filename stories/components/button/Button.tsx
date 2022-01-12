@@ -20,9 +20,10 @@ export const Button = ({
     <ButtonStyles
       type="button"
       className={[`${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      backgroundColor={backgroundColor}
       {...props}
     >
+      {console.log('🚀 ~ file: Button.tsx ~ line 24 ~ backgroundColor', backgroundColor)}
       {label}
     </ButtonStyles>
   );

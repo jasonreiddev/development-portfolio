@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const ButtonStyles = styled.button`
+interface ButtonStylesProps {
+  backgroundColor?: string;
+}
+
+export const ButtonStyles = styled.button<ButtonStylesProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: var(--font-weight-bold);
   border: 0;
@@ -11,12 +15,14 @@ export const ButtonStyles = styled.button`
 
   &.primary {
     color: white;
-    background-color: var(--color-primary);
+    background-color: ${(p: ButtonStylesProps) =>
+      p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
   }
 
   &.secondary {
     color: #333;
-    background-color: transparent;
+    background-color: ${(p: ButtonStylesProps) =>
+      p.backgroundColor ? `${p.backgroundColor};` : 'transparent'};
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   }
 

@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-export const ContactCardPageStyles = styled.article`
-  background-color: var(--color-primary);
+interface ContactCardPageStylesProps {
+  backgroundColor: string;
+}
+
+export const ContactCardPageStyles = styled.article<ContactCardPageStylesProps>`
+  background-color: ${(p: ContactCardPageStylesProps) =>
+    p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
   height: 100vh;
   padding 10px;
 `;

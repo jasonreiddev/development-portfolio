@@ -11,7 +11,7 @@ export const PageContactCard = ({
   email,
   backgroundColor,
 }: PageContactCardProps): JSX.Element => (
-  <ContactCardPageStyles style={{ backgroundColor }}>
+  <ContactCardPageStyles backgroundColor={backgroundColor}>
     <ContactCard avatarSrc={avatarSrc} name={name} email={email} />
   </ContactCardPageStyles>
 );
