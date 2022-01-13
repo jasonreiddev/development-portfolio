@@ -7,8 +7,15 @@ export const GlobalStyles = createGlobalStyle`
   --font-weight-light: 300;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-  --color-primary: rgb(249 138 225);
-  --border-radius: 25px;
+  --border-radius: 15px;
+  --color-primary: rgb(249, 188, 225);
+  --color-secondary: rgb(91, 140, 90);
+  --color-tertiary: rgb(168, 208, 219);
+  --color-black: rgb(70, 73, 76);
+  --color-white: rgb(247, 245, 236);
+  --box-shadow: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
+    0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073),
+    0 -15px 40px -20px rgba(0, 0, 0, 0.2);
 }
 
 /* CSS Reset */
@@ -113,5 +120,33 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
+/* Tooltips */
+[data-tooltip]:before {
+    /* needed - do not touch */
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+    
+    /* customizable */
+    transition: all 0.15s ease;
+    padding: 10px;
+    color: #333;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);  
+}
+
+[data-tooltip]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+    
+    /* customizable */
+    background: var(--color-tertiary);
+    margin-top: -50px;
+    margin-left: 20px;    
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+    pointer-events: none;
+}
 
 `;

@@ -14,7 +14,7 @@ export const ButtonStyles = styled.button<ButtonStylesProps>`
   line-height: 1;
 
   &.primary {
-    color: white;
+    color: var(--color-white);
     background-color: ${(p: ButtonStylesProps) =>
       p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
   }
@@ -23,7 +23,7 @@ export const ButtonStyles = styled.button<ButtonStylesProps>`
     color: #333;
     background-color: ${(p: ButtonStylesProps) =>
       p.backgroundColor ? `${p.backgroundColor};` : 'transparent'};
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    box-shadow: var(--box-shadow);
   }
 
   &.small {

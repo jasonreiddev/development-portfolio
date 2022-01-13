@@ -13,8 +13,7 @@ export const LoginForm = ({
   type = 'email',
   PasswordPlaceHolder = 'Enter your password',
   showPassword = false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  handleSubmit = function (): void {},
+  handleSubmit,
 }: LoginFormProps): JSX.Element => {
   return (
     <LoginFormStyles id="login-form" onSubmit={handleSubmit}>

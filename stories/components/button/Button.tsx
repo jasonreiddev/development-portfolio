@@ -23,7 +23,6 @@ export const Button = ({
       backgroundColor={backgroundColor}
       {...props}
     >
-      {console.log('🚀 ~ file: Button.tsx ~ line 24 ~ backgroundColor', backgroundColor)}
       {label}
     </ButtonStyles>
   );

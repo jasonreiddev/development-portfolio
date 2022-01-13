@@ -40,7 +40,7 @@ export const LandingStyles = styled.article`
 
   section .tip {
     display: inline-block;
-    border-radius: 1em;
+    border-radius: var(--border-radius);
     font-size: 11px;
     line-height: 12px;
     font-weight: 700;

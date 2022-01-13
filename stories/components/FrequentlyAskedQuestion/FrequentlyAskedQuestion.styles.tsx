@@ -5,7 +5,7 @@ export const FrequentlyAskedQuestionStyles = styled.details`
   color: hsl(0deg 0% 25%);
   margin: 32px;
   border: 2px solid;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
 
   summary {
     cursor: pointer;
@@ -15,7 +15,7 @@ export const FrequentlyAskedQuestionStyles = styled.details`
 
   .answer {
     background: hsl(0deg 0% 92.5%);
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
     padding: 12px 17px;
     font-style: italic;
   }

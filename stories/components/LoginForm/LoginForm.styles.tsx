@@ -5,7 +5,7 @@ export const LoginFormStyles = styled.form`
   margin: 16px auto;
   border: 1px dotted silver;
   padding: 26px 32px 32px;
-  border-radius: 2px;
+  border-radius: var(--border-radius);
 
   & label {
     display: block;
@@ -15,11 +15,11 @@ export const LoginFormStyles = styled.form`
   input {
     display: block;
     width: 175px;
-    border: 1px solid black;
+    border: 1px solid var(--color-black);
     border-bottom-width: 2px;
     padding: 6px 8px;
     margin-top: 4px;
-    border-radius: 2px 2px 3px 3px;
+    border-radius: var(--border-radius);
   }
 
   input:focus {
@@ -32,8 +32,8 @@ export const LoginFormStyles = styled.form`
     display: block;
     margin-top: 40px;
     width: 100%;
-    background: black;
-    color: white;
+    background: var(--color-black);
+    color: var(--color-white);
     padding: 8px;
     border: none;
     font-size: 1rem;
