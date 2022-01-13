@@ -126,33 +126,34 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
-/* Tooltips */
-[data-tooltip]:before {
-    /* needed - do not touch */
+[data-tooltip]{
+  &:before {
     content: attr(data-tooltip);
     position: absolute;
     opacity: 0;
-    
-    /* customizable */
     transition: all 0.15s ease;
     padding: 10px;
     color: var(--color-black);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);  
-}
+  }
 
-[data-tooltip]:hover:before {
-    /* needed - do not touch */
+  &:hover:before {
     opacity: 1;
-    
-    /* customizable */
     background: var(--color-tertiary);
-    margin-top: -50px;
+    margin-top: -40px;
     margin-left: 20px;    
-}
+  }
 
-[data-tooltip]:not([data-tooltip-persistent]):before {
+  &[data-tooltip--close]:hover:before {
+    opacity: 1;
+    margin-top: -30px;
+    margin-left: 15px;    
+  }
+
+  &:not([data-tooltip--persistent]):before {
     pointer-events: none;
+  }  
 }
 
 `;

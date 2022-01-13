@@ -15,7 +15,7 @@ interface IconButtonProps {
 export enum Icon {
   None,
   Mail,
-  SignOut,
+  LogOut,
   Refresh,
   Search,
 }
@@ -26,7 +26,7 @@ const renderIcon = (icon: Icon): JSX.Element => {
       return <MdCircle />;
     case Icon.Mail:
       return <MdMail />;
-    case Icon.SignOut:
+    case Icon.LogOut:
       return <MdLogout />;
     case Icon.Refresh:
       return <MdRefresh />;
@@ -53,6 +53,7 @@ export const IconButton = ({
       backgroundColor={backgroundColor}
       {...props}
       data-tooltip={label}
+      data-tooltip--close={size == 'small' ? 'true' : null}
     >
       <span className="icon">{renderIcon(icon)}</span>
     </IconButtonStyles>

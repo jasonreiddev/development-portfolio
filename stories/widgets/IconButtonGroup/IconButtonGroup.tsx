@@ -36,10 +36,10 @@ export const IconButtonGroup = ({
         label={'Search'}
       />
       <IconButton
-        icon={Icon.SignOut}
+        icon={Icon.LogOut}
         size={iconButtonSize}
         backgroundColor={iconButtonBackgroundColor}
-        label={'SignOut'}
+        label={'Log Out'}
       />
     </ButtonGroupStyles>
   );
