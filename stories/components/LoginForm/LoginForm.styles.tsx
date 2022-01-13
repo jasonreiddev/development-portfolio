@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const LoginFormStyles = styled.form`
+  background-color: var(--color-white);
   width: max-content;
   margin: 16px auto;
   border: 1px dotted silver;
@@ -29,21 +30,11 @@ export const LoginFormStyles = styled.form`
   }
 
   button[type='submit'] {
-    display: block;
     margin-top: 40px;
     width: 100%;
-    background: var(--color-black);
-    color: var(--color-white);
-    padding: 8px;
-    border: none;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 3px;
   }
 
   button[type='submit']:focus {
-    outline: 3px auto var(--color-primary);
     background: var(--color-primary);
     outline-offset: 2px;
   }

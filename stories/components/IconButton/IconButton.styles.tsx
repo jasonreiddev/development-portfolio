@@ -8,8 +8,9 @@ interface IconButtonStylesProps {
 export const IconButtonStyles = styled.button<IconButtonStylesProps>`
   background: var(--color-white);
   border-radius: var(--border-radius);
-  border: 2px solid hsl(0deg 0% 80%);
+  box-shadow: var(--box-shadow);
   aspect-ratio: 1/1;
+  border: 0;
 
   .icon {
     display: block;
@@ -40,10 +41,9 @@ export const IconButtonStyles = styled.button<IconButtonStylesProps>`
   }
 
   &.secondary {
-    color: #333;
+    color: var(--color-black);
     background-color: ${(p: IconButtonStylesProps) =>
-      p.backgroundColor ? `${p.backgroundColor};` : 'transparent'};
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+      p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-secondary)'};
   }
 
   &.small {

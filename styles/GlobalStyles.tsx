@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   --border-radius: 15px;
   --color-primary: rgb(249, 188, 225);
   --color-secondary: rgb(91, 140, 90);
-  --color-tertiary: rgb(168, 208, 219);
+  --color-tertiary: rgb(129, 176, 194);
   --color-black: rgb(70, 73, 76);
   --color-white: rgb(247, 245, 236);
   --box-shadow: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
@@ -95,6 +95,12 @@ body, input, button, textarea, select, option {
   font: inherit; // Remove built-in form typography styles
   font-family: var(--font-family);
   font-weight: var(--font-weight-light);
+  color: var(--color-black);
+}
+
+a {
+  color: var(--color-tertiary);
+  text-decoration: none;
 }
 
 b {
@@ -130,7 +136,7 @@ img, picture, video, canvas, svg {
     /* customizable */
     transition: all 0.15s ease;
     padding: 10px;
-    color: #333;
+    color: var(--color-black);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);  
 }

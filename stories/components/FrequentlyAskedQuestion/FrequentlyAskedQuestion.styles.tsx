@@ -4,17 +4,20 @@ export const FrequentlyAskedQuestionStyles = styled.details`
   font-size: 1rem;
   color: hsl(0deg 0% 25%);
   margin: 32px;
-  border: 2px solid;
-  border-radius: var(--border-radius);
+
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--box-shadow);
 
   summary {
     cursor: pointer;
     padding: 12px 16px;
     outline-offset: 5px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
   }
 
   .answer {
-    background: hsl(0deg 0% 92.5%);
+    background: var(--color-primary);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     padding: 12px 17px;
     font-style: italic;

@@ -11,6 +11,7 @@ export const WallArtStyles = styled.button<WallArtStylesProps>`
   background: var(--color-white);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
+  border: 0;
 
   img {
     display: block;
@@ -24,7 +25,7 @@ export const WallArtStyles = styled.button<WallArtStylesProps>`
     bottom: 8px;
     text-align: center;
     padding: 8px;
-    background: hsl(0deg 0% 100% / 0.9);
+    background: var(--color-white);
     backdrop-filter: blur(10px);
   }
 `;

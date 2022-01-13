@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof PageContactCard> = (args) => <PageContactC
 
 export const Jason = Template.bind({});
 Jason.args = {
-  backgroundColor: 'rgba(255, 200, 235, 1)',
+  backgroundColor: 'var(--color-secondary)',
   ...ContactCardStories.Jason.args,
 };
 
@@ -23,6 +23,6 @@ JasonNoBackground.args = {
 
 export const Jake = Template.bind({});
 Jake.args = {
-  backgroundColor: 'rgba(25, 255, 0, 0.5)',
+  backgroundColor: 'var(--color-tertiary)',
   ...ContactCardStories.Jake.args,
 };

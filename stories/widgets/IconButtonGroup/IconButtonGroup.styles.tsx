@@ -6,7 +6,7 @@ interface IconButtonGroupStylesProps {
 
 export const ButtonGroupStyles = styled.div<IconButtonGroupStylesProps>`
   background-color: ${(p: IconButtonGroupStylesProps) =>
-    p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-secondary)'};
+    p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-white)'};
   padding 10px;
   width: fit-content;
   border-radius: var(--border-radius);

@@ -5,25 +5,23 @@ interface ButtonStylesProps {
 }
 
 export const ButtonStyles = styled.button<ButtonStylesProps>`
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: var(--font-weight-bold);
   border: 0;
   border-radius: var(--border-radius);
   cursor: pointer;
   display: inline-block;
   line-height: 1;
+  box-shadow: var(--box-shadow);
+  color: var(--color-white);
 
   &.primary {
-    color: var(--color-white);
     background-color: ${(p: ButtonStylesProps) =>
       p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
   }
 
   &.secondary {
-    color: #333;
     background-color: ${(p: ButtonStylesProps) =>
-      p.backgroundColor ? `${p.backgroundColor};` : 'transparent'};
-    box-shadow: var(--box-shadow);
+      p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-secondary)'};
   }
 
   &.small {

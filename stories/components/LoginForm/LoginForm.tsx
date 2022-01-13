@@ -1,3 +1,4 @@
+import { Button } from '../Button/Button';
 import { LoginFormStyles } from './LoginForm.styles';
 
 export interface LoginFormProps {
@@ -29,7 +30,7 @@ export const LoginForm = ({
           type={showPassword ? 'text' : 'password'}
         />
       </label>
-      <button type="submit">Log In</button>
+      <Button type="submit" label="Log In" />
     </LoginFormStyles>
   );
 };
