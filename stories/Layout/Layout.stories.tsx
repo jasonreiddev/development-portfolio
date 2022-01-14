@@ -4,7 +4,9 @@ import { Layout } from './Layout';
 
 export default {
   title: 'Layout',
-  layout: 'fullscreen',
+  parameters: {
+    layout: 'fullscreen',
+  },
   component: Layout,
 };
 

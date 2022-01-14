@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
 export const LoginFormStyles = styled.form`
-  background-color: var(--color-white);
-  width: max-content;
-  margin: 16px auto;
-  border: 1px dotted silver;
-  padding: 26px 32px 32px;
-  border-radius: var(--border-radius);
-
   & label {
     display: block;
     margin-bottom: 16px;
