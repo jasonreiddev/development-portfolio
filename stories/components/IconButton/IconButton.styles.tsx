@@ -6,11 +6,19 @@ interface IconButtonStylesProps {
 }
 
 export const IconButtonStyles = styled.button<IconButtonStylesProps>`
-  background: var(--color-white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
   aspect-ratio: 1/1;
   border: 0;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  backface-visibility: hidden;
+
+  &:hover {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
 
   .icon {
     display: block;
@@ -22,17 +30,6 @@ export const IconButtonStyles = styled.button<IconButtonStylesProps>`
       font-size: 2em;
     }
   }
-
-  /* font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: var(--font-weight-bold);
-  border: 0;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-  
-  Below unused temp
-  */
 
   &.primary {
     color: var(--color-white);
