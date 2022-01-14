@@ -28,3 +28,6 @@ JS.args = {
   question: 'What does “JS” stand for?',
   answer: 'Jake Stringer',
 };
+
+export const Minimum = Template.bind({});
+Minimum.args = {};

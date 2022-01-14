@@ -35,3 +35,6 @@ UsernameShowPassword.args = {
   PasswordPlaceHolder: 'Enter your password',
   showPassword: true,
 };
+
+export const Minimum = Template.bind({});
+Minimum.args = {};

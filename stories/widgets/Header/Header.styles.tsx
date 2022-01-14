@@ -8,6 +8,9 @@ export const HeaderStyles = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
   }
 
   svg {

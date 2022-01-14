@@ -54,3 +54,6 @@ SmallRefresh.args = {
   size: 'small',
   label: 'Refresh',
 };
+
+export const Minimum = Template.bind({});
+Minimum.args = {};

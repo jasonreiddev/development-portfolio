@@ -22,3 +22,6 @@ Jake.args = {
   name: 'Jake Stringer',
   email: 'JakeStringer@actual.help',
 };
+
+export const Minimum = Template.bind({});
+Minimum.args = {};
