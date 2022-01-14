@@ -26,3 +26,6 @@ Jake.args = {
   backgroundColor: 'var(--color-tertiary)',
   ...ContactCardStories.Jake.args,
 };
+
+export const Minimum = Template.bind({});
+Minimum.args = {};

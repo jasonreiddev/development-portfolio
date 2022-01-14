@@ -21,3 +21,6 @@ export const Small = Template.bind({});
 Small.args = {
   iconButtonSize: 'small',
 };
+
+export const Minimum = Template.bind({});
+Minimum.args = {};

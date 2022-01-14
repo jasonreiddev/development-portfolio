@@ -24,3 +24,6 @@ export const SrcOnly = Template.bind({});
 SrcOnly.args = {
   src: 'https://picsum.photos/300/400',
 };
+
+export const Minimum = Template.bind({});
+Minimum.args = {};
