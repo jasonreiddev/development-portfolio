@@ -4,7 +4,9 @@ import { HelloWorld } from './helloWorld';
 
 export default {
   title: 'Pages/Hello World!',
-  layout: 'fullscreen',
+  parameters: {
+    layout: 'fullscreen',
+  },
   component: HelloWorld,
 } as ComponentMeta<typeof HelloWorld>;
 

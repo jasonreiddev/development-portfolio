@@ -72,9 +72,6 @@ table {
   box-sizing: border-box; // more-intuitive box-sizing model.
 }
 
-* {
- 
-}
 html, body {
   height: 100%; // Allow percentage-based heights in the application
 }

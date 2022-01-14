@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const HeaderStyles = styled.header`
   .wrapper {
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 15px 20px;
     display: flex;
