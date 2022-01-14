@@ -14,5 +14,11 @@ HelloWorld.args = {
   text: `Hello World!`,
 };
 
+export const HelloWorldFitContent = Template.bind({});
+HelloWorldFitContent.args = {
+  text: `Hello World!`,
+  fitContent: true,
+};
+
 export const Minimum = Template.bind({});
 Minimum.args = {};

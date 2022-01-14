@@ -11,13 +11,11 @@ const Template: ComponentStory<typeof Like> = (args) => <Like {...args} />;
 
 export const Liked = Template.bind({});
 Liked.args = {
-  likes: 1337,
   liked: true,
 };
 
 export const FirstLike = Template.bind({});
 FirstLike.args = {
-  likes: 0,
   liked: false,
 };
 
