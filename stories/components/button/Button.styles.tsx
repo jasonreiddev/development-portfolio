@@ -7,12 +7,20 @@ interface ButtonStylesProps {
 export const ButtonStyles = styled.button<ButtonStylesProps>`
   font-weight: var(--font-weight-bold);
   border: 0;
-  border-radius: var(--border-radius);
-  cursor: pointer;
   display: inline-block;
   line-height: 1;
-  box-shadow: var(--box-shadow);
+  background: var(--color-white);
   color: var(--color-white);
+  border-radius: var(--border-radius);
+
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  backface-visibility: hidden;
+
+  &:hover {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
 
   &.primary {
     background-color: ${(p: ButtonStylesProps) =>

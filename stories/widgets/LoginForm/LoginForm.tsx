@@ -3,11 +3,11 @@ import { TextCard } from '../TextCard/TextCard';
 import { LoginFormStyles } from './LoginForm.styles';
 
 export interface LoginFormProps {
-  placeHolder: string;
-  type: string;
-  PasswordPlaceHolder: string;
-  showPassword: boolean;
-  handleSubmit: () => void;
+  placeHolder?: string;
+  type?: string;
+  PasswordPlaceHolder?: string;
+  showPassword?: boolean;
+  handleSubmit?: () => void;
 }
 
 export const LoginForm = ({
