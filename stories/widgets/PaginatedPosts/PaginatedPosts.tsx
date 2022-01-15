@@ -3,26 +3,24 @@ import { Pagination } from '../../components/Pagination/Pagination';
 import { Posts, Post } from '../../components/Posts/Posts';
 
 interface PaginatedPostsProps {
-  posts: Post[];
-  pageSize: number;
-  totalCount: number;
-  currentPage: number;
+  posts?: Post[];
+  pageSize?: number;
+  currentPage?: number;
   base?: string;
 }
 
 export const PaginatedPosts = ({
   posts,
-  pageSize,
-  totalCount,
-  currentPage,
+  pageSize = 5,
+  currentPage = 1,
   base,
 }: PaginatedPostsProps): JSX.Element => {
   return (
     <ContainerStyles>
-      <Posts posts={posts} />
+      {posts && <Posts posts={posts} />}
       <Pagination
         pageSize={pageSize}
-        totalCount={totalCount}
+        totalCount={posts ? posts.length : 0}
         currentPage={currentPage}
         base={base}
       />

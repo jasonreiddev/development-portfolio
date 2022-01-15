@@ -6,10 +6,10 @@ interface FooterCardProps {
   fitContent?: boolean;
 }
 
-export const TextCard = ({ text, children, fitContent }: FooterCardProps): JSX.Element => {
+export const TextCard = ({ text, children, fitContent = true }: FooterCardProps): JSX.Element => {
   return (
     <TextCardStyles fitContent={fitContent}>
-      <h2>{text}</h2>
+      {text && <h2>{text}</h2>}
       {children}
     </TextCardStyles>
   );
