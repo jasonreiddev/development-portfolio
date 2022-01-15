@@ -9,6 +9,8 @@ const Container = styled.div<{ fullWidth: boolean }>`
   width: ${(p) => (p.fullWidth ? '100%' : 'fit-content')};
   @media ${from(Device.Mobile)} {
     min-width: 10em;
+    border-radius: var(--border-radius);
+    padding: 20px 0;
   }
 
   a {
