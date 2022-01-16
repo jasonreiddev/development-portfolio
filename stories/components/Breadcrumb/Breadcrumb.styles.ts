@@ -4,7 +4,6 @@ const Breadcrumb = styled.div`
   display: flex;
   align-items: center;
   border: none;
-  padding-bottom: 3.5em;
   font-size: 13px;
   flex-wrap: wrap;
   color: var(--color-black);

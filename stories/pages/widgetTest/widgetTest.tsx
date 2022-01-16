@@ -9,6 +9,7 @@ import { IconButtonGroup } from '../../widgets/IconButtonGroup/IconButtonGroup';
 // import { Like } from '../../widgets/Like/Like'; // layout
 import { LoginForm } from '../../widgets/LoginForm/LoginForm';
 // import { PaginatedPosts } from '../../widgets/PaginatedPosts/PaginatedPosts'; // w.i.p
+import { PathBreadcrumb } from '../../widgets/PathBreadcrumb/PathBreadcrumb';
 // import { Seo } from '../../widgets/Seo/Seo'; // layout
 // import { Share } from '../../widgets/Share/Share'; // layout
 import { TextCard } from '../../widgets/TextCard/TextCard';
@@ -25,6 +26,9 @@ export const WidgetTest = ({ text }: WidgetTestProps): JSX.Element => (
       </TextCard>
       <IconButtonGroup />
       <LoginForm />
+      <TextCard>
+        <PathBreadcrumb />
+      </TextCard>
       <TextCard>
         <h2>{text}</h2>
       </TextCard>
