@@ -31,7 +31,7 @@ const List = styled.ul`
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: ${darken(0.1, brand.grey.grey80)};
+    background: ${darken(0.1, 'var(--color-black)')};
   }
 `;
 
@@ -86,7 +86,7 @@ const NoResults = styled.span`
 
 const Results = styled.span`
   span.reset-selection {
-    color: ${brand.blue};
+    color: var(--color-tertiary);
     font-weight: 500;
     cursor: pointer;
 
