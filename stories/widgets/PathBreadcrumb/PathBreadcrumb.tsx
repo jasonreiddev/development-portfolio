@@ -5,7 +5,10 @@ export const PathBreadcrumb = (): ReactElement => {
   return (
     <>
       {typeof window !== 'undefined' && window.location.pathname !== '/' && (
-        <Breadcrumb path={window.location.pathname + window.location.search} />
+        <Breadcrumb
+          siteName="Jason Reid Development Portfolio"
+          path={window.location.pathname + window.location.search}
+        />
       )}
     </>
   );
