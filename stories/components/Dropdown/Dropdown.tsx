@@ -12,6 +12,7 @@ export interface DropdownProps {
   icon: Icon;
   active: boolean;
   fullWidth: boolean;
+  expand: boolean;
   toggleActive: VoidFunction;
   dropdownRef: React.Ref<HTMLElement>;
   dropdownItemGroups: DropdownItem[][];
@@ -38,6 +39,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   icon,
   active,
   fullWidth,
+  expand,
   toggleActive,
   dropdownRef,
   dropdownItemGroups,
@@ -52,7 +54,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
       </DropdownStyles.Header>
       {dropdownItemGroups && (
         <nav ref={dropdownRef}>
-          <DropdownStyles.Dropdown active={active} fullWidth={fullWidth}>
+          <DropdownStyles.Dropdown active={active} fullWidth={fullWidth} expand={expand}>
             <DropdownStyles.DropdownInner>
               {dropdownItemGroups.map((group, index) => (
                 <>

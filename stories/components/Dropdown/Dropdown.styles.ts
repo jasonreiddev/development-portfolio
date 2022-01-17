@@ -29,11 +29,10 @@ const Container = styled.div<{ fullWidth: boolean }>`
   }
 `;
 
-const Dropdown = styled.div<{ active: boolean; fullWidth: boolean }>`
+const Dropdown = styled.div<{ active: boolean; fullWidth: boolean; expand: boolean }>`
   overflow: hidden;
-  position: absolute;
+  position: ${(p) => (p.expand ? 'initial' : 'absolute')};
   background-color: inherit;
-  box-shadow: var(--box-shadow-no-top);
   color: var(--color-white);
   min-width: 10em;
   width: fit-content;

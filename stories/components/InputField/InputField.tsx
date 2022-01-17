@@ -5,16 +5,18 @@ export type InputFieldProps = {
   title?: string;
   name: string;
   placeholder?: string;
-  type: string;
+  type?: string;
   callback?(value: string): void;
+  onClick?(): void;
 };
 
 const InputField: FunctionComponent<InputFieldProps> = ({
   title,
   name,
   placeholder,
-  type,
+  type = 'Text',
   callback,
+  onClick,
 }) => {
   return (
     <InputFieldStyles.Container>
@@ -28,6 +30,7 @@ const InputField: FunctionComponent<InputFieldProps> = ({
           onChange={(e) => {
             callback && callback(e.target.value);
           }}
+          onClick={onClick}
         />
       </InputFieldStyles.Input>
     </InputFieldStyles.Container>
