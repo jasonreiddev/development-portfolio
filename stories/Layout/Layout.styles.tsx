@@ -27,6 +27,7 @@ export const MainStyles = styled.main`
 `;
 
 export const ContentStyles = styled.div`
+  height: 1440px; // manually updating for layout atm needs fixing
   max-width: 1080px;
   flex-grow: 2;
   width: 100%;
