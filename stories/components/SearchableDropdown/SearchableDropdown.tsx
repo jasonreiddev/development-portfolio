@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
-import SearchField from '../SearchField/SearchField';
+import InputField from '../InputField/InputField';
 import { SearchableDropdownStyles } from './SearchableDropdown.styles';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { clickOutside } from '../../../helpers/clickOutside';
@@ -51,7 +51,7 @@ const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
     <SearchableDropdownStyles.Container
       onClick={() => showDropdownOnContainerClick && setIsActive(!isActive)}
     >
-      <SearchField
+      <InputField
         title={title}
         name={name}
         placeholder={placeholder}
