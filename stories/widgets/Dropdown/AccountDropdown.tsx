@@ -41,6 +41,7 @@ export const AccountDropdown = ({ username }: AccountDropdownProps): ReactElemen
     <Dropdown
       text={username}
       icon={Icon.Account}
+      expand={true}
       active={isActive}
       fullWidth={false}
       dropdownRef={dropdownRef}
