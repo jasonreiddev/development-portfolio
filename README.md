@@ -24,6 +24,12 @@ Open [http://localhost:6006](http://localhost:6006) with your browser to see the
 
 You can start editing the the components and pages in the stories directory. Stories auto-update when you save files.
 
+## Vercel
+
+Build: yarn vercel dev
+
+Deploy: yarn vercel --prod
+
 ## Other Commands
 
 yarn lint - preforms lint check on project
