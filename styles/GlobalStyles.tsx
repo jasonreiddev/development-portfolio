@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
   --color-tertiary: rgb(129, 176, 194);
   --color-black: rgb(70, 73, 76);
   --color-white: rgb(247, 245, 236);
+  --color-white-bright: rgb(255, 255, 255);
   --box-shadow: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073),
     0 -15px 40px -20px rgba(0, 0, 0, 0.2);
