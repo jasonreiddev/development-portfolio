@@ -14,6 +14,9 @@ import { PathBreadcrumb } from '../../widgets/PathBreadcrumb/PathBreadcrumb';
 // import { Share } from '../../widgets/Share/Share'; // layout
 import { TextCard } from '../../widgets/TextCard/TextCard';
 
+// Components
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
+
 export interface WidgetTestProps {
   text?: string;
 }
@@ -30,7 +33,10 @@ export const WidgetTest = ({ text }: WidgetTestProps): JSX.Element => (
         <PathBreadcrumb />
       </TextCard>
       <TextCard>
-        <h2>{text}</h2>
+        <>
+          <h2>{text}</h2>
+          <ProgressBar progress={69} />
+        </>
       </TextCard>
     </WidgetTestStyles>
   </Layout>
