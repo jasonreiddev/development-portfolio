@@ -4,7 +4,6 @@ export const GlobalStyles = createGlobalStyle`
 
 :root {
   --font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-multiplier: 1;
   --font-weight-light: 300;
   --font-weight-medium: 500;
   --font-weight-bold: 700;

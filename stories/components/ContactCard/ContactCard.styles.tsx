@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { clamp } from '../../../helpers/media';
 
 export const ContactCardStyles = styled.article`
   min-width: 250px;
@@ -26,12 +27,7 @@ export const ContactCardStyles = styled.article`
   }
 
   h2 {
-    --font-multiplier: 1.25;
-    font-size: clamp(
-      1rem * var(--font-multiplier),
-      1vw + 1rem * var(--font-multiplier),
-      2rem * var(--font-multiplier)
-    );
+    font-size: ${clamp({ multiplier: 1.25 })};
     font-weight: 600;
     margin-bottom: 0px;
   }

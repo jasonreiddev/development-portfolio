@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { clamp } from '../../../helpers/media';
 
 export const HeaderStyles = styled.header`
   .wrapper {
@@ -19,12 +20,7 @@ export const HeaderStyles = styled.header`
 
   h1 {
     font-weight: 900;
-    --font-multiplier: 1.5;
-    font-size: clamp(
-      1rem * var(--font-multiplier),
-      1vw + 1rem * var(--font-multiplier),
-      2rem * var(--font-multiplier)
-    );
+    font-size: ${clamp({ multiplier: 1.5 })};
     line-height: 1;
     margin: 6px 0 6px 10px;
     display: inline-block;
