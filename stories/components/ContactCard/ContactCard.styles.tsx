@@ -26,7 +26,12 @@ export const ContactCardStyles = styled.article`
   }
 
   h2 {
-    font-size: 1.25rem;
+    --font-multiplier: 1.25;
+    font-size: clamp(
+      1rem * var(--font-multiplier),
+      1vw + 1rem * var(--font-multiplier),
+      2rem * var(--font-multiplier)
+    );
     font-weight: 600;
     margin-bottom: 0px;
   }

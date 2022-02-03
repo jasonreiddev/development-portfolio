@@ -5,7 +5,12 @@ const Footer = styled.footer`
   background-color: var(--color-secondary);
   display: flex;
   color: var(--color-white);
-  font-size: 1rem;
+  --font-multiplier: 0.5;
+  font-size: clamp(
+    1rem * var(--font-multiplier),
+    1vw + 1rem * var(--font-multiplier),
+    2rem * var(--font-multiplier)
+  );
 `;
 
 const Title = styled.a`

@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
 
 :root {
   --font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-multiplier: 1;
   --font-weight-light: 300;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
@@ -111,6 +112,8 @@ body, input, button, textarea, select, option {
   font-weight: var(--font-weight-light);
   color: var(--color-black);
 }
+
+input[type='text'],textarea {font-size:1em;}
 
 a {
   color: var(--color-tertiary);

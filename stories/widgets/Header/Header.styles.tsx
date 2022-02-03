@@ -19,7 +19,12 @@ export const HeaderStyles = styled.header`
 
   h1 {
     font-weight: 900;
-    font-size: 20px;
+    --font-multiplier: 1.5;
+    font-size: clamp(
+      1rem * var(--font-multiplier),
+      1vw + 1rem * var(--font-multiplier),
+      2rem * var(--font-multiplier)
+    );
     line-height: 1;
     margin: 6px 0 6px 10px;
     display: inline-block;
