@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Device, from } from '../../helpers/media';
 
 export const SiteBorderStyles = styled.div`
   overflow: auto;
@@ -25,7 +26,7 @@ export const MainStyles = styled.main`
   display: flex;
   width: 100%;
   flex-direction: column;
-  @media only screen and (min-width: 1440px) {
+  @media ${from(Device.Desktop)} {
     justify-content: space-between;
   }
 `;
@@ -35,7 +36,7 @@ export const ContentStyles = styled.div`
   max-width: 1080px;
   flex-grow: 2;
   width: 100%;
-  @media only screen and (min-width: 1440px) {
+  @media ${from(Device.Desktop)} {
     order: 2;
     height: Calc(100vh - 120px);
     overflow: auto;
@@ -45,7 +46,7 @@ export const ContentStyles = styled.div`
 export const AsideStyles = styled.aside`
   width: 50%;
   flex-grow: 0;
-  @media only screen and (min-width: 1440px) {
+  @media ${from(Device.Desktop)} {
     flex-grow: 1;
     width: 100%;
   }
@@ -54,7 +55,7 @@ export const AsideStyles = styled.aside`
   justify-content: center;
   position: relative;
 
-  @media only screen and (min-width: 1440px) {
+  @media ${from(Device.Desktop)} {
     &.aside-left {
       order: 1;
       width: unset !important;
@@ -75,7 +76,7 @@ export const BodyDivStyles = styled.div`
   flex-grow: 1;
   flex-direction: column;
   background-color: #ffffff6b;
-  @media only screen and (min-width: 1440px) {
+  @media ${from(Device.Desktop)} {
     max-width: unset;
     flex-direction: row;
   }
@@ -86,7 +87,7 @@ export const FooterStyles = styled.footer`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media only screen and (min-width: 1440px) {
+  @media ${from(Device.Desktop)} {
     display: none;
   }
 `;
@@ -94,7 +95,7 @@ export const FooterStyles = styled.footer`
 export const DesktopFooterStyles = styled.footer`
   width: 100%;
   display: none;
-  @media only screen and (min-width: 1440px) {
+  @media ${from(Device.Desktop)} {
     display: flex;
     justify-content: center;
     align-items: flex-end;

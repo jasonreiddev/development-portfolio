@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Device, from } from '../../../helpers/media';
 
 export const PaginationStyles = styled.div`
   display: flex;
@@ -24,7 +25,8 @@ export const PaginationStyles = styled.div`
       color: var(--color-primary);
     }
   }
-  @media (max-width: 800px) {
+
+  @media ${from(Device.Tablet)} {
     .word {
       display: none;
     }
