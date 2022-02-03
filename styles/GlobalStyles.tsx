@@ -76,6 +76,7 @@ table {
 }
 
 html, body {
+  overflow: hidden;
   height: 100%; // Allow percentage-based heights in the application
 }
 
@@ -154,6 +155,21 @@ img, picture, video, canvas, svg {
   &:not([data-tooltip--persistent]):before {
     pointer-events: none;
   }  
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+  z-index: 999;
+}
+   
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.35rem rgba(0, 0, 0, 0.3);
+}
+   
+::-webkit-scrollbar-thumb {
+  border: 0.1rem solid var(--color-black);
+  background-color: var(--color-tertiary);
+  border-radius: 0.75rem;
 }
 
 `;
