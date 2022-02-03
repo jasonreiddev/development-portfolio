@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react';
-import { ConversationStyles } from './Conversation.styles';
+import { ConversationStyles as s } from './Conversation.styles';
 import { MdAccountCircle } from 'react-icons/md';
 
 export enum Icon {
@@ -40,33 +40,30 @@ export const Conversation: FunctionComponent<ConversationProps> = ({
   conversationItemGroups,
 }) => {
   return (
-    <ConversationStyles.Container fullWidth={fullWidth}>
-      <ConversationStyles.Header hasIcon={icon !== 0}>
+    <s.Container fullWidth={fullWidth}>
+      <s.Header hasIcon={icon !== 0}>
         <div onClick={toggleActive}>
           {renderIcon(icon)}
           <span>{chatName}</span>
         </div>
-      </ConversationStyles.Header>
+      </s.Header>
       {conversationItemGroups && (
-        <ConversationStyles.Dropdown active={active} fullWidth={fullWidth}>
+        <s.Dropdown active={active} fullWidth={fullWidth}>
           {conversationItemGroups.map((group, index) => (
             <div key={`ConversationGroup-${index}`}>
               {index > 0 && <hr />}
-              <ConversationStyles.DropdownInner key={`ConversationGroup-${index}`}>
+              <s.DropdownInner key={`ConversationGroup-${index}`}>
                 {group.map((item, index) => (
-                  <ConversationStyles.ConversationItem
-                    sentByMe={item.sentByMe}
-                    key={`ConversationItem-${index}`}
-                  >
+                  <s.ConversationItem sentByMe={item.sentByMe} key={`ConversationItem-${index}`}>
                     {item.text}
-                  </ConversationStyles.ConversationItem>
+                  </s.ConversationItem>
                 ))}
-              </ConversationStyles.DropdownInner>
+              </s.DropdownInner>
             </div>
           ))}
-        </ConversationStyles.Dropdown>
+        </s.Dropdown>
       )}
-    </ConversationStyles.Container>
+    </s.Container>
   );
 };
 

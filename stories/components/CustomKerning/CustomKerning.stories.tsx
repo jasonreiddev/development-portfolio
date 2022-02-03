@@ -23,8 +23,7 @@ Wavey.args = {
   kernGroups: [
     { letters: 'W', letterSpacing: '0px' },
     { letters: 'A', letterSpacing: '-2px' },
-    { letters: 'V', letterSpacing: '0px' },
-    { letters: 'EY!', letterSpacing: '1px' },
+    { letters: 'VEY!', letterSpacing: '0px' },
   ],
 };
 

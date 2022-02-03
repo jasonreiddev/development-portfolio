@@ -4,8 +4,10 @@ interface IconButtonGroupStylesProps {
   backgroundColor?: string;
 }
 
-export const ButtonGroupStyles = styled.div<IconButtonGroupStylesProps>`
-  button {
-    margin: 10px;
-  }
+const ButtonWrapper = styled.div<IconButtonGroupStylesProps>`
+  margin: 10px;
 `;
+
+export const ButtonGroupStyles = {
+  ButtonWrapper,
+};

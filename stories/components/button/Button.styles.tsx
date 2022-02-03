@@ -4,7 +4,7 @@ interface ButtonStylesProps {
   backgroundColor?: string;
 }
 
-export const ButtonStyles = styled.button<ButtonStylesProps>`
+const Button = styled.button<ButtonStylesProps>`
   font-weight: var(--font-weight-bold);
   border: 0;
   display: inline-block;
@@ -47,3 +47,7 @@ export const ButtonStyles = styled.button<ButtonStylesProps>`
     padding: 12px 24px;
   }
 `;
+
+export const ButtonStyles = {
+  Button,
+};

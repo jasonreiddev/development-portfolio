@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { clamp } from '../../../helpers/media';
 
-export const ContactCardStyles = styled.article`
+const Card = styled.article`
   min-width: 250px;
   border-radius: var(--border-radius);
   padding: 24px;
@@ -38,3 +38,7 @@ export const ContactCardStyles = styled.article`
     color: hsl(0deg 0% 40%);
   }
 `;
+
+export const ContactCardStyles = {
+  Card,
+};

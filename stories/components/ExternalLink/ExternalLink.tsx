@@ -1,6 +1,6 @@
 import { MdLink } from 'react-icons/md';
 
-import { ExternalLinkStyles } from './ExternalLink.styles';
+import { ExternalLinkStyles as s } from './ExternalLink.styles';
 
 interface ExternalLinkProps {
   to?: string;
@@ -9,9 +9,9 @@ interface ExternalLinkProps {
 
 export const ExternalLink = ({ to, text }: ExternalLinkProps): JSX.Element => {
   return (
-    <ExternalLinkStyles href={to}>
+    <s.Link href={to}>
       <MdLink />
       {text}
-    </ExternalLinkStyles>
+    </s.Link>
   );
 };

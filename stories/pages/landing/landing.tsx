@@ -1,26 +1,24 @@
-import { LandingStyles } from './landing.styles';
+import { LandingStyles as s } from './landing.styles';
 
 export interface LandingProps {
   storybookUrl?: string;
 }
 
 export const Landing = ({ storybookUrl }: LandingProps): JSX.Element => (
-  <LandingStyles>
-    <section>
-      <h1>Next.js Component Library</h1>
-      <p>
-        There isn&apos;t much to see here, but check out the&nbsp;
-        {storybookUrl ? (
-          <b>
-            <a href={storybookUrl}>storybook</a>
-          </b>
-        ) : (
-          <>
-            storybook by running &apos;<b>Yarn Storybook</b>&apos;
-          </>
-        )}
-        !
-      </p>
-    </section>
-  </LandingStyles>
+  <s.Wrapper>
+    <s.Title>Next.js Component Library</s.Title>
+    <s.Text>
+      There isn&apos;t much to see here, but check out the&nbsp;
+      {storybookUrl ? (
+        <b>
+          <a href={storybookUrl}>storybook</a>
+        </b>
+      ) : (
+        <>
+          storybook by running &apos;<b>Yarn Storybook</b>&apos;
+        </>
+      )}
+      !
+    </s.Text>
+  </s.Wrapper>
 );

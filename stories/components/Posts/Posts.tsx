@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { UlStyles } from './Posts.styles';
+import { PostStyles as s } from './Posts.styles';
 
 export interface Post {
   id?: number;
@@ -17,7 +17,7 @@ interface PostsProps {
 
 export const Posts = ({ posts }: PostsProps): JSX.Element => {
   return (
-    <UlStyles>
+    <s.Wrapper>
       {posts &&
         posts.map(
           (post: {
@@ -50,6 +50,6 @@ export const Posts = ({ posts }: PostsProps): JSX.Element => {
             );
           },
         )}
-    </UlStyles>
+    </s.Wrapper>
   );
 };

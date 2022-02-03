@@ -1,4 +1,4 @@
-import { FrequentlyAskedQuestionStyles } from './FrequentlyAskedQuestion.styles';
+import { FrequentlyAskedQuestionStyles as s } from './FrequentlyAskedQuestion.styles';
 
 export interface FrequentlyAskedQuestionProps {
   question: string;
@@ -10,9 +10,9 @@ export const FrequentlyAskedQuestion = ({
   answer,
 }: FrequentlyAskedQuestionProps): JSX.Element => {
   return (
-    <FrequentlyAskedQuestionStyles>
+    <s.Wrapper>
       <summary>{question}</summary>
       <div className="answer">{answer}</div>
-    </FrequentlyAskedQuestionStyles>
+    </s.Wrapper>
   );
 };

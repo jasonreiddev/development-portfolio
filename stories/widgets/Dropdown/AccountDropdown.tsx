@@ -1,4 +1,5 @@
 import { useRef, ReactElement } from 'react';
+
 import { Dropdown, Icon, DropdownItem } from '../../components/Dropdown/Dropdown';
 import { clickOutside } from '../../../helpers/clickOutside';
 // import useUser, { UserContextType } from '../../../context/UserContext';

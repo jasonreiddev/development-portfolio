@@ -1,30 +1,12 @@
-// import React, { useState, useEffect } from 'react';
-// import { graphql, useStaticQuery } from 'gatsby';
-//import { Helmet } from 'react-helmet-async';
-// import 'normalize.css';
 import { FaCode } from 'react-icons/fa';
 import { HiTerminal } from 'react-icons/hi';
 import { IoBrowsers } from 'react-icons/io5';
-// import firebase from '../../utils/useFirebase';
-// import { doc, getDoc } from 'firebase/firestore';
 
-// import { SEO } from '../widgets/SEO/SEO';
 import { Header, Links } from '../widgets/Header/Header';
 import { Share } from '../widgets/Share/Share';
 import { Like } from '../widgets/Like/Like';
 
-import {
-  AsideStyles,
-  BodyDivStyles,
-  ContentStyles,
-  FooterStyles,
-  MainStyles,
-  SVGStyles,
-  SiteBorderStyles,
-  LoadMaskStyles,
-  LoadSpinnerStyles,
-  DesktopFooterStyles,
-} from './Layout.styles';
+import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
 import { useState } from 'react';
 interface LayoutProps {
@@ -54,7 +36,7 @@ export const Layout = ({
 
   return (
     <>
-      <SVGStyles>
+      <s.SVGStyles>
         <defs>
           <pattern
             id="background-icons"
@@ -70,45 +52,35 @@ export const Layout = ({
           </pattern>
         </defs>
         <rect x="0" y="0" width="100%" height="100%" fill="url(#background-icons)" />
-      </SVGStyles>
-      <SiteBorderStyles className={'mobile-scroll'}>
-        {/* <Helmet>
-            <body className={'theme-' + theme.theme} />
-          </Helmet> */}
-        {/* <SEO title={title} /> */}
-        <LoadMaskStyles className="load-mask" loading={loading} />
-        <LoadSpinnerStyles className="load-spinner" loading={loading} />
-        {/* <Header menuLinks={site.menuLinks} title={title} /> */}
+      </s.SVGStyles>
+      <s.SiteBorderStyles className={'mobile-scroll'}>
+        <s.LoadMaskStyles className="load-mask" loading={loading} />
+        <s.LoadSpinnerStyles className="load-spinner" loading={loading} />
         <Header title={title} menuLinks={menuLinks} />
-        <BodyDivStyles className={'column-small tablet-scroll'}>
-          <ContentStyles className={'desktop-scroll'}>
-            <MainStyles>
+        <s.BodyDivStyles className={'column-small tablet-scroll'}>
+          <s.ContentStyles className={'desktop-scroll'}>
+            <s.MainStyles>
               <div>{children}</div>
-              <DesktopFooterStyles>
+              <s.DesktopFooterStyles>
                 <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-              </DesktopFooterStyles>
-            </MainStyles>
-          </ContentStyles>
-          <AsideStyles className="aside-left">
+              </s.DesktopFooterStyles>
+            </s.MainStyles>
+          </s.ContentStyles>
+          <s.AsideStyles className="aside-left">
             <Like getLikesDB={getLikesDB} updateLikesDB={updateLikesDB} liked={false} />
-          </AsideStyles>
-          <AsideStyles className="aside-right">
-            {/* <Share
-                text="Share"
-                shareText={`${title ? title : site.titleTemplate} - @${site.twitterUsername}`}
-                shareUrl={`${site.url}${typeof window !== 'undefined' ? location.pathname : ''}`}
-              /> */}
+          </s.AsideStyles>
+          <s.AsideStyles className="aside-right">
             <Share
               text="Share"
               shareText={`${title ? title : 'site.titleTemplate'} - @${'site.twitterUsername'}`}
               shareUrl={`${'site.url'}${typeof window !== 'undefined' ? location.pathname : ''}`}
             />
-          </AsideStyles>
-          <FooterStyles>
+          </s.AsideStyles>
+          <s.FooterStyles>
             <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-          </FooterStyles>
-        </BodyDivStyles>
-      </SiteBorderStyles>
+          </s.FooterStyles>
+        </s.BodyDivStyles>
+      </s.SiteBorderStyles>
     </>
   );
 };

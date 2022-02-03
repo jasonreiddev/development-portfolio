@@ -1,6 +1,6 @@
 import { MdMail, MdLogout, MdRefresh, MdSearch, MdCircle } from 'react-icons/md';
 
-import { IconButtonStyles } from './IconButton.styles';
+import { IconButtonStyles as s } from './IconButton.styles';
 
 interface IconButtonProps {
   icon: Icon;
@@ -46,7 +46,7 @@ export const IconButton = ({
 }: IconButtonProps): JSX.Element => {
   const mode = primary ? 'primary' : 'secondary';
   return (
-    <IconButtonStyles
+    <s.Wrapper
       active={active}
       type="button"
       className={[`${size}`, mode].join(' ')}
@@ -56,6 +56,6 @@ export const IconButton = ({
       data-tooltip--close={size == 'small' ? 'true' : null}
     >
       <span className="icon">{renderIcon(icon)}</span>
-    </IconButtonStyles>
+    </s.Wrapper>
   );
 };

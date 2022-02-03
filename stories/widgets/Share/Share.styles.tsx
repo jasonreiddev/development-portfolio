@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
-export const ShareStyles = styled.div`
+const Wrapper = styled.div`
   text-align: center;
   width: 50px;
-
   font-weight: var(--font-weight-bold);
 
   a {
     color: var(--color-black);
   }
+
   svg {
     width: 50px;
     height: 25px;
@@ -19,3 +19,7 @@ export const ShareStyles = styled.div`
     height: 20px;
   }
 `;
+
+export const ShareStyles = {
+  Wrapper,
+};

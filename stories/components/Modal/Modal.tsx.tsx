@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactNode } from 'react';
-import { ModalStyles } from './Modal.styles';
+import { ModalStyles as s } from './Modal.styles';
 import { MdClose } from 'react-icons/md';
 import { MdAccountCircle } from 'react-icons/md';
 
@@ -40,30 +40,30 @@ export const Modal: FunctionComponent<ModalProps> = ({
 }) => {
   return (
     <>
-      <ModalStyles.Mask active={active} />
+      <s.Mask active={active} />
       <span ref={modalRef}>
-        <ModalStyles.Open hasIcon={openIcon !== 0}>
+        <s.Open hasIcon={openIcon !== 0}>
           <div onClick={toggleActive}>
             {openIcon && renderIcon(openIcon)}
             <span>{openText}</span>
           </div>
-        </ModalStyles.Open>
-        <ModalStyles.Modal active={active}>
-          <ModalStyles.CloseContainer>
-            <ModalStyles.Close>
+        </s.Open>
+        <s.Modal active={active}>
+          <s.CloseContainer>
+            <s.Close>
               <MdClose onClick={toggleActive} />
-            </ModalStyles.Close>
-          </ModalStyles.CloseContainer>
-          <ModalStyles.TitleContainer>
-            <ModalStyles.Title>{title}</ModalStyles.Title>
-          </ModalStyles.TitleContainer>
-          <ModalStyles.Body>
-            <ModalStyles.SubTitleContainer>
+            </s.Close>
+          </s.CloseContainer>
+          <s.TitleContainer>
+            <s.Title>{title}</s.Title>
+          </s.TitleContainer>
+          <s.Body>
+            <s.SubTitleContainer>
               <h3>{subtitle}</h3>
-            </ModalStyles.SubTitleContainer>
+            </s.SubTitleContainer>
             {children}
-          </ModalStyles.Body>
-        </ModalStyles.Modal>
+          </s.Body>
+        </s.Modal>
       </span>
     </>
   );

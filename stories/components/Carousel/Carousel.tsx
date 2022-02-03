@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MdArrowLeft, MdArrowRight } from 'react-icons/md';
 
-import { CarouselStyles, ImageStyles } from './Carousel.styles';
+import { CarouselStyles as s } from './Carousel.styles';
 
 interface Image {
   src: string;
@@ -26,18 +26,18 @@ export const Carousel = ({ images }: CarouselProps): JSX.Element => {
     };
 
     return (
-      <CarouselStyles>
+      <s.Carousel>
         <MdArrowLeft className="leftArrow" onClick={prevSlide} />
         <MdArrowRight className="rightArrow" onClick={nextSlide} />
         {images.map(
           (image, index) =>
             index == current && (
               <div key={`${index}-cl`}>
-                <ImageStyles src={image.src} alt={image.altText} />
+                <s.Image src={image.src} alt={image.altText} />
               </div>
             ),
         )}
-      </CarouselStyles>
+      </s.Carousel>
     );
   }
   return <></>;

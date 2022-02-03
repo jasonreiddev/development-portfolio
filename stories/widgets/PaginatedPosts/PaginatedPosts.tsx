@@ -1,4 +1,4 @@
-import { ContainerStyles } from './PaginatedPosts.styles';
+import { PaginatedPostsStyles as s } from './PaginatedPosts.styles';
 import { Pagination } from '../../components/Pagination/Pagination';
 import { Posts, Post } from '../../components/Posts/Posts';
 
@@ -16,7 +16,7 @@ export const PaginatedPosts = ({
   base,
 }: PaginatedPostsProps): JSX.Element => {
   return (
-    <ContainerStyles>
+    <s.Wrapper>
       {posts && <Posts posts={posts} />}
       <Pagination
         pageSize={pageSize}
@@ -24,6 +24,6 @@ export const PaginatedPosts = ({
         currentPage={currentPage}
         base={base}
       />
-    </ContainerStyles>
+    </s.Wrapper>
   );
 };

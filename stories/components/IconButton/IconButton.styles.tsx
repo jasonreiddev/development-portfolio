@@ -5,7 +5,7 @@ interface IconButtonStylesProps {
   active?: boolean;
 }
 
-export const IconButtonStyles = styled.button<IconButtonStylesProps>`
+const Wrapper = styled.button<IconButtonStylesProps>`
   aspect-ratio: 1/1;
   border: 0;
   background: var(--color-white);
@@ -58,3 +58,7 @@ export const IconButtonStyles = styled.button<IconButtonStylesProps>`
     padding: 12px 24px;
   }
 `;
+
+export const IconButtonStyles = {
+  Wrapper,
+};

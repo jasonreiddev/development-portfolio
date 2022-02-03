@@ -4,7 +4,7 @@ interface WallArtStylesProps {
   backgroundColor?: string;
 }
 
-export const WallArtStyles = styled.button<WallArtStylesProps>`
+export const Wrapper = styled.span<WallArtStylesProps>`
   padding: 8px;
   position: relative;
   isolation: isolate;
@@ -29,3 +29,7 @@ export const WallArtStyles = styled.button<WallArtStylesProps>`
     backdrop-filter: blur(10px);
   }
 `;
+
+export const WallArtStyles = {
+  Wrapper,
+};

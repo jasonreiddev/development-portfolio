@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const FooterCardStyles = styled.span`
+const Wrapper = styled.span`
   text-align: center;
   display: flex;
   flex-direction: column;
 `;
 
-export const MediaLinksStyles = styled.span`
+const MediaLinks = styled.span`
   font-size: 30px;
   display: flex;
   justify-content: center;
@@ -22,6 +22,12 @@ export const MediaLinksStyles = styled.span`
   }
 `;
 
-export const TextStyles = styled.span`
+export const Text = styled.span`
   text-align: center;
 `;
+
+export const FooterCardStyles = {
+  Wrapper,
+  MediaLinks,
+  Text,
+};

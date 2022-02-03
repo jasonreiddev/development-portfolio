@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { LoadingProgressStyles } from './LoadingProgress.styles';
+import { LoadingProgressStyles as s } from './LoadingProgress.styles';
 
 export type LoadingProgressProps = {
   progress: number;
@@ -10,19 +10,19 @@ export type LoadingProgressProps = {
 const LoadingProgress: FunctionComponent<LoadingProgressProps> = ({ progress, total, log }) => {
   const getProgress = (): number => Math.round((progress / total) * 100);
   return (
-    <LoadingProgressStyles.Container>
-      <LoadingProgressStyles.Spinner /*TODO Spinner*/ />
-      <LoadingProgressStyles.Loading>Loading Timebanks....</LoadingProgressStyles.Loading>
-      <LoadingProgressStyles.Progress>
+    <s.Container>
+      <s.Spinner />
+      <s.Loading>Loading Timebanks....</s.Loading>
+      <s.Progress>
         <span>{getProgress()}%</span>
-      </LoadingProgressStyles.Progress>
-      <LoadingProgressStyles.Log>
+      </s.Progress>
+      <s.Log>
         {getProgress() === 100 && <span>Done.</span>}
         {log.map((entry, i) => (
           <span key={'entry_' + i}>{entry}</span>
         ))}
-      </LoadingProgressStyles.Log>
-    </LoadingProgressStyles.Container>
+      </s.Log>
+    </s.Container>
   );
 };
 

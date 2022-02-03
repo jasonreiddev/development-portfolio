@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const LikeStyles = styled.div`
+const Wrapper = styled.div`
   text-align: center;
   width: 50px;
 `;
 
-export const LikeInnerStyles = styled.span`
+const Likes = styled.span`
   font-weight: bold;
   svg {
     font-size: 25px;
@@ -18,3 +18,8 @@ export const LikeInnerStyles = styled.span`
     height: 20px;
   }
 `;
+
+export const LikeStyles = {
+  Wrapper,
+  Likes,
+};

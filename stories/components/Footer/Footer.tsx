@@ -1,7 +1,8 @@
 import { FunctionComponent } from 'react';
-import { FooterStyles } from './Footer.styles';
 import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import Link from 'next/link';
+
+import { FooterStyles as s } from './Footer.styles';
 
 const Footer: FunctionComponent = () => {
   function goToTop(): void {
@@ -10,14 +11,14 @@ const Footer: FunctionComponent = () => {
     }
   }
   return (
-    <FooterStyles.Footer>
-      <FooterStyles.Title>
+    <s.Footer>
+      <s.Title>
         <Link href="/">Home</Link>
-      </FooterStyles.Title>
-      <FooterStyles.Icon>
+      </s.Title>
+      <s.Icon>
         <BsFillArrowUpCircleFill onClick={goToTop} />
-      </FooterStyles.Icon>
-    </FooterStyles.Footer>
+      </s.Icon>
+    </s.Footer>
   );
 };
 

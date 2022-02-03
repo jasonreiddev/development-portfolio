@@ -1,4 +1,4 @@
-import { CustomKerningStyles } from './CustomKerning.styles';
+import { CustomKerningStyles as s } from './CustomKerning.styles';
 
 export interface CustomKerningProps {
   kernGroups: KernGroup[];
@@ -11,15 +11,15 @@ interface KernGroup {
 
 export const CustomKerning = ({ kernGroups }: CustomKerningProps): JSX.Element => {
   return (
-    <CustomKerningStyles.Container>
+    <s.Container>
       {kernGroups &&
         kernGroups.map((item, index) => {
           return (
-            <CustomKerningStyles.KernGroup key={index} letterSpacing={item.letterSpacing}>
+            <s.KernGroup key={index} letterSpacing={item.letterSpacing}>
               {item.letters}
-            </CustomKerningStyles.KernGroup>
+            </s.KernGroup>
           );
         })}
-    </CustomKerningStyles.Container>
+    </s.Container>
   );
 };

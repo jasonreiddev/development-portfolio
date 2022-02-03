@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactNode } from 'react';
-import { DropdownStyles } from './Dropdown.styles';
 import { MdAccountCircle } from 'react-icons/md';
+
+import { DropdownStyles as s } from './Dropdown.styles';
 
 export enum Icon {
   None,
@@ -45,17 +46,17 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   dropdownItemGroups,
 }) => {
   return (
-    <DropdownStyles.Container fullWidth={fullWidth}>
-      <DropdownStyles.Header hasIcon={icon !== 0}>
+    <s.Container fullWidth={fullWidth}>
+      <s.Header hasIcon={icon !== 0}>
         <div onClick={toggleActive}>
           {renderIcon(icon)}
           <span>{text}</span>
         </div>
-      </DropdownStyles.Header>
+      </s.Header>
       {dropdownItemGroups && (
         <nav ref={dropdownRef}>
-          <DropdownStyles.Dropdown active={active} fullWidth={fullWidth} expand={expand}>
-            <DropdownStyles.DropdownInner>
+          <s.Dropdown active={active} fullWidth={fullWidth} expand={expand}>
+            <s.DropdownInner>
               {dropdownItemGroups.map((group, index) => (
                 <>
                   {index > 0 && <hr />}
@@ -74,11 +75,11 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
                   </ul>
                 </>
               ))}
-            </DropdownStyles.DropdownInner>
-          </DropdownStyles.Dropdown>
+            </s.DropdownInner>
+          </s.Dropdown>
         </nav>
       )}
-    </DropdownStyles.Container>
+    </s.Container>
   );
 };
 
