@@ -103,23 +103,34 @@ export const DesktopFooterStyles = styled.footer`
 
 export const LoadMaskStyles = styled.div<{ loading: boolean }>`
   position: absolute;
-  transition: all 0.5s ease-in;
   z-index: 1;
   opacity: ${(p) => (p.loading ? '1' : '0')};
   pointer-events: ${(p) => (p.loading ? 'all' : 'none')};
-
   height: 100vh;
   width: 100vw;
   background: var(--color-primary);
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.5s ease-in;
+  }
 `;
 
 export const LoadSpinnerStyles = styled.div<{ loading: boolean }>`
   position: absolute;
-  transition: all 0.5s ease-in;
   z-index: 1;
   opacity: ${(p) => (p.loading ? '1' : '0')};
   pointer-events: ${(p) => (p.loading ? 'all' : 'none')};
-
+  border: 9px solid var(--color-white);
+  border-top: 9px solid var(--color-tertiary);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  right: 30px;
+  bottom: 30px;
+  animation: spin 5s linear infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.5s ease-in;
+    animation: spin 2s linear infinite;
+  }
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -128,13 +139,4 @@ export const LoadSpinnerStyles = styled.div<{ loading: boolean }>`
       transform: rotate(360deg);
     }
   }
-
-  border: 9px solid var(--color-white);
-  border-top: 9px solid var(--color-tertiary);
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  animation: spin 2s linear infinite;
-  right: 30px;
-  bottom: 30px;
 `;

@@ -33,7 +33,9 @@ const Icon = styled.span`
   justify-self: flex-end;
   align-items: center;
   margin-right: 10%;
-  transition: transform 0.2s;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.2s;
+  }
 
   svg {
     cursor: pointer;

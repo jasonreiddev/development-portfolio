@@ -132,11 +132,13 @@ img, picture, video, canvas, svg {
     content: attr(data-tooltip);
     position: absolute;
     opacity: 0;
-    transition: all 0.15s ease;
     padding: 10px;
     color: var(--color-black);
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);  
+    box-shadow: var(--box-shadow);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.15s ease;
+    }
   }
 
   &:hover:before {

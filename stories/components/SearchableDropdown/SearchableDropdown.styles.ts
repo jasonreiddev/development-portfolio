@@ -66,7 +66,9 @@ const Option = styled.li`
     &.option-chosen {
       width: 25px;
     }
-    transition: width 0.1s;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: width 0.1s;
+    }
   }
 
   span {

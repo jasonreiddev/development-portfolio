@@ -7,8 +7,10 @@ export const HoverColorStyles = styled.span`
     * {
       display: block;
       width: fit-content;
-      transition: background-position 1s, color 0.5s;
       background-size: 200% 100%;
+      @media (prefers-reduced-motion: no-preference) {
+        transition: background-position 1s, color 0.5s;
+      }
     }
   }
   &:hover {
