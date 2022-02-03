@@ -13,9 +13,9 @@ export const HoverColorStyles = styled.span`
       }
     }
   }
-  &:hover {
-    .highlight {
-      * {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .highlight {
         background-position: -100% 0;
         background-image: linear-gradient(to right, transparent 50%, var(--color-primary) 50%);
         background-position: -100% 0;
