@@ -43,8 +43,10 @@ const Mask = styled.div<{ active: boolean }>`
   background: var(--color-black);
   z-index: 50;
   visibility: hidden;
-  transition: 0.7s;
   opacity: 0;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: 0.7s;
+  }
 
   ${(p) =>
     p.active

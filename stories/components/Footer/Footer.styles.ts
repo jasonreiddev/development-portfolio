@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { clamp } from '../../../helpers/media';
 
 const Footer = styled.footer`
   min-height: 100px;
   background-color: var(--color-secondary);
   display: flex;
   color: var(--color-white);
-  font-size: 1rem;
+  font-size: ${clamp({ multiplier: 0.5 })};
 `;
 
 const Title = styled.a`
@@ -33,7 +34,9 @@ const Icon = styled.span`
   justify-self: flex-end;
   align-items: center;
   margin-right: 10%;
-  transition: transform 0.2s;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.2s;
+  }
 
   svg {
     cursor: pointer;

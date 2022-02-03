@@ -18,3 +18,23 @@ export function from(size: Device): string {
 export function until(size: Device): string {
   return `(max-width: ${size - 1}px)`;
 }
+
+interface ClampProps {
+  multiplier?: number;
+  initial?: string;
+  scale?: string;
+  max?: string;
+}
+
+export function clamp({
+  multiplier = 1,
+  initial = '1rem',
+  scale = '1vw',
+  max = '2rem',
+}: ClampProps): string {
+  return `clamp(
+    ${initial} * ${multiplier},
+    ${scale} + ${initial} * ${multiplier},
+    ${max} * ${multiplier}
+  )`;
+}

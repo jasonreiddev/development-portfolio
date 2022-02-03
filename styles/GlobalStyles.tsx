@@ -19,6 +19,19 @@ export const GlobalStyles = createGlobalStyle`
     0 -15px 40px -20px rgba(0, 0, 0, 0.2);
     --box-shadow-no-top: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073);
+
+  @media (prefers-color-scheme: dark) {
+    --color-primary: rgb(179, 94, 145);
+    --color-secondary: rgb(52, 94, 51);
+    --color-tertiary: rgb(70, 115, 133);
+    --color-black: rgb(0, 0, 0);
+    --color-white: rgb(192, 192, 192);
+    --color-white-bright: rgb(182, 182, 182);
+  }
+}
+
+html {
+  background-color: var(--color-white);
 }
 
 /* CSS Reset */
@@ -99,6 +112,8 @@ body, input, button, textarea, select, option {
   color: var(--color-black);
 }
 
+input[type='text'],textarea {font-size:1em;}
+
 a {
   color: var(--color-tertiary);
   text-decoration: none;
@@ -132,11 +147,13 @@ img, picture, video, canvas, svg {
     content: attr(data-tooltip);
     position: absolute;
     opacity: 0;
-    transition: all 0.15s ease;
     padding: 10px;
     color: var(--color-black);
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);  
+    box-shadow: var(--box-shadow);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: all 0.15s ease;
+    }
   }
 
   &:hover:before {
