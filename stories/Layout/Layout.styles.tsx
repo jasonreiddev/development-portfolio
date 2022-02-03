@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SiteBorderStyles = styled.div`
+  overflow: auto;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -22,15 +23,23 @@ export const SVGStyles = styled.svg`
 
 export const MainStyles = styled.main`
   display: flex;
-  height: 100%;
+  width: 100%;
   flex-direction: column;
+  @media only screen and (min-width: 1440px) {
+    justify-content: space-between;
+  }
 `;
 
 export const ContentStyles = styled.div`
-  height: 1440px; // manually updating for layout atm needs fixing
+  display: flex;
   max-width: 1080px;
   flex-grow: 2;
   width: 100%;
+  @media only screen and (min-width: 1440px) {
+    order: 2;
+    height: Calc(100vh - 120px);
+    overflow: auto;
+  }
 `;
 
 export const AsideStyles = styled.aside`
@@ -44,22 +53,88 @@ export const AsideStyles = styled.aside`
   align-items: center;
   justify-content: center;
   position: relative;
+
+  @media only screen and (min-width: 1440px) {
+    &.aside-left {
+      order: 1;
+      width: unset !important;
+    }
+    &.aside-right {
+      order: 3;
+      width: unset !important;
+    }
+  }
 `;
 
 export const BodyDivStyles = styled.div`
-  width: Calc(100% - 3rem);
-  max-width: 1080px;
-  margin: auto;
+  max-width: 1440px;
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  padding-left: 1rem;
-  padding-right: 1rem;
+
   flex-grow: 1;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #ffffff6b;
+  @media only screen and (min-width: 1440px) {
+    max-width: unset;
+    flex-direction: row;
+  }
 `;
 
 export const FooterStyles = styled.footer`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  @media only screen and (min-width: 1440px) {
+    display: none;
+  }
+`;
+
+export const DesktopFooterStyles = styled.footer`
+  width: 100%;
+  display: none;
+  @media only screen and (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+`;
+
+export const LoadMaskStyles = styled.div<{ loading: boolean }>`
+  position: absolute;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+  opacity: ${(p) => (p.loading ? '1' : '0')};
+  pointer-events: ${(p) => (p.loading ? 'all' : 'none')};
+
+  height: 100vh;
+  width: 100vw;
+  background: var(--color-primary);
+`;
+
+export const LoadSpinnerStyles = styled.div<{ loading: boolean }>`
+  position: absolute;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+  opacity: ${(p) => (p.loading ? '1' : '0')};
+  pointer-events: ${(p) => (p.loading ? 'all' : 'none')};
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  border: 9px solid var(--color-white);
+  border-top: 9px solid var(--color-tertiary);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: spin 2s linear infinite;
+  right: 30px;
+  bottom: 30px;
 `;

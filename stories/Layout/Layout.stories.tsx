@@ -31,5 +31,13 @@ Default.args = {
   likesMockDBValue: 10,
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+  title: 'Next.js Component Library',
+  menuLinks: menuLinks,
+  likesMockDBValue: 10,
+  loading: true,
+};
+
 export const Minimum = Template.bind({});
 Minimum.args = {};

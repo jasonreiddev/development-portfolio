@@ -21,6 +21,9 @@ import {
   MainStyles,
   SVGStyles,
   SiteBorderStyles,
+  LoadMaskStyles,
+  LoadSpinnerStyles,
+  DesktopFooterStyles,
 } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
 import { useState } from 'react';
@@ -29,6 +32,7 @@ interface LayoutProps {
   title?: string;
   menuLinks: Links[];
   likesMockDBValue: number;
+  loading?: boolean;
 }
 
 export const Layout = ({
@@ -36,6 +40,7 @@ export const Layout = ({
   title,
   menuLinks,
   likesMockDBValue = 0,
+  loading = false,
 }: LayoutProps): JSX.Element => {
   // Mock DB shenanigans
   const [LikesMockDBValue, setLikesMockDBValue] = useState(likesMockDBValue);
@@ -71,13 +76,18 @@ export const Layout = ({
             <body className={'theme-' + theme.theme} />
           </Helmet> */}
         {/* <SEO title={title} /> */}
-        <div className="load-mask" />
-        <div className="load-spinner" />
+        <LoadMaskStyles className="load-mask" loading={loading} />
+        <LoadSpinnerStyles className="load-spinner" loading={loading} />
         {/* <Header menuLinks={site.menuLinks} title={title} /> */}
         <Header title={title} menuLinks={menuLinks} />
         <BodyDivStyles className={'column-small tablet-scroll'}>
           <ContentStyles className={'desktop-scroll'}>
-            <MainStyles>{children}</MainStyles>
+            <MainStyles>
+              <div>{children}</div>
+              <DesktopFooterStyles>
+                <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
+              </DesktopFooterStyles>
+            </MainStyles>
           </ContentStyles>
           <AsideStyles className="aside-left">
             <Like getLikesDB={getLikesDB} updateLikesDB={updateLikesDB} liked={false} />
