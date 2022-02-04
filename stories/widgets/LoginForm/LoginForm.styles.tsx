@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const Label = styled.label`
+const Label = styled.label`
   display: block;
   margin-bottom: 16px;
 `;
 
-export const Input = styled.input`
+const Input = styled.input`
   display: block;
   width: 175px;
   border: 1px solid var(--color-black);
@@ -21,7 +21,7 @@ export const Input = styled.input`
   }
 `;
 
-export const ButtonWrapper = styled.span`
+const ButtonWrapper = styled.span`
   &[type='submit'] {
     margin-top: 40px;
     width: 100%;

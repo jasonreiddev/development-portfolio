@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.details`
+const Wrapper = styled.details`
   font-size: 1rem;
   color: hsl(0deg 0% 25%);
   margin: 32px;

@@ -5,7 +5,8 @@ interface IconButtonGroupStylesProps {
 }
 
 const ButtonWrapper = styled.div<IconButtonGroupStylesProps>`
-  margin: 10px;
+  display: flex;
+  gap: clamp(8px, 1vw, 24px);
 `;
 
 export const ButtonGroupStyles = {
