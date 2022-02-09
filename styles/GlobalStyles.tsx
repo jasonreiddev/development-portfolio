@@ -26,12 +26,16 @@ export const GlobalStyles = createGlobalStyle`
     --color-tertiary: rgb(70, 115, 133);
     --color-black: rgb(0, 0, 0);
     --color-white: rgb(192, 192, 192);
-    --color-white-bright: rgb(182, 182, 182);
+    --color-white-bright: rgb(216, 216, 216);
   }
 }
 
 html {
   background-color: var(--color-white);
+}
+
+input {
+  background-color: var(--color-white-bright);
 }
 
 /* CSS Reset */

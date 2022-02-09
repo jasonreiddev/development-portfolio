@@ -19,7 +19,15 @@ const Likes = styled.span`
   }
 `;
 
+const BackgroundIcon = styled.span`
+  position: absolute;
+  svg {
+    fill: var(--color-white);
+  }
+`;
+
 export const LikeStyles = {
   Wrapper,
   Likes,
+  BackgroundIcon,
 };

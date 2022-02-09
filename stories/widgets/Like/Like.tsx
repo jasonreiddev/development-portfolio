@@ -26,6 +26,9 @@ export const Like = ({ getLikesDB, updateLikesDB, liked }: LikeProps): JSX.Eleme
         {!hasLiked && <FaRegHeart onClick={OnClick} />}
         <br />
         <div>{typeof localLikes !== 'undefined' ? localLikes : ''}</div>
+        <s.BackgroundIcon>
+          <FaHeart />
+        </s.BackgroundIcon>
       </s.Likes>
     </s.Wrapper>
   );
