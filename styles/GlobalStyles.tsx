@@ -9,20 +9,20 @@ export const GlobalStyles = createGlobalStyle`
   --font-weight-bold: 700;
   --border-radius: 15px;
   --color-primary: rgb(249, 188, 225);
-  --color-secondary: rgb(91, 140, 90);
+  --color-secondary: rgb(127, 170, 127);
   --color-tertiary: rgb(129, 176, 194);
-  --global-white: rgb(233, 230, 220);
+  --global-white: rgb(253, 242, 248);
   --color-base: var(--global-white);
-  --global-white-semi-bold: rgb(236, 233, 225);
-  --color-base-semi-bold: var(--global-contrast-bold);
+  --global-white-semi-bold: rgb(248, 232, 242);
+  --color-base-semi-bold: var(--global-white-semi-bold);
   --global-white-bold: rgb(255, 255, 255);
   --color-base-bold: var(--global-white-bold);
   --global-black: rgb(70, 73, 76);
-  --color-contrast: var(--global-contrast);
+  --color-contrast: var(--global-black);
   --global-black-semi-bold: rgb(35, 38, 42);
-  --color-contrast-semi-bold: var(--global-contrast-bold);
+  --color-contrast-semi-bold: var(--global-black-bold);
   --global-black-bold: rgb(0, 3, 6);
-  --color-contrast-bold: var(--global-contrast-semi-bold);
+  --color-contrast-bold: var(--global-black-semi-bold);
 
   --color-base-bold: rgb(255, 255, 255);
   --box-shadow: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),

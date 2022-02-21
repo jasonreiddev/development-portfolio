@@ -10,7 +10,7 @@ const Button = styled.button<ButtonStylesProps>`
   display: inline-block;
   line-height: 1;
   background: var(--color-base);
-  color: var(--color-base);
+  color: var(--color-contrast);
   border-radius: var(--border-radius);
 
   cursor: pointer;

@@ -14,7 +14,7 @@ const Container = styled.div<{ fullWidth: boolean }>`
   }
 
   a {
-    color: var(--color-base);
+    color: var(--color-contrast);
     text-decoration: none;
     line-height: 1.5;
     cursor: pointer;
@@ -64,7 +64,7 @@ const Dropdown = styled.div<{ active: boolean; fullWidth: boolean; expand: boole
 `;
 
 const Header = styled.div<{ hasIcon: boolean }>`
-  color: var(--color-base);
+  color: var(--color-contrast);
   display: inline-flex;
   align-items: center;
   height: 100%;

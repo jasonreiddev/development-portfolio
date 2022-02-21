@@ -64,7 +64,7 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.div`
-  color: var(--color-base);
+  color: var(--color-contrast);
   font-weight: bold;
   font-size: 30px;
   @media ${from(Device.Tablet)} {
@@ -80,7 +80,7 @@ const CloseContainer = styled.div`
 
 const Close = styled.div`
   font-size: 30px;
-  color: var(--color-base);
+  color: var(--color-contrast);
   display: flex;
   justify-content: flex-end;
   svg {
@@ -100,7 +100,7 @@ const SubTitleContainer = styled.div`
 `;
 
 const Open = styled.div<{ hasIcon: boolean }>`
-  color: var(--color-base);
+  color: var(--color-contrast);
   display: inline-flex;
   align-items: center;
   height: 100%;

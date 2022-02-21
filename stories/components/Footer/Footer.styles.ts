@@ -23,7 +23,7 @@ const Title = styled.a`
   }
 
   a {
-    color: var(--color-base);
+    color: var(--color-contrast);
     text-decoration: none;
   }
 `;

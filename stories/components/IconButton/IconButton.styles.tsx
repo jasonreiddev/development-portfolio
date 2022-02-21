@@ -23,7 +23,7 @@ const Wrapper = styled.button<IconButtonStylesProps>`
   .icon {
     display: block;
     color: ${(p: IconButtonStylesProps) =>
-      p.active ? 'var(--color-contrast)' : 'var(--color-base)'};
+      p.active ? 'var(--color-base-bold)' : 'var(--color-contrast)'};
 
     svg {
       margin: auto;
@@ -32,7 +32,7 @@ const Wrapper = styled.button<IconButtonStylesProps>`
   }
 
   &.primary {
-    color: var(--color-base);
+    color: var(--color-contrast);
     background-color: ${(p: IconButtonStylesProps) =>
       p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
   }
