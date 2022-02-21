@@ -11,7 +11,7 @@ const SVG = styled.svg`
   z-index: -1;
   transform: unset;
   svg {
-    fill: var(--color-primary);
+    fill: var(--color-base-semi-bold);
     font-size: 25px;
   }
 `;
@@ -34,7 +34,7 @@ const LoadSpinner = styled.div<{ loading: boolean }>`
   z-index: 1;
   opacity: ${(p) => (p.loading ? '1' : '0')};
   pointer-events: ${(p) => (p.loading ? 'all' : 'none')};
-  border: 9px solid var(--color-white);
+  border: 9px solid var(--color-base);
   border-top: 9px solid var(--color-tertiary);
   border-radius: 50%;
   width: 10px;

@@ -11,9 +11,20 @@ export const GlobalStyles = createGlobalStyle`
   --color-primary: rgb(249, 188, 225);
   --color-secondary: rgb(91, 140, 90);
   --color-tertiary: rgb(129, 176, 194);
-  --color-black: rgb(70, 73, 76);
-  --color-white: rgb(247, 245, 236);
-  --color-white-bright: rgb(255, 255, 255);
+  --global-white: rgb(233, 230, 220);
+  --color-base: var(--global-white);
+  --global-white-semi-bold: rgb(236, 233, 225);
+  --color-base-semi-bold: var(--global-contrast-bold);
+  --global-white-bold: rgb(255, 255, 255);
+  --color-base-bold: var(--global-white-bold);
+  --global-black: rgb(70, 73, 76);
+  --color-contrast: var(--global-contrast);
+  --global-black-semi-bold: rgb(35, 38, 42);
+  --color-contrast-semi-bold: var(--global-contrast-bold);
+  --global-black-bold: rgb(0, 3, 6);
+  --color-contrast-bold: var(--global-contrast-semi-bold);
+
+  --color-base-bold: rgb(255, 255, 255);
   --box-shadow: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073),
     0 -15px 40px -20px rgba(0, 0, 0, 0.2);
@@ -24,18 +35,21 @@ export const GlobalStyles = createGlobalStyle`
     --color-primary: rgb(179, 94, 145);
     --color-secondary: rgb(52, 94, 51);
     --color-tertiary: rgb(70, 115, 133);
-    --color-black: rgb(0, 0, 0);
-    --color-white: rgb(192, 192, 192);
-    --color-white-bright: rgb(216, 216, 216);
+    --color-base: var(--global-black);
+    --color-base-semi-bold: var(--global-black-semi-bold);
+    --color-base-bold: var(--global-black-bold);
+    --color-contrast: var(--global-white);
+    --color-contrast-semi-bold: var(--global-white-semi-bold);
+    --color-contrast-bold: var(--global-white-bold);
   }
 }
 
 html {
-  background-color: var(--color-white);
+  background-color: var(--color-base);
 }
 
 input {
-  background-color: var(--color-white-bright);
+  background-color: var(--color-base-bright);
 }
 
 /* CSS Reset */
@@ -113,7 +127,7 @@ body, input, button, textarea, select, option {
   font: inherit; // Remove built-in form typography styles
   font-family: var(--font-family);
   font-weight: var(--font-weight-light);
-  color: var(--color-black);
+  color: var(--color-contrast);
 }
 
 input[type='text'],textarea {font-size:1em;}
@@ -153,7 +167,7 @@ img, picture, video, canvas, svg {
     position: absolute;
     opacity: 0;
     padding: 10px;
-    color: var(--color-black);
+    color: var(--color-contrast);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     @media (prefers-reduced-motion: no-preference) {
@@ -189,7 +203,7 @@ img, picture, video, canvas, svg {
 }
    
 ::-webkit-scrollbar-thumb {
-  border: 0.1rem solid var(--color-black);
+  border: 0.1rem solid var(--color-contrast);
   background-color: var(--color-tertiary);
   border-radius: 0.75rem;
 }

@@ -8,7 +8,7 @@ const Wrapper = styled.div<TextCardStylesProps>`
   margin: 20px;
   padding: 20px;
   border-radius: var(--border-radius);
-  background: var(--color-white);
+  background: var(--color-base);
   box-shadow: var(--box-shadow);
   ${(p: TextCardStylesProps) => (p.fitContent ? `width: fit-content;` : null)};
 `;

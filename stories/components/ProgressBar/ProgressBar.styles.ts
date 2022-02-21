@@ -13,8 +13,8 @@ const Bar = styled.div`
   height: 2em;
   width: 100%;
   max-width: 200px;
-  border: 1px solid var(--color-black);
-  background-color: var(--color-white-bright);
+  border: 1px solid var(--color-contrast);
+  background-color: var(--color-base-bright);
   margin: auto;
   border-radius: var(--border-radius);
   overflow: hidden;

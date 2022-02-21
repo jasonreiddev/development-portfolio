@@ -6,7 +6,7 @@ export const Wrapper = styled.article`
   padding: 48px 20px;
   margin: 0 auto;
   max-width: 600px;
-  background-color: var(--color-white);
+  background-color: var(--color-base);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 `;

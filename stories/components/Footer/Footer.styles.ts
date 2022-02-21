@@ -5,7 +5,7 @@ const Footer = styled.footer`
   min-height: 100px;
   background-color: var(--color-secondary);
   display: flex;
-  color: var(--color-white);
+  color: var(--color-base);
   font-size: ${clamp({ multiplier: 0.5 })};
 `;
 
@@ -23,7 +23,7 @@ const Title = styled.a`
   }
 
   a {
-    color: var(--color-white);
+    color: var(--color-base);
     text-decoration: none;
   }
 `;

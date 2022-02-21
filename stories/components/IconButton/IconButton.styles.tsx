@@ -8,7 +8,7 @@ interface IconButtonStylesProps {
 const Wrapper = styled.button<IconButtonStylesProps>`
   aspect-ratio: 1/1;
   border: 0;
-  background: var(--color-white);
+  background: var(--color-base);
   border-radius: var(--border-radius);
 
   cursor: pointer;
@@ -23,7 +23,7 @@ const Wrapper = styled.button<IconButtonStylesProps>`
   .icon {
     display: block;
     color: ${(p: IconButtonStylesProps) =>
-      p.active ? 'var(--color-black)' : 'var(--color-white)'};
+      p.active ? 'var(--color-contrast)' : 'var(--color-base)'};
 
     svg {
       margin: auto;
@@ -32,13 +32,13 @@ const Wrapper = styled.button<IconButtonStylesProps>`
   }
 
   &.primary {
-    color: var(--color-white);
+    color: var(--color-base);
     background-color: ${(p: IconButtonStylesProps) =>
       p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
   }
 
   &.secondary {
-    color: var(--color-black);
+    color: var(--color-contrast);
     background-color: ${(p: IconButtonStylesProps) =>
       p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-secondary)'};
   }

@@ -8,7 +8,7 @@ const Wrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  background: var(--color-white);
+  background: var(--color-base);
   box-shadow: var(--box-shadow);
 
   button + button {

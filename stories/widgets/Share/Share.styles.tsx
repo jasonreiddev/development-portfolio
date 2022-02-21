@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   font-weight: var(--font-weight-bold);
 
   a {
-    color: var(--color-black);
+    color: var(--color-contrast);
   }
 
   svg {

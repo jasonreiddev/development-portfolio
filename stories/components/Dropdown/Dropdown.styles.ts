@@ -14,7 +14,7 @@ const Container = styled.div<{ fullWidth: boolean }>`
   }
 
   a {
-    color: var(--color-white);
+    color: var(--color-base);
     text-decoration: none;
     line-height: 1.5;
     cursor: pointer;
@@ -33,7 +33,7 @@ const Dropdown = styled.div<{ active: boolean; fullWidth: boolean; expand: boole
   overflow: hidden;
   position: ${(p) => (p.expand ? 'initial' : 'absolute')};
   background-color: inherit;
-  color: var(--color-white);
+  color: var(--color-base);
   min-width: 10em;
   width: fit-content;
   padding: 0 1.5em;
@@ -64,7 +64,7 @@ const Dropdown = styled.div<{ active: boolean; fullWidth: boolean; expand: boole
 `;
 
 const Header = styled.div<{ hasIcon: boolean }>`
-  color: var(--color-white);
+  color: var(--color-base);
   display: inline-flex;
   align-items: center;
   height: 100%;

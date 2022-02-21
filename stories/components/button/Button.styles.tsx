@@ -9,8 +9,8 @@ const Button = styled.button<ButtonStylesProps>`
   border: 0;
   display: inline-block;
   line-height: 1;
-  background: var(--color-white);
-  color: var(--color-white);
+  background: var(--color-base);
+  color: var(--color-base);
   border-radius: var(--border-radius);
 
   cursor: pointer;

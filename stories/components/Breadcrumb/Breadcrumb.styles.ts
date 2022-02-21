@@ -6,7 +6,7 @@ const Breadcrumb = styled.div`
   border: none;
   font-size: 13px;
   flex-wrap: wrap;
-  color: var(--color-black);
+  color: var(--color-contrast);
 `;
 
 const BreadcrumbGroup = styled.div`
@@ -16,7 +16,7 @@ const BreadcrumbGroup = styled.div`
 
 const BreadcrumbItem = styled.a<{ first?: boolean }>`
   padding: 0 1em;
-  color: var(--color-black);
+  color: var(--color-contrast);
   text-decoration: none;
   line-height: 1.5;
   text-transform: capitalize;
@@ -34,7 +34,7 @@ const CopyButton = styled.a`
   margin-top: 4px;
   cursor: copy;
   svg {
-    color: var(--color-black);
+    color: var(--color-contrast);
   }
 `;
 

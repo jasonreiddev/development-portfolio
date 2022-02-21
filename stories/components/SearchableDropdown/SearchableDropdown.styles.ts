@@ -25,13 +25,13 @@ const List = styled.ul`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-black);
+    background: var(--color-contrast);
     border-radius: 4px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: ${darken(0.1, 'var(--color-black)')};
+    background: ${darken(0.1, 'var(--color-contrast)')};
   }
 `;
 
@@ -80,7 +80,7 @@ const Option = styled.li`
 `;
 
 const NoResults = styled.span`
-  color: var(--color-black);
+  color: var(--color-contrast);
   user-select: none;
   cursor: default;
   z-index: 1;
@@ -93,7 +93,7 @@ const Results = styled.span`
     cursor: pointer;
 
     &.disabled {
-      color: var(--color-black);
+      color: var(--color-contrast);
       cursor: default;
       user-select: none;
     }
@@ -112,7 +112,7 @@ const ListAndResults = styled.div<{ visible: boolean }>`
   width: 290px;
   border-bottom: 4px solid var(--color-secondary);
   z-index: 1;
-  background-color: var(--color-white);
+  background-color: var(--color-base);
   padding: 5px;
   border-radius: 0px 0px 5px 5px;
   z-index: 3;

@@ -12,7 +12,7 @@ const Modal = styled.div<{ active: boolean }>`
   height: 80vh;
   max-height: 80vw;
   max-width: 80vh;
-  background: var(--color-white);
+  background: var(--color-base);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 
@@ -40,7 +40,7 @@ const Mask = styled.div<{ active: boolean }>`
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-black);
+  background: var(--color-contrast);
   z-index: 50;
   visibility: hidden;
   opacity: 0;
@@ -64,7 +64,7 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.div`
-  color: var(--color-white);
+  color: var(--color-base);
   font-weight: bold;
   font-size: 30px;
   @media ${from(Device.Tablet)} {
@@ -80,7 +80,7 @@ const CloseContainer = styled.div`
 
 const Close = styled.div`
   font-size: 30px;
-  color: var(--color-white);
+  color: var(--color-base);
   display: flex;
   justify-content: flex-end;
   svg {
@@ -91,7 +91,7 @@ const Close = styled.div`
 
 const Body = styled.div`
   padding: 1em;
-  background: var(--color-white);
+  background: var(--color-base);
 `;
 const SubTitleContainer = styled.div`
   text-align: center;
@@ -100,7 +100,7 @@ const SubTitleContainer = styled.div`
 `;
 
 const Open = styled.div<{ hasIcon: boolean }>`
-  color: var(--color-white);
+  color: var(--color-base);
   display: inline-flex;
   align-items: center;
   height: 100%;

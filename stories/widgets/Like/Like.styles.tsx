@@ -21,15 +21,7 @@ const Likes = styled.button`
   }
 `;
 
-const BackgroundIcon = styled.span`
-  position: absolute;
-  svg {
-    fill: var(--color-white);
-  }
-`;
-
 export const LikeStyles = {
   Wrapper,
   Likes,
-  BackgroundIcon,
 };
