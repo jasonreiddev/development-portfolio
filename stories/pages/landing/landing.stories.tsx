@@ -4,6 +4,9 @@ import { Landing } from './landing';
 
 export default {
   title: 'Pages/Landing',
+  parameters: {
+    layout: 'fullscreen',
+  },
   component: Landing,
 } as ComponentMeta<typeof Landing>;
 
