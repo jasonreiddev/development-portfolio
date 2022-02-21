@@ -21,9 +21,9 @@ export const Like = ({ getLikesDB, updateLikesDB, liked }: LikeProps): JSX.Eleme
 
   return (
     <s.Wrapper>
-      <s.Likes title="Leave a Like!">
-        {hasLiked && <FaHeart onClick={OnClick} />}
-        {!hasLiked && <FaRegHeart onClick={OnClick} />}
+      <s.Likes title="Leave a Like!" onClick={OnClick}>
+        {hasLiked && <FaHeart />}
+        {!hasLiked && <FaRegHeart />}
         <br />
         <div>{typeof localLikes !== 'undefined' ? localLikes : ''}</div>
         <s.BackgroundIcon>

@@ -20,6 +20,11 @@ const Wrapper = styled.div`
   }
 `;
 
+const Share = styled.a`
+  display: block;
+`;
+
 export const ShareStyles = {
   Wrapper,
+  Share,
 };

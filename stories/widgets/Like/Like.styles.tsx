@@ -5,7 +5,9 @@ const Wrapper = styled.div`
   width: 50px;
 `;
 
-const Likes = styled.span`
+const Likes = styled.button`
+  background: none;
+  border: none;
   font-weight: bold;
   svg {
     font-size: 25px;
