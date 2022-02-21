@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const UlStyles = styled.ul`
+const Wrapper = styled.ul`
   padding: 0;
   margin: 0;
 
@@ -8,3 +8,7 @@ export const UlStyles = styled.ul`
     list-style-type: none;
   }
 `;
+
+export const PostStyles = {
+  Wrapper,
+};

@@ -1,4 +1,4 @@
-import { ContactCardPageStyles } from './contactCard.styles';
+import { ContactCardStyles as s } from './contactCard.styles';
 import { ContactCard, ContactCardProps } from '../../components/ContactCard/ContactCard';
 
 interface PageContactCardProps extends ContactCardProps {
@@ -11,7 +11,7 @@ export const PageContactCard = ({
   email,
   backgroundColor,
 }: PageContactCardProps): JSX.Element => (
-  <ContactCardPageStyles backgroundColor={backgroundColor}>
+  <s.Wrapper backgroundColor={backgroundColor}>
     <ContactCard avatarSrc={avatarSrc} name={name} email={email} />
-  </ContactCardPageStyles>
+  </s.Wrapper>
 );

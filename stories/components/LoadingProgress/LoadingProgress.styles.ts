@@ -41,7 +41,7 @@ const Log = styled.div`
   height: 140px;
   overflow: hidden;
   mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
-  
+
   span {
     font-size: 17px;
     padding: 3px 0px;
@@ -53,5 +53,5 @@ export const LoadingProgressStyles = {
   Loading,
   Spinner,
   Progress,
-  Log
+  Log,
 };

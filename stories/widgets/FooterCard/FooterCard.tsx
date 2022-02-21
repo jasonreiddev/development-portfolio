@@ -1,7 +1,7 @@
 import { AiFillLinkedin, AiOutlineTwitter, AiFillGithub } from 'react-icons/ai';
 
 import { SmallText } from '../../components/SmallText/SmallText';
-import { FooterCardStyles, MediaLinksStyles, TextStyles } from './FooterCard.styles';
+import { FooterCardStyles as s } from './FooterCard.styles';
 
 interface FooterCardProps {
   text?: string;
@@ -9,8 +9,8 @@ interface FooterCardProps {
 
 export const FooterCard = ({ text }: FooterCardProps): JSX.Element => {
   return (
-    <FooterCardStyles>
-      <MediaLinksStyles>
+    <s.Wrapper>
+      <s.MediaLinks>
         <a title="LinkedIn" href="https://www.linkedin.com/in/jasonreiddev/">
           <AiFillLinkedin />
         </a>
@@ -20,10 +20,10 @@ export const FooterCard = ({ text }: FooterCardProps): JSX.Element => {
         <a title="Twitter" href="https://twitter.com/jasonreiddev">
           <AiOutlineTwitter />
         </a>
-      </MediaLinksStyles>
-      <TextStyles>
+      </s.MediaLinks>
+      <s.Text>
         <SmallText text={text} />
-      </TextStyles>
-    </FooterCardStyles>
+      </s.Text>
+    </s.Wrapper>
   );
 };

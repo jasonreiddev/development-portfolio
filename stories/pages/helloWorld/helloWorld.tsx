@@ -1,5 +1,5 @@
 import { Layout } from '../../Layout/Layout';
-import { HelloWorldStyles } from './helloWorld.styles';
+import { HelloWorldStyles as s } from './helloWorld.styles';
 import { TextCard } from '../../widgets/TextCard/TextCard';
 
 export interface HelloWorldProps {
@@ -8,10 +8,8 @@ export interface HelloWorldProps {
 
 export const HelloWorld = ({ text }: HelloWorldProps): JSX.Element => (
   <Layout menuLinks={[]} likesMockDBValue={7734} title="Hello World">
-    <HelloWorldStyles>
-      <TextCard>
-        <h2>{text}</h2>
-      </TextCard>
-    </HelloWorldStyles>
+    <TextCard>
+      <s.Text>{text}</s.Text>
+    </TextCard>
   </Layout>
 );

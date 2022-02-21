@@ -1,6 +1,6 @@
 import { MdMail, MdLogout, MdRefresh, MdSearch, MdCircle } from 'react-icons/md';
 
-import { HoverColorStyles } from './HoverColor.styles';
+import { HoverColorStyles as s } from './HoverColor.styles';
 
 interface HoverColorProps {
   text?: string;
@@ -34,10 +34,10 @@ const renderIcon = (icon: Icon): JSX.Element => {
 
 export const HoverColor = ({ text, icon, date }: HoverColorProps): JSX.Element => {
   return (
-    <HoverColorStyles>
+    <s.Wrapper>
       {icon && <>{renderIcon(icon)}&nbsp;</>}
       <span className="highlight">{text}</span>
       {date && <span>&nbsp;- {date}</span>}
-    </HoverColorStyles>
+    </s.Wrapper>
   );
 };

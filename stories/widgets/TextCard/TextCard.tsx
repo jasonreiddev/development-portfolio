@@ -1,4 +1,4 @@
-import { TextCardStyles } from './TextCard.styles';
+import { TextCardStyles as s } from './TextCard.styles';
 
 interface FooterCardProps {
   text?: string;
@@ -8,9 +8,9 @@ interface FooterCardProps {
 
 export const TextCard = ({ text, children, fitContent = true }: FooterCardProps): JSX.Element => {
   return (
-    <TextCardStyles fitContent={fitContent}>
-      {text && <h2>{text}</h2>}
+    <s.Wrapper fitContent={fitContent}>
+      {text && <s.Title>{text}</s.Title>}
       {children}
-    </TextCardStyles>
+    </s.Wrapper>
   );
 };

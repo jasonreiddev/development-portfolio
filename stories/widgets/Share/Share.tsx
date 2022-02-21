@@ -1,6 +1,6 @@
 import { MdShare } from 'react-icons/md';
 
-import { ShareStyles } from './Share.styles';
+import { ShareStyles as s } from './Share.styles';
 
 interface ShareProps {
   text?: string;
@@ -10,7 +10,7 @@ interface ShareProps {
 
 export const Share = ({ text, shareText, shareUrl }: ShareProps): JSX.Element => {
   return (
-    <ShareStyles>
+    <s.Wrapper>
       <a
         title="Share via Twitter"
         href={`
@@ -20,6 +20,6 @@ export const Share = ({ text, shareText, shareUrl }: ShareProps): JSX.Element =>
         <br />
         <div>{text}</div>
       </a>
-    </ShareStyles>
+    </s.Wrapper>
   );
 };

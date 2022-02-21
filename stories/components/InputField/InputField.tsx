@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
-import { InputFieldStyles } from './InputField.styles';
+
+import { InputFieldStyles as s } from './InputField.styles';
 
 export type InputFieldProps = {
   title?: string;
@@ -19,9 +20,9 @@ const InputField: FunctionComponent<InputFieldProps> = ({
   onClick,
 }) => {
   return (
-    <InputFieldStyles.Container>
-      {!!title && <InputFieldStyles.Title>{title}</InputFieldStyles.Title>}
-      <InputFieldStyles.Input>
+    <s.Container>
+      {!!title && <s.Title>{title}</s.Title>}
+      <s.Input>
         <input
           type={type}
           name={name}
@@ -32,8 +33,8 @@ const InputField: FunctionComponent<InputFieldProps> = ({
           }}
           onClick={onClick}
         />
-      </InputFieldStyles.Input>
-    </InputFieldStyles.Container>
+      </s.Input>
+    </s.Container>
   );
 };
 

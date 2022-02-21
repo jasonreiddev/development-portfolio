@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
-import { LegendStyles } from './Legend.styles';
+
+import { LegendStyles as s } from './Legend.styles';
 
 export type Props = {
   level: 'Primary' | 'Secondary' | 'Tertiary';
@@ -7,22 +8,22 @@ export type Props = {
 
 const Legend: FunctionComponent = () => {
   return (
-    <LegendStyles.Container>
-      <LegendStyles.LegendPair>
-        <LegendStyles.Key level={'Primary'}></LegendStyles.Key>
-        <LegendStyles.Title>Primary</LegendStyles.Title>
-      </LegendStyles.LegendPair>
+    <s.Container>
+      <s.LegendPair>
+        <s.Key level={'Primary'}></s.Key>
+        <s.Title>Primary</s.Title>
+      </s.LegendPair>
 
-      <LegendStyles.LegendPair>
-        <LegendStyles.Key level={'Secondary'}></LegendStyles.Key>
-        <LegendStyles.Title> &lt; Secondary</LegendStyles.Title>
-      </LegendStyles.LegendPair>
+      <s.LegendPair>
+        <s.Key level={'Secondary'}></s.Key>
+        <s.Title> &lt; Secondary</s.Title>
+      </s.LegendPair>
 
-      <LegendStyles.LegendPair>
-        <LegendStyles.Key level={'Tertiary'}></LegendStyles.Key>
-        <LegendStyles.Title>&lt; Tertiary</LegendStyles.Title>
-      </LegendStyles.LegendPair>
-    </LegendStyles.Container>
+      <s.LegendPair>
+        <s.Key level={'Tertiary'}></s.Key>
+        <s.Title>&lt; Tertiary</s.Title>
+      </s.LegendPair>
+    </s.Container>
   );
 };
 

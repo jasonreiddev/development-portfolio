@@ -1,6 +1,6 @@
 import { Button } from '../../components/Button/Button';
 import { TextCard } from '../TextCard/TextCard';
-import { LoginFormStyles } from './LoginForm.styles';
+import { LoginFormStyles as s } from './LoginForm.styles';
 
 export interface LoginFormProps {
   placeHolder?: string;
@@ -19,21 +19,23 @@ export const LoginForm = ({
 }: LoginFormProps): JSX.Element => {
   return (
     <TextCard text="Log in" fitContent={true}>
-      <LoginFormStyles id="login-form" onSubmit={handleSubmit}>
-        <label>
+      <form id="login-form" onSubmit={handleSubmit}>
+        <s.Label>
           Email:
-          <input className="input" placeholder={placeHolder} type={type} />
-        </label>
-        <label>
+          <s.Input className="input" placeholder={placeHolder} type={type} />
+        </s.Label>
+        <s.Label>
           Password:
-          <input
+          <s.Input
             className="input"
             placeholder={PasswordPlaceHolder}
             type={showPassword ? 'text' : 'password'}
           />
-        </label>
-        <Button type="submit" label="Log In" />
-      </LoginFormStyles>
+        </s.Label>
+        <s.ButtonWrapper>
+          <Button type="submit" label="Log In" />
+        </s.ButtonWrapper>
+      </form>
     </TextCard>
   );
 };

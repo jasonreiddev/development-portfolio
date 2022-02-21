@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LikeStyles, LikeInnerStyles } from './Like.styles';
+import { LikeStyles as s } from './Like.styles';
 import { FaHeart } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
 
@@ -20,13 +20,16 @@ export const Like = ({ getLikesDB, updateLikesDB, liked }: LikeProps): JSX.Eleme
   }
 
   return (
-    <LikeStyles>
-      <LikeInnerStyles title="Leave a Like!">
+    <s.Wrapper>
+      <s.Likes title="Leave a Like!">
         {hasLiked && <FaHeart onClick={OnClick} />}
         {!hasLiked && <FaRegHeart onClick={OnClick} />}
         <br />
         <div>{typeof localLikes !== 'undefined' ? localLikes : ''}</div>
-      </LikeInnerStyles>
-    </LikeStyles>
+        <s.BackgroundIcon>
+          <FaHeart />
+        </s.BackgroundIcon>
+      </s.Likes>
+    </s.Wrapper>
   );
 };

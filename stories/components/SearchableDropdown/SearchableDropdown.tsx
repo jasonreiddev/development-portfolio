@@ -1,8 +1,9 @@
 import { FunctionComponent, useEffect, useRef, useState } from 'react';
-import InputField from '../InputField/InputField';
-import { SearchableDropdownStyles } from './SearchableDropdown.styles';
 import { AiOutlineCheck } from 'react-icons/ai';
+
+import InputField from '../InputField/InputField';
 import { clickOutside } from '../../../helpers/clickOutside';
+import { SearchableDropdownStyles as s } from './SearchableDropdown.styles';
 
 export type SearchableDropdownProps = {
   searchFieldCallback(chosenOptions: string[]): void;
@@ -48,9 +49,7 @@ const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
   }, [values]);
 
   return (
-    <SearchableDropdownStyles.Container
-      onClick={() => showDropdownOnContainerClick && setIsActive(!isActive)}
-    >
+    <s.Container onClick={() => showDropdownOnContainerClick && setIsActive(!isActive)}>
       <InputField
         title={title}
         name={name}
@@ -60,7 +59,7 @@ const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
           !showDropdownOnContainerClick && setIsActive(!isActive);
         }}
       />
-      <SearchableDropdownStyles.ListAndResults
+      <s.ListAndResults
         visible={isActive}
         ref={dropdownRef}
         onClick={(e) => {
@@ -68,10 +67,10 @@ const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
           e.stopPropagation();
         }}
       >
-        <SearchableDropdownStyles.ListWrapper>
-          <SearchableDropdownStyles.List>
+        <s.ListWrapper>
+          <s.List>
             {data.map((d, i) => (
-              <SearchableDropdownStyles.Option
+              <s.Option
                 onClick={() => {
                   if (results.includes(d)) {
                     if (chosenOptions.includes(d))
@@ -86,14 +85,14 @@ const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
               >
                 <AiOutlineCheck className={`${chosenOptions.includes(d) ? 'option-chosen' : ''}`} />{' '}
                 <span>{d}</span>
-              </SearchableDropdownStyles.Option>
+              </s.Option>
             ))}
-          </SearchableDropdownStyles.List>
-        </SearchableDropdownStyles.ListWrapper>
+          </s.List>
+        </s.ListWrapper>
         {resultCount === 0 ? (
-          <SearchableDropdownStyles.NoResults>No Results....</SearchableDropdownStyles.NoResults>
+          <s.NoResults>No Results....</s.NoResults>
         ) : (
-          <SearchableDropdownStyles.Results>
+          <s.Results>
             {resultCount} Result{resultCount > 1 ? 's' : ''} -{' '}
             <span
               className={`reset-selection ${chosenOptions.length > 0 ? '' : 'disabled'}`}
@@ -101,10 +100,10 @@ const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
             >
               Clear selection?
             </span>
-          </SearchableDropdownStyles.Results>
+          </s.Results>
         )}
-      </SearchableDropdownStyles.ListAndResults>
-    </SearchableDropdownStyles.Container>
+      </s.ListAndResults>
+    </s.Container>
   );
 };
 

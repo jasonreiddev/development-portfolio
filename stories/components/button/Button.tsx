@@ -1,4 +1,4 @@
-import { ButtonStyles } from './Button.styles';
+import { ButtonStyles as s } from './Button.styles';
 
 interface ButtonProps {
   primary?: boolean;
@@ -19,13 +19,13 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
   const mode = primary ? 'primary' : 'secondary';
   return (
-    <ButtonStyles
+    <s.Button
       type={type}
       className={[`${size}`, mode].join(' ')}
       backgroundColor={backgroundColor}
       {...props}
     >
       {label}
-    </ButtonStyles>
+    </s.Button>
   );
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HoverColorStyles = styled.span`
+export const Wrapper = styled.span`
   display: inline-flex;
   align-items: center;
   .highlight {
@@ -23,3 +23,7 @@ export const HoverColorStyles = styled.span`
     }
   }
 `;
+
+export const HoverColorStyles = {
+  Wrapper,
+};

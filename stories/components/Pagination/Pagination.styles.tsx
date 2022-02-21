@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Device, from } from '../../../helpers/media';
 
-export const PaginationStyles = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   align-content: center;
   align-items: center;
@@ -33,3 +33,7 @@ export const PaginationStyles = styled.div`
     font-size: 1.4rem;
   }
 `;
+
+export const PaginationStyles = {
+  Wrapper,
+};

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CarouselStyles = styled.div`
+const Carousel = styled.div`
   .rightArrow {
     position: absolute;
     top: 50%;
@@ -16,7 +16,7 @@ export const CarouselStyles = styled.div`
   }
 `;
 
-export const ImageStyles = styled.img`
+const Image = styled.img`
   aspect-ratio: 16/9;
   display: block;
   box-sizing: border-box;
@@ -24,3 +24,8 @@ export const ImageStyles = styled.img`
   padding: 0px 50px;
   object-fit: cover;
 `;
+
+export const CarouselStyles = {
+  Carousel,
+  Image,
+};

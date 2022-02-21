@@ -1,14 +1,15 @@
 import styled from 'styled-components';
+
 import { Device, from } from '../../helpers/media';
 
-export const SiteBorderStyles = styled.div`
+const SiteBorderStyles = styled.div`
   overflow: auto;
   display: flex;
   flex-direction: column;
   height: 100vh;
 `;
 
-export const SVGStyles = styled.svg`
+const SVGStyles = styled.svg`
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +23,7 @@ export const SVGStyles = styled.svg`
   }
 `;
 
-export const MainStyles = styled.main`
+const MainStyles = styled.main`
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -31,7 +32,7 @@ export const MainStyles = styled.main`
   }
 `;
 
-export const ContentStyles = styled.div`
+const ContentStyles = styled.div`
   display: flex;
   max-width: 1080px;
   flex-grow: 2;
@@ -43,7 +44,7 @@ export const ContentStyles = styled.div`
   }
 `;
 
-export const AsideStyles = styled.aside`
+const AsideStyles = styled.aside`
   width: 50%;
   flex-grow: 0;
   @media ${from(Device.Desktop)} {
@@ -67,7 +68,7 @@ export const AsideStyles = styled.aside`
   }
 `;
 
-export const BodyDivStyles = styled.div`
+const BodyDivStyles = styled.div`
   max-width: 1440px;
   flex: 1;
   display: flex;
@@ -82,7 +83,7 @@ export const BodyDivStyles = styled.div`
   }
 `;
 
-export const FooterStyles = styled.footer`
+const FooterStyles = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -92,7 +93,7 @@ export const FooterStyles = styled.footer`
   }
 `;
 
-export const DesktopFooterStyles = styled.footer`
+const DesktopFooterStyles = styled.footer`
   width: 100%;
   display: none;
   @media ${from(Device.Desktop)} {
@@ -102,7 +103,7 @@ export const DesktopFooterStyles = styled.footer`
   }
 `;
 
-export const LoadMaskStyles = styled.div<{ loading: boolean }>`
+const LoadMaskStyles = styled.div<{ loading: boolean }>`
   position: absolute;
   z-index: 1;
   opacity: ${(p) => (p.loading ? '1' : '0')};
@@ -115,7 +116,7 @@ export const LoadMaskStyles = styled.div<{ loading: boolean }>`
   }
 `;
 
-export const LoadSpinnerStyles = styled.div<{ loading: boolean }>`
+const LoadSpinnerStyles = styled.div<{ loading: boolean }>`
   position: absolute;
   z-index: 1;
   opacity: ${(p) => (p.loading ? '1' : '0')};
@@ -141,3 +142,16 @@ export const LoadSpinnerStyles = styled.div<{ loading: boolean }>`
     }
   }
 `;
+
+export const LayoutStyles = {
+  AsideStyles,
+  BodyDivStyles,
+  ContentStyles,
+  FooterStyles,
+  MainStyles,
+  SVGStyles,
+  SiteBorderStyles,
+  LoadMaskStyles,
+  LoadSpinnerStyles,
+  DesktopFooterStyles,
+};

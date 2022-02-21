@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
-import { PaginationStyles } from './Pagination.styles';
+import { PaginationStyles as s } from './Pagination.styles';
 
 interface PaginationProps {
   pageSize: number;
@@ -26,7 +26,7 @@ export const Pagination = ({
   return (
     <>
       {totalPages > 1 && !showAll && (
-        <PaginationStyles>
+        <s.Wrapper>
           <Link href={`${!hasPrevPage && `base/}${prevPage}`}`} passHref>
             <AiOutlineLeft />
             <span className="word">Prev</span>
@@ -45,7 +45,7 @@ export const Pagination = ({
             <AiOutlineRight />
           </Link>
           <Link href={`${base}`}>All</Link>
-        </PaginationStyles>
+        </s.Wrapper>
       )}
     </>
   );

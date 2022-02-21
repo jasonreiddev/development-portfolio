@@ -1,4 +1,4 @@
-import { ButtonGroupStyles } from './IconButtonGroup.styles';
+import { ButtonGroupStyles as s } from './IconButtonGroup.styles';
 import { IconButton, Icon } from '../../components/IconButton/IconButton';
 import { TextCard } from '../../widgets/TextCard/TextCard';
 
@@ -18,7 +18,7 @@ export const IconButtonGroup = ({
 }: IconButtonGroupProps): JSX.Element => {
   return (
     <TextCard fitContent={fitContent}>
-      <ButtonGroupStyles backgroundColor={backgroundColor} {...props}>
+      <s.ButtonWrapper backgroundColor={backgroundColor} {...props}>
         <IconButton
           icon={Icon.Mail}
           active={true}
@@ -45,7 +45,7 @@ export const IconButtonGroup = ({
           backgroundColor={iconButtonBackgroundColor}
           label={'Log Out'}
         />
-      </ButtonGroupStyles>
+      </s.ButtonWrapper>
     </TextCard>
   );
 };

@@ -1,6 +1,7 @@
 import { FunctionComponent, useState } from 'react';
-import { BreadcrumbStyles } from './Breadcrumb.styles';
 import { MdCheckBox, MdCopyAll } from 'react-icons/md';
+
+import { BreadcrumbStyles as s } from './Breadcrumb.styles';
 
 export interface BreadcrumbProps {
   path: string;
@@ -31,33 +32,30 @@ export const Breadcrumb: FunctionComponent<BreadcrumbProps> = ({ path, siteName 
   const arrayPath = noParamPath.split('/');
   let mapPath = '';
   return (
-    <BreadcrumbStyles.Breadcrumb>
-      <BreadcrumbStyles.BreadcrumbGroup>
-        <BreadcrumbStyles.BreadcrumbItem href="/" first={true}>
+    <s.Breadcrumb>
+      <s.BreadcrumbGroup>
+        <s.BreadcrumbItem href="/" first={true}>
           {siteName}
-        </BreadcrumbStyles.BreadcrumbItem>
-      </BreadcrumbStyles.BreadcrumbGroup>
+        </s.BreadcrumbItem>
+      </s.BreadcrumbGroup>
       {arrayPath.map((item, index) => {
         mapPath = mapPath + '/' + item;
         return (
-          <BreadcrumbStyles.BreadcrumbGroup key={`BreadcrumbItem-${index}`}>
+          <s.BreadcrumbGroup key={`BreadcrumbItem-${index}`}>
             <span>/</span>
-            <BreadcrumbStyles.BreadcrumbItem href={mapPath}>
+            <s.BreadcrumbItem href={mapPath}>
               {decodeURIComponent(item).replace(/-/g, ' ').trim()}
-            </BreadcrumbStyles.BreadcrumbItem>
+            </s.BreadcrumbItem>
             {arrayPath.length - 1 == index && (
-              <BreadcrumbStyles.CopyButton
-                title="Copy to Clipboard"
-                onClick={() => copyToClipboard(path)}
-              >
+              <s.CopyButton title="Copy to Clipboard" onClick={() => copyToClipboard(path)}>
                 {!copied && <MdCopyAll />}
                 {copied && <MdCheckBox />}
-              </BreadcrumbStyles.CopyButton>
+              </s.CopyButton>
             )}
-          </BreadcrumbStyles.BreadcrumbGroup>
+          </s.BreadcrumbGroup>
         );
       })}
-    </BreadcrumbStyles.Breadcrumb>
+    </s.Breadcrumb>
   );
 };
 
