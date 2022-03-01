@@ -5,7 +5,7 @@ const Card = styled.article`
   min-width: 250px;
   border-radius: var(--border-radius);
   padding: 24px;
-  background: var(--color-white);
+  background: var(--color-base);
   box-shadow: var(--box-shadow);
   text-align: center;
 
@@ -23,7 +23,7 @@ const Card = styled.article`
     margin-right: auto;
     margin-top: -64px;
     margin-bottom: 16px;
-    border: 6px solid var(--color-white);
+    border: 6px solid var(--color-base);
   }
 
   h2 {

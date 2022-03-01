@@ -5,6 +5,9 @@ import * as ContactCardStories from '../../components/ContactCard/ContactCard.st
 
 export default {
   title: 'Pages/Contact Card',
+  parameters: {
+    layout: 'fullscreen',
+  },
   component: PageContactCard,
 } as ComponentMeta<typeof PageContactCard>;
 

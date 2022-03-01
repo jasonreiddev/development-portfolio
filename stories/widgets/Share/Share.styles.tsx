@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   font-weight: var(--font-weight-bold);
 
   a {
-    color: var(--color-black);
+    color: var(--color-contrast);
   }
 
   svg {
@@ -20,6 +20,11 @@ const Wrapper = styled.div`
   }
 `;
 
+const Share = styled.a`
+  display: block;
+`;
+
 export const ShareStyles = {
   Wrapper,
+  Share,
 };

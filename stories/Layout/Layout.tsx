@@ -36,7 +36,7 @@ export const Layout = ({
 
   return (
     <>
-      <s.SVGStyles>
+      <s.SVG>
         <defs>
           <pattern
             id="background-icons"
@@ -52,35 +52,31 @@ export const Layout = ({
           </pattern>
         </defs>
         <rect x="0" y="0" width="100%" height="100%" fill="url(#background-icons)" />
-      </s.SVGStyles>
-      <s.SiteBorderStyles className={'mobile-scroll'}>
-        <s.LoadMaskStyles className="load-mask" loading={loading} />
-        <s.LoadSpinnerStyles className="load-spinner" loading={loading} />
+      </s.SVG>
+      <s.LoadMask className="load-mask" loading={loading} />
+      <s.LoadSpinner className="load-spinner" loading={loading} />
+      <s.Wrapper className={'mobile-scroll'}>
         <Header title={title} menuLinks={menuLinks} />
-        <s.BodyDivStyles className={'column-small tablet-scroll'}>
-          <s.ContentStyles className={'desktop-scroll'}>
-            <s.MainStyles>
-              <div>{children}</div>
-              <s.DesktopFooterStyles>
-                <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-              </s.DesktopFooterStyles>
-            </s.MainStyles>
-          </s.ContentStyles>
-          <s.AsideStyles className="aside-left">
-            <Like getLikesDB={getLikesDB} updateLikesDB={updateLikesDB} liked={false} />
-          </s.AsideStyles>
-          <s.AsideStyles className="aside-right">
-            <Share
-              text="Share"
-              shareText={`${title ? title : 'site.titleTemplate'} - @${'site.twitterUsername'}`}
-              shareUrl={`${'site.url'}${typeof window !== 'undefined' ? location.pathname : ''}`}
-            />
-          </s.AsideStyles>
-          <s.FooterStyles>
+        <s.Aside className="aside-left">
+          <Like getLikesDB={getLikesDB} updateLikesDB={updateLikesDB} liked={false} />
+        </s.Aside>
+        <s.Main>
+          <div>{children}</div>
+          <s.MobileFooter>
             <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-          </s.FooterStyles>
-        </s.BodyDivStyles>
-      </s.SiteBorderStyles>
+          </s.MobileFooter>
+        </s.Main>
+        <s.Aside className="aside-right">
+          <Share
+            text="Share"
+            shareText={`${title ? title : 'site.titleTemplate'} - @${'site.twitterUsername'}`}
+            shareUrl={`${'site.url'}${typeof window !== 'undefined' ? location.pathname : ''}`}
+          />
+        </s.Aside>
+        <s.DesktopFooter>
+          <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
+        </s.DesktopFooter>
+      </s.Wrapper>
     </>
   );
 };

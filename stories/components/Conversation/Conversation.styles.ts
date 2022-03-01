@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Device, from } from '../../../helpers/media';
 
 const Container = styled.div<{ fullWidth: boolean }>`
-  background-color: var(--color-white-bright);
-  border: 1px solid var(--color-black);
+  background-color: var(--color-base-bright);
+  border: 1px solid var(--color-contrast);
   text-align: center;
   height: 100%;
   width: ${(p) => (p.fullWidth ? '100%' : 'fit-content')};
@@ -32,7 +32,7 @@ const Dropdown = styled.div<{ active: boolean; fullWidth: boolean }>`
 `;
 
 const Header = styled.div<{ hasIcon: boolean }>`
-  color: var(--color-black);
+  color: var(--color-contrast);
   display: inline-flex;
   align-items: center;
   height: 100%;
@@ -89,11 +89,11 @@ const ConversationItem = styled.li<{ sentByMe: boolean }>`
     p.sentByMe
       ? `
       background: var(--color-tertiary);
-      color: var(--color-white-bright);
+      color: var(--color-base-bright);
       `
       : `
-      background: var(--color-white);
-      color: var(--color-black);
+      background: var(--color-base);
+      color: var(--color-contrast);
       align-self: flex-end;
   `}
 `;

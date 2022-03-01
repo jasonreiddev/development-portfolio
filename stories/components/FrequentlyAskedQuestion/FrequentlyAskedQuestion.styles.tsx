@@ -12,7 +12,7 @@ const Wrapper = styled.details`
     cursor: pointer;
     padding: 12px 16px;
     outline-offset: 5px;
-    background-color: var(--color-white);
+    background-color: var(--color-base);
     box-shadow: var(--box-shadow);
   }
 

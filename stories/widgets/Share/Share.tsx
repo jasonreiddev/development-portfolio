@@ -11,7 +11,7 @@ interface ShareProps {
 export const Share = ({ text, shareText, shareUrl }: ShareProps): JSX.Element => {
   return (
     <s.Wrapper>
-      <a
+      <s.Share
         title="Share via Twitter"
         href={`
           https://twitter.com/intent/tweet?text=${shareText}:&url=${shareUrl}`}
@@ -19,7 +19,7 @@ export const Share = ({ text, shareText, shareUrl }: ShareProps): JSX.Element =>
         <MdShare />
         <br />
         <div>{text}</div>
-      </a>
+      </s.Share>
     </s.Wrapper>
   );
 };
