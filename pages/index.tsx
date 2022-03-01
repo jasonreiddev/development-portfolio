@@ -7,7 +7,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Head>
-        <title>SSR styled-components with Next.js Starter</title>
+        <title>SSR styled-components with Next.js</title>
       </Head>
       <GlobalStyles />
       <Landing />
