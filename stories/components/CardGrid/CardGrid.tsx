@@ -5,9 +5,10 @@ import { Card, CardProps } from '../Card/Card';
 
 export interface CardGridProps {
   cards: CardProps[];
+  onTagClick: (text: string) => void;
 }
 
-export const CardGrid: FunctionComponent<CardGridProps> = ({ cards }) => {
+export const CardGrid: FunctionComponent<CardGridProps> = ({ cards, onTagClick }) => {
   return (
     <s.Container size={200}>
       {cards &&
@@ -22,6 +23,7 @@ export const CardGrid: FunctionComponent<CardGridProps> = ({ cards }) => {
               text={card.text}
               tags={card.tags}
               doubleWidth={card.doubleWidth}
+              onTagClick={onTagClick}
             />
           );
         })}

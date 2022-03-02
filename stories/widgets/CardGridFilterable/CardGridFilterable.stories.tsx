@@ -48,7 +48,6 @@ Cards.args = {
       tags: ['Social'],
     },
     {
-      url: 'https://twitter.com/jasonreiddev',
       title:
         'agshagsh ga hagg hagsgahsg aghshg shgaghs gaggshgh gaghgs ghasg agsg hags gg ags hagsh ga aghs hgsahhs ggagshgahgshagsghagsgahsghghsghaghsgh as ha gshaghs ghag ghghsahgahgh ahggs hag hag s ghs ghagghahghkgskh ghah hasgs ahgshg g hasghaghsgag hujh uhuok h kh ukhuh kh uh uh khukhhhuk kuhkuhukhkuhklo',
       text: 'hfwhf uhuihfuhw hw h ukhuh kh uh uh khukhhhuk kuhkuhukhkuhklo hhuhuhu hushu  sukhukdsk ksddkk dshghyidusgy g tdgywuidywgd gd wddw hasg agsg hags gg ags hagsh ga aghs hgsahhs ggagshgahgshagsghagsgahsghghsghaghsgh as ha gshaghs ghag ghghsah hgsahhs hff uehwiufhuwh fwufh hhwuihwlfhdk hiwlkfhd huiwfefe',

@@ -21,8 +21,7 @@ const Container = styled.a<CardStylesProps>`
     ${(p) =>
       p.doubleWidth
         ? `
-      grid-column: span 2;
-      
+      grid-column: span 2; 
   `
         : null}
   }
@@ -64,7 +63,7 @@ const TagsContainer = styled.div`
 const Tag = styled.div`
   padding: 6px;
   background-color: var(--color-base-semi-bold-80);
-  top: 0;
+  pointer-events: all;
 `;
 
 export const CardStyles = {

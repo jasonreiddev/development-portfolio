@@ -5,13 +5,14 @@ import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
 
 export interface CardProps {
-  url: string;
+  url?: string;
   title: string;
   image?: string;
   alt?: string;
   text?: string;
   tags?: string[];
   doubleWidth?: boolean;
+  onTagClick?: (text: string) => void;
 }
 
 export const Card: FunctionComponent<CardProps> = ({
@@ -22,6 +23,7 @@ export const Card: FunctionComponent<CardProps> = ({
   text,
   tags,
   doubleWidth,
+  onTagClick,
 }) => {
   if (tags != undefined) {
     tags.sort(function (a, b) {
@@ -39,7 +41,17 @@ export const Card: FunctionComponent<CardProps> = ({
       {tags && (
         <s.TagsContainer>
           {tags.map((tag, index) => (
-            <s.Tag key={`${title}-tag${index}`}>
+            <s.Tag
+              key={`${title}-tag${index}`}
+              onClick={(event) => {
+                if (onTagClick != undefined) {
+                  event.stopPropagation();
+                  event.preventDefault();
+                  onTagClick(tag);
+                  return false;
+                }
+              }}
+            >
               {tag.length > 14 ? tag.substring(0, 12) + '...' : tag}
             </s.Tag>
           ))}

@@ -51,7 +51,6 @@ export const CardGridFilterable = ({ cards = [] }: CardGridFilterableProps): JSX
       setStateTags([...stateTags]);
 
       const active = stateTags.filter((t) => t.active).map((a) => a.text);
-      console.log('🚀 ~ file: CardGridFilterable.tsx ~ line 54 ~ tagClick ~ active', active);
       if (active != undefined && active.length > 0) {
         const filteredCards = cards.filter((c) =>
           c.tags == undefined ? false : c.tags.some((tag) => active.includes(tag)),
@@ -78,7 +77,7 @@ export const CardGridFilterable = ({ cards = [] }: CardGridFilterableProps): JSX
           </s.Tag>
         ))}
       </s.TagsContainer>
-      <CardGrid cards={stateCards} />
+      <CardGrid cards={stateCards} onTagClick={tagClick} />
     </s.Wrapper>
   );
 };
