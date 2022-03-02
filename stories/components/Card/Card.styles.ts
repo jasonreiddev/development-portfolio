@@ -6,7 +6,6 @@ interface CardStylesProps {
 }
 
 const Container = styled.a<CardStylesProps>`
-  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -17,15 +16,13 @@ const Container = styled.a<CardStylesProps>`
   color: var(--color-contrast);
   background-color: var(--color-primary);
   position: relative;
-  height: 100%;
-  width: 100%;
 
   @media ${from(Device.MobileLarge)} {
     ${(p) =>
       p.doubleWidth
         ? `
-      aspect-ratio: 2 / 1;
       grid-column: span 2;
+      
   `
         : null}
   }

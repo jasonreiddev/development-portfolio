@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface CardGridFilterableStylesProps {
+  active: boolean;
+}
+
 const Wrapper = styled.span`
   overflow: auto;
 `;
@@ -9,14 +13,22 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
   padding: 8px;
   gap: 2px;
-  max-height: 65px;
   overflow: hidden;
 `;
 
-const Tag = styled.div`
+const Tag = styled.button<CardGridFilterableStylesProps>`
   padding: 6px;
-  background-color: var(--color-base-semi-bold-80);
-  top: 0;
+  border: 0;
+  cursor: pointer;
+
+  background-color: ${(p) =>
+    p.active
+      ? `
+       var(--color-primary);
+        `
+      : `
+       var(--color-base-semi-bold-80);
+        `};
 `;
 
 export const CardGridFilterableStyles = {

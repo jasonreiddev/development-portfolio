@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { CardProps } from '../../components/Card/Card';
 import CardGrid from '../../components/CardGrid/CardGrid';
 
@@ -7,34 +8,77 @@ interface CardGridFilterableProps {
   cards: CardProps[];
 }
 
-export const CardGridFilterable = ({ cards }: CardGridFilterableProps): JSX.Element => {
-  const tags: string[] = [];
+interface tag {
+  text: string;
+  prevalence: number;
+  active: boolean;
+}
+
+export const CardGridFilterable = ({ cards = [] }: CardGridFilterableProps): JSX.Element => {
+  const tags: tag[] = [];
+
   cards.forEach((card) => {
     if (card.tags) {
       card.tags.forEach((tag) => {
-        if (!tags.includes(tag)) {
-          tags.push(tag);
+        const match = tags.find((t) => t.text == tag);
+        if (match == undefined || !tags.includes(match)) {
+          tags.push({ text: tag, prevalence: 1, active: false });
+        } else {
+          match.prevalence++;
         }
       });
     }
   });
 
   tags.sort(function (a, b) {
-    // by length then alphabetically
-    if (a.length == b.length) {
-      return a < b ? -1 : 1;
+    // by desc prevalence, asc length, asc alphabetically
+    if (a.prevalence !== b.prevalence) {
+      return b.prevalence - a.prevalence;
     }
-    return a.length - b.length;
+    if (a.text.length !== b.text.length) {
+      return a.text.length - b.text.length;
+    }
+    return a < b ? -1 : 1;
   });
+
+  const [stateTags, setStateTags] = useState<tag[]>(tags);
+  const [stateCards, setStateCards] = useState<CardProps[]>(cards);
+
+  function tagClick(text: string): void {
+    const match = stateTags.find((t) => t.text == text);
+    if (match != undefined) {
+      match.active = !match.active;
+      setStateTags([...stateTags]);
+
+      const active = stateTags.filter((t) => t.active).map((a) => a.text);
+      console.log('🚀 ~ file: CardGridFilterable.tsx ~ line 54 ~ tagClick ~ active', active);
+      if (active != undefined && active.length > 0) {
+        const filteredCards = cards.filter((c) =>
+          c.tags == undefined ? false : c.tags.some((tag) => active.includes(tag)),
+        );
+        setStateCards([...filteredCards]);
+      } else {
+        setStateCards([...cards]);
+      }
+    }
+  }
 
   return (
     <s.Wrapper>
       <s.TagsContainer>
-        {tags.map((tag, index) => (
-          <s.Tag key={`$all-tag${index}`}>{tag}</s.Tag>
+        {stateTags.map((tag, index) => (
+          <s.Tag
+            onClick={() => {
+              tagClick(tag.text);
+            }}
+            key={`$all-tag${index}`}
+            active={!!tag.active}
+          >
+            {tag.text}
+          </s.Tag>
         ))}
       </s.TagsContainer>
-      <CardGrid cards={cards} />
+      <CardGrid cards={stateCards} />
     </s.Wrapper>
   );
 };

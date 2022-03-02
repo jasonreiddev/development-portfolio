@@ -25,11 +25,11 @@ export const Card: FunctionComponent<CardProps> = ({
 }) => {
   if (tags != undefined) {
     tags.sort(function (a, b) {
-      // by length then alphabetically
-      if (a.length == b.length) {
-        return a < b ? -1 : 1;
+      // by asc length, asc alphabetically
+      if (a.length !== b.length) {
+        return a.length - b.length;
       }
-      return a.length - b.length;
+      return a < b ? -1 : 1;
     });
   }
 
