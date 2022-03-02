@@ -42,9 +42,10 @@ const Content = styled.div`
   padding: 8px;
   background-color: var(--color-base-semi-bold-80);
 
-  a {
+  h3 {
     font-weight: var(--font-weight-bold);
     color: var(--color-contrast-bold);
+    margin-bottom: 0.5em;
   }
 `;
 
@@ -56,7 +57,7 @@ const TagsContainer = styled.div`
   top: 0;
   width: 192px;
   gap: 2px;
-  max-height: 65px;
+  max-height: 72px;
   overflow: hidden;
 `;
 

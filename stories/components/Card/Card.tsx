@@ -58,9 +58,9 @@ export const Card: FunctionComponent<CardProps> = ({
         </s.TagsContainer>
       )}
       <s.Content>
-        <a href="#">
+        <h3>
           <ClampText lines={2} text={title} />
-        </a>
+        </h3>
         {text && <ClampText lines={3} text={text} />}
       </s.Content>
     </s.Container>

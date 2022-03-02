@@ -2,6 +2,7 @@ import { Layout } from '../../Layout/Layout';
 import { WidgetTestStyles } from './widgetTest.styles';
 
 // List all widgets, comment out if not required
+import { CardGridFilterable } from '../../widgets/CardGridFilterable/CardGridFilterable';
 import { AccountDropdown } from '../../widgets/Dropdown/AccountDropdown';
 // import { FooterCard } from '../../widgets/FooterCard/FooterCard'; // layout
 // import { Header } from '../../widgets/Header/Header'; // layout
@@ -16,13 +17,14 @@ import { TextCard } from '../../widgets/TextCard/TextCard';
 
 // Components
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import { CardData } from '../../widgets/CardGridFilterable/CardGridFilterable.stories';
 
 export interface WidgetTestProps {
   text?: string;
 }
 
 export const WidgetTest = ({ text }: WidgetTestProps): JSX.Element => (
-  <Layout menuLinks={[]} likesMockDBValue={7734} title="Hello World">
+  <Layout menuLinks={[]} likesMockDBValue={7734} title="Widget Test">
     <WidgetTestStyles>
       <TextCard>
         <AccountDropdown username={'Jason'} />
@@ -37,6 +39,9 @@ export const WidgetTest = ({ text }: WidgetTestProps): JSX.Element => (
           <h2>{text}</h2>
           <ProgressBar progress={69} />
         </>
+      </TextCard>
+      <TextCard>
+        <CardGridFilterable cards={CardData} />
       </TextCard>
     </WidgetTestStyles>
   </Layout>

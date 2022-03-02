@@ -13,7 +13,6 @@ const ClampText = styled.span<ClampTextStylesProps>`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: ${(p: ClampTextStylesProps) => (p.lines ? `${p.lines};` : '1px')};
   overflow: hidden;
-  margin-bottom: 1em;
 `;
 
 export const CustomKerningStyles = {
