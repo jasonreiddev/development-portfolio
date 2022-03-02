@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import { Device, from } from '../../../helpers/media';
 
-const Container = styled.a`
+interface CardStylesProps {
+  doubleWidth?: boolean;
+}
+
+const Container = styled.a<CardStylesProps>`
   aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
@@ -12,6 +17,18 @@ const Container = styled.a`
   color: var(--color-contrast);
   background-color: var(--color-primary);
   position: relative;
+  height: 100%;
+  width: 100%;
+
+  @media ${from(Device.MobileLarge)} {
+    ${(p) =>
+      p.doubleWidth
+        ? `
+      aspect-ratio: 2 / 1;
+      grid-column: span 2;
+  `
+        : null}
+  }
 
   img {
     position: absolute;
@@ -19,7 +36,7 @@ const Container = styled.a`
     top: 0;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
   }
 `;
 
@@ -28,6 +45,11 @@ const Content = styled.div`
   position: relative;
   padding: 8px;
   background-color: var(--color-base-semi-bold-80);
+
+  a {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-contrast-bold);
+  }
 `;
 
 const TagsContainer = styled.div`
@@ -36,7 +58,7 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
   padding: 8px;
   top: 0;
-  width: 200px;
+  width: 192px;
   gap: 2px;
   max-height: 65px;
   overflow: hidden;

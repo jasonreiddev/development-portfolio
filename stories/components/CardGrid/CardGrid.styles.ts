@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+interface CardGridStylesProps {
+  // Should be 200+ for fitting tags and max content
+  size: number;
+}
+
+const Container = styled.div<CardGridStylesProps>`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(${(p) => p.size}px, 1fr));
   grid-gap: 10px;
   padding: 10px;
-
-  > * {
-    max-width: 400px;
-  }
 `;
 
-export const CardStyles = {
+export const CardGridStyles = {
   Container,
 };
