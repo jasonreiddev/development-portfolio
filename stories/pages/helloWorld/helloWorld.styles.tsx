@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { clamp } from '../../../helpers/media';
 
 export const Text = styled.h2`

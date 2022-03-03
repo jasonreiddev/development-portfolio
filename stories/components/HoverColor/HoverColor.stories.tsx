@@ -1,11 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 
 import { HoverColor, Icon } from './HoverColor';
 
 export default {
   title: 'Components/Hover Color',
   component: HoverColor,
-} as ComponentMeta<typeof HoverColor>;
+};
 
 const Template: ComponentStory<typeof HoverColor> = (args) => <HoverColor {...args} />;
 

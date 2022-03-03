@@ -1,15 +1,14 @@
 import { Story } from '@storybook/react';
-import Legend from './Legend';
 
-const meta = {
+import { Legend } from './Legend';
+
+export default {
   component: Legend,
   title: 'Components/Legend',
   parameters: {
     layout: 'centered',
   },
 };
-
-export default meta;
 
 const Template: Story = () => <Legend />;
 

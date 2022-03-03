@@ -1,7 +1,8 @@
-import Modal, { ModalProps } from './Modal.tsx';
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-const meta: Meta<ModalProps> = {
+import Modal, { ModalProps } from './Modal.tsx';
+
+export default {
   title: 'Components/Modal',
   component: Modal,
   parameters: {
@@ -14,8 +15,6 @@ const meta: Meta<ModalProps> = {
     active: true,
   },
 };
-
-export default meta;
 
 const Template: Story<ModalProps> = (args: ModalProps) => <Modal {...args} />;
 

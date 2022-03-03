@@ -1,8 +1,9 @@
 import { Story } from '@storybook/react';
-import React from 'react';
-import Select from './Select';
+import { useState } from 'react';
 
-const meta = {
+import { Select } from './Select';
+
+export default {
   component: Select,
   title: 'Components/Select',
   parameters: {
@@ -10,10 +11,8 @@ const meta = {
   },
 };
 
-export default meta;
-
 const Template: Story = () => {
-  const [value, setValue] = React.useState('newest');
+  const [value, setValue] = useState('newest');
   return <Select value={value} onChange={(ev) => setValue(ev.target.value)} />;
 };
 

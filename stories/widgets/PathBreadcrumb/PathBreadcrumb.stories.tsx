@@ -1,15 +1,13 @@
 import { ReactNode } from 'react';
-import { PathBreadcrumb } from './PathBreadcrumb';
-import { Meta } from '@storybook/react';
 
-const meta: Meta = {
+import { PathBreadcrumb } from './PathBreadcrumb';
+
+export default {
   title: 'Widgets/Breadcrumb',
   component: PathBreadcrumb,
   parameters: {
     layout: 'fullscreen',
   },
 };
-
-export default meta;
 
 export const Default = (): ReactNode => <PathBreadcrumb />;

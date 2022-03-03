@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 
 import { WidgetTest } from './widgetTest';
 
@@ -8,7 +8,7 @@ export default {
     layout: 'fullscreen',
   },
   component: WidgetTest,
-} as ComponentMeta<typeof WidgetTest>;
+};
 
 const Template: ComponentStory<typeof WidgetTest> = (args) => <WidgetTest {...args} />;
 

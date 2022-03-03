@@ -1,6 +1,7 @@
 import { useState } from 'react';
+
 import { CardProps } from '../../components/Card/Card';
-import CardGrid from '../../components/CardGrid/CardGrid';
+import { CardGrid } from '../../components/CardGrid/CardGrid';
 
 import { CardGridFilterableStyles as s } from './CardGridFilterable.styles';
 

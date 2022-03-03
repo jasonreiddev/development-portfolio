@@ -1,7 +1,8 @@
-import { Meta, Story } from '@storybook/react';
-import InputField, { InputFieldProps } from './InputField';
+import { Story } from '@storybook/react';
 
-const meta: Meta<InputFieldProps> = {
+import { InputField, InputFieldProps } from './InputField';
+
+export default {
   component: InputField,
   title: 'Components/Input Field',
   args: {
@@ -14,8 +15,6 @@ const meta: Meta<InputFieldProps> = {
     layout: 'centered',
   },
 };
-
-export default meta;
 
 const Template: Story<InputFieldProps> = (args) => <InputField {...args} />;
 

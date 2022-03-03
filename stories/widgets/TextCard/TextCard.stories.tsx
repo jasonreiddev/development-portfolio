@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { TextCard } from './TextCard';
 
 export default {
-  title: 'Widgets/TextCard',
+  title: 'Widgets/Text Card',
   component: TextCard,
 } as ComponentMeta<typeof TextCard>;
 

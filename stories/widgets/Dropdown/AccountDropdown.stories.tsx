@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
-import { AccountDropdown, AccountDropdownProps } from './AccountDropdown';
 import { Meta } from '@storybook/react';
 
+import { AccountDropdown, AccountDropdownProps } from './AccountDropdown';
+
 const meta: Meta<AccountDropdownProps> = {
-  title: 'Widgets/AccountDropdown',
+  title: 'Widgets/Account Dropdown',
   component: AccountDropdown,
   parameters: {
     layout: 'fullscreen',

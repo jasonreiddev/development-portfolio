@@ -1,15 +1,14 @@
-import Breadcrumb, { BreadcrumbProps } from './Breadcrumb';
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-const meta: Meta<BreadcrumbProps> = {
+import { Breadcrumb, BreadcrumbProps } from './Breadcrumb';
+
+export default {
   title: 'Components/Breadcrumb',
   component: Breadcrumb,
   parameters: {
     layout: 'fullscreen',
   },
 };
-
-export default meta;
 
 const Template: Story<BreadcrumbProps> = (args: BreadcrumbProps) => <Breadcrumb {...args} />;
 

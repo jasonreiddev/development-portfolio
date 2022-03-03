@@ -1,7 +1,8 @@
-import { Meta, Story } from '@storybook/react';
-import LoadingProgress, { LoadingProgressProps } from './LoadingProgress';
+import { Story } from '@storybook/react';
 
-const meta: Meta<LoadingProgressProps> = {
+import { LoadingProgress, LoadingProgressProps } from './LoadingProgress';
+
+export default {
   component: LoadingProgress,
   title: 'Components/Loading Progress',
   args: {},
@@ -9,8 +10,6 @@ const meta: Meta<LoadingProgressProps> = {
     layout: 'centered',
   },
 };
-
-export default meta;
 
 const Template: Story<LoadingProgressProps> = (args) => <LoadingProgress {...args} />;
 

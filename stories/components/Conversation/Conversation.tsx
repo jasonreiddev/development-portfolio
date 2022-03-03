@@ -1,6 +1,7 @@
-import { FunctionComponent, ReactNode } from 'react';
-import { ConversationStyles as s } from './Conversation.styles';
+import { ReactNode } from 'react';
 import { MdAccountCircle } from 'react-icons/md';
+
+import { ConversationStyles as s } from './Conversation.styles';
 
 export enum Icon {
   None,
@@ -31,14 +32,14 @@ const renderIcon = (icon: Icon): ReactNode => {
   }
 };
 
-export const Conversation: FunctionComponent<ConversationProps> = ({
+export const Conversation = ({
   chatName,
   icon,
   active,
   fullWidth,
   toggleActive,
   conversationItemGroups,
-}) => {
+}: ConversationProps): JSX.Element => {
   return (
     <s.Container fullWidth={fullWidth}>
       <s.Header hasIcon={icon !== 0}>
@@ -66,5 +67,3 @@ export const Conversation: FunctionComponent<ConversationProps> = ({
     </s.Container>
   );
 };
-
-export default Conversation;

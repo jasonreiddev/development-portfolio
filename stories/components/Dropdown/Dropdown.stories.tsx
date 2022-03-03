@@ -1,5 +1,6 @@
-import Dropdown, { DropdownProps, Icon, DropdownItem } from './Dropdown';
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
+
+import { Dropdown, DropdownProps, Icon, DropdownItem } from './Dropdown';
 
 const access: DropdownItem[] = [
   {
@@ -34,7 +35,7 @@ const edit: DropdownItem[] = [
 
 const dropdownItemGroups: DropdownItem[][] = [access, edit];
 
-const meta: Meta<DropdownProps> = {
+export default {
   title: 'Components/Dropdown',
   component: Dropdown,
   parameters: {
@@ -51,8 +52,6 @@ const meta: Meta<DropdownProps> = {
     icon: { control: { type: 'select', options: Icon } },
   },
 };
-
-export default meta;
 
 const Template: Story<DropdownProps> = (args: DropdownProps) => <Dropdown {...args} />;
 

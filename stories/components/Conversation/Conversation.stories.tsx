@@ -1,5 +1,6 @@
-import Conversation, { ConversationProps, Icon, ConversationItem } from './Conversation';
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
+
+import { Conversation, ConversationProps, Icon, ConversationItem } from './Conversation';
 
 const goodMorning: ConversationItem[] = [
   {
@@ -33,7 +34,7 @@ const goodNight: ConversationItem[] = [
 
 const conversationItemGroups: ConversationItem[][] = [goodMorning, goodNight];
 
-const meta: Meta<ConversationProps> = {
+export default {
   title: 'Components/Conversation',
   component: Conversation,
   parameters: {
@@ -50,8 +51,6 @@ const meta: Meta<ConversationProps> = {
     icon: { control: { type: 'select', options: Icon } },
   },
 };
-
-export default meta;
 
 const Template: Story<ConversationProps> = (args: ConversationProps) => <Conversation {...args} />;
 

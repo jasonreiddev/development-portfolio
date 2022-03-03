@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { WallArt } from './WallArt';
 
 export default {
-  title: 'Components/WallArt',
+  title: 'Components/Wall Art',
   component: WallArt,
   argTypes: {
     backgroundColor: { control: 'color' },

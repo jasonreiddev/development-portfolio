@@ -1,11 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 
 import { ClampText } from './ClampText';
 
 export default {
-  title: 'Components/ClampText',
+  title: 'Components/Clamp Text',
   component: ClampText,
-} as ComponentMeta<typeof ClampText>;
+};
 
 const Template: ComponentStory<typeof ClampText> = (args) => <ClampText {...args} />;
 

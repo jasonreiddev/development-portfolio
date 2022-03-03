@@ -1,12 +1,12 @@
-import { Meta, Story } from '@storybook/react';
-import { SearchableDropdownProps } from './SearchableDropdown';
-import SearchableDropdown from './SearchableDropdown';
+import { Story } from '@storybook/react';
+
+import { SearchableDropdown, SearchableDropdownProps } from './SearchableDropdown';
 
 const callbackFunction = (chosenOptions: string[]): void => {
   console.info(chosenOptions);
 };
 
-const meta: Meta<SearchableDropdownProps> = {
+export default {
   component: SearchableDropdown,
   title: 'Components/Searchable Dropdown',
   args: {},
@@ -14,8 +14,6 @@ const meta: Meta<SearchableDropdownProps> = {
     layout: 'fullscreen',
   },
 };
-
-export default meta;
 
 const Template: Story<SearchableDropdownProps> = (args) => <SearchableDropdown {...args} />;
 

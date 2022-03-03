@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { Device, from } from '../../../helpers/media';
 
 interface CardStylesProps {

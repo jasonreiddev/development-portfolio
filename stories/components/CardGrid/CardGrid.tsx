@@ -30,5 +30,3 @@ export const CardGrid: FunctionComponent<CardGridProps> = ({ cards, onTagClick }
     </s.Container>
   );
 };
-
-export default CardGrid;

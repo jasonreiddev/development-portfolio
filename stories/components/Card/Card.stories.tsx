@@ -1,15 +1,14 @@
-import Card, { CardProps } from './Card';
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-const meta: Meta<CardProps> = {
+import { Card, CardProps } from './Card';
+
+export default {
   title: 'Components/Card',
   component: Card,
   parameters: {
     layout: 'fullscreen',
   },
 };
-
-export default meta;
 
 const Template: Story<CardProps> = (args: CardProps) => <Card {...args} />;
 

@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import Image from 'next/image';
 
 import { CardStyles as s } from './Card.styles';
@@ -15,7 +14,7 @@ export interface CardProps {
   onTagClick?: (text: string) => void;
 }
 
-export const Card: FunctionComponent<CardProps> = ({
+export const Card = ({
   url,
   title,
   image,
@@ -24,7 +23,7 @@ export const Card: FunctionComponent<CardProps> = ({
   tags,
   doubleWidth,
   onTagClick,
-}) => {
+}: CardProps): JSX.Element => {
   if (tags != undefined) {
     tags.sort(function (a, b) {
       // by asc length, asc alphabetically
@@ -66,5 +65,3 @@ export const Card: FunctionComponent<CardProps> = ({
     </s.Container>
   );
 };
-
-export default Card;

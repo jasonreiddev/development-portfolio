@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SmallText } from './SmallText';
 
 export default {
-  title: 'Components/SmallText',
+  title: 'Components/Small Text',
   component: SmallText,
 } as ComponentMeta<typeof SmallText>;
 

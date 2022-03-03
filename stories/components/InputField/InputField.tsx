@@ -1,5 +1,3 @@
-import { FunctionComponent } from 'react';
-
 import { InputFieldStyles as s } from './InputField.styles';
 
 export type InputFieldProps = {
@@ -11,14 +9,14 @@ export type InputFieldProps = {
   onClick?(): void;
 };
 
-const InputField: FunctionComponent<InputFieldProps> = ({
+export const InputField = ({
   title,
   name,
   placeholder,
   type = 'Text',
   callback,
   onClick,
-}) => {
+}: InputFieldProps): JSX.Element => {
   return (
     <s.Container>
       {!!title && <s.Title>{title}</s.Title>}
@@ -37,5 +35,3 @@ const InputField: FunctionComponent<InputFieldProps> = ({
     </s.Container>
   );
 };
-
-export default InputField;

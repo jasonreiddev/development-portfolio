@@ -1,11 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 
 import { FooterCard } from './FooterCard';
 
 export default {
   title: 'Widgets/FooterCard',
   component: FooterCard,
-} as ComponentMeta<typeof FooterCard>;
+};
 
 const Template: ComponentStory<typeof FooterCard> = (args) => <FooterCard {...args} />;
 

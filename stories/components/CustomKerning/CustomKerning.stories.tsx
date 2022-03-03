@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CustomKerning } from './CustomKerning';
 
 export default {
-  title: 'Components/CustomKerning',
+  title: 'Components/Custom Kerning',
   component: CustomKerning,
 } as ComponentMeta<typeof CustomKerning>;
 

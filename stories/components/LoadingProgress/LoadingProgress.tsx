@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react';
 import { LoadingProgressStyles as s } from './LoadingProgress.styles';
 
 export type LoadingProgressProps = {
@@ -7,7 +6,7 @@ export type LoadingProgressProps = {
   log: Array<string>;
 };
 
-const LoadingProgress: FunctionComponent<LoadingProgressProps> = ({ progress, total, log }) => {
+export const LoadingProgress = ({ progress, total, log }: LoadingProgressProps): JSX.Element => {
   const getProgress = (): number => Math.round((progress / total) * 100);
   return (
     <s.Container>
@@ -25,5 +24,3 @@ const LoadingProgress: FunctionComponent<LoadingProgressProps> = ({ progress, to
     </s.Container>
   );
 };
-
-export default LoadingProgress;

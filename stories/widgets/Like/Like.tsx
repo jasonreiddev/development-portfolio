@@ -1,7 +1,7 @@
 import { useState } from 'react';
+
 import { LikeStyles as s } from './Like.styles';
-import { FaHeart } from 'react-icons/fa';
-import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 interface LikeProps {
   getLikesDB: () => number;

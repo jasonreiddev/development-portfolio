@@ -1,12 +1,12 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { CardProps } from '../../components/Card/Card';
+import { ComponentStory } from '@storybook/react';
 
 import { CardGridFilterable } from './CardGridFilterable';
+import { CardProps } from '../../components/Card/Card';
 
 export default {
   title: 'Widgets/Card Grid Filterable',
   component: CardGridFilterable,
-} as ComponentMeta<typeof CardGridFilterable>;
+};
 
 const Template: ComponentStory<typeof CardGridFilterable> = (args) => (
   <CardGridFilterable {...args} />
@@ -33,7 +33,7 @@ export const CardData: CardProps[] = [
     url: 'https://www.linkedin.com/in/jasonreiddev/',
     title: 'LinkedIn',
     text: 'Contact me on LinkedIn!',
-    tags: ['Social2', 'Social', 'Zocial', 'Zocial2'],
+    tags: ['Social-2', 'Social-1', '1Social', '2Social'],
   },
   {
     url: 'https://github.com/jasonreiddev',
@@ -48,9 +48,9 @@ export const CardData: CardProps[] = [
   },
   {
     title:
-      'agshagsh ga hagg hagsgahsg aghshg shgaghs gaggshgh gaghgs ghasg agsg hags gg ags hagsh ga aghs hgsahhs ggagshgahgshagsghagsgahsghghsghaghsgh as ha gshaghs ghag ghghsahgahgh ahggs hag hag s ghs ghagghahghkgskh ghah hasgs ahgshg g hasghaghsgag hujh uhuok h kh ukhuh kh uh uh khukhhhuk kuhkuhukhkuhklo',
-    text: 'hfwhf uhuihfuhw hw h ukhuh kh uh uh khukhhhuk kuhkuhukhkuhklo hhuhuhu hushu  sukhukdsk ksddkk dshghyidusgy g tdgywuidywgd gd wddw hasg agsg hags gg ags hagsh ga aghs hgsahhs ggagshgahgshagsghagsgahsghghsghaghsgh as ha gshaghs ghag ghghsah hgsahhs hff uehwiufhuwh fwufh hhwuihwlfhdk hiwlkfhd huiwfefe',
-    tags: ['efesfsff', 'dqddhjdhjhkadfkbfkebkfjhekfefererfefedfe', 'fwefwfwef'],
+      'Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text.',
+    text: 'Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text.',
+    tags: ['Short text', 'Antidisestablishmentarianism', 'Long text. Long text.'],
   },
 ];
 

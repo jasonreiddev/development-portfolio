@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FunctionComponent } from 'react';
+import { ChangeEventHandler } from 'react';
 import { MdChevronRight } from 'react-icons/md';
 
 import { SelectStyles as s } from './Select.styles';
@@ -6,10 +6,10 @@ import { SelectStyles as s } from './Select.styles';
 export type SelectProps = {
   value?: string;
   onChange: ChangeEventHandler<HTMLSelectElement>;
-  string?: string;
+  children?: JSX.Element;
 };
 
-const Select: FunctionComponent<SelectProps> = ({ value, onChange, children }): JSX.Element => {
+export const Select = ({ value, onChange, children }: SelectProps): JSX.Element => {
   const displayedValue = 'Test';
 
   return (
@@ -30,5 +30,3 @@ const Select: FunctionComponent<SelectProps> = ({ value, onChange, children }): 
     </s.Wrapper>
   );
 };
-
-export default Select;
