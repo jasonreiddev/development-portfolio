@@ -1,12 +1,12 @@
 import { TextCardStyles as s } from './TextCard.styles';
 
-interface FooterCardProps {
+export interface TextCardProps {
   text?: string;
   children?: JSX.Element;
   fitContent?: boolean;
 }
 
-export const TextCard = ({ text, children, fitContent = true }: FooterCardProps): JSX.Element => {
+export const TextCard = ({ text, children, fitContent = true }: TextCardProps): JSX.Element => {
   return (
     <s.Wrapper fitContent={fitContent}>
       {text && <s.Title>{text}</s.Title>}

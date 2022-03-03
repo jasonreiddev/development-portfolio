@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Button } from './Button';
+import { Button, ButtonProps } from './Button';
 
 export default {
   title: 'Components/Button',
@@ -8,9 +8,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Button>;
+};
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -36,4 +36,3 @@ Small.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

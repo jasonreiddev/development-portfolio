@@ -23,3 +23,5 @@ FormattingText.args = {
   path: '/-requires-trim-/no-trim/---requires---trim---/TestCapitals/projects/%25100%20Decoded/Next.js/?page=3',
   siteName: 'Next.js Component Library',
 };
+
+export const Minimum = Template.bind({});

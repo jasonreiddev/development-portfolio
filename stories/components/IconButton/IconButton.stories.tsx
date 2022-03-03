@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { IconButton, Icon } from './IconButton';
+import { IconButton, IconButtonProps, Icon } from './IconButton';
 
 export default {
   title: 'Components/Icon Button',
@@ -8,9 +8,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof IconButton>;
+};
 
-const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} />;
+const Template: Story<IconButtonProps> = (args) => <IconButton {...args} />;
 
 export const PrimaryMail = Template.bind({});
 PrimaryMail.args = {
@@ -56,4 +56,3 @@ SmallRefresh.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

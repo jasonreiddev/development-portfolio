@@ -2,7 +2,7 @@ import { ButtonGroupStyles as s } from './IconButtonGroup.styles';
 import { IconButton, Icon } from '../../components/IconButton/IconButton';
 import { TextCard } from '../../widgets/TextCard/TextCard';
 
-interface IconButtonGroupProps {
+export interface IconButtonGroupProps {
   backgroundColor?: string;
   iconButtonBackgroundColor?: string;
   iconButtonSize?: 'small' | 'medium' | 'large';

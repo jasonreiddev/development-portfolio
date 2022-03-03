@@ -3,7 +3,7 @@ import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 import { PaginationStyles as s } from './Pagination.styles';
 
-interface PaginationProps {
+export interface PaginationProps {
   pageSize: number;
   totalCount: number;
   currentPage: number;

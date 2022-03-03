@@ -8,7 +8,7 @@ export interface BreadcrumbProps {
   siteName: string;
 }
 
-export const Breadcrumb = ({ path, siteName }: BreadcrumbProps): JSX.Element => {
+export const Breadcrumb = ({ path = '', siteName = 'Site' }: BreadcrumbProps): JSX.Element => {
   const [copied, setCopied] = useState(false);
   function copyToClipboard(path: string): void {
     setCopied(true);

@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { PageContactCard } from './contactCard';
+import { PageContactCard, PageContactCardProps } from './contactCard';
 import * as ContactCardStories from '../../components/ContactCard/ContactCard.stories';
 
 export default {
@@ -9,9 +9,9 @@ export default {
     layout: 'fullscreen',
   },
   component: PageContactCard,
-} as ComponentMeta<typeof PageContactCard>;
+};
 
-const Template: ComponentStory<typeof PageContactCard> = (args) => <PageContactCard {...args} />;
+const Template: Story<PageContactCardProps> = (args) => <PageContactCard {...args} />;
 
 export const Jason = Template.bind({});
 Jason.args = {
@@ -31,4 +31,3 @@ Jake.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

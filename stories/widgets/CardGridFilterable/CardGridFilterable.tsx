@@ -5,7 +5,7 @@ import { CardGrid } from '../../components/CardGrid/CardGrid';
 
 import { CardGridFilterableStyles as s } from './CardGridFilterable.styles';
 
-interface CardGridFilterableProps {
+export interface CardGridFilterableProps {
   cards: CardProps[];
 }
 

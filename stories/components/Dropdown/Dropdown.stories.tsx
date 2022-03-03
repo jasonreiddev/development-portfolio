@@ -41,13 +41,6 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {
-    text: 'Actions',
-    icon: 1,
-    active: true,
-    fullWidth: false,
-    dropdownItemGroups: dropdownItemGroups,
-  },
   argTypes: {
     icon: { control: { type: 'select', options: Icon } },
   },
@@ -55,10 +48,22 @@ export default {
 
 const Template: Story<DropdownProps> = (args: DropdownProps) => <Dropdown {...args} />;
 
-export const Default = Template.bind({});
+export const Actions = Template.bind({});
+Actions.args = {
+  text: 'Actions',
+  icon: 1,
+  active: true,
+  fullWidth: false,
+  dropdownItemGroups: dropdownItemGroups,
+};
 
 export const FullWidth = Template.bind({});
-
 FullWidth.args = {
+  text: 'Actions',
+  icon: 1,
+  active: true,
   fullWidth: true,
+  dropdownItemGroups: dropdownItemGroups,
 };
+
+export const Minimum = Template.bind({});

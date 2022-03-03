@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { LikeStyles as s } from './Like.styles';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
-interface LikeProps {
+export interface LikeProps {
   getLikesDB: () => number;
   updateLikesDB: (likes: number) => void;
   liked: boolean;

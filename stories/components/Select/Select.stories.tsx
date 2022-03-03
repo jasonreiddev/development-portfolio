@@ -17,3 +17,5 @@ const Template: Story = () => {
 };
 
 export const Default = Template.bind({});
+
+export const Minimum = Template.bind({});

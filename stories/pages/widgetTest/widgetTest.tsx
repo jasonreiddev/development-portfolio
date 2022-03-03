@@ -16,7 +16,7 @@ import { PathBreadcrumb } from '../../widgets/PathBreadcrumb/PathBreadcrumb';
 // import { Share } from '../../widgets/Share/Share'; // layout
 import { TextCard } from '../../widgets/TextCard/TextCard';
 
-interface WidgetTestProps {
+export interface WidgetTestProps {
   text: string;
 }
 

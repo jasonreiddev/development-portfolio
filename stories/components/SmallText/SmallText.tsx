@@ -1,6 +1,6 @@
 import { TextStyles as s } from './SmallText.styles';
 
-interface SmallTextProps {
+export interface SmallTextProps {
   text?: string;
 }
 

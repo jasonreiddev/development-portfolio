@@ -2,7 +2,7 @@ import { MdLink } from 'react-icons/md';
 
 import { ExternalLinkStyles as s } from './ExternalLink.styles';
 
-interface ExternalLinkProps {
+export interface ExternalLinkProps {
   to?: string;
   text?: string;
 }

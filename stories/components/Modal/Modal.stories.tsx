@@ -8,14 +8,16 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {
-    title: 'Title',
-    subtitle: 'Subtitle',
-    children: 'Children',
-    active: true,
-  },
 };
 
 const Template: Story<ModalProps> = (args: ModalProps) => <Modal {...args} />;
 
-export const Default = Template.bind({});
+export const PlaceHolder = Template.bind({});
+PlaceHolder.args = {
+  title: 'Title',
+  subtitle: 'Subtitle',
+  children: 'Children',
+  active: true,
+};
+
+export const Minimum = Template.bind({});

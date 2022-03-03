@@ -2,7 +2,7 @@ import { MdMail, MdLogout, MdRefresh, MdSearch, MdCircle } from 'react-icons/md'
 
 import { IconButtonStyles as s } from './IconButton.styles';
 
-interface IconButtonProps {
+export interface IconButtonProps {
   icon: Icon;
   active?: boolean;
   primary?: boolean;

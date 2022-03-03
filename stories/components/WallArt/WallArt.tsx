@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { WallArtStyles as s } from './WallArt.styles';
 
-interface WallArtProps {
+export interface WallArtProps {
   src?: string;
   alt?: string;
   caption?: string;

@@ -1,19 +1,20 @@
-import { ReactNode } from 'react';
-import { Meta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
 import { AccountDropdown, AccountDropdownProps } from './AccountDropdown';
 
-const meta: Meta<AccountDropdownProps> = {
+export default {
   title: 'Widgets/Account Dropdown',
   component: AccountDropdown,
   parameters: {
     layout: 'fullscreen',
   },
-  args: {
-    username: 'John',
-  },
 };
 
-export default meta;
+const Template: Story<AccountDropdownProps> = (args) => <AccountDropdown {...args} />;
 
-export const Default = (args: AccountDropdownProps): ReactNode => <AccountDropdown {...args} />;
+export const LotsOfResults = Template.bind({});
+LotsOfResults.args = {
+  username: 'John',
+};
+
+export const Minimum = Template.bind({});

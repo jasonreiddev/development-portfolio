@@ -1,11 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Header } from './Header';
+import { Header, HeaderProps } from './Header';
 
 export default {
   title: 'Widgets/Header',
   component: Header,
-} as ComponentMeta<typeof Header>;
+};
 
 const menuLinks = [
   {
@@ -19,7 +19,7 @@ const menuLinks = [
   },
 ];
 
-const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
+const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 
 export const Home = Template.bind({});
 Home.args = {
@@ -34,4 +34,3 @@ Projects.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

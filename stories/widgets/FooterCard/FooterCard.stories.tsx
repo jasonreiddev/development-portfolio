@@ -1,13 +1,13 @@
-import { ComponentStory } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { FooterCard } from './FooterCard';
+import { FooterCard, FooterCardProps } from './FooterCard';
 
 export default {
   title: 'Widgets/FooterCard',
   component: FooterCard,
 };
 
-const Template: ComponentStory<typeof FooterCard> = (args) => <FooterCard {...args} />;
+const Template: Story<FooterCardProps> = (args) => <FooterCard {...args} />;
 
 export const Jason = Template.bind({});
 Jason.args = {
@@ -15,4 +15,3 @@ Jason.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

@@ -10,3 +10,5 @@ export default {
 const Template: Story = () => <Footer />;
 
 export const Default = Template.bind({});
+
+export const Minimum = Template.bind({});

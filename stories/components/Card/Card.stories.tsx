@@ -21,3 +21,5 @@ Portfolio.args = {
   text: `Hi, I'm Jason Reid, a software developer from Yorkshire. I started my software development career in January of 2019 as an apprentice at Bradford Council and am now a support developer at NetConstruct. I am currently working as a CRO Frontend Developer at WMG Agency & Equation Digital on secondment.`,
   tags: ['Development', 'Portfolio', 'React', 'Gatsby'],
 };
+
+export const Minimum = Template.bind({});

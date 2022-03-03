@@ -1,6 +1,6 @@
-import { ComponentStory } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { CardGridFilterable } from './CardGridFilterable';
+import { CardGridFilterable, CardGridFilterableProps } from './CardGridFilterable';
 import { CardProps } from '../../components/Card/Card';
 
 export default {
@@ -8,9 +8,7 @@ export default {
   component: CardGridFilterable,
 };
 
-const Template: ComponentStory<typeof CardGridFilterable> = (args) => (
-  <CardGridFilterable {...args} />
-);
+const Template: Story<CardGridFilterableProps> = (args) => <CardGridFilterable {...args} />;
 
 export const CardData: CardProps[] = [
   {
@@ -60,4 +58,3 @@ Cards.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

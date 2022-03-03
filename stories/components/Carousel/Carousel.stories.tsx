@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Carousel } from './Carousel';
+import { Carousel, CarouselProps } from './Carousel';
 
 export default {
   title: 'Components/Carousel',
   component: Carousel,
-} as ComponentMeta<typeof Carousel>;
+};
 
-const Template: ComponentStory<typeof Carousel> = (args) => <Carousel {...args} />;
+const Template: Story<CarouselProps> = (args) => <Carousel {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -18,4 +18,3 @@ Primary.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

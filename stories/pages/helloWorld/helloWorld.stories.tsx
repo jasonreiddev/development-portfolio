@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { HelloWorld } from './helloWorld';
+import { HelloWorld, HelloWorldProps } from './helloWorld';
 
 export default {
   title: 'Pages/Hello World!',
@@ -8,9 +8,9 @@ export default {
     layout: 'fullscreen',
   },
   component: HelloWorld,
-} as ComponentMeta<typeof HelloWorld>;
+};
 
-const Template: ComponentStory<typeof HelloWorld> = (args) => <HelloWorld {...args} />;
+const Template: Story<HelloWorldProps> = (args) => <HelloWorld {...args} />;
 
 export const JustSayingHelloWorld = Template.bind({});
 JustSayingHelloWorld.args = {
@@ -18,4 +18,3 @@ JustSayingHelloWorld.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

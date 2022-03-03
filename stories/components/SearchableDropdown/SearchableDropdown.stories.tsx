@@ -9,7 +9,6 @@ const callbackFunction = (chosenOptions: string[]): void => {
 export default {
   component: SearchableDropdown,
   title: 'Components/Searchable Dropdown',
-  args: {},
   parameters: {
     layout: 'fullscreen',
   },
@@ -26,3 +25,5 @@ export const LotsOfResults = Template.bind({});
 LotsOfResults.args = {
   searchFieldCallback: callbackFunction,
 };
+
+export const Minimum = Template.bind({});

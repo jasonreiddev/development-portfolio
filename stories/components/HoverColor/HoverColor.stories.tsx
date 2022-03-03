@@ -1,13 +1,13 @@
-import { ComponentStory } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { HoverColor, Icon } from './HoverColor';
+import { HoverColor, HoverColorProps, Icon } from './HoverColor';
 
 export default {
   title: 'Components/Hover Color',
   component: HoverColor,
 };
 
-const Template: ComponentStory<typeof HoverColor> = (args) => <HoverColor {...args} />;
+const Template: Story<HoverColorProps> = (args) => <HoverColor {...args} />;
 
 export const LogOut = Template.bind({});
 LogOut.args = {
@@ -24,4 +24,3 @@ Mail.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

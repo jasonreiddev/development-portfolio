@@ -2,7 +2,7 @@ import { MdShare } from 'react-icons/md';
 
 import { ShareStyles as s } from './Share.styles';
 
-interface ShareProps {
+export interface ShareProps {
   text?: string;
   shareText?: string;
   shareUrl?: string;

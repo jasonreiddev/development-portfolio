@@ -1,6 +1,6 @@
-import { ComponentStory } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Layout } from './Layout';
+import { Layout, LayoutProps } from './Layout';
 
 export default {
   title: 'Layout',
@@ -22,7 +22,7 @@ const menuLinks = [
   },
 ];
 
-const Template: ComponentStory<typeof Layout> = (args) => <Layout {...args} />;
+const Template: Story<LayoutProps> = (args) => <Layout {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -40,4 +40,3 @@ Loading.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

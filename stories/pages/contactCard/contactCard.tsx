@@ -1,7 +1,7 @@
 import { ContactCardStyles as s } from './contactCard.styles';
 import { ContactCard, ContactCardProps } from '../../components/ContactCard/ContactCard';
 
-interface PageContactCardProps extends ContactCardProps {
+export interface PageContactCardProps extends ContactCardProps {
   backgroundColor: string;
 }
 

@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { LoginForm } from './LoginForm';
+import { LoginForm, LoginFormProps } from './LoginForm';
 
 export default {
   title: 'Widgets/Login Form',
   component: LoginForm,
-} as ComponentMeta<typeof LoginForm>;
+};
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+const Template: Story<LoginFormProps> = (args) => <LoginForm {...args} />;
 
 export const Email = Template.bind({});
 Email.args = {
@@ -34,4 +34,3 @@ UsernameShowPassword.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Landing } from './landing';
+import { Landing, LandingProps } from './landing';
 
 export default {
   title: 'Pages/Landing',
@@ -8,9 +8,9 @@ export default {
     layout: 'fullscreen',
   },
   component: Landing,
-} as ComponentMeta<typeof Landing>;
+};
 
-const Template: ComponentStory<typeof Landing> = (args) => <Landing {...args} />;
+const Template: Story<LandingProps> = (args) => <Landing {...args} />;
 
 export const YarnStorybook = Template.bind({});
 
@@ -20,4 +20,3 @@ StorybookUrl.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

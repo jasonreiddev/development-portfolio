@@ -11,7 +11,7 @@ export interface Post {
   excerpt: string;
 }
 
-interface PostsProps {
+export interface PostsProps {
   posts: Post[];
 }
 

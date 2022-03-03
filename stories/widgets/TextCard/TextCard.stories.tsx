@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { TextCard } from './TextCard';
+import { TextCard, TextCardProps } from './TextCard';
 
 export default {
   title: 'Widgets/Text Card',
   component: TextCard,
-} as ComponentMeta<typeof TextCard>;
+};
 
-const Template: ComponentStory<typeof TextCard> = (args) => <TextCard {...args} />;
+const Template: Story<TextCardProps> = (args) => <TextCard {...args} />;
 
 export const HelloWorld = Template.bind({});
 HelloWorld.args = {
@@ -21,4 +21,3 @@ HelloWorldFitContent.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

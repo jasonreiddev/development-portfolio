@@ -9,7 +9,7 @@ import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
 
-interface LayoutProps {
+export interface LayoutProps {
   title?: string;
   menuLinks: Links[];
   likesMockDBValue: number;

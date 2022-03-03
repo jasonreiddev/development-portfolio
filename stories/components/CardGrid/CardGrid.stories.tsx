@@ -17,3 +17,5 @@ export const Portfolio = Template.bind({});
 Portfolio.args = {
   cards: CardData,
 };
+
+export const Minimum = Template.bind({});

@@ -8,7 +8,7 @@ export interface Links {
   nameOverrideNav?: string;
 }
 
-interface HeaderProps {
+export interface HeaderProps {
   user?: Record<string, never>;
   onLogin?: () => void;
   onLogout?: () => void;

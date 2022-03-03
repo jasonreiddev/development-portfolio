@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 import { PathBreadcrumb } from './PathBreadcrumb';
 
 export default {
@@ -10,4 +8,4 @@ export default {
   },
 };
 
-export const Default = (): ReactNode => <PathBreadcrumb />;
+export const Default = (): JSX.Element => <PathBreadcrumb />;

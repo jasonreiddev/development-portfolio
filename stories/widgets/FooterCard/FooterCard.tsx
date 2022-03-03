@@ -3,7 +3,7 @@ import { AiFillLinkedin, AiOutlineTwitter, AiFillGithub } from 'react-icons/ai';
 import { SmallText } from '../../components/SmallText/SmallText';
 import { FooterCardStyles as s } from './FooterCard.styles';
 
-interface FooterCardProps {
+export interface FooterCardProps {
   text?: string;
 }
 

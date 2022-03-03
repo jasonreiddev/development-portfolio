@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { WallArt } from './WallArt';
+import { WallArt, WallArtProps } from './WallArt';
 
 export default {
   title: 'Components/Wall Art',
@@ -8,9 +8,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof WallArt>;
+};
 
-const Template: ComponentStory<typeof WallArt> = (args) => <WallArt {...args} />;
+const Template: Story<WallArtProps> = (args) => <WallArt {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -26,4 +26,3 @@ SrcOnly.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

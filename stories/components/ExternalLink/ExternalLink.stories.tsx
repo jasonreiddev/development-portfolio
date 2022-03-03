@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { ExternalLink } from './ExternalLink';
+import { ExternalLink, ExternalLinkProps } from './ExternalLink';
 
 export default {
   title: 'Components/External Link',
   component: ExternalLink,
-} as ComponentMeta<typeof ExternalLink>;
+};
 
-const Template: ComponentStory<typeof ExternalLink> = (args) => <ExternalLink {...args} />;
+const Template: Story<ExternalLinkProps> = (args) => <ExternalLink {...args} />;
 
 export const Self = Template.bind({});
 Self.args = {
@@ -15,11 +15,10 @@ Self.args = {
   text: 'This Story',
 };
 
-export const Story = Template.bind({});
-Story.args = {
+export const StoryBook = Template.bind({});
+StoryBook.args = {
   to: 'http://localhost:6006/?path=/story/example-introduction--page',
   text: 'Welcome to Storybook',
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

@@ -40,13 +40,6 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  args: {
-    chatName: 'Nancy',
-    icon: 1,
-    active: true,
-    fullWidth: false,
-    conversationItemGroups: conversationItemGroups,
-  },
   argTypes: {
     icon: { control: { type: 'select', options: Icon } },
   },
@@ -54,10 +47,22 @@ export default {
 
 const Template: Story<ConversationProps> = (args: ConversationProps) => <Conversation {...args} />;
 
-export const Default = Template.bind({});
+export const Nancy = Template.bind({});
+Nancy.args = {
+  chatName: 'Nancy',
+  icon: 1,
+  active: true,
+  fullWidth: false,
+  conversationItemGroups: conversationItemGroups,
+};
 
 export const FullWidth = Template.bind({});
-
 FullWidth.args = {
+  chatName: 'Nancy',
+  icon: 1,
+  active: true,
   fullWidth: true,
+  conversationItemGroups: conversationItemGroups,
 };
+
+export const Minimum = Template.bind({});
