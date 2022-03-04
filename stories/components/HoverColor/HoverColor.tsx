@@ -2,7 +2,7 @@ import { MdMail, MdLogout, MdRefresh, MdSearch, MdCircle } from 'react-icons/md'
 
 import { HoverColorStyles as s } from './HoverColor.styles';
 
-interface HoverColorProps {
+export interface HoverColorProps {
   text?: string;
   icon?: Icon;
   iconAlt?: string;

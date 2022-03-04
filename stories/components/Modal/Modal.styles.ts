@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { from, Device } from '../../../helpers/media';
 
 const Modal = styled.div<{ active: boolean }>`

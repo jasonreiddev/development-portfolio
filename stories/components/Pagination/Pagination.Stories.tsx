@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Pagination } from './Pagination';
+import { Pagination, PaginationProps } from './Pagination';
 
 export default {
   title: 'Components/Pagination',
   component: Pagination,
-} as ComponentMeta<typeof Pagination>;
+};
 
-const Template: ComponentStory<typeof Pagination> = (args) => <Pagination {...args} />;
+const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
 
 export const FirstProjectPage = Template.bind({});
 FirstProjectPage.args = {
@@ -26,4 +26,3 @@ LastProjectPage.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

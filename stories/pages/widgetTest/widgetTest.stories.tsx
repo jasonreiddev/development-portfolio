@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { WidgetTest } from './widgetTest';
+import { WidgetTest, WidgetTestProps } from './widgetTest';
 
 export default {
   title: 'Pages/Widget Test',
@@ -8,9 +8,9 @@ export default {
     layout: 'fullscreen',
   },
   component: WidgetTest,
-} as ComponentMeta<typeof WidgetTest>;
+};
 
-const Template: ComponentStory<typeof WidgetTest> = (args) => <WidgetTest {...args} />;
+const Template: Story<WidgetTestProps> = (args) => <WidgetTest {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -18,4 +18,3 @@ Default.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

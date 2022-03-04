@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { ContactCard } from './ContactCard';
+import { ContactCard, ContactCardProps } from './ContactCard';
 
 export default {
   title: 'Components/Contact Card',
   component: ContactCard,
-} as ComponentMeta<typeof ContactCard>;
+};
 
-const Template: ComponentStory<typeof ContactCard> = (args) => <ContactCard {...args} />;
+const Template: Story<ContactCardProps> = (args) => <ContactCard {...args} />;
 
 export const Jason = Template.bind({});
 Jason.args = {
@@ -24,4 +24,3 @@ Jake.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

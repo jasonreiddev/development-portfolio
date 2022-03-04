@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { CustomKerning } from './CustomKerning';
+import { CustomKerning, CustomKerningProps } from './CustomKerning';
 
 export default {
-  title: 'Components/CustomKerning',
+  title: 'Components/Custom Kerning',
   component: CustomKerning,
-} as ComponentMeta<typeof CustomKerning>;
+};
 
-const Template: ComponentStory<typeof CustomKerning> = (args) => <CustomKerning {...args} />;
+const Template: Story<CustomKerningProps> = (args) => <CustomKerning {...args} />;
 
 export const Hello = Template.bind({});
 Hello.args = {
@@ -36,4 +36,3 @@ JasonReid.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

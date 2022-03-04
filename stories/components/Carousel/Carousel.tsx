@@ -8,7 +8,7 @@ interface Image {
   altText?: string;
 }
 
-interface CarouselProps {
+export interface CarouselProps {
   images: Image[];
 }
 

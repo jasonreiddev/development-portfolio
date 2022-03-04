@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FaCode } from 'react-icons/fa';
 import { HiTerminal } from 'react-icons/hi';
 import { IoBrowsers } from 'react-icons/io5';
@@ -5,24 +6,23 @@ import { IoBrowsers } from 'react-icons/io5';
 import { Header, Links } from '../widgets/Header/Header';
 import { Share } from '../widgets/Share/Share';
 import { Like } from '../widgets/Like/Like';
-
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
-import { useState } from 'react';
-interface LayoutProps {
-  children?: JSX.Element;
+
+export interface LayoutProps {
   title?: string;
   menuLinks: Links[];
   likesMockDBValue: number;
   loading?: boolean;
+  children?: JSX.Element;
 }
 
 export const Layout = ({
-  children,
   title,
   menuLinks,
   likesMockDBValue = 0,
   loading = false,
+  children,
 }: LayoutProps): JSX.Element => {
   // Mock DB shenanigans
   const [LikesMockDBValue, setLikesMockDBValue] = useState(likesMockDBValue);

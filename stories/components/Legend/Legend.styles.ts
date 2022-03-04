@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+
 import { Device, from } from '../../../helpers/media';
-import { Props } from './Legend';
+import { LegendProps } from './Legend';
 
 const Container = styled.div`
   display: flex;
@@ -20,13 +21,13 @@ const LegendPair = styled.div`
   margin-right: 0.5em;
 `;
 
-const Key = styled.span<Props>`
+const Key = styled.span<LegendProps>`
   height: 1.5rem;
   width: 1.5rem;
   margin-right: 5px;
   border-radius: 50%;
-  background-color: ${(props) => {
-    switch (props.level) {
+  background-color: ${(p) => {
+    switch (p.level) {
       case 'Primary': {
         return 'var(--color-primary)';
       }

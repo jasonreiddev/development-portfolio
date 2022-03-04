@@ -1,5 +1,6 @@
-import Conversation, { ConversationProps, Icon, ConversationItem } from './Conversation';
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
+
+import { Conversation, ConversationProps, Icon, ConversationItem } from './Conversation';
 
 const goodMorning: ConversationItem[] = [
   {
@@ -33,32 +34,35 @@ const goodNight: ConversationItem[] = [
 
 const conversationItemGroups: ConversationItem[][] = [goodMorning, goodNight];
 
-const meta: Meta<ConversationProps> = {
+export default {
   title: 'Components/Conversation',
   component: Conversation,
   parameters: {
     layout: 'fullscreen',
-  },
-  args: {
-    chatName: 'Nancy',
-    icon: 1,
-    active: true,
-    fullWidth: false,
-    conversationItemGroups: conversationItemGroups,
   },
   argTypes: {
     icon: { control: { type: 'select', options: Icon } },
   },
 };
 
-export default meta;
-
 const Template: Story<ConversationProps> = (args: ConversationProps) => <Conversation {...args} />;
 
-export const Default = Template.bind({});
+export const Nancy = Template.bind({});
+Nancy.args = {
+  chatName: 'Nancy',
+  icon: 1,
+  active: true,
+  fullWidth: false,
+  conversationItemGroups: conversationItemGroups,
+};
 
 export const FullWidth = Template.bind({});
-
 FullWidth.args = {
+  chatName: 'Nancy',
+  icon: 1,
+  active: true,
   fullWidth: true,
+  conversationItemGroups: conversationItemGroups,
 };
+
+export const Minimum = Template.bind({});

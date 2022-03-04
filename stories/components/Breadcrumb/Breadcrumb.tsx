@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { useState } from 'react';
 import { MdCheckBox, MdCopyAll } from 'react-icons/md';
 
 import { BreadcrumbStyles as s } from './Breadcrumb.styles';
@@ -8,7 +8,7 @@ export interface BreadcrumbProps {
   siteName: string;
 }
 
-export const Breadcrumb: FunctionComponent<BreadcrumbProps> = ({ path, siteName }) => {
+export const Breadcrumb = ({ path = '', siteName = 'Site' }: BreadcrumbProps): JSX.Element => {
   const [copied, setCopied] = useState(false);
   function copyToClipboard(path: string): void {
     setCopied(true);
@@ -58,5 +58,3 @@ export const Breadcrumb: FunctionComponent<BreadcrumbProps> = ({ path, siteName 
     </s.Breadcrumb>
   );
 };
-
-export default Breadcrumb;

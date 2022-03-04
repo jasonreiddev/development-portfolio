@@ -1,13 +1,12 @@
-import { ComponentStory } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Posts } from './Posts';
+import { Posts, PostsProps } from './Posts';
 
 export default {
   title: 'Components/Posts',
   component: Posts,
 };
 
-const Template: ComponentStory<typeof Posts> = (args) => <Posts {...args} />;
+const Template: Story<PostsProps> = (args) => <Posts {...args} />;
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

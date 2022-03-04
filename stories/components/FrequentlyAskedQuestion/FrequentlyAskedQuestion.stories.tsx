@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { FrequentlyAskedQuestion } from './FrequentlyAskedQuestion';
+import { FrequentlyAskedQuestion, FrequentlyAskedQuestionProps } from './FrequentlyAskedQuestion';
 
 export default {
   title: 'Components/Frequently Asked Question',
   component: FrequentlyAskedQuestion,
-} as ComponentMeta<typeof FrequentlyAskedQuestion>;
+};
 
-const Template: ComponentStory<typeof FrequentlyAskedQuestion> = (args) => (
+const Template: Story<FrequentlyAskedQuestionProps> = (args) => (
   <FrequentlyAskedQuestion {...args} />
 );
 
@@ -30,4 +30,3 @@ JS.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

@@ -1,7 +1,6 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { MdClose, MdAccountCircle } from 'react-icons/md';
+
 import { ModalStyles as s } from './Modal.styles';
-import { MdClose } from 'react-icons/md';
-import { MdAccountCircle } from 'react-icons/md';
 
 export enum Icon {
   None,
@@ -19,7 +18,7 @@ export interface ModalProps {
   modalRef: React.Ref<HTMLElement>;
 }
 
-const renderIcon = (icon: Icon): ReactNode => {
+const renderIcon = (icon: Icon): JSX.Element | undefined => {
   switch (icon) {
     case Icon.None:
       return;
@@ -28,7 +27,7 @@ const renderIcon = (icon: Icon): ReactNode => {
   }
 };
 
-export const Modal: FunctionComponent<ModalProps> = ({
+export const Modal = ({
   openText,
   openIcon,
   title,
@@ -37,7 +36,7 @@ export const Modal: FunctionComponent<ModalProps> = ({
   active,
   toggleActive,
   modalRef,
-}) => {
+}: ModalProps): JSX.Element => {
   return (
     <>
       <s.Mask active={active} />

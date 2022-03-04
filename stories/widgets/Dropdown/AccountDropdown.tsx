@@ -1,4 +1,4 @@
-import { useRef, ReactElement } from 'react';
+import { useRef } from 'react';
 
 import { Dropdown, Icon, DropdownItem } from '../../components/Dropdown/Dropdown';
 import { clickOutside } from '../../../helpers/clickOutside';
@@ -8,7 +8,7 @@ export interface AccountDropdownProps {
   username: string;
 }
 
-export const AccountDropdown = ({ username }: AccountDropdownProps): ReactElement => {
+export const AccountDropdown = ({ username }: AccountDropdownProps): JSX.Element => {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = clickOutside(dropdownRef, false);
   const toggleActive = (): void => setIsActive(!isActive);

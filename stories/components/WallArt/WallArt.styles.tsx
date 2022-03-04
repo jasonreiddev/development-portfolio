@@ -5,13 +5,10 @@ interface WallArtStylesProps {
 }
 
 export const Wrapper = styled.span<WallArtStylesProps>`
-  padding: 8px;
   position: relative;
-  isolation: isolate;
   background: var(--color-base);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
-  border: 0;
 
   img {
     display: block;
@@ -21,7 +18,6 @@ export const Wrapper = styled.span<WallArtStylesProps>`
   .caption {
     position: absolute;
     left: 8px;
-    right: 8px;
     bottom: 8px;
     text-align: center;
     padding: 8px;

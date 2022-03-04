@@ -1,7 +1,7 @@
-import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 
-import InputField from '../InputField/InputField';
+import { InputField } from '../InputField/InputField';
 import { clickOutside } from '../../../helpers/clickOutside';
 import { SearchableDropdownStyles as s } from './SearchableDropdown.styles';
 
@@ -14,15 +14,14 @@ export type SearchableDropdownProps = {
   placeholder: string;
 };
 
-const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
+export const SearchableDropdown = ({
   searchFieldCallback,
   showDropdownOnContainerClick = false,
   values,
   title,
   name,
   placeholder,
-}) => {
-  // eslint-disable-next-line
+}: SearchableDropdownProps): JSX.Element => {
   const [data, setData] = useState<string[]>([]);
   const [search, setSearch] = useState('');
   const [resultCount, setResultCount] = useState(data.length);
@@ -106,5 +105,3 @@ const SearchableDropdown: FunctionComponent<SearchableDropdownProps> = ({
     </s.Container>
   );
 };
-
-export default SearchableDropdown;

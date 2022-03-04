@@ -1,13 +1,11 @@
-import { Meta, Story } from '@storybook/react';
-import ProgressBar, { ProgressBarProps } from './ProgressBar';
+import { Story } from '@storybook/react';
 
-const meta: Meta<ProgressBarProps> = {
+import { ProgressBar, ProgressBarProps } from './ProgressBar';
+
+export default {
   component: ProgressBar,
   title: 'Components/Progress Bar',
-  args: {},
 };
-
-export default meta;
 
 const Template: Story<ProgressBarProps> = (args) => <ProgressBar {...args} />;
 
@@ -28,3 +26,5 @@ Compete.args = {
   progress: 100,
   total: 100,
 };
+
+export const Minimum = Template.bind({});

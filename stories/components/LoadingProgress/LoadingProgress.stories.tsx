@@ -1,21 +1,19 @@
-import { Meta, Story } from '@storybook/react';
-import LoadingProgress, { LoadingProgressProps } from './LoadingProgress';
+import { Story } from '@storybook/react';
 
-const meta: Meta<LoadingProgressProps> = {
+import { LoadingProgress, LoadingProgressProps } from './LoadingProgress';
+
+export default {
   component: LoadingProgress,
   title: 'Components/Loading Progress',
-  args: {},
   parameters: {
     layout: 'centered',
   },
 };
 
-export default meta;
-
 const Template: Story<LoadingProgressProps> = (args) => <LoadingProgress {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Tempo = Template.bind({});
+Tempo.args = {
   log: [
     'Loading Peabody....',
     'Loaded Peabody.',
@@ -27,3 +25,5 @@ Default.args = {
   progress: 50,
   total: 100,
 };
+
+export const Minimum = Template.bind({});

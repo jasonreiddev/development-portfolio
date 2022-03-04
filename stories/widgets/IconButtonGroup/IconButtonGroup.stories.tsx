@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { IconButtonGroup } from './IconButtonGroup';
+import { IconButtonGroup, IconButtonGroupProps } from './IconButtonGroup';
 
 export default {
   title: 'Widgets/Icon Button Group',
@@ -8,9 +8,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof IconButtonGroup>;
+};
 
-const Template: ComponentStory<typeof IconButtonGroup> = (args) => <IconButtonGroup {...args} />;
+const Template: Story<IconButtonGroupProps> = (args) => <IconButtonGroup {...args} />;
 
 export const Large = Template.bind({});
 Large.args = {
@@ -25,4 +25,3 @@ Small.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

@@ -1,12 +1,10 @@
-import { FunctionComponent } from 'react';
-
 import { LegendStyles as s } from './Legend.styles';
 
-export type Props = {
+export type LegendProps = {
   level: 'Primary' | 'Secondary' | 'Tertiary';
 };
 
-const Legend: FunctionComponent = () => {
+export const Legend = (): JSX.Element => {
   return (
     <s.Container>
       <s.LegendPair>
@@ -26,5 +24,3 @@ const Legend: FunctionComponent = () => {
     </s.Container>
   );
 };
-
-export default Legend;

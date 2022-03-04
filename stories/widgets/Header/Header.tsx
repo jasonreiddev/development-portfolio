@@ -1,4 +1,5 @@
 import { Button } from '../../components/Button/Button';
+
 import { HeaderStyles as s } from './Header.styles';
 
 export interface Links {
@@ -7,7 +8,7 @@ export interface Links {
   nameOverrideNav?: string;
 }
 
-interface HeaderProps {
+export interface HeaderProps {
   user?: Record<string, never>;
   onLogin?: () => void;
   onLogout?: () => void;

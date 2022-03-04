@@ -9,6 +9,7 @@ const Wrapper = styled.details`
   box-shadow: var(--box-shadow);
 
   summary {
+    color: var(--color-contrast);
     cursor: pointer;
     padding: 12px 16px;
     outline-offset: 5px;

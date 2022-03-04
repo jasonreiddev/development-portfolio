@@ -1,15 +1,14 @@
-import Breadcrumb, { BreadcrumbProps } from './Breadcrumb';
-import { Meta, Story } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-const meta: Meta<BreadcrumbProps> = {
+import { Breadcrumb, BreadcrumbProps } from './Breadcrumb';
+
+export default {
   title: 'Components/Breadcrumb',
   component: Breadcrumb,
   parameters: {
     layout: 'fullscreen',
   },
 };
-
-export default meta;
 
 const Template: Story<BreadcrumbProps> = (args: BreadcrumbProps) => <Breadcrumb {...args} />;
 
@@ -24,3 +23,5 @@ FormattingText.args = {
   path: '/-requires-trim-/no-trim/---requires---trim---/TestCapitals/projects/%25100%20Decoded/Next.js/?page=3',
   siteName: 'Next.js Component Library',
 };
+
+export const Minimum = Template.bind({});

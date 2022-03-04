@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { ClampText } from './ClampText';
+import { ClampText, ClampTextProps } from './ClampText';
 
 export default {
-  title: 'Components/ClampText',
+  title: 'Components/Clamp Text',
   component: ClampText,
-} as ComponentMeta<typeof ClampText>;
+};
 
-const Template: ComponentStory<typeof ClampText> = (args) => <ClampText {...args} />;
+const Template: Story<ClampTextProps> = (args) => <ClampText {...args} />;
 
 export const Hello = Template.bind({});
 Hello.args = {
@@ -28,4 +28,3 @@ ZeroLines.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

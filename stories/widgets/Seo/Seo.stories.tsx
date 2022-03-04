@@ -1,13 +1,12 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Seo } from './Seo';
+import { Seo, SeoProps } from './Seo';
 
 export default {
   title: 'Widgets/SEO',
   component: Seo,
-} as ComponentMeta<typeof Seo>;
+};
 
-const Template: ComponentStory<typeof Seo> = (args) => <Seo {...args} />;
+const Template: Story<SeoProps> = (args) => <Seo {...args} />;
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

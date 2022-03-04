@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { MdAccountCircle } from 'react-icons/md';
 
 import { DropdownStyles as s } from './Dropdown.styles';
@@ -35,7 +35,7 @@ const renderIcon = (icon: Icon): ReactNode => {
   }
 };
 
-export const Dropdown: FunctionComponent<DropdownProps> = ({
+export const Dropdown = ({
   text,
   icon,
   active,
@@ -44,7 +44,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   toggleActive,
   dropdownRef,
   dropdownItemGroups,
-}) => {
+}: DropdownProps): JSX.Element => {
   return (
     <s.Container fullWidth={fullWidth}>
       <s.Header hasIcon={icon !== 0}>
@@ -82,5 +82,3 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
     </s.Container>
   );
 };
-
-export default Dropdown;

@@ -2,7 +2,7 @@
 // import { useLocation } from '@reach/router';
 // import { graphql, StaticQuery } from 'gatsby';
 
-interface SEOProps {
+export interface SeoProps {
   title?: string;
   //   subTitle?: string;
   //   description?: string;
@@ -10,7 +10,7 @@ interface SEOProps {
   //   content?: string;
 }
 
-export const Seo = ({ title }: SEOProps): JSX.Element => {
+export const Seo = ({ title }: SeoProps): JSX.Element => {
   //const { pathname } = useLocation();
   return (
     <div>{title}</div>

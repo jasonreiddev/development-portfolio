@@ -2,7 +2,7 @@ import { PaginatedPostsStyles as s } from './PaginatedPosts.styles';
 import { Pagination } from '../../components/Pagination/Pagination';
 import { Posts, Post } from '../../components/Posts/Posts';
 
-interface PaginatedPostsProps {
+export interface PaginatedPostsProps {
   posts?: Post[];
   pageSize?: number;
   currentPage?: number;

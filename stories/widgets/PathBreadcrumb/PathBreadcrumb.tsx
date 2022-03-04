@@ -1,7 +1,6 @@
-import { ReactElement } from 'react';
 import { Breadcrumb } from '../../components/Breadcrumb/Breadcrumb';
 
-export const PathBreadcrumb = (): ReactElement => {
+export const PathBreadcrumb = (): JSX.Element => {
   return (
     <>
       {typeof window !== 'undefined' && window.location.pathname !== '/' && (
@@ -13,5 +12,3 @@ export const PathBreadcrumb = (): ReactElement => {
     </>
   );
 };
-
-export default PathBreadcrumb;

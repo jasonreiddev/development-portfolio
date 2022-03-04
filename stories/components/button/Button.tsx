@@ -1,6 +1,6 @@
 import { ButtonStyles as s } from './Button.styles';
 
-interface ButtonProps {
+export interface ButtonProps {
   primary?: boolean;
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';

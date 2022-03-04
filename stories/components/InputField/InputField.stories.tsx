@@ -1,36 +1,31 @@
-import { Meta, Story } from '@storybook/react';
-import InputField, { InputFieldProps } from './InputField';
+import { Story } from '@storybook/react';
 
-const meta: Meta<InputFieldProps> = {
+import { InputField, InputFieldProps } from './InputField';
+
+export default {
   component: InputField,
   title: 'Components/Input Field',
-  args: {
-    title: 'Input',
-    name: 'Input',
-    placeholder: 'Input...',
-    type: 'text',
-  },
   parameters: {
     layout: 'centered',
   },
 };
 
-export default meta;
-
 const Template: Story<InputFieldProps> = (args) => <InputField {...args} />;
 
-export const Default = Template.bind({});
-export const Password = Template.bind({});
-export const NoText = Template.bind({});
+export const Text = Template.bind({});
+Text.args = {
+  title: 'Input',
+  name: 'Input',
+  placeholder: 'Input...',
+  type: 'text',
+};
 
+export const Password = Template.bind({});
 Password.args = {
-  ...Default.args,
   title: 'Password',
+  name: 'Password',
   placeholder: 'Password...',
   type: 'Password',
 };
 
-NoText.args = {
-  ...Default.args,
-  title: '',
-};
+export const Minimum = Template.bind({});

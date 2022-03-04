@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { Share } from './Share';
+import { Share, ShareProps } from './Share';
 
 export default {
   title: 'Widgets/Share',
   component: Share,
-} as ComponentMeta<typeof Share>;
+};
 
-const Template: ComponentStory<typeof Share> = (args) => <Share {...args} />;
+const Template: Story<ShareProps> = (args) => <Share {...args} />;
 
 export const Hello = Template.bind({});
 Hello.args = {
@@ -15,4 +15,3 @@ Hello.args = {
 };
 
 export const Minimum = Template.bind({});
-Minimum.args = {};

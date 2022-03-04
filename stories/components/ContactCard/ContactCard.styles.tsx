@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { clamp } from '../../../helpers/media';
 
 const Card = styled.article`

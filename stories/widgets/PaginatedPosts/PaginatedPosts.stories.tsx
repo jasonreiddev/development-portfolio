@@ -1,13 +1,12 @@
-import { ComponentStory } from '@storybook/react';
+import { Story } from '@storybook/react';
 
-import { PaginatedPosts } from './PaginatedPosts';
+import { PaginatedPosts, PaginatedPostsProps } from './PaginatedPosts';
 
 export default {
   title: 'Widgets/Paginated Posts',
   component: PaginatedPosts,
 };
 
-const Template: ComponentStory<typeof PaginatedPosts> = (args) => <PaginatedPosts {...args} />;
+const Template: Story<PaginatedPostsProps> = (args) => <PaginatedPosts {...args} />;
 
 export const Minimum = Template.bind({});
-Minimum.args = {};
