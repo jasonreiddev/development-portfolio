@@ -7,7 +7,7 @@ import { CardGridFilterableStyles as s } from './CardGridFilterable.styles';
 
 export interface CardGridFilterableProps {
   cards: CardProps[];
-  size: number;
+  size?: number;
 }
 
 interface tag {
