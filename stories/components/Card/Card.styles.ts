@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Device, from } from '../../../helpers/media';
 
 interface CardStylesProps {
-  doubleWidth?: boolean;
+  modifyWidth?: 1 | 2 | 'full';
 }
 
 const Container = styled.a<CardStylesProps>`
@@ -18,12 +18,16 @@ const Container = styled.a<CardStylesProps>`
   background-color: var(--color-primary);
   position: relative;
 
-  @media ${from(Device.MobileLarge)} {
+  
     ${(p) =>
-      p.doubleWidth
+      typeof p.modifyWidth == 'number'
         ? `
-      grid-column: span 2; 
-  `
+        @media ${from(Device.MobileLarge)} {
+      grid-column: span ${p.modifyWidth}; 
+        }
+        `
+        : p.modifyWidth == 'full'
+        ? 'grid-column: 1 / -1;'
         : null}
   }
 
