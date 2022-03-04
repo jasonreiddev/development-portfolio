@@ -12,14 +12,14 @@ export const LoadingProgress = ({ progress, total, log }: LoadingProgressProps):
     <s.Container>
       <s.Spinner />
       <s.Loading>Loading Timebanks....</s.Loading>
-      <s.Progress>
-        <span>{getProgress()}%</span>
-      </s.Progress>
+      {progress && total && (
+        <s.Progress>
+          <span>{getProgress()}%</span>
+        </s.Progress>
+      )}
       <s.Log>
         {getProgress() === 100 && <span>Done.</span>}
-        {log.map((entry, i) => (
-          <span key={'entry_' + i}>{entry}</span>
-        ))}
+        {log && log.map((entry, i) => <span key={'entry_' + i}>{entry}</span>)}
       </s.Log>
     </s.Container>
   );

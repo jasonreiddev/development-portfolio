@@ -14,7 +14,7 @@ export const WallArt = ({ src, alt, caption, width }: WallArtProps): JSX.Element
   const height = width * aspectRatio;
   return (
     <s.Wrapper>
-      <Image src={`${src}`} alt={alt} width={width} height={height} />
+      {src && <Image src={`${src}`} alt={alt} width={width} height={height} />}
       {caption ? <p className="caption">{caption}</p> : null}
     </s.Wrapper>
   );

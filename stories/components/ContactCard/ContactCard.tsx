@@ -11,7 +11,7 @@ export interface ContactCardProps {
 export const ContactCard = ({ avatarSrc, name, email }: ContactCardProps): JSX.Element => {
   return (
     <s.Card>
-      <Image alt="" src={avatarSrc} className="avatar" />
+      {avatarSrc && <Image alt="" src={avatarSrc} className="avatar" />}
       <h2>{name}</h2>
       <p>{email}</p>
     </s.Card>
