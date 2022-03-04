@@ -15,4 +15,9 @@ Cards.args = {
   ...CardGridStories.Cards.args,
 };
 
+export const LargeCards = Template.bind({});
+LargeCards.args = {
+  ...CardGridStories.LargeCards.args,
+};
+
 export const Minimum = Template.bind({});

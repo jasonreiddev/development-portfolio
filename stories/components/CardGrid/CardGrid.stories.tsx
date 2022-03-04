@@ -14,6 +14,7 @@ const Template: Story<CardGridProps> = (args: CardGridProps) => <CardGrid {...ar
 
 export const Cards = Template.bind({});
 Cards.args = {
+  size: 200,
   cards: [
     {
       url: 'https://jasonreid.dev/',
@@ -63,6 +64,12 @@ Cards.args = {
       modifyWidth: 'full',
     },
   ],
+};
+
+export const LargeCards = Template.bind({});
+LargeCards.args = {
+  ...Cards.args,
+  size: 300,
 };
 
 export const Minimum = Template.bind({});

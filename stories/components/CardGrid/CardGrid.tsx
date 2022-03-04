@@ -4,9 +4,10 @@ import { Card, CardProps } from '../Card/Card';
 export interface CardGridProps {
   cards: CardProps[];
   onTagClick: (text: string) => void;
+  size?: number;
 }
 
-export const CardGrid = ({ cards, onTagClick }: CardGridProps): JSX.Element => {
+export const CardGrid = ({ cards, onTagClick, size = 200 }: CardGridProps): JSX.Element => {
   cards.sort(function (a, b) {
     // by desc modify width
     a.modifyWidth = typeof b.modifyWidth == undefined ? 1 : a.modifyWidth;
@@ -23,7 +24,7 @@ export const CardGrid = ({ cards, onTagClick }: CardGridProps): JSX.Element => {
   });
 
   return (
-    <s.Container size={200}>
+    <s.Container size={size}>
       {cards &&
         cards.map((card, index) => {
           return (
