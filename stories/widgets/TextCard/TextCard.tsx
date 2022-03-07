@@ -2,7 +2,7 @@ import { TextCardStyles as s } from './TextCard.styles';
 
 export interface TextCardProps {
   text?: string;
-  children?: JSX.Element;
+  children?: JSX.Element | string;
   fitContent?: boolean;
 }
 

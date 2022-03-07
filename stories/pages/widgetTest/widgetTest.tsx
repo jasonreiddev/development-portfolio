@@ -3,7 +3,7 @@ import { WidgetTestStyles } from './widgetTest.styles';
 
 // List all widgets, comment out if not required
 import { CardGridFilterable } from '../../widgets/CardGridFilterable/CardGridFilterable';
-import { CardData } from '../../widgets/CardGridFilterable/CardGridFilterable.stories';
+import * as CardGridStories from '../../components/CardGrid/CardGrid.stories';
 import { AccountDropdown } from '../../widgets/Dropdown/AccountDropdown';
 // import { FooterCard } from '../../widgets/FooterCard/FooterCard'; // layout
 // import { Header } from '../../widgets/Header/Header'; // layout
@@ -34,9 +34,11 @@ export const WidgetTest = ({ text }: WidgetTestProps): JSX.Element => (
       <TextCard>
         <PathBreadcrumb />
       </TextCard>
-      <TextCard>
-        <CardGridFilterable cards={CardData} />
-      </TextCard>
+      {CardGridStories.Cards.args?.cards && (
+        <TextCard>
+          <CardGridFilterable cards={CardGridStories.Cards.args.cards} />
+        </TextCard>
+      )}
     </WidgetTestStyles>
   </Layout>
 );

@@ -6,7 +6,7 @@ import { SelectStyles as s } from './Select.styles';
 export type SelectProps = {
   value?: string;
   onChange: ChangeEventHandler<HTMLSelectElement>;
-  children?: JSX.Element;
+  children?: JSX.Element | string;
 };
 
 export const Select = ({ value, onChange, children }: SelectProps): JSX.Element => {

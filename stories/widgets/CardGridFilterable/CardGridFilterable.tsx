@@ -7,6 +7,7 @@ import { CardGridFilterableStyles as s } from './CardGridFilterable.styles';
 
 export interface CardGridFilterableProps {
   cards: CardProps[];
+  size?: number;
 }
 
 interface tag {
@@ -15,7 +16,7 @@ interface tag {
   active: boolean;
 }
 
-export const CardGridFilterable = ({ cards = [] }: CardGridFilterableProps): JSX.Element => {
+export const CardGridFilterable = ({ cards = [], size }: CardGridFilterableProps): JSX.Element => {
   const tags: tag[] = [];
 
   cards.forEach((card) => {
@@ -78,7 +79,7 @@ export const CardGridFilterable = ({ cards = [] }: CardGridFilterableProps): JSX
           </s.Tag>
         ))}
       </s.TagsContainer>
-      <CardGrid cards={stateCards} onTagClick={tagClick} />
+      <CardGrid cards={stateCards} size={size} onTagClick={tagClick} />
     </s.Wrapper>
   );
 };

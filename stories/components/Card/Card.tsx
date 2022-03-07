@@ -10,7 +10,7 @@ export interface CardProps {
   alt?: string;
   text?: string;
   tags?: string[];
-  doubleWidth?: boolean;
+  modifyWidth?: 1 | 2 | 'full';
   onTagClick?: (text: string) => void;
 }
 
@@ -21,7 +21,7 @@ export const Card = ({
   alt,
   text,
   tags,
-  doubleWidth,
+  modifyWidth,
   onTagClick,
 }: CardProps): JSX.Element => {
   if (tags != undefined) {
@@ -35,7 +35,7 @@ export const Card = ({
   }
 
   return (
-    <s.Container href={url} doubleWidth={doubleWidth}>
+    <s.Container href={url} modifyWidth={modifyWidth}>
       {image && <Image src={image} alt={alt} />}
       {tags && (
         <s.TagsContainer>
