@@ -14,7 +14,7 @@ export interface LayoutProps {
   menuLinks: Links[];
   likesMockDBValue: number;
   loading?: boolean;
-  children?: JSX.Element;
+  children?: JSX.Element | string;
 }
 
 export const Layout = ({
