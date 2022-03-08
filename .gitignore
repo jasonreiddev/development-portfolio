@@ -39,3 +39,12 @@ yarn-error.log*
 storybook-static/
 
 .vercel
+
+.yarn/
+
+
+dist/apps/nextjsmono/.next/
+
+projects/component-library/node_modules/
+
+projects/component-library/.next/
