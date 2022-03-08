@@ -7,8 +7,14 @@
   ],
   "scripts": {
     "cl": "yarn workspace component-library start-storybook -p 6006",
-    "cl:lint": "yarn workspace component-library next lint",
+    "cl:lint": "yarn workspace component-library lint",
     "cl:build": "yarn workspace component-library build-storybook",
-    "cl:serve": "npx http-server ./projects/component-library/storybook-static"
+    "cl:serve": "npx http-server ./projects/component-library/storybook-static",
+    "pf": "yarn workspace portfolio dev",
+    "pf:lint": "yarn workspace portfolio lint",
+    "pf:build": "yarn workspace portfolio build",
+    "pf:start": "npx http-server start",
+    "lint": "yarn cl:lint && yarn pf:lint",
+    "lint-parallel": "yarn cl:lint & yarn pf:lint"
   }
 }
