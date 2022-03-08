@@ -7,10 +7,8 @@
   ],
   "scripts": {
     "cl": "yarn workspace component-library start-storybook -p 6006",
-    "cl:dev": "yarn workspace component-library next dev",
-    "cl:build": "yarn workspace component-library next build",
-    "cl:start": "yarn workspace component-library next start",
     "cl:lint": "yarn workspace component-library next lint",
-    "cl:storybook": "yarn workspace component-library start-storybook -p 6006"
+    "cl:build": "yarn workspace component-library build-storybook",
+    "cl:serve": "npx http-server ./projects/component-library/storybook-static"
   }
 }
