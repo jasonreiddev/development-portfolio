@@ -40,11 +40,14 @@ storybook-static/
 
 .vercel
 
-.yarn/
-
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
 
 dist/apps/nextjsmono/.next/
 
 projects/component-library/node_modules/
 
 projects/component-library/.next/
+
+.yarn/install-state.gz
