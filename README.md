@@ -1,5 +1,5 @@
 <span style="display:none;">
-    If you're reading this and not wanting to edit this file, use preview mode!
+    If you're reading this and not wanting to edit the file, use preview mode!
     VS Code Windows: Ctrl + Shift + V
 </span>
 
@@ -70,9 +70,9 @@ All commands in this readme should be executed from the root folder of this repo
 
 ## Add Project
 
-`cd projects` - change terminal directory to the workspace.
+`cd projects` - change terminal directory to the projects folder.
 
-<code>yarn create <span title="placeholder">[project name]</span> --typescript</code> - create new project (TS flag is optional)
+<code>yarn create <span title="placeholder">[project name]</span> --typescript</code> - create new project (TS flag is optional.)
 
 If eslint / eslint-config-next packages are added in the new package.json, these will need to be removed.
 
@@ -89,7 +89,7 @@ module.exports = withTM(nextConfig);
 
 </div>
 
-### Please also commands to the root package.json, and update the readme, following the same structure as the Portfolio and Component Library sections.
+### Please add scripts to the root package.json and update the readme, following the same structure as the Portfolio and Component Library sections.
 
 ## Other Other Commands
 
@@ -98,6 +98,9 @@ module.exports = withTM(nextConfig);
 `yarn lint-parallel` - faster but less readable.
 
 <style>
+    a:hover {
+        text-decoration: none;
+    }
     code, .codeblock {
         color: orange;
         border: 1px solid grey;
