@@ -48,6 +48,8 @@ All commands in this readme should be executed from the root folder of this repo
 
 <code>yarn create <span title="placeholder">[project name]</span> --typescript</code> - create new project (TS flag is optional)
 
+If eslint / eslint-config-next packages are added in the new package.json, these will need to be removed.
+
 ### Using components from other projects:
 
 <code>yarn workspace <span title="placeholder">[project name]</span> add tsconfig-paths-webpack-plugin</code> - add next-transpile-modules package.
@@ -61,7 +63,7 @@ module.exports = withTM(nextConfig);
 
 </div>
 
-Please also add commands to the root package.json, and update the readme, following the same structure as the Portfolio and Component Library sections.
+### Please also commands to the root package.json, and update the readme, following the same structure as the Portfolio and Component Library sections.
 
 ## Other Other Commands
 
