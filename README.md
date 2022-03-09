@@ -1,3 +1,29 @@
+<span style="display:none;">
+    If you're reading this and not wanting to edit this file, use preview mode!
+    VS Code Windows: Ctrl + Shift + V
+</span>
+
+<p align="center">
+  <a href="https://jasonreid.dev">
+    <img alt="jasonreid.dev logo" src="./images/icon.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Next.js Monorepo by Jason Reid
+</h1>
+<div align="center">
+  <a href="https://github.com/jasonreiddev/nextjs/stargazers">
+    <img src="https://img.shields.io/github/stars/jasonreiddev/nextjs" alt="Stars">
+  </a>
+  <a href="https://github.com/jasonreiddev/nextjs/issues">
+    <img src="https://img.shields.io/github/issues/jasonreiddev/nextjs" alt="Issues">
+  </a>
+  <a href="https://github.com/jasonreiddev/nextjs/network/members">
+    <img src="https://img.shields.io/github/forks/jasonreiddev/nextjs" alt="Forks">
+  </a>
+  </div>
+<br>
+
 ## Getting Started
 
 All commands in this readme should be executed from the root folder of this repository.
