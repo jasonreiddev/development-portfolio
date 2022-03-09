@@ -1,56 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<span style="display:none;">
+    If you're reading this and not wanting to edit the file, use preview mode!
+    VS Code Windows: Ctrl + Shift + V
+</span>
+
+<p align="center">
+  <a href="https://jasonreid.dev">
+    <img alt="jasonreid.dev logo" src="./images/icon.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Next.js Monorepo by Jason Reid
+</h1>
+<div align="center">
+  <a href="https://github.com/jasonreiddev/nextjs/stargazers">
+    <img src="https://img.shields.io/github/stars/jasonreiddev/nextjs" alt="Stars">
+  </a>
+  <a href="https://github.com/jasonreiddev/nextjs/issues">
+    <img src="https://img.shields.io/github/issues/jasonreiddev/nextjs" alt="Issues">
+  </a>
+  <a href="https://github.com/jasonreiddev/nextjs/network/members">
+    <img src="https://img.shields.io/github/forks/jasonreiddev/nextjs" alt="Forks">
+  </a>
+  </div>
+<br>
 
 ## Getting Started
 
-First, run the development server:
+All commands in this readme should be executed from the root folder of this repository.
 
-yarn dev
+### Install packages:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`yarn`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Component Library
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Run storybook:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`yarn cl`
 
-## Storybook
+### Other Commands:
 
-Run storybook:
+`yarn cl:lint` - performs lint check on the project.
 
-yarn storybook
+`yarn cl:build` - creates static storybook build.
 
-Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
+`yarn cl:serve` - serves static storybook build.
 
-You can start editing the the components and pages in the stories directory. Stories auto-update when you save files.
+<code>yarn workspace component-library <span title="placeholder">...</span></code> - run yarn commands in the workspace (i.e. adding packages.)
 
-## Vercel
+`cd projects/component-library` - change terminal directory to the workspace.
 
-Build: yarn vercel dev
+## Portfolio
 
-Deploy: yarn vercel --prod
+### Start development server:
 
-## Other Commands
+`yarn pf`
 
-yarn lint - preforms lint check on project
+### Deploy to Vercel:
 
-yarn build - creates optimized production build
+<code>yarn vercel <span title="optional">--prod</span></code>
 
-yarn start - serves optimized production build
+### Other Commands:
 
-build-storybook - creates static storybook build
+`yarn pf:lint` - performs lint check on the project.
 
-## Learn More
+`yarn pf:build` - builds the app for production.
 
-To learn more about Next.js, take a look at the following resources:
+`yarn pf:serve` - runs the built app in production mode.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<code>yarn workspace portfolio <span title="placeholder">...</span></code> - run yarn commands in the workspace (i.e. adding packages.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`cd projects/portfolio` - change terminal directory to the workspace.
 
-## Deploy on Vercel
+## Add Project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`cd projects` - change terminal directory to the projects folder.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<code>yarn create <span title="placeholder">project-name</span> <span title="optional">--typescript</span></code> - create new project.
+
+If eslint / eslint-config-next packages are added in the new package.json, these will need to be removed.
+
+### Using components from other projects:
+
+<code>yarn workspace <span title="placeholder">project-name</span> add tsconfig-paths-webpack-plugin</code> - add next-transpile-modules package.
+
+In <span title="placeholder">project-name</span>/next.js.config import next-transpile-modules and specify packages to transpile, then change the export to use the withTM method. e.g.:
+
+<div class="codeblock">
+const withTM = require(next-transpile-modules)([component-library<span title="optional">, <span title="placeholder">project-name</span></span>]);
+
+module.exports = withTM(nextConfig);
+
+</div>
+
+### Please add scripts to the root package.json and update the readme, following the same structure as the Portfolio and Component Library sections.
+
+## Other Other Commands
+
+`yarn lint` - performs lint checks on all projects.
+
+`yarn lint-parallel` - faster but less readable.
+
+<style>
+    a:hover {
+        text-decoration: none;
+    }
+    code, .codeblock {
+        color: orange;
+        border: 1px solid grey;
+        padding: 0 1em;
+    }
+    .codeblock {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
+    span[title="placeholder"] {
+        color: grey;  
+    }
+    span[title="optional"] {
+        color: lightblue;  
+        text-decoration: underline;
+    }
+</style>
