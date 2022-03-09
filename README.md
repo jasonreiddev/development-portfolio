@@ -1,7 +1,8 @@
-<span style="display:none;">
-    If you're reading this and not wanting to edit the file, use preview mode!
-    VS Code Windows: Ctrl + Shift + V
-</span>
+<!--
+    For better readability, use markdown preview.
+    Windows VS Code: Ctrl + Shift + V
+    Windows Atom: Ctrl + Shift + M
+-->
 
 <p align="center">
   <a href="https://jasonreid.dev">
@@ -101,7 +102,11 @@ module.exports = withTM(nextConfig);
 
 `yarn lint-parallel` - faster but less readable.
 
-<style>
+<br/>
+
+ <style>
+   Markdown viewer has stripped style tags
+    <!--
     a:hover {
         text-decoration: none;
     }
@@ -121,4 +126,5 @@ module.exports = withTM(nextConfig);
         color: lightblue;  
         text-decoration: underline;
     }
+    -->
 </style>
