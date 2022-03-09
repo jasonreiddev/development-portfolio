@@ -46,7 +46,7 @@ All commands in this readme should be executed from the root folder of this repo
 
 `yarn cl:serve` - serves static storybook build.
 
-<code>yarn workspace component-library <span title="placeholder">[...]</span></code> - run yarn commands in the workspace (i.e. adding packages.)
+<code>yarn workspace component-library <span title="placeholder">...</span></code> - run yarn commands in the workspace (i.e. adding packages.)
 
 `cd projects/component-library` - change terminal directory to the workspace.
 
@@ -56,6 +56,10 @@ All commands in this readme should be executed from the root folder of this repo
 
 `yarn pf`
 
+### Deploy to Vercel:
+
+<code>yarn vercel <span title="optional">--prod</span></code>
+
 ### Other Commands:
 
 `yarn pf:lint` - performs lint check on the project.
@@ -64,7 +68,7 @@ All commands in this readme should be executed from the root folder of this repo
 
 `yarn pf:serve` - runs the built app in production mode.
 
-<code>yarn workspace portfolio <span title="placeholder">[...]</span></code> - run yarn commands in the workspace (i.e. adding packages.)
+<code>yarn workspace portfolio <span title="placeholder">...</span></code> - run yarn commands in the workspace (i.e. adding packages.)
 
 `cd projects/portfolio` - change terminal directory to the workspace.
 
@@ -72,18 +76,18 @@ All commands in this readme should be executed from the root folder of this repo
 
 `cd projects` - change terminal directory to the projects folder.
 
-<code>yarn create <span title="placeholder">[project name]</span> --typescript</code> - create new project (TS flag is optional.)
+<code>yarn create <span title="placeholder">project-name</span> <span title="optional">--typescript</span></code> - create new project.
 
 If eslint / eslint-config-next packages are added in the new package.json, these will need to be removed.
 
 ### Using components from other projects:
 
-<code>yarn workspace <span title="placeholder">[project name]</span> add tsconfig-paths-webpack-plugin</code> - add next-transpile-modules package.
+<code>yarn workspace <span title="placeholder">project-name</span> add tsconfig-paths-webpack-plugin</code> - add next-transpile-modules package.
 
-In <span title="placeholder">[project name]</span>/next.js.config import next-transpile-modules and specify packages to transpile, then change the export to use the withTM method. e.g.:
+In <span title="placeholder">project-name</span>/next.js.config import next-transpile-modules and specify packages to transpile, then change the export to use the withTM method. e.g.:
 
 <div class="codeblock">
-const withTM = require(next-transpile-modules)([component-library,<span title="placeholder">[project name]</span>]);
+const withTM = require(next-transpile-modules)([component-library<span title="optional">, <span title="placeholder">project-name</span></span>]);
 
 module.exports = withTM(nextConfig);
 
@@ -112,5 +116,9 @@ module.exports = withTM(nextConfig);
     }
     span[title="placeholder"] {
         color: grey;  
+    }
+    span[title="optional"] {
+        color: lightblue;  
+        text-decoration: underline;
     }
 </style>

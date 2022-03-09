@@ -4,3 +4,4 @@ storybook-static/
 .yarn/cache
 .yarn/unplugged
 .yarn/install-state.gz
+.vercel
