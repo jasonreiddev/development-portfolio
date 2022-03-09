@@ -102,11 +102,11 @@ module.exports = withTM(nextConfig);
 
 `yarn lint-parallel` - faster but less readable.
 
-<details hidden>
- <summary>Ignore</summary>
- GitHub doesn't allow style tags and attributes, so here they are:
+<br/>
 
  <style>
+   The current markdown viewer doesn't allow styles to render
+    <!--
     a:hover {
         text-decoration: none;
     }
@@ -126,5 +126,5 @@ module.exports = withTM(nextConfig);
         color: lightblue;  
         text-decoration: underline;
     }
+    -->
 </style>
-</details>
