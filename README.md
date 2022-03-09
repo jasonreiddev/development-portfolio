@@ -105,7 +105,7 @@ module.exports = withTM(nextConfig);
 <br/>
 
  <style>
-   The current markdown viewer doesn't allow styles to render
+   Markdown viewer has stripped style tags
     <!--
     a:hover {
         text-decoration: none;
