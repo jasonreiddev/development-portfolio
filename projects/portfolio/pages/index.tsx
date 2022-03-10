@@ -8,7 +8,7 @@ import { GlobalStyles } from '../../component-library/styles/GlobalStyles';
 import { firestore } from '../../component-library/helpers/useFirebase';
 
 const Home: NextPage = () => {
-  const docRef = doc(firestore, 'likes', 'development');
+  const docRef = doc(firestore, 'likes', `${process.env.NEXT_PUBLIC_FIREBASE_LIKE_DOC_ID}`);
 
   async function getLikesDBValue(
     setLikesFunction: Dispatch<SetStateAction<number>>,
