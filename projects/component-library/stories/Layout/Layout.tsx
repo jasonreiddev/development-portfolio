@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { FaCode } from 'react-icons/fa';
 import { HiTerminal } from 'react-icons/hi';
 import { IoBrowsers } from 'react-icons/io5';
@@ -8,11 +7,13 @@ import { Share } from '../widgets/Share/Share';
 import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
+import { Dispatch, SetStateAction } from 'react';
 
 export interface LayoutProps {
   title?: string;
   menuLinks: Links[];
-  likesMockDBValue: number;
+  getLikesDBValue?: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
+  setLikesDBValue?: (value: number) => void;
   loading?: boolean;
   children?: JSX.Element | string;
 }
@@ -20,20 +21,12 @@ export interface LayoutProps {
 export const Layout = ({
   title,
   menuLinks,
-  likesMockDBValue = 0,
+  setLikesDBValue = () => 1,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  getLikesDBValue = async () => {},
   loading = false,
   children,
 }: LayoutProps): JSX.Element => {
-  // Mock DB shenanigans
-  const [LikesMockDBValue, setLikesMockDBValue] = useState(likesMockDBValue);
-  function updateLikesDB(change: number): void {
-    const newVal = getLikesDB() + change;
-    setLikesMockDBValue(LikesMockDBValue + newVal);
-  }
-  function getLikesDB(): number {
-    return LikesMockDBValue;
-  }
-
   return (
     <>
       <s.SVG>
@@ -53,12 +46,16 @@ export const Layout = ({
         </defs>
         <rect x="0" y="0" width="100%" height="100%" fill="url(#background-icons)" />
       </s.SVG>
-      <s.LoadMask className="load-mask" loading={loading} />
-      <s.LoadSpinner className="load-spinner" loading={loading} />
+      {loading && (
+        <>
+          <s.LoadMask className="load-mask" />
+          <s.LoadSpinner className="load-spinner" />
+        </>
+      )}
       <s.Wrapper className={'mobile-scroll'}>
         <Header title={title} menuLinks={menuLinks} />
         <s.Aside className="aside-left">
-          <Like getLikesDB={getLikesDB} updateLikesDB={updateLikesDB} liked={false} />
+          <Like setLikesDBValue={setLikesDBValue} getLikesDBValue={getLikesDBValue} liked={false} />
         </s.Aside>
         <s.Main>
           <div>{children}</div>

@@ -16,11 +16,9 @@ const SVG = styled.svg`
   }
 `;
 
-const LoadMask = styled.div<{ loading: boolean }>`
+const LoadMask = styled.div`
   position: absolute;
   z-index: 1;
-  opacity: ${(p) => (p.loading ? '1' : '0')};
-  pointer-events: ${(p) => (p.loading ? 'all' : 'none')};
   height: 100vh;
   width: 100vw;
   background: var(--color-primary);
@@ -29,11 +27,9 @@ const LoadMask = styled.div<{ loading: boolean }>`
   }
 `;
 
-const LoadSpinner = styled.div<{ loading: boolean }>`
+const LoadSpinner = styled.div`
   position: absolute;
   z-index: 1;
-  opacity: ${(p) => (p.loading ? '1' : '0')};
-  pointer-events: ${(p) => (p.loading ? 'all' : 'none')};
   border: 9px solid var(--color-base);
   border-top: 9px solid var(--color-tertiary);
   border-radius: 50%;
