@@ -53,6 +53,10 @@ All commands in this readme should be executed from the root folder of this repo
 
 ## Portfolio
 
+### Setup Environment variables:
+
+Copy '.env.example' and rename it to '.env.local', use this new file as a template for copying environment variables from Vercel to use locally.
+
 ### Start development server:
 
 `yarn pf`
