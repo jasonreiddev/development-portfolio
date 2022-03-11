@@ -83,6 +83,8 @@ Copy '.env.example' and rename it to '.env.local', use this new file as a templa
 
 <code>yarn create <span title="placeholder">project-name</span> <span title="optional">--typescript</span></code> - create new project.
 
+In the the package.json set the packageManager to match the root package.json i.e "yarn@3.2.0".
+
 If eslint / eslint-config-next packages are added in the new package.json, these will need to be removed.
 
 ### Using components from other projects:
@@ -95,6 +97,8 @@ In <span title="placeholder">project-name</span>/next.js.config import next-tran
 const withTM = require(next-transpile-modules)([component-library<span title="optional">, <span title="placeholder">project-name</span></span>]);
 
 module.exports = withTM(nextConfig);
+
+Add a .babelrc file to the workspace with the presents set to "next/babel", and add the following plugin option for styled components: ["styled-components", { "ssr": true }]
 
 </div>
 
