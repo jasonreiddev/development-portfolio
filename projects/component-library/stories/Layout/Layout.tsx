@@ -8,9 +8,13 @@ import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
 import { Dispatch, SetStateAction } from 'react';
+import { GlobalStyles } from '../../styles/GlobalStyles';
+import Head from 'next/head';
 
 export interface LayoutProps {
   title?: string;
+  pageTitle?: string;
+  headerTitle?: string;
   menuLinks: Links[];
   getLikesDBValue?: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
   setLikesDBValue?: (value: number) => void;
@@ -20,6 +24,8 @@ export interface LayoutProps {
 
 export const Layout = ({
   title,
+  pageTitle,
+  headerTitle,
   menuLinks,
   setLikesDBValue = () => 1,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -29,6 +35,13 @@ export const Layout = ({
 }: LayoutProps): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>
+          {title}
+          {pageTitle && <> | {pageTitle}</>}
+        </title>
+      </Head>
+      <GlobalStyles />
       <s.SVG>
         <defs>
           <pattern
@@ -53,7 +66,7 @@ export const Layout = ({
         </>
       )}
       <s.Wrapper className={'mobile-scroll'}>
-        <Header title={title} menuLinks={menuLinks} />
+        <Header title={headerTitle} menuLinks={menuLinks} />
         <s.Aside className="aside-left">
           <Like setLikesDBValue={setLikesDBValue} getLikesDBValue={getLikesDBValue} liked={false} />
         </s.Aside>

@@ -5,7 +5,6 @@ import { HeaderStyles as s } from './Header.styles';
 export interface Links {
   name: string;
   link: string;
-  nameOverrideNav?: string;
 }
 
 export interface HeaderProps {
@@ -22,6 +21,7 @@ export const Header = ({
   onLogin,
   onLogout,
   onCreateAccount,
+  menuLinks,
   title,
 }: HeaderProps): JSX.Element => {
   return (
@@ -37,6 +37,17 @@ export const Header = ({
           </>
         )}
       </div>
+      <nav>
+        <ul>
+          {menuLinks.map((link) => (
+            <li key={link.name}>
+              <a className={link.name == title ? 'active' : ''} href={link.link}>
+                {link.name ? link.name : link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </s.Wrapper>
   );
 };
