@@ -1,19 +1,18 @@
 import '../styles/globals.css';
-import { Layout } from '../../component-library/stories/Layout/Layout';
+// import { Layout } from '../../component-library/stories/Layout/Layout';
 
 import type { AppProps } from 'next/app';
-import { LayoutPropProvider } from '../layoutContext';
-import { useLayoutProps } from '../layoutContext';
+import { ThemeProvider } from '../layoutContext';
+import { Layout } from '../../component-library/stories/Layout/Layout';
+import { defaultLayoutProps } from '../defaultLayoutProps';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  const layoutProps = useLayoutProps();
-
   return (
-    <LayoutPropProvider>
-      <Layout {...layoutProps}>
+    <ThemeProvider>
+      <Layout {...defaultLayoutProps}>
         <Component {...pageProps} />
       </Layout>
-    </LayoutPropProvider>
+    </ThemeProvider>
   );
 }
 
