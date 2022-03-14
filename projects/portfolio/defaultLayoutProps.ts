@@ -16,7 +16,7 @@ function setLikesDBValue(value: number): void {
   setDoc(docRef, { value: value });
 }
 
-export const layoutProps = {
+export const defaultLayoutProps = {
   title: `JR Dev`,
   headerTitle: `Jason Reid's Dev Portfolio`,
   menuLinks: [

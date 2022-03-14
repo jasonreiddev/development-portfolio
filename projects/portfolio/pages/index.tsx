@@ -1,13 +1,7 @@
 import type { NextPage } from 'next';
-import { Layout } from '../../component-library/stories/Layout/Layout';
-import { layoutProps } from '../layoutProps';
 
 const Home: NextPage = () => {
-  return (
-    <Layout {...layoutProps}>
-      <h2>Homepage</h2>
-    </Layout>
-  );
+  return <h2>Home</h2>;
 };
 
 export default Home;

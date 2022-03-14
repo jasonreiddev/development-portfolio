@@ -28,8 +28,9 @@ export const Layout = ({
   headerTitle,
   menuLinks,
   setLikesDBValue = () => 1,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  getLikesDBValue = async () => {},
+  getLikesDBValue = async () => {
+    0;
+  },
   loading = false,
   children,
 }: LayoutProps): JSX.Element => {
