@@ -2,7 +2,7 @@ import '../styles/globals.css';
 // import { Layout } from '../../component-library/stories/Layout/Layout';
 
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from '../layoutContext';
+import { ThemeProvider } from '../../component-library/helpers/layoutContext';
 import { Layout } from '../../component-library/stories/Layout/Layout';
 import { defaultLayoutProps } from '../defaultLayoutProps';
 

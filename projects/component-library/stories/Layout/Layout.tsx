@@ -7,9 +7,10 @@ import { Share } from '../widgets/Share/Share';
 import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useContext } from 'react';
 import { GlobalStyles } from '../../styles/GlobalStyles';
 import Head from 'next/head';
+import { LayoutContext } from '../../helpers/layoutContext';
 
 export interface LayoutProps {
   title?: string;
@@ -24,7 +25,6 @@ export interface LayoutProps {
 
 export const Layout = ({
   title,
-  pageTitle,
   headerTitle,
   menuLinks,
   setLikesDBValue = () => 1,
@@ -34,13 +34,15 @@ export const Layout = ({
   loading = false,
   children,
 }: LayoutProps): JSX.Element => {
+  const { pageTitle } = useContext(LayoutContext);
+  if (pageTitle) {
+    title = `${title} | ${pageTitle}`;
+  }
+
   return (
     <>
       <Head>
-        <title>
-          {title}
-          {pageTitle && <> | {pageTitle}</>}
-        </title>
+        <title>{title}</title>
       </Head>
       <GlobalStyles />
       <s.SVG>
