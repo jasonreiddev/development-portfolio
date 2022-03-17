@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useContext } from 'react';
-import { LayoutContext } from '../../component-library/helpers/layoutContext';
+import { LayoutContext } from '../../helpers/layoutContext';
 
 const Projects: NextPage = () => {
   const { updatePageTitle } = useContext(LayoutContext);

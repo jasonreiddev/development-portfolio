@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { clamp } from '../../../helpers/media';
+import { clamp } from '../../../../helpers/media';
 
 const Wrapper = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
