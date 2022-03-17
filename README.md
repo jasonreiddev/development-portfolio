@@ -77,6 +77,22 @@ Copy '.env.example' and rename it to '.env.local', use this new file as a templa
 
 `cd projects/portfolio` - change terminal directory to the workspace.
 
+## Sanity
+
+### Start development server:
+
+`yarn sn`
+
+### Deploy Sanity:
+
+<code>yarn sn:deploy></code>
+
+### Other Commands:
+
+`yarn sn:lint` - performs lint check on the project.
+
+`cd projects/sanity` - change terminal directory to the workspace.
+
 ## Add Project
 
 `cd projects` - change terminal directory to the projects folder.

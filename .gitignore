@@ -1,5 +1,7 @@
 node_modules/
 storybook-static/
+build/
+dist/
 .next/
 .yarn/cache
 .yarn/unplugged

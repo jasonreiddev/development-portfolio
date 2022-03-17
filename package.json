@@ -14,8 +14,11 @@
     "pf:lint": "yarn workspace portfolio lint",
     "pf:build": "yarn workspace portfolio build",
     "pf:start": "npx http-server start",
-    "lint": "yarn cl:lint && yarn pf:lint",
-    "lint-parallel": "yarn cl:lint & yarn pf:lint"
+    "sn": "yarn workspace sanity sanity start",
+    "sn:lint": "yarn workspace sanity lint",
+    "sn:deploy": "yarn sanity sanity deploy build",
+    "lint": "yarn cl:lint && yarn pf:lint && yarn sn:lint",
+    "lint-parallel": "yarn cl:lint & yarn pf:lint & yarn sn:lint"
   },
   "dependencies": {
     "vercel": "^24.0.0"
