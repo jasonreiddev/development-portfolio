@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { clamp } from '../../../helpers/media';
+import { clamp } from '../../../../helpers/media';
 
 export const Text = styled.h2`
   font-size: ${clamp({ multiplier: 1.2 })};

@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import { useContext, useEffect, useState } from 'react';
 import { LayoutContext } from '../../helpers/layoutContext';
 import { client } from '../../helpers/client';
+// import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
 
 const Projects: NextPage = () => {
   const { updatePageTitle } = useContext(LayoutContext);
@@ -24,6 +25,7 @@ const Projects: NextPage = () => {
   return (
     <>
       <h2>Projects</h2>
+      {/* <CardGridFilterable cards={projects}/> */}
       {projects &&
         projects.length > 0 &&
         projects.map(

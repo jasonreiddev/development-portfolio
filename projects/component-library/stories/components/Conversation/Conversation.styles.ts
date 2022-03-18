@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Device, from } from '../../../helpers/media';
+import { Device, from } from '../../../../helpers/media';
 
 const Container = styled.div<{ fullWidth: boolean }>`
   background-color: var(--color-base-bright);

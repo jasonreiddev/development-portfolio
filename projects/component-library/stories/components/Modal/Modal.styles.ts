@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { from, Device } from '../../../helpers/media';
+import { from, Device } from '../../../../helpers/media';
 
 const Modal = styled.div<{ active: boolean }>`
   transition: 0.15s ease-in;
