@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { clamp } from '../../../helpers/media';
+import { clamp } from '../../../../helpers/media';
 
 const Card = styled.article`
   min-width: 250px;

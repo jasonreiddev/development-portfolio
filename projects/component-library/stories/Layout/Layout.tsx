@@ -10,7 +10,7 @@ import { FooterCard } from '../widgets/FooterCard/FooterCard';
 import { Dispatch, SetStateAction, useContext } from 'react';
 import { GlobalStyles } from '../../styles/GlobalStyles';
 import Head from 'next/head';
-import { LayoutContext } from '../../helpers/layoutContext';
+import { LayoutContext } from '../../../helpers/layoutContext';
 
 export interface LayoutProps {
   title?: string;

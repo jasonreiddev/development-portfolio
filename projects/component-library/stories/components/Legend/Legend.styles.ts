@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Device, from } from '../../../helpers/media';
+import { Device, from } from '../../../../helpers/media';
 import { LegendProps } from './Legend';
 
 const Container = styled.div`

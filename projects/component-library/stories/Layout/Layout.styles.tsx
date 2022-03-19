@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Device, from } from '../../helpers/media';
+import { Device, from } from '../../../helpers/media';
 
 const SVG = styled.svg`
   position: fixed;
@@ -84,7 +84,16 @@ const Main = styled.main`
   justify-content: space-between;
 
   @media ${from(Device.Tablet)} {
-    overflow: auto;
+    overflow-x: visible;
+    // for flip cards to not trigger horizontal scroll
+    overflow-y: auto;
+  }
+
+  h2 {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
   }
 `;
 

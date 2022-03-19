@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { defaultLayoutProps } from '../../portfolio/defaultLayoutProps';
+import { defaultLayoutProps } from '../../projects/portfolio/defaultLayoutProps';
 
 export interface ILayoutContext {
   dark: boolean;

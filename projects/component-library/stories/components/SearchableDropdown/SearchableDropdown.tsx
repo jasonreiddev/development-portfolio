@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AiOutlineCheck } from 'react-icons/ai';
 
 import { InputField } from '../InputField/InputField';
-import { clickOutside } from '../../../helpers/clickOutside';
+import { clickOutside } from '../../../../helpers/clickOutside';
 import { SearchableDropdownStyles as s } from './SearchableDropdown.styles';
 
 export type SearchableDropdownProps = {

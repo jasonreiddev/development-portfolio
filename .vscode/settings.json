@@ -1,5 +1,13 @@
 {
-  "cSpell.words": ["firestore", "nextjs", "Paintcan", "picsum", "Vercel", "Viewports"],
+  "cSpell.words": [
+    "firestore",
+    "nextjs",
+    "organisation",
+    "Paintcan",
+    "picsum",
+    "Vercel",
+    "Viewports"
+  ],
   "cSpell.ignorePaths": ["yarn.lock", "settings.json", "package-lock.json"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
