@@ -76,9 +76,9 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
   padding: 8px;
   top: 0;
-  width: 192px;
+  width: 100%;
   gap: 2px;
-  max-height: 72px;
+  max-height: calc(100% - 108px);
   overflow: hidden;
 `;
 
@@ -91,10 +91,18 @@ const Tag = styled.div`
 
 const Front = styled.div<CardStylesProps>`
   background-color: var(--color-primary);
+
   ${(p) =>
     p.canFlip
       ? `
       cursor: pointer;
+      `
+      : null}
+
+  ${(p) =>
+    p.flipped
+      ? `
+      pointer-events: none;
       `
       : null}
 
@@ -107,6 +115,13 @@ const Front = styled.div<CardStylesProps>`
 `;
 
 const Back = styled(Front)`
+  ${(p) =>
+    p.flipped
+      ? `
+      pointer-events: all;
+      `
+      : `pointer-events: none;`}
+
   background-color: var(--color-secondary);
 
   /* Flip */
