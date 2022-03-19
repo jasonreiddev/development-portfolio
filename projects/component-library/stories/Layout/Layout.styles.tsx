@@ -84,7 +84,9 @@ const Main = styled.main`
   justify-content: space-between;
 
   @media ${from(Device.Tablet)} {
-    overflow: auto;
+    overflow-x: visible;
+    // for flip cards to not trigger horizontal scroll
+    overflow-y: auto;
   }
 `;
 

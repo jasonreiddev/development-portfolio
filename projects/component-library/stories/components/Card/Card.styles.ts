@@ -36,7 +36,7 @@ const Container = styled.a<CardStylesProps>`
 
   /* Flip */
   background-color: transparent;
-  perspective: 1000px;
+  perspective: 200vw;
 `;
 
 const ContainerInner = styled.div<CardStylesProps>`
@@ -95,19 +95,6 @@ const Front = styled.div<CardStylesProps>`
     p.canFlip
       ? `
       cursor: pointer;
-      :after {
-        content: '';
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        border-style: solid;
-        border-width: 0 0 25px 25px;
-        border-color: transparent transparent var(--color-secondary) transparent;
-        transition: all .3s;
-      }
-      :hover:after {
-        border-width: 0 0 35px 35px;
-      }
       `
       : null}
 
@@ -121,10 +108,6 @@ const Front = styled.div<CardStylesProps>`
 
 const Back = styled(Front)`
   background-color: var(--color-secondary);
-  :after {
-    border-color: transparent transparent var(--color-primary) transparent;
-    border-width: 0 0 35px 35px;
-  }
 
   /* Flip */
   transform: rotateY(180deg);
@@ -132,6 +115,16 @@ const Back = styled(Front)`
 
 const BackContent = styled(Content)`
   height: 100%;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+    height: calc(100% - 20px);
+  }
+  ::-webkit-scrollbar-thumb {
+    border: 0.1rem solid var(--color-contrast);
+    background-color: var(--color-primary);
+    border-radius: 0.75rem;
+  }
 `;
 
 export const CardStyles = {

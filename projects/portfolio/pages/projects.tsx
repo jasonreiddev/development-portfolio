@@ -26,35 +26,52 @@ const Projects: NextPage = () => {
         return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
       });
       response.map((project: any) => {
+        project.lastWorkedOn =
+          project.lastWorkedOn == null
+            ? `Project Ongoing`
+            : `Project last worked on ${new Date(project.lastWorkedOn).toLocaleDateString('en-GB', {
+                month: 'long',
+                year: 'numeric',
+              })}.`;
         Projects.push({
           title: project.projectTitle,
+          flipContent: (
+            <>
+              <h3>{project.projectTitle}</h3>
+              {/* <p className="organisation">
+                {!project.position.hideOnEmployment ? (
+                  <span>
+                    <a href={`/employment/${project.position.slug.current}`}>
+                      {project.position.jobTitle}
+                    </a>
+                    &nbsp;-&nbsp;
+                    {project.position.organisation.organisation}
+                  </span>
+                ) : (
+                  project.position.organisation.organisation
+                )}
+              </p> */}
+              <p>{project.lastWorkedOn}</p>
+              <hr />
+              <br />
+              <p>{project.details}</p>
+              {project.repoUrl && (
+                <p>
+                  <a href={project.repoUrl}>View Repository</a>
+                </p>
+              )}
+              {project.siteUrl && (
+                <p>
+                  <a href={project.siteUrl}>View Site</a>
+                </p>
+              )}
+            </>
+          ),
           tags: project.tags,
-          text: `${
-            project.lastWorkedOn == null
-              ? `Project Ongoing`
-              : `Project last worked on ${new Date(project.lastWorkedOn).toLocaleDateString(
-                  'en-GB',
-                  {
-                    month: 'long',
-                    year: 'numeric',
-                  },
-                )}.`
-          }\n${project.excerpt}`,
+          text: `${project.lastWorkedOn}\n${project.excerpt}`,
         });
       });
-      //setCards([...cards, ...Projects]);
-      // Test
-      setCards([
-        ...cards,
-        ...Projects,
-        {
-          title: 'flip me',
-          flipText:
-            'Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text!',
-          text: 'text',
-          url: 'www.google.com',
-        },
-      ]);
+      setCards([...Projects]);
     };
     fetchProjects();
   }, []);

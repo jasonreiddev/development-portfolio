@@ -13,8 +13,7 @@ export interface CardProps {
   tags?: string[];
   modifyWidth?: 1 | 2 | 'full';
   onTagClick?: (text: string) => void;
-  flipText?: string;
-  flipUrlText?: string;
+  flipContent?: JSX.Element;
 }
 
 export const Card = ({
@@ -26,8 +25,7 @@ export const Card = ({
   tags,
   modifyWidth,
   onTagClick,
-  flipText,
-  flipUrlText = 'Read More',
+  flipContent,
 }: CardProps): JSX.Element => {
   if (tags != undefined) {
     tags.sort(function (a, b) {
@@ -40,7 +38,7 @@ export const Card = ({
   }
 
   const [flipped, setFlipped] = useState<boolean>(false);
-  if (flipText) {
+  if (flipContent) {
     url = undefined;
   }
 
@@ -49,7 +47,7 @@ export const Card = ({
       href={url}
       modifyWidth={modifyWidth}
       onClick={() => {
-        if (flipText) {
+        if (flipContent) {
           {
             setFlipped(!flipped);
           }
@@ -57,7 +55,7 @@ export const Card = ({
       }}
     >
       <s.ContainerInner flipped={flipped}>
-        <s.Front flipped={flipped} canFlip={!!flipText}>
+        <s.Front flipped={flipped} canFlip={!!flipContent}>
           {image && <Image src={image} alt={alt} />}
           {tags && (
             <s.TagsContainer>
@@ -85,16 +83,9 @@ export const Card = ({
             {text && <ClampText lines={3} text={text} />}
           </s.Content>
         </s.Front>
-        {flipText && (
-          <s.Back flipped={flipped} canFlip={!!flipText}>
-            <s.BackContent>
-              <h3>{title}</h3>
-              {flipText}
-              <a href={url}>
-                <br />
-                {flipUrlText}
-              </a>
-            </s.BackContent>
+        {flipContent && (
+          <s.Back flipped={flipped} canFlip={!!flipContent}>
+            <s.BackContent>{flipContent}</s.BackContent>
           </s.Back>
         )}
       </s.ContainerInner>
