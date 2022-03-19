@@ -27,19 +27,7 @@ export const CardGrid = ({ cards, onTagClick, size = 200 }: CardGridProps): JSX.
     <s.Container size={size}>
       {cards &&
         cards.map((card, index) => {
-          return (
-            <Card
-              key={`Card${index}`}
-              url={card.url}
-              title={card.title}
-              image={card.image}
-              alt={card.alt}
-              text={card.text}
-              tags={card.tags}
-              modifyWidth={card.modifyWidth}
-              onTagClick={onTagClick}
-            />
-          );
+          return <Card {...card} key={`Card${index}`} onTagClick={onTagClick} />;
         })}
     </s.Container>
   );

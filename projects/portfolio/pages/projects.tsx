@@ -42,7 +42,19 @@ const Projects: NextPage = () => {
           }\n${project.excerpt}`,
         });
       });
-      setCards([...cards, ...Projects]);
+      //setCards([...cards, ...Projects]);
+      // Test
+      setCards([
+        ...cards,
+        ...Projects,
+        {
+          title: 'flip me',
+          flipText:
+            'Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text! Long text!',
+          text: 'text',
+          url: 'www.google.com',
+        },
+      ]);
     };
     fetchProjects();
   }, []);
