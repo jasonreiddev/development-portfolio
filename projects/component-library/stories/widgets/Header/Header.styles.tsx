@@ -26,7 +26,19 @@ const Title = styled.h1`
   vertical-align: top;
 `;
 
+const MenuItems = styled.ul`
+  display: flex;
+  gap: 2em;
+
+  a {
+    color: var(--color-contrast);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+`;
+
 export const HeaderStyles = {
   Wrapper,
   Title,
+  MenuItems,
 };

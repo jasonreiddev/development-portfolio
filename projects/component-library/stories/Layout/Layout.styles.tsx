@@ -88,6 +88,13 @@ const Main = styled.main`
     // for flip cards to not trigger horizontal scroll
     overflow-y: auto;
   }
+
+  h2 {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+  }
 `;
 
 const Aside = styled.aside`
