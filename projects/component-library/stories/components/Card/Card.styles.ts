@@ -9,15 +9,9 @@ interface CardStylesProps {
 }
 
 const Container = styled.a<CardStylesProps>`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  border: none;
   font-size: 13px;
   flex-wrap: wrap;
   color: var(--color-contrast);
-  background-color: var(--color-primary);
   position: relative;
 
   ${(p) =>
@@ -39,6 +33,25 @@ const Container = styled.a<CardStylesProps>`
     height: 100%;
     object-fit: cover;
   }
+
+  /* Flip */
+  background-color: transparent;
+  perspective: 1000px;
+`;
+
+const ContainerInner = styled.div<CardStylesProps>`
+  /* Flip */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+
+  ${(p) =>
+    p.flipped
+      ? `
+      transform: rotateY(180deg);
+      `
+      : null}
 `;
 
 const Content = styled.div`
@@ -77,19 +90,11 @@ const Tag = styled.div`
 `;
 
 const Front = styled.div<CardStylesProps>`
-  height: 100%;
-  width: 100%;
-  display: block;
-  ${(p) =>
-    p.flipped
-      ? `
-     display: none;
-      `
-      : null}
-
+  background-color: var(--color-primary);
   ${(p) =>
     p.canFlip
       ? `
+      cursor: pointer;
       :after {
         content: '';
         bottom: 0;
@@ -105,41 +110,33 @@ const Front = styled.div<CardStylesProps>`
       }
       `
       : null}
-`;
 
-const Back = styled.div<CardStylesProps>`
+  /* Flip */
+  position: absolute;
   width: 100%;
   height: 100%;
-  display: none;
-  ${(p) =>
-    p.flipped
-      ? `
-     display: block;
-      `
-      : null};
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+`;
 
+const Back = styled(Front)`
+  background-color: var(--color-secondary);
   :after {
-    content: '';
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    border-style: solid;
-    border-width: 0 0 35px 35px;
     border-color: transparent transparent var(--color-primary) transparent;
-    transition: all 0.3s;
+    border-width: 0 0 35px 35px;
   }
-  :hover:after {
-    border-width: 0 0 25px 25px;
-  }
+
+  /* Flip */
+  transform: rotateY(180deg);
 `;
 
 const BackContent = styled(Content)`
   height: 100%;
-  // https://www.w3schools.com/howto/howto_css_flip_card.asp
 `;
 
 export const CardStyles = {
   Container,
+  ContainerInner,
   TagsContainer,
   Tag,
   Content,

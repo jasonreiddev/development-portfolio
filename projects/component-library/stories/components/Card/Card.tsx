@@ -56,46 +56,48 @@ export const Card = ({
         }
       }}
     >
-      <s.Front flipped={flipped} canFlip={!!flipText}>
-        {image && <Image src={image} alt={alt} />}
-        {tags && (
-          <s.TagsContainer>
-            {tags.map((tag, index) => (
-              <s.Tag
-                key={`${title}-tag${index}`}
-                onClick={(event) => {
-                  if (onTagClick != undefined) {
-                    event.stopPropagation();
-                    event.preventDefault();
-                    onTagClick(tag);
-                    return false;
-                  }
-                }}
-              >
-                {tag.length > 14 ? tag.substring(0, 12) + '...' : tag}
-              </s.Tag>
-            ))}
-          </s.TagsContainer>
+      <s.ContainerInner flipped={flipped}>
+        <s.Front flipped={flipped} canFlip={!!flipText}>
+          {image && <Image src={image} alt={alt} />}
+          {tags && (
+            <s.TagsContainer>
+              {tags.map((tag, index) => (
+                <s.Tag
+                  key={`${title}-tag${index}`}
+                  onClick={(event) => {
+                    if (onTagClick != undefined) {
+                      event.stopPropagation();
+                      event.preventDefault();
+                      onTagClick(tag);
+                      return false;
+                    }
+                  }}
+                >
+                  {tag.length > 14 ? tag.substring(0, 12) + '...' : tag}
+                </s.Tag>
+              ))}
+            </s.TagsContainer>
+          )}
+          <s.Content>
+            <h3>
+              <ClampText lines={2} text={title} />
+            </h3>
+            {text && <ClampText lines={3} text={text} />}
+          </s.Content>
+        </s.Front>
+        {flipText && (
+          <s.Back flipped={flipped} canFlip={!!flipText}>
+            <s.BackContent>
+              <h3>{title}</h3>
+              {flipText}
+              <a href={url}>
+                <br />
+                {flipUrlText}
+              </a>
+            </s.BackContent>
+          </s.Back>
         )}
-        <s.Content>
-          <h3>
-            <ClampText lines={2} text={title} />
-          </h3>
-          {text && <ClampText lines={3} text={text} />}
-        </s.Content>
-      </s.Front>
-      {flipText && (
-        <s.Back flipped={flipped} canFlip={!!flipText}>
-          <s.BackContent>
-            <h3>{title}</h3>
-            {flipText}
-            <a href={url}>
-              <br />
-              {flipUrlText}
-            </a>
-          </s.BackContent>
-        </s.Back>
-      )}
+      </s.ContainerInner>
     </s.Container>
   );
 };
