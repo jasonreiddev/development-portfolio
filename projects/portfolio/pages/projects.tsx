@@ -2,13 +2,14 @@ import type { NextPage } from 'next';
 import { useContext, useEffect, useState } from 'react';
 import { LayoutContext } from '../../helpers/layoutContext';
 import { client } from '../../helpers/client';
-// import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
+import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
+import { CardProps } from '../../component-library/stories/components/Card/Card';
 
 const Projects: NextPage = () => {
   const { updatePageTitle } = useContext(LayoutContext);
   updatePageTitle && updatePageTitle('Projects');
 
-  const [projects, setProjects] = useState([]);
+  const [cards, setCards] = useState<CardProps[]>([]);
   useEffect(() => {
     const fetchProjects = async (): Promise<any> => {
       const promise = await client.fetch(
@@ -17,7 +18,31 @@ const Projects: NextPage = () => {
       `,
       );
       const response = await promise;
-      setProjects(response);
+      const Projects: CardProps[] = [];
+      response.sort(function (a: any, b: any) {
+        // by desc lastWorkedOn
+        a.sortDate = a.lastWorkedOn == null ? Date.now() : a.lastWorkedOn;
+        b.sortDate = b.lastWorkedOn == null ? Date.now() : b.lastWorkedOn;
+        return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
+      });
+      response.map((project: any) => {
+        Projects.push({
+          title: project.projectTitle,
+          tags: project.tags,
+          text: `${
+            project.lastWorkedOn == null
+              ? `Project Ongoing`
+              : `Project last worked on ${new Date(project.lastWorkedOn).toLocaleDateString(
+                  'en-GB',
+                  {
+                    month: 'long',
+                    year: 'numeric',
+                  },
+                )}.`
+          }\n${project.excerpt}`,
+        });
+      });
+      setCards([...cards, ...Projects]);
     };
     fetchProjects();
   }, []);
@@ -25,18 +50,7 @@ const Projects: NextPage = () => {
   return (
     <>
       <h2>Projects</h2>
-      {/* <CardGridFilterable cards={projects}/> */}
-      {projects &&
-        projects.length > 0 &&
-        projects.map(
-          ({ _id, projectTitle = '', slug = '', lastWorkedOn = '', excerpt = '' }) =>
-            slug && (
-              <li key={_id}>
-                <a href={`/projects/${slug}`}>{projectTitle}</a> (
-                {new Date(lastWorkedOn).toDateString()})<p>{excerpt}</p>
-              </li>
-            ),
-        )}
+      {cards.length > 0 && <CardGridFilterable cards={cards} size={300} />}
     </>
   );
 };

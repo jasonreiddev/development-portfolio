@@ -70,6 +70,7 @@ const Tag = styled.div`
   padding: 6px;
   background-color: var(--color-base-semi-bold-80);
   pointer-events: all;
+  cursor: pointer;
 `;
 
 export const CardStyles = {

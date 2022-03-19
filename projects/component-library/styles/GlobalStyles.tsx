@@ -116,6 +116,7 @@ table {
 html, body {
   overflow: hidden;
   height: 100%; // Allow percentage-based heights in the application
+  white-space: pre-wrap;
 }
 
 *, *::before, *::after {
