@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { useContext, useEffect, useState } from 'react';
 import { LayoutContext } from '../../helpers/layoutContext';
 import { client } from '../../helpers/client';
-import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
+import { CardTimeline } from '../../component-library/stories/components/CardTimeline/CardTimeline';
 import { CardProps } from '../../component-library/stories/components/Card/Card';
 
 const Employment: NextPage = () => {
@@ -62,7 +62,7 @@ const Employment: NextPage = () => {
   return (
     <>
       <h2>Employment</h2>
-      {cards.length > 0 && <CardGridFilterable cards={cards} size={300} />}
+      {cards.length > 0 && <CardTimeline cards={cards} size={300} />}
     </>
   );
 };
