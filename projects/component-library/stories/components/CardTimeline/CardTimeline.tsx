@@ -8,12 +8,14 @@ export interface CardTimelineProps {
 
 export const CardTimeline = ({ cards, size = 200 }: CardTimelineProps): JSX.Element => {
   return (
-    <s.Container size={size}>
-      {cards &&
-        cards.map((card, index) => {
-          return <Card {...card} modifyWidth={1} key={`Card${index}`} />;
-        })}
-      <s.Line size={size} />
-    </s.Container>
+    <>
+      <s.Container size={size}>
+        {cards &&
+          cards.map((card, index) => {
+            return <Card {...card} modifyWidth={1} key={`Card${index}`} />;
+          })}
+        <s.Line size={size} />
+      </s.Container>
+    </>
   );
 };
