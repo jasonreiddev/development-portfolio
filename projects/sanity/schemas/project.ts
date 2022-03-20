@@ -88,7 +88,7 @@ export default {
     select: {
       projectTitle: 'projectTitle',
     },
-    prepare: (fields) => ({
+    prepare: (fields: { projectTitle: string }): { title: string } => ({
       title: `${fields.projectTitle}`,
     }),
   },

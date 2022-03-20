@@ -38,6 +38,7 @@ const Projects: NextPage = () => {
           flipContent: (
             <>
               <h3>{project.projectTitle}</h3>
+              {/* TODO Include organisation info */}
               {/* <p className="organisation">
                 {!project.position.hideOnEmployment ? (
                   <span>

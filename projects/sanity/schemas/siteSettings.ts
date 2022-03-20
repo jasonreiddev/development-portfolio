@@ -39,8 +39,8 @@ export default {
     },
   ],
   preview: {
-    prepare: fields => ({
-      title: `Site Settings`
-    })
-  }
+    prepare: (): { title: string } => ({
+      title: `Site Settings`,
+    }),
+  },
 };

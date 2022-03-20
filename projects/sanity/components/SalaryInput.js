@@ -20,13 +20,13 @@ export default function PriceInput({ type, value, onChange, inputComponent }) {
       <input
         type={type.name}
         value={value}
-        onChange={event => onChange(createPatchFrom(event.target.value))}
+        onChange={(event) => onChange(createPatchFrom(event.target.value))}
         ref={inputComponent}
       />
     </div>
   );
 }
 
-PriceInput.focus = function() {
+PriceInput.focus = function () {
   this._inputElement.focus();
 };
