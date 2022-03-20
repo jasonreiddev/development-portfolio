@@ -53,7 +53,7 @@ const ContainerInner = styled.div<CardStylesProps>`
   ${(p) =>
     p.flipped
       ? `
-      transform: rotateY(180deg);
+      transform: rotateX(180deg);
       `
       : null}
 `;
@@ -129,7 +129,7 @@ const Back = styled(Front)`
   background-color: var(--color-secondary);
 
   /* Flip */
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 `;
 
 const BackContent = styled(Content)`
