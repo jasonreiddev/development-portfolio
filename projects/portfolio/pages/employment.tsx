@@ -50,7 +50,7 @@ const Employment: NextPage = () => {
                 <p>{position.details}</p>
               </>
             ),
-            text: `${position.endDate} - ${position.endDate}\n${position.preview}`,
+            text: `${position.startDate} - ${position.endDate}\n${position.preview}`,
           });
         }
       });
