@@ -8,6 +8,8 @@ interface CardStylesProps {
   flipped?: boolean;
 }
 
+// TODO Add zoom on hover and make clear which cards flip and which have urls
+
 const Container = styled.a<CardStylesProps>`
   font-size: 13px;
   flex-wrap: wrap;
@@ -40,6 +42,8 @@ const Container = styled.a<CardStylesProps>`
 `;
 
 const ContainerInner = styled.div<CardStylesProps>`
+  /* Required for storybook */
+  min-height: 140px;
   /* Flip */
   width: 100%;
   height: 100%;

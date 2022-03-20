@@ -25,6 +25,10 @@ export const defaultLayoutProps = {
       link: '/',
     },
     {
+      name: 'Employment',
+      link: '/employment',
+    },
+    {
       name: 'Projects',
       link: '/projects',
     },

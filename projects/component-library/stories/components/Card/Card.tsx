@@ -13,7 +13,7 @@ export interface CardProps {
   tags?: string[];
   modifyWidth?: 1 | 2 | 'full';
   onTagClick?: (text: string) => void;
-  flipContent?: JSX.Element;
+  flipContent?: JSX.Element | string;
 }
 
 export const Card = ({
