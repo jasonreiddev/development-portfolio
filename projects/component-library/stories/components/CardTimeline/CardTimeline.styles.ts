@@ -19,14 +19,14 @@ const Container = styled.div<CardTimelineStylesProps>`
     height: 10px;
     width: 20px;
     background-color: var(--color-secondary);
-    right: -20px;
+    right: -15px;
     top: calc(${(p) => p.size / 2}px - 5px);
   }
 
   a:nth-child(even) {
     &:before {
       right: auto;
-      left: -20px;
+      left: -15px;
     }
     transform: translateY(calc(${(p) => p.size / 2}px + 5px));
   }

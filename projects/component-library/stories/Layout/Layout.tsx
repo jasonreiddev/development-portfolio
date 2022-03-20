@@ -38,13 +38,14 @@ export const Layout = ({
   if (pageTitle) {
     title = `${title} | ${pageTitle}`;
   }
+  const { dark } = useContext(LayoutContext);
 
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <GlobalStyles />
+      <GlobalStyles dark={dark} />
       <s.SVG>
         <defs>
           <pattern

@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+interface GlobalStylesProps {
+  dark: boolean;
+}
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
 :root {
   --font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -35,7 +39,10 @@ export const GlobalStyles = createGlobalStyle`
     --box-shadow-no-top: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073);
 
-  @media (prefers-color-scheme: dark) {
+
+    ${(p) =>
+      p.dark
+        ? `
     --color-primary: rgb(179, 94, 145);
     --color-secondary: rgb(52, 94, 51);
     --color-tertiary: rgb(70, 115, 133);
@@ -47,7 +54,8 @@ export const GlobalStyles = createGlobalStyle`
     --color-contrast-semi-bold: var(--global-white-semi-bold);
     --color-contrast-semi-bold-66: var(--global-white-semi-bold-66);
     --color-contrast-bold: var(--global-white-bold);
-  }
+      `
+        : null}
 }
 
 html {

@@ -15,7 +15,7 @@ const defaultState = {
 
 export const LayoutContext = createContext<ILayoutContext>(defaultState);
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const LayoutProvider: React.FC = ({ children }) => {
   const [dark, setDark] = useState(defaultState.dark);
   const [pageTitle, setPageTitle] = useState('');
 
