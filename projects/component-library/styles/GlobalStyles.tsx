@@ -15,17 +15,17 @@ export const GlobalStyles = createGlobalStyle`
   --color-base: var(--global-white);
   --global-white-semi-bold: rgb(248, 232, 242);
   --color-base-semi-bold: var(--global-white-semi-bold);
-  --global-white-semi-bold-80: rgba(248, 232, 242, 0.8);
-  --color-base-semi-bold-80: var(--global-white-semi-bold-80);
+  --global-white-semi-bold-66: rgba(248, 232, 242, 0.66);
+  --color-base-semi-bold-66: var(--global-white-semi-bold-66);
   --global-white-bold: rgb(255, 255, 255);
   --color-base-bold: var(--global-white-bold);
-  --global-black: rgb(70, 73, 76);
+  --global-black: rgb(32, 32, 32);
   --color-contrast: var(--global-black);
-  --global-black-semi-bold: rgb(35, 38, 42);
+  --global-black-semi-bold: rgb(18, 18, 18);
   --color-contrast-semi-bold: var(--global-black-bold);
-  --global-black-semi-bold-80: rgba(35, 38, 42, 0.8);
-  --color-contrast-semi-bold-80: var(--global-black-semi-bold-80);
-  --global-black-bold: rgb(0, 3, 6);
+  --global-black-semi-bold-66: rgba(16, 16, 16, 0.66);
+  --color-contrast-semi-bold-66: var(--global-black-semi-bold-66);
+  --global-black-bold: rgb(8, 8, 8);
   --color-contrast-bold: var(--global-black-semi-bold);
 
   --color-base-bold: rgb(255, 255, 255);
@@ -41,11 +41,11 @@ export const GlobalStyles = createGlobalStyle`
     --color-tertiary: rgb(70, 115, 133);
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);
-    --color-base-semi-bold-80: var(--global-black-semi-bold-80);
+    --color-base-semi-bold-66: var(--global-black-semi-bold-66);
     --color-base-bold: var(--global-black-bold);
     --color-contrast: var(--global-white);
     --color-contrast-semi-bold: var(--global-white-semi-bold);
-    --color-contrast-semi-bold-80: var(--global-white-semi-bold-80);
+    --color-contrast-semi-bold-66: var(--global-white-semi-bold-66);
     --color-contrast-bold: var(--global-white-bold);
   }
 }

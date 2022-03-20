@@ -27,7 +27,7 @@ const Tag = styled.button<CardGridFilterableStylesProps>`
        var(--color-primary);
         `
       : `
-       var(--color-base-semi-bold-80);
+       var(--color-base-semi-bold-66);
         `};
 `;
 

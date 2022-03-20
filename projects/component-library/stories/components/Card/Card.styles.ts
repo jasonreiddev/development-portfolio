@@ -65,7 +65,7 @@ const Content = styled.div`
   bottom: 0;
   position: absolute;
   width: 100%;
-  background-color: var(--color-base-semi-bold-80);
+  background-color: var(--color-base-semi-bold-66);
 
   h3 {
     font-weight: var(--font-weight-bold);
@@ -88,7 +88,7 @@ const TagsContainer = styled.div`
 
 const Tag = styled.div`
   padding: 6px;
-  background-color: var(--color-base-semi-bold-80);
+  background-color: var(--color-base-semi-bold-66);
   pointer-events: all;
   cursor: pointer;
 `;
