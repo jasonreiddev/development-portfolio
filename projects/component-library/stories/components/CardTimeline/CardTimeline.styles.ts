@@ -37,8 +37,32 @@ const Line = styled.div<CardTimelineStylesProps>`
   top: 0;
   bottom: 0;
   width: 10px;
-  margin: calc(${(p) => p.size / 2}px + 5px) calc(50% - 5px);
+  margin: calc(${(p) => p.size / 2}px + 5px) calc(50% - 5px) 0;
   background-color: var(--color-secondary);
+  margin-bottom: -20px;
+
+  &:nth-child(odd):before {
+    content: '';
+    position: absolute;
+    height: 150px;
+    width: 10px;
+    background-color: var(--color-secondary);
+    bottom: -150px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    margin: 0 calc(50% - 20px);
+    height: 10px;
+    bottom: 0;
+    width: 40px;
+    background-color: var(--color-secondary);
+  }
+
+  &:nth-child(odd):after {
+    margin-bottom: -150px;
+  }
 `;
 
 export const CardTimelineStyles = {
