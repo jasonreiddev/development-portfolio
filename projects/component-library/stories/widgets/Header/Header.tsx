@@ -28,7 +28,7 @@ export const Header = ({
   return (
     <s.Wrapper>
       <s.Title href="/">
-        <h2>{title}</h2>
+        <h1>{title}</h1>
       </s.Title>
 
       {(user || onLogin || onCreateAccount) && (

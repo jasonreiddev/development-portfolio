@@ -33,7 +33,7 @@ const Title = styled.a`
   display: inline-block;
   vertical-align: top;
   color: var(--color-contrast);
-  h2 {
+  h1 {
     margin: 0 auto;
   }
 `;
@@ -48,7 +48,7 @@ const MenuItems = styled.ul`
 const MenuLink = styled.a`
   font-size: 1.5rem;
   line-height: 1;
-
+  font-weight: var(--font-weight-bold);
   color: var(--color-contrast);
 `;
 
