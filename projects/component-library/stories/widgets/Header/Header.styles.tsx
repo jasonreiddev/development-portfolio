@@ -46,14 +46,14 @@ const MenuItems = styled.ul`
 `;
 
 const MenuLink = styled.a`
-  font-size: 1.5rem;
+  font-size: ${clamp({ multiplier: 1 })};
   line-height: 1;
   font-weight: var(--font-weight-bold);
   color: var(--color-contrast);
 `;
 
 const MenuActive = styled.h2`
-  font-size: 1.5rem;
+  font-size: ${clamp({ multiplier: 1 })};
   line-height: 1;
   margin: 0;
   color: var(--color-base-bold);
