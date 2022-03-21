@@ -76,9 +76,9 @@ export const Layout = ({
         </s.Aside>
         <s.Main>
           <div>{children}</div>
-          <s.MobileFooter>
+          <s.NestedFooter>
             <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-          </s.MobileFooter>
+          </s.NestedFooter>
         </s.Main>
         <s.Aside className="aside-right">
           <Share
@@ -87,9 +87,9 @@ export const Layout = ({
             shareUrl={`${'site.url'}${typeof window !== 'undefined' ? location.pathname : ''}`}
           />
         </s.Aside>
-        <s.DesktopFooter>
+        <s.Footer>
           <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-        </s.DesktopFooter>
+        </s.Footer>
       </s.Wrapper>
     </>
   );

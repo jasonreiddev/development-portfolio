@@ -53,18 +53,21 @@ const LoadSpinner = styled.div`
 `;
 
 const Wrapper = styled.div`
-  display: grid;
   height: 100vh;
-  grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
+  overflow-x: hidden;
+  overflow-y: auto;
 
-  overflow: auto;
-  grid-template-rows: 50px 1fr;
+  display: grid;
+  grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
+  grid-template-rows: auto;
   grid-template-areas:
     'header header header'
-    'aside-left main aside-right';
+    'main main main'
+    'aside-left ignore aside-right'
+    'footer footer footer';
+
   @media ${from(Device.Tablet)} {
     overflow: hidden;
-    grid-template-rows: 100px 1fr 100px;
     grid-template-areas:
       'header header header'
       'aside-left main aside-right'
@@ -73,6 +76,7 @@ const Wrapper = styled.div`
 
   header {
     grid-area: header;
+    background-color: var(--color-primary);
   }
 `;
 
@@ -112,7 +116,9 @@ const Aside = styled.aside`
   }
 `;
 
-const MobileFooter = styled.footer`
+const Footer = styled.footer`
+  padding: 20px;
+  grid-area: footer;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -121,14 +127,12 @@ const MobileFooter = styled.footer`
   }
 `;
 
-const DesktopFooter = styled.footer`
-  padding: 20px;
-  grid-area: footer;
+const NestedFooter = styled.footer`
   display: none;
+  justify-content: center;
+  align-items: flex-end;
   @media ${from(Device.Tablet)} {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
   }
 `;
 
@@ -139,6 +143,6 @@ export const LayoutStyles = {
   Wrapper,
   Aside,
   Main,
-  MobileFooter,
-  DesktopFooter,
+  NestedFooter,
+  Footer,
 };
