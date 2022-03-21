@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { defaultLayoutProps } from '../../projects/portfolio/defaultLayoutProps';
 
 export interface ILayoutContext {
@@ -8,8 +8,10 @@ export interface ILayoutContext {
   updatePageTitle?: (pageTitle: string) => void;
 }
 
+// updated from preference on mount
+
 const defaultState = {
-  dark: false,
+  dark: true,
   pageTitle: '',
 };
 
@@ -20,12 +22,26 @@ export const LayoutProvider: React.FC = ({ children }) => {
   const [pageTitle, setPageTitle] = useState('');
 
   const toggleDark = (): void => {
+    localStorage.setItem('dark', (!dark).toString());
     setDark(!dark);
   };
 
   const updatePageTitle = (pageTitle: string): void => {
     setPageTitle(pageTitle);
   };
+
+  useEffect(() => {
+    const dark = localStorage.getItem('dark');
+    if (dark == undefined) {
+      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        setDark(false);
+      }
+    } else {
+      if (dark == 'false') {
+        setDark(false);
+      }
+    }
+  }, []);
 
   return (
     <LayoutContext.Provider

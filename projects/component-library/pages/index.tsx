@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
       <Head>
         <title>SSR styled-components with Next.js</title>
       </Head>
-      <GlobalStyles />
+      <GlobalStyles dark={true} />
       <Landing />
     </>
   );

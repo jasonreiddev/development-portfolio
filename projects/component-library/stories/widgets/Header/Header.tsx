@@ -1,4 +1,4 @@
-// import { ToggleDarkMode } from '../../../../helpers/layoutContext';
+import { ToggleDarkMode } from '../../../../helpers/layoutContext';
 import { Button } from '../../components/Button/Button';
 
 import { HeaderStyles as s } from './Header.styles';
@@ -49,9 +49,9 @@ export const Header = ({
               </a>
             </li>
           ))}
-          {/* <li>
+          <li>
             <ToggleDarkMode />
-          </li> */}
+          </li>
         </s.MenuItems>
       </nav>
     </s.Wrapper>

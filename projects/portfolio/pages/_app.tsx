@@ -1,6 +1,3 @@
-import '../styles/globals.css';
-// import { Layout } from '../../component-library/stories/Layout/Layout';
-
 import type { AppProps } from 'next/app';
 import { LayoutProvider } from '../../helpers/layoutContext';
 import { Layout } from '../../component-library/stories/Layout/Layout';
