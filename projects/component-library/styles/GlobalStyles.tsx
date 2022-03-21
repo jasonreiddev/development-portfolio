@@ -179,6 +179,10 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
+hr {
+  border-color: var(--color-primary);
+}
+
 [data-tooltip]{
   &:before {
     content: attr(data-tooltip);
