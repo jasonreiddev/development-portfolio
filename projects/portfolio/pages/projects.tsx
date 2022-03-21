@@ -77,12 +77,7 @@ const Projects: NextPage = () => {
     fetchProjects();
   }, []);
 
-  return (
-    <>
-      <h2>Projects</h2>
-      {cards.length > 0 && <CardGridFilterable cards={cards} size={300} />}
-    </>
-  );
+  return <>{cards.length > 0 && <CardGridFilterable cards={cards} size={300} />}</>;
 };
 
 export default Projects;

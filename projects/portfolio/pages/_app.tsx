@@ -1,18 +1,15 @@
-import '../styles/globals.css';
-// import { Layout } from '../../component-library/stories/Layout/Layout';
-
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from '../../helpers/layoutContext';
+import { LayoutProvider } from '../../helpers/layoutContext';
 import { Layout } from '../../component-library/stories/Layout/Layout';
 import { defaultLayoutProps } from '../defaultLayoutProps';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <ThemeProvider>
+    <LayoutProvider>
       <Layout {...defaultLayoutProps}>
         <Component {...pageProps} />
       </Layout>
-    </ThemeProvider>
+    </LayoutProvider>
   );
 }
 

@@ -1,5 +1,9 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { defaultLayoutProps } from '../../projects/portfolio/defaultLayoutProps';
+import {
+  IconButton,
+  Icon,
+} from '../../projects/component-library/stories/components/IconButton/IconButton';
 
 export interface ILayoutContext {
   dark: boolean;
@@ -8,24 +12,40 @@ export interface ILayoutContext {
   updatePageTitle?: (pageTitle: string) => void;
 }
 
+// updated from preference on mount
+
 const defaultState = {
-  dark: false,
+  dark: true,
   pageTitle: '',
 };
 
 export const LayoutContext = createContext<ILayoutContext>(defaultState);
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const LayoutProvider: React.FC = ({ children }) => {
   const [dark, setDark] = useState(defaultState.dark);
   const [pageTitle, setPageTitle] = useState('');
 
   const toggleDark = (): void => {
+    localStorage.setItem('dark', (!dark).toString());
     setDark(!dark);
   };
 
   const updatePageTitle = (pageTitle: string): void => {
     setPageTitle(pageTitle);
   };
+
+  useEffect(() => {
+    const dark = localStorage.getItem('dark');
+    if (dark == undefined) {
+      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        setDark(false);
+      }
+    } else {
+      if (dark == 'false') {
+        setDark(false);
+      }
+    }
+  }, []);
 
   return (
     <LayoutContext.Provider
@@ -44,13 +64,19 @@ export const ThemeProvider: React.FC = ({ children }) => {
 
 export const ToggleDarkMode = (): JSX.Element => {
   const { dark, toggleDark } = useContext(LayoutContext);
-  const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
+  const handleOnClick = (): void => {
     toggleDark && toggleDark();
   };
   return (
     <>
-      <button onClick={handleOnClick}>{dark ? '🌙' : '🌞'}</button>
+      <IconButton
+        onClick={() => {
+          handleOnClick();
+        }}
+        icon={dark ? Icon.Moon : Icon.Sun}
+        size="small"
+        active={true}
+      />
     </>
   );
 };

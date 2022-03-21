@@ -1,10 +1,11 @@
 import type { NextPage } from 'next';
 import { TextCard } from '../../component-library/stories/widgets/TextCard/TextCard';
+import { PageTitle } from '../../component-library/stories/components/PageTitle/PageTitle';
 
 const Home: NextPage = () => {
   return (
     <>
-      <h2>Welcome to my portfolio</h2>
+      <PageTitle text="Welcome to my portfolio!" />
       <TextCard>
         Hi, I'm Jason Reid, a software developer from Yorkshire. I started my software development
         career in January of 2019 as an apprentice at Bradford Council and am now a support

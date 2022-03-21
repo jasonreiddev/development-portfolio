@@ -15,7 +15,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <>
-      <GlobalStyles />
+      <GlobalStyles dark={true} />
       <Story />
     </>
   ),

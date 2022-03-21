@@ -1,4 +1,4 @@
-// import { ToggleDarkMode } from '../../../../helpers/layoutContext';
+import { ToggleDarkMode } from '../../../../helpers/layoutContext';
 import { Button } from '../../components/Button/Button';
 
 import { HeaderStyles as s } from './Header.styles';
@@ -42,16 +42,23 @@ export const Header = ({
       )}
       <nav>
         <s.MenuItems>
-          {menuLinks.map((link) => (
-            <li key={link.name}>
-              <a className={link.name == title ? 'active' : ''} href={link.link}>
-                {link.name ? link.name : link.name}
-              </a>
-            </li>
-          ))}
-          {/* <li>
+          {menuLinks.map((link) => {
+            if (typeof window !== 'undefined' && location.pathname == link.link) {
+              return (
+                <li>
+                  <s.MenuActive>{link.name}</s.MenuActive>
+                </li>
+              );
+            }
+            return (
+              <li key={link.name}>
+                <s.MenuLink href={link.link}>{link.name ? link.name : link.name}</s.MenuLink>
+              </li>
+            );
+          })}
+          <li>
             <ToggleDarkMode />
-          </li> */}
+          </li>
         </s.MenuItems>
       </nav>
     </s.Wrapper>

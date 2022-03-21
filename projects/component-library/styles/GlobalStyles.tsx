@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+interface GlobalStylesProps {
+  dark: boolean;
+}
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
 :root {
   --font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -11,21 +15,22 @@ export const GlobalStyles = createGlobalStyle`
   --color-primary: rgb(249, 188, 225);
   --color-secondary: rgb(127, 170, 127);
   --color-tertiary: rgb(129, 176, 194);
+  --color-tertiary-contrast: rgb(0 95 130);
   --global-white: rgb(253, 242, 248);
   --color-base: var(--global-white);
   --global-white-semi-bold: rgb(248, 232, 242);
   --color-base-semi-bold: var(--global-white-semi-bold);
-  --global-white-semi-bold-80: rgba(248, 232, 242, 0.8);
-  --color-base-semi-bold-80: var(--global-white-semi-bold-80);
+  --global-white-semi-bold-66: rgba(248, 232, 242, 0.66);
+  --color-base-semi-bold-66: var(--global-white-semi-bold-66);
   --global-white-bold: rgb(255, 255, 255);
   --color-base-bold: var(--global-white-bold);
-  --global-black: rgb(70, 73, 76);
+  --global-black: rgb(32, 32, 32);
   --color-contrast: var(--global-black);
-  --global-black-semi-bold: rgb(35, 38, 42);
+  --global-black-semi-bold: rgb(18, 18, 18);
   --color-contrast-semi-bold: var(--global-black-bold);
-  --global-black-semi-bold-80: rgba(35, 38, 42, 0.8);
-  --color-contrast-semi-bold-80: var(--global-black-semi-bold-80);
-  --global-black-bold: rgb(0, 3, 6);
+  --global-black-semi-bold-66: rgba(16, 16, 16, 0.66);
+  --color-contrast-semi-bold-66: var(--global-black-semi-bold-66);
+  --global-black-bold: rgb(8, 8, 8);
   --color-contrast-bold: var(--global-black-semi-bold);
 
   --color-base-bold: rgb(255, 255, 255);
@@ -35,19 +40,24 @@ export const GlobalStyles = createGlobalStyle`
     --box-shadow-no-top: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073);
 
-  @media (prefers-color-scheme: dark) {
+
+    ${(p) =>
+      p.dark
+        ? `
     --color-primary: rgb(179, 94, 145);
     --color-secondary: rgb(52, 94, 51);
     --color-tertiary: rgb(70, 115, 133);
+    --color-tertiary-contrast: rgb(115 165 185);
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);
-    --color-base-semi-bold-80: var(--global-black-semi-bold-80);
+    --color-base-semi-bold-66: var(--global-black-semi-bold-66);
     --color-base-bold: var(--global-black-bold);
     --color-contrast: var(--global-white);
     --color-contrast-semi-bold: var(--global-white-semi-bold);
-    --color-contrast-semi-bold-80: var(--global-white-semi-bold-80);
+    --color-contrast-semi-bold-66: var(--global-white-semi-bold-66);
     --color-contrast-bold: var(--global-white-bold);
-  }
+      `
+        : null}
 }
 
 html {
@@ -141,7 +151,7 @@ body, input, button, textarea, select, option {
 input[type='text'],textarea {font-size:1em;}
 
 a {
-  color: var(--color-tertiary);
+  color: var(--color-tertiary-contrast);
   text-decoration: none;
 }
 

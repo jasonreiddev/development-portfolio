@@ -1,4 +1,5 @@
-import { MdMail, MdLogout, MdRefresh, MdSearch, MdCircle } from 'react-icons/md';
+import { MdCircle, MdMail, MdLogout, MdRefresh, MdSearch } from 'react-icons/md';
+import { HiSun, HiMoon } from 'react-icons/hi';
 
 import { IconButtonStyles as s } from './IconButton.styles';
 
@@ -8,7 +9,7 @@ export interface IconButtonProps {
   primary?: boolean;
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
-  label: string;
+  label?: string;
   onClick?: () => void;
 }
 
@@ -18,6 +19,8 @@ export enum Icon {
   LogOut,
   Refresh,
   Search,
+  Sun,
+  Moon,
 }
 
 const renderIcon = (icon: Icon): JSX.Element => {
@@ -32,6 +35,10 @@ const renderIcon = (icon: Icon): JSX.Element => {
       return <MdRefresh />;
     case Icon.Search:
       return <MdSearch />;
+    case Icon.Sun:
+      return <HiSun />;
+    case Icon.Moon:
+      return <HiMoon />;
   }
 };
 

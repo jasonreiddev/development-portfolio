@@ -33,7 +33,7 @@ export default {
       name: 'hideOnEmployment',
       title: 'Hide on Employment',
       type: 'boolean',
-      description: 'Hide in the employmernt page of gatsby site',
+      description: 'Hide in the employment page of gatsby site',
       options: {
         layout: 'checkbox',
       },
