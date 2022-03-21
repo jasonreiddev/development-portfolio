@@ -59,12 +59,11 @@ const Wrapper = styled.div`
 
   display: grid;
   grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
-  grid-template-rows: auto;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     'header header header'
     'main main main'
-    'aside-left ignore aside-right'
-    'footer footer footer';
+    'aside-left footer aside-right';
 
   @media ${from(Device.Tablet)} {
     overflow: hidden;
@@ -76,7 +75,6 @@ const Wrapper = styled.div`
 
   header {
     grid-area: header;
-    background-color: var(--color-primary);
   }
 `;
 

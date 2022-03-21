@@ -12,6 +12,7 @@ const Container = styled.div<CardTimelineStylesProps>`
   grid-gap: 10px 40px;
   padding: 10px;
   position: relative;
+  margin-bottom: 30px;
 
   a:before {
     content: '';

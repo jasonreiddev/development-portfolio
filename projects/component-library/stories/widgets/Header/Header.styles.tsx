@@ -10,8 +10,10 @@ const Wrapper = styled.header`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  height: fit-content;
+  padding: 20px;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  background: var(--color-base);
+  background-color: var(--color-primary);
   box-shadow: var(--box-shadow);
 
   nav {
