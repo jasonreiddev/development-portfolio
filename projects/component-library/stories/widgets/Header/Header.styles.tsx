@@ -28,6 +28,7 @@ const Title = styled.h1`
 
 const MenuItems = styled.ul`
   display: flex;
+  align-items: center;
   gap: 2em;
 
   a {

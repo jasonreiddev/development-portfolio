@@ -1,5 +1,9 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { defaultLayoutProps } from '../../projects/portfolio/defaultLayoutProps';
+import {
+  IconButton,
+  Icon,
+} from '../../projects/component-library/stories/components/IconButton/IconButton';
 
 export interface ILayoutContext {
   dark: boolean;
@@ -60,13 +64,19 @@ export const LayoutProvider: React.FC = ({ children }) => {
 
 export const ToggleDarkMode = (): JSX.Element => {
   const { dark, toggleDark } = useContext(LayoutContext);
-  const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
+  const handleOnClick = (): void => {
     toggleDark && toggleDark();
   };
   return (
     <>
-      <button onClick={handleOnClick}>{dark ? '🌙' : '🌞'}</button>
+      <IconButton
+        onClick={() => {
+          handleOnClick();
+        }}
+        icon={dark ? Icon.Moon : Icon.Sun}
+        size="small"
+        active={true}
+      />
     </>
   );
 };
