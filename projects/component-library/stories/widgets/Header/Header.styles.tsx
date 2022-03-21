@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import { clamp } from '../../../../helpers/media';
 
+interface HeaderStylesProps {
+  active: boolean;
+}
+
 const Wrapper = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 15px 20px;
@@ -39,16 +43,18 @@ const MenuItems = styled.ul`
   display: flex;
   align-items: baseline;
   gap: 2em;
+`;
 
-  a {
-    color: var(--color-contrast);
-    font-size: 1.5rem;
-    line-height: 1;
-  }
+const MenuLink = styled.a<HeaderStylesProps>`
+  font-size: 1.5rem;
+  line-height: 1;
+
+  color: ${(p) => (p.active ? `var(--color-base);` : `var(--color-contrast);`)};
 `;
 
 export const HeaderStyles = {
   Wrapper,
   Title,
   MenuItems,
+  MenuLink,
 };

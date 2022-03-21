@@ -42,13 +42,21 @@ export const Header = ({
       )}
       <nav>
         <s.MenuItems>
-          {menuLinks.map((link) => (
-            <li key={link.name}>
-              <a className={link.name == title ? 'active' : ''} href={link.link}>
-                {link.name ? link.name : link.name}
-              </a>
-            </li>
-          ))}
+          {menuLinks.map((link) => {
+            let active = false;
+            if (typeof window !== 'undefined') {
+              console.log(link.link);
+              active = location.pathname == link.link;
+              console.log('🚀 ~ file: Header.tsx ~ line 51 ~ {menuLinks.map ~ active', active);
+            }
+            return (
+              <li key={link.name}>
+                <s.MenuLink href={link.link} active={active}>
+                  {link.name ? link.name : link.name}
+                </s.MenuLink>
+              </li>
+            );
+          })}
           <li>
             <ToggleDarkMode />
           </li>
