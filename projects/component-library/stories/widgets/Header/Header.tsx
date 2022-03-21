@@ -27,7 +27,10 @@ export const Header = ({
 }: HeaderProps): JSX.Element => {
   return (
     <s.Wrapper>
-      <s.Title>{title}</s.Title>
+      <s.Title href="/">
+        <h2>{title}</h2>
+      </s.Title>
+
       {(user || onLogin || onCreateAccount) && (
         <div>
           {user ? (

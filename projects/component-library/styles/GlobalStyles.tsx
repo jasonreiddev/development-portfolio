@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --border-radius: 15px;
-  --color-primary: rgb(249, 188, 225);
+  --color-primary: rgb(207 121 173);
   --color-secondary: rgb(127, 170, 127);
   --color-tertiary: rgb(129, 176, 194);
   --color-tertiary-contrast: rgb(0 95 130);
