@@ -36,7 +36,7 @@ export const Layout = ({
 }: LayoutProps): JSX.Element => {
   const { pageTitle } = useContext(LayoutContext);
   if (pageTitle) {
-    title = `${title} | ${pageTitle}`;
+    title = `${title} / ${pageTitle}`;
   }
   const { dark } = useContext(LayoutContext);
 
@@ -44,6 +44,12 @@ export const Layout = ({
     <>
       <Head>
         <title>{title}</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#b35e91" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#b35e91" />
       </Head>
       <GlobalStyles dark={dark} />
       <s.SVG>
@@ -83,8 +89,10 @@ export const Layout = ({
         <s.Aside className="aside-right">
           <Share
             text="Share"
-            shareText={`${title ? title : 'site.titleTemplate'} - @${'site.twitterUsername'}`}
-            shareUrl={`${'site.url'}${typeof window !== 'undefined' ? location.pathname : ''}`}
+            shareText={`${title} - @jasonreiddev`}
+            shareUrl={
+              typeof window !== 'undefined' ? location.host + location.pathname : 'jasonreid.dev'
+            }
           />
         </s.Aside>
         <s.Footer>
