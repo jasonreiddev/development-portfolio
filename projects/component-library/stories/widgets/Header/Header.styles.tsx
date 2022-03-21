@@ -2,10 +2,6 @@ import styled from 'styled-components';
 
 import { clamp } from '../../../../helpers/media';
 
-interface HeaderStylesProps {
-  active: boolean;
-}
-
 const Wrapper = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 15px 20px;
@@ -45,11 +41,18 @@ const MenuItems = styled.ul`
   gap: 2em;
 `;
 
-const MenuLink = styled.a<HeaderStylesProps>`
+const MenuLink = styled.a`
   font-size: 1.5rem;
   line-height: 1;
 
-  color: ${(p) => (p.active ? `var(--color-base);` : `var(--color-contrast);`)};
+  color: var(--color-contrast);
+`;
+
+const MenuActive = styled.h2`
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: 0;
+  color: var(--color-base);
 `;
 
 export const HeaderStyles = {
@@ -57,4 +60,5 @@ export const HeaderStyles = {
   Title,
   MenuItems,
   MenuLink,
+  MenuActive,
 };

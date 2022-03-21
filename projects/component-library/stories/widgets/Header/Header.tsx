@@ -43,17 +43,16 @@ export const Header = ({
       <nav>
         <s.MenuItems>
           {menuLinks.map((link) => {
-            let active = false;
-            if (typeof window !== 'undefined') {
-              console.log(link.link);
-              active = location.pathname == link.link;
-              console.log('🚀 ~ file: Header.tsx ~ line 51 ~ {menuLinks.map ~ active', active);
+            if (typeof window !== 'undefined' && location.pathname == link.link) {
+              return (
+                <li>
+                  <s.MenuActive>{link.name}</s.MenuActive>
+                </li>
+              );
             }
             return (
               <li key={link.name}>
-                <s.MenuLink href={link.link} active={active}>
-                  {link.name ? link.name : link.name}
-                </s.MenuLink>
+                <s.MenuLink href={link.link}>{link.name ? link.name : link.name}</s.MenuLink>
               </li>
             );
           })}

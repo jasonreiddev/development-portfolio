@@ -59,12 +59,7 @@ const Employment: NextPage = () => {
     fetchPositions();
   }, []);
 
-  return (
-    <>
-      <h2>Employment</h2>
-      {cards.length > 0 && <CardTimeline cards={cards} size={300} />}
-    </>
-  );
+  return <>{cards.length > 0 && <CardTimeline cards={cards} size={300} />}</>;
 };
 
 export default Employment;
