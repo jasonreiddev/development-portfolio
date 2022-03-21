@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --border-radius: 15px;
-  --color-primary: rgb(249, 188, 225);
+  --color-primary: rgb(179, 94, 145);
   --color-secondary: rgb(127, 170, 127);
   --color-tertiary: rgb(129, 176, 194);
   --color-tertiary-contrast: rgb(0 95 130);
@@ -44,7 +44,6 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     ${(p) =>
       p.dark
         ? `
-    --color-primary: rgb(179, 94, 145);
     --color-secondary: rgb(52, 94, 51);
     --color-tertiary: rgb(70, 115, 133);
     --color-tertiary-contrast: rgb(115 165 185);
@@ -177,6 +176,10 @@ em {
 img, picture, video, canvas, svg {
   display: block; // Improve media defaults
   max-width: 100%;
+}
+
+hr {
+  border-color: var(--color-primary);
 }
 
 [data-tooltip]{

@@ -75,6 +75,7 @@ const Wrapper = styled.div`
 
   header {
     grid-area: header;
+    z-index: 1;
   }
 `;
 

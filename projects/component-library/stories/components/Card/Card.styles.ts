@@ -95,6 +95,7 @@ const Tag = styled.div`
 
 const Front = styled.div<CardStylesProps>`
   background-color: var(--color-primary);
+  border-radius: var(--border-radius);
 
   ${(p) =>
     p.canFlip
