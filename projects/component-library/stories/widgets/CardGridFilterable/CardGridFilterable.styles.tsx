@@ -24,7 +24,7 @@ const Tag = styled.button<CardGridFilterableStylesProps>`
   background-color: ${(p) =>
     p.active
       ? `
-       var(--color-primary);
+       var(--color-secondary);
         `
       : `
        var(--color-base-semi-bold-66);

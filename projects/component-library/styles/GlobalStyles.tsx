@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --color-primary: rgb(249, 188, 225);
   --color-secondary: rgb(127, 170, 127);
   --color-tertiary: rgb(129, 176, 194);
+  --color-tertiary-contrast: rgb(0 95 130);
   --global-white: rgb(253, 242, 248);
   --color-base: var(--global-white);
   --global-white-semi-bold: rgb(248, 232, 242);
@@ -46,6 +47,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     --color-primary: rgb(179, 94, 145);
     --color-secondary: rgb(52, 94, 51);
     --color-tertiary: rgb(70, 115, 133);
+    --color-tertiary-contrast: rgb(115 165 185);
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);
     --color-base-semi-bold-66: var(--global-black-semi-bold-66);
@@ -149,7 +151,7 @@ body, input, button, textarea, select, option {
 input[type='text'],textarea {font-size:1em;}
 
 a {
-  color: var(--color-tertiary);
+  color: var(--color-tertiary-contrast);
   text-decoration: none;
 }
 
