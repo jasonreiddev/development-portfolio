@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { clamp } from '../../../../helpers/media';
+import { clamp, Device, until } from '../../../../helpers/media';
 
 const Wrapper = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -41,8 +41,20 @@ const Title = styled.a`
 const MenuItems = styled.ul`
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 2em;
+  gap: 0.5em 2em;
+
+  @media ${until(Device.MobileLarge)} {
+    li > button {
+      height: 2em;
+      background: unset !important;
+      box-shadow: unset;
+      min-width: auto !important;
+      padding: 0 !important;
+      transform: translateY(3px);
+    }
+  }
 `;
 
 const MenuLink = styled.a`

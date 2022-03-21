@@ -46,6 +46,7 @@ const Wrapper = styled.button<IconButtonStylesProps>`
   &.small {
     font-size: 12px;
     padding: 10px 16px;
+    min-width: 50px;
   }
 
   &.medium {
