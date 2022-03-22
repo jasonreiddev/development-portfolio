@@ -50,39 +50,37 @@ const Container = styled.div<CardTimelineStylesProps>`
 `;
 
 const Line = styled.div<CardTimelineStylesProps>`
-  display: none;
-  @media ${from(Device.Tablet)} {
-    display: block;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  margin: calc(${(p) => p.size / 2}px + 5px) calc(50% - 5px) 0;
+  background-color: var(--color-secondary);
+  margin-bottom: -20px;
+  z-index: -1;
+
+  &:nth-child(odd):before {
+    content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
+    height: 150px;
     width: 10px;
-    margin: calc(${(p) => p.size / 2}px + 5px) calc(50% - 5px) 0;
     background-color: var(--color-secondary);
-    margin-bottom: -20px;
+    bottom: -150px;
+  }
 
-    &:nth-child(odd):before {
-      content: '';
-      position: absolute;
-      height: 150px;
-      width: 10px;
-      background-color: var(--color-secondary);
-      bottom: -150px;
-    }
+  &:after {
+    content: '';
+    position: absolute;
+    margin: 0 calc(50% - 20px);
+    height: 10px;
+    bottom: 0;
+    width: 40px;
+    background-color: var(--color-secondary);
+  }
 
-    &:after {
-      content: '';
-      position: absolute;
-      margin: 0 calc(50% - 20px);
-      height: 10px;
-      bottom: 0;
-      width: 40px;
-      background-color: var(--color-secondary);
-    }
-
-    &:nth-child(odd):after {
-      margin-bottom: -150px;
-    }
+  &:nth-child(odd):after {
+    margin-bottom: -150px;
   }
 `;
 
