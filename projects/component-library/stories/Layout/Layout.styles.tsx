@@ -67,6 +67,17 @@ const Wrapper = styled.div`
 
   @media ${from(Device.Tablet)} {
     overflow: hidden;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas:
+      'header header header'
+      'main main aside-left'
+      ' main main aside-right'
+      'footer footer footer';
+  }
+
+  @media ${from(Device.TabletLarge)} {
+    overflow: hidden;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
       'header header header'
       'aside-left main aside-right'
