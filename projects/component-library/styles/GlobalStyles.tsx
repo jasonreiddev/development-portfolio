@@ -59,14 +59,6 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
         : null}
 }
 
-html {
-  background-color: var(--color-base);
-}
-
-input {
-  background-color: var(--color-base-bright);
-}
-
 /* CSS Reset */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -122,10 +114,19 @@ table {
   box-sizing: border-box; // more-intuitive box-sizing model.
 }
 
-html, body {
+html, body, #__next {
+  padding: 0;
+  margin: 0;
   overflow: hidden;
-  height: 100%; // Allow percentage-based heights in the application
-  white-space: pre-wrap;
+  width: 100vw;
+  height: 100%;
+}
+html {
+  background-color: var(--color-base);
+}
+
+input {
+  background-color: var(--color-base-bright);
 }
 
 *, *::before, *::after {
@@ -145,6 +146,7 @@ body, input, button, textarea, select, option {
   font-family: var(--font-family);
   font-weight: var(--font-weight-light);
   color: var(--color-contrast);
+  white-space: pre-wrap;
 }
 
 input[type='text'],textarea {font-size:1em;}
@@ -171,7 +173,6 @@ h1, h2, h3, h4, h5, h6, p {
 em {
     font-style: italic;
 }
-
 
 img, picture, video, canvas, svg {
   display: block; // Improve media defaults

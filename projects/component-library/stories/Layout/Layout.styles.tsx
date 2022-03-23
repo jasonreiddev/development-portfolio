@@ -7,7 +7,7 @@ const SVG = styled.svg`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
   transform: unset;
   svg {
@@ -19,7 +19,7 @@ const SVG = styled.svg`
 const LoadMask = styled.div`
   position: absolute;
   z-index: 1;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background: var(--color-primary);
   @media (prefers-reduced-motion: no-preference) {
@@ -53,7 +53,7 @@ const LoadSpinner = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 
