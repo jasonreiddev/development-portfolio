@@ -7,11 +7,6 @@
     "lint": "eslint .",
     "start": "sanity start"
   },
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ]
-  },
   "dependencies": {
     "@sanity/base": "^2.27.1",
     "@sanity/cli": "^2.27.0",
