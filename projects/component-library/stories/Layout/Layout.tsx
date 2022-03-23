@@ -76,7 +76,9 @@ export const Layout = ({
         </>
       )}
       <s.Wrapper className={'mobile-scroll'}>
-        <Header title={headerTitle} menuLinks={menuLinks} />
+        <s.Header>
+          <Header title={headerTitle} menuLinks={menuLinks} />
+        </s.Header>
         <s.Aside className="aside-left">
           <Like setLikesDBValue={setLikesDBValue} getLikesDBValue={getLikesDBValue} liked={false} />
         </s.Aside>

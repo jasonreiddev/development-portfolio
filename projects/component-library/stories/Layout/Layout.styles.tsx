@@ -76,7 +76,7 @@ const Wrapper = styled.div`
       'footer footer footer';
   }
 
-  @media ${from(Device.TabletLarge)} {
+  @media ${from(Device.Desktop)} {
     overflow: hidden;
     grid-template-rows: auto 1fr;
     grid-template-areas:
@@ -85,10 +85,21 @@ const Wrapper = styled.div`
       'footer footer footer';
   }
 
-  header {
-    grid-area: header;
-    z-index: 1;
+  // Static layout from 2560px
+  @media ${from(Device.DesktopXL)} {
+    // 70% of 2560 = 1792
+    // (2560 - 1792) / 2 = 384
+    grid-template-columns: 1fr 384px 1792px 384px 1fr;
+    grid-template-areas:
+      'dead-left header header header dead-right'
+      'dead-left aside-left main aside-right dead-right'
+      'dead-left footer footer footer dead-right';
   }
+`;
+
+const Header = styled.main`
+  grid-area: header;
+  z-index: 1;
 `;
 
 const Main = styled.main`
@@ -153,6 +164,7 @@ export const LayoutStyles = {
   LoadSpinner,
   Wrapper,
   Aside,
+  Header,
   Main,
   NestedFooter,
   Footer,
