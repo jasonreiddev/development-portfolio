@@ -65,7 +65,7 @@ const Wrapper = styled.div`
     'main main main'
     'aside-left footer aside-right';
 
-  @media ${from(Device.Tablet)} {
+  @media ${from(Device.Tablet)} and (orientation: landscape) {
     overflow: hidden;
     grid-template-rows: auto 1fr 1fr;
     grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
