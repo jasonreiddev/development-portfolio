@@ -36,9 +36,9 @@ interface ClampProps {
 
 export function clamp({
   multiplier = 1,
-  initial = '1rem',
+  initial = '1em',
   scale = '1vw',
-  max = '2rem',
+  max = '2em',
 }: ClampProps): string {
   return `clamp(
     ${initial} * ${multiplier},

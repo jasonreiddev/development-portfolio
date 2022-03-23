@@ -58,7 +58,7 @@ const Wrapper = styled.div`
   overflow-y: auto;
 
   display: grid;
-  grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
+  grid-template-columns: 1fr minmax(150px, 1fr) 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'header header header'
@@ -68,6 +68,7 @@ const Wrapper = styled.div`
   @media ${from(Device.Tablet)} {
     overflow: hidden;
     grid-template-rows: auto 1fr 1fr;
+    grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
     grid-template-areas:
       'header header header'
       'main main aside-left'
@@ -92,7 +93,7 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   grid-area: main;
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
