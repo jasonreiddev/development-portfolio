@@ -44,7 +44,7 @@ const Dropdown = styled.div<{ active: boolean; fullWidth: boolean; expand: boole
     right: initial;
     border-bottom-right-radius: var(--border-radius);
   }
-  max-height: ${(p) => (p.active ? '100vh' : 0)};
+  max-height: ${(p) => (p.active ? '100%' : 0)};
   @media (prefers-reduced-motion: no-preference) {
     transition: max-height 0.15s ease-in;
   }

@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://jasonreid.dev">
-    <img alt="jasonreid.dev logo" src="./images/icon.png" width="60" />
+    <img alt="jasonreid.dev logo" src="./projects/portfolio/public/images/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -92,6 +92,12 @@ Copy '.env.example' and rename it to '.env.local', use this new file as a templa
 `yarn sn:lint` - performs lint check on the project.
 
 `cd projects/sanity` - change terminal directory to the workspace.
+
+## Helpers
+
+`yarn hl:lint` - performs lint check on the project.
+
+`cd projects/helpers` - change terminal directory to the workspace.
 
 ## Add Project
 

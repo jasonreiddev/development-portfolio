@@ -17,6 +17,7 @@
     "sn": "yarn workspace sanity sanity start",
     "sn:lint": "yarn workspace sanity lint",
     "sn:deploy": "yarn sanity sanity deploy build",
+    "hl:lint": "yarn workspace helpers lint",
     "lint": "yarn cl:lint && yarn pf:lint && yarn sn:lint",
     "lint-parallel": "yarn cl:lint & yarn pf:lint & yarn sn:lint"
   },

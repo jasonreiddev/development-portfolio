@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { Device } from '../../../../helpers/media';
+import { Accordion } from '../../components/Accordion/Accordion';
 
 import { CardProps } from '../../components/Card/Card';
 import { CardGrid } from '../../components/CardGrid/CardGrid';
+import { IfWidth } from '../../components/IfWidth/IfWidth';
 
 import { CardGridFilterableStyles as s } from './CardGridFilterable.styles';
 
@@ -64,8 +67,8 @@ export const CardGridFilterable = ({ cards = [], size }: CardGridFilterableProps
     }
   }
 
-  return (
-    <s.Wrapper>
+  const TagContainer = (): JSX.Element => {
+    return (
       <s.TagsContainer>
         {stateTags.map((tag, index) => (
           <s.Tag
@@ -79,6 +82,19 @@ export const CardGridFilterable = ({ cards = [], size }: CardGridFilterableProps
           </s.Tag>
         ))}
       </s.TagsContainer>
+    );
+  };
+
+  // Up to minWidth Mobile - Wrap Tags in accordion
+  const FalseChildren = (): JSX.Element => {
+    return <Accordion title="Tags">{TagContainer()}</Accordion>;
+  };
+
+  return (
+    <s.Wrapper>
+      <IfWidth falseChildren={FalseChildren()} minWidth={Device.Tablet}>
+        {TagContainer()}
+      </IfWidth>
       <CardGrid cards={stateCards} size={size} onTagClick={tagClick} />
     </s.Wrapper>
   );

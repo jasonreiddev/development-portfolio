@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Device, until } from '../../../../helpers/media';
 
 interface CardGridFilterableStylesProps {
   active: boolean;
@@ -29,6 +30,10 @@ const Tag = styled.button<CardGridFilterableStylesProps>`
       : `
        var(--color-base-semi-bold-66);
         `};
+
+  @media ${until(Device.Tablet)} {
+    font-size: 13px;
+  }
 `;
 
 export const CardGridFilterableStyles = {

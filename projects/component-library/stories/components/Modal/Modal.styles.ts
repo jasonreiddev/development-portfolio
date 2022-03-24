@@ -10,18 +10,12 @@ const Modal = styled.div<{ active: boolean }>`
   top: 0;
   bottom: 0;
   margin: 5em auto auto;
-  height: 80vh;
-  max-height: 80vw;
-  max-width: 80vh;
+  max-width: 720px;
+  width: min(calc(80% - 10px), calc(80vw - 10px));
+  aspect-ratio: 1 / 1;
   background: var(--color-base);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-
-  @media ${from(Device.Tablet)} {
-    width: 80vw;
-    max-width: 600px;
-    max-height: 600px;
-  }
 
   z-index: 100;
   visibility: hidden;

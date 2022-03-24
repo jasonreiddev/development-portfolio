@@ -2,9 +2,18 @@
   "root": true,
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es2021": true,
+    "es6": true
   },
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "extends": [
     "plugin:@next/next/recommended", // NextJS Specific
     "eslint:recommended",
@@ -13,6 +22,7 @@
     "plugin:react/recommended"
   ],
   "rules": {
+    "@next/next/no-html-link-for-pages": ["error", "projects/portfolio/pages/"],
     "@typescript-eslint/explicit-function-return-type": [
       "warn", // because I'm lazy
       {
@@ -37,15 +47,27 @@
           }
         }
       }
-    ],
+    ], // Disable prop-types as we use TypeScript for type checking
     "react/prop-types": "off",
     // NextJS Specific
     // suppress errors for missing 'import React' in files
     "react/react-in-jsx-scope": "off",
     // allow jsx syntax in js files (for next.js project)
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx", ".ts"] }],
-    "comma-dangle": ["warn", "always-multiline"]
+    "comma-dangle": ["warn", "always-multiline"],
+    // For Sanity
+    "require-jsdoc": 0
   },
+  "overrides": [
+    // Override some TypeScript rules just for .js files
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"
