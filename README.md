@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://jasonreid.dev">
-    <img alt="jasonreid.dev logo" src="./images/icon.png" width="60" />
+    <img alt="jasonreid.dev logo" src="./projects/portfolio/public/images/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
