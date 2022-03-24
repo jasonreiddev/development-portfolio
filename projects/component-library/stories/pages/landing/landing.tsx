@@ -6,7 +6,7 @@ export interface LandingProps {
 }
 
 export const Landing = ({ storybookUrl }: LandingProps): JSX.Element => (
-  <Layout menuLinks={[]} likesMockDBValue={7734} title="Next.js Component Library">
+  <Layout menuLinks={[]} title="Next.js Component Library">
     <s.Wrapper>
       <s.Title>Welcome!</s.Title>
       <s.Text>

@@ -21,7 +21,7 @@ export interface WidgetTestProps {
 }
 
 export const WidgetTest = ({ text }: WidgetTestProps): JSX.Element => (
-  <Layout menuLinks={[]} likesMockDBValue={7734} title="Widget Test">
+  <Layout menuLinks={[]} title="Widget Test">
     <WidgetTestStyles>
       <TextCard>
         <>{text}</>
