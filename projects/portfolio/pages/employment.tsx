@@ -28,6 +28,10 @@ const Employment: NextPage = () => {
       // TODO Calculate Length
       response.map((position: any) => {
         if (!position.hideOnEmployment) {
+          position.startDate = new Date(position.endDate).toLocaleDateString('en-GB', {
+            month: 'long',
+            year: 'numeric',
+          });
           position.endDate =
             position.endDate == null
               ? `Present `
