@@ -1,5 +1,17 @@
 import { MdKeyboard as icon } from 'react-icons/md';
 
+export interface Project {
+  projectTitle: string;
+  siteUrl: string;
+  repoUrl: string;
+  position: string;
+  lastWorkedOn: Date;
+  slug: string;
+  details: string;
+  tags: string[];
+  excerpt: string;
+}
+
 export default {
   name: 'project',
   title: 'Project',

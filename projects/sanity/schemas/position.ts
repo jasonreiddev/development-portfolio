@@ -1,6 +1,18 @@
 import { MdWork as icon } from 'react-icons/md';
 import SalaryInput from '../components/SalaryInput';
 
+export interface Position {
+  jobTitle: string;
+  organisation: any;
+  currentJob: boolean;
+  hideOnEmployment: boolean;
+  slug: string;
+  salary: string;
+  endDate: Date;
+  startDate: Date;
+  details: string;
+}
+
 export default {
   name: 'position',
   title: 'Position',

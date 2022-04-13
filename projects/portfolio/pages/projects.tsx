@@ -3,8 +3,14 @@ import { LayoutContext } from '../../helpers/layoutContext';
 import { client } from '../../helpers/client';
 import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
 import { CardProps } from '../../component-library/stories/components/Card/Card';
+import { Project as SchemaProject } from 'projects/sanity/schemas/project';
 
-type ProjectsProps = { data: any };
+interface Project extends SchemaProject {
+  sortDate: Date;
+  endDate: string;
+}
+
+type ProjectsProps = { data: Project[] };
 
 export const getStaticProps = async () => {
   const res = await client.fetch(
@@ -26,14 +32,14 @@ const Projects = ({ data }: ProjectsProps) => {
   updatePageTitle && updatePageTitle('Projects');
 
   const Projects: CardProps[] = [];
-  data.sort(function (a: any, b: any) {
+  data.sort(function (a: Project, b: Project) {
     // by desc lastWorkedOn
-    a.sortDate = a.lastWorkedOn == null ? Date.now() : a.lastWorkedOn;
-    b.sortDate = b.lastWorkedOn == null ? Date.now() : b.lastWorkedOn;
+    a.sortDate = a.lastWorkedOn == null ? new Date() : a.lastWorkedOn;
+    b.sortDate = b.lastWorkedOn == null ? new Date() : b.lastWorkedOn;
     return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
   });
-  data.map((project: any) => {
-    project.lastWorkedOn =
+  data.map((project: Project) => {
+    project.endDate =
       project.lastWorkedOn == null
         ? `Project Ongoing`
         : `Project last worked on ${new Date(project.lastWorkedOn).toLocaleDateString('en-GB', {
@@ -59,7 +65,7 @@ const Projects = ({ data }: ProjectsProps) => {
               project.position.organisation.organisation
             )}
           </p> */}
-          <p>{project.lastWorkedOn}</p>
+          <p>{project.endDate}</p>
           <hr />
           <br />
           <p>{project.details}</p>
@@ -76,7 +82,7 @@ const Projects = ({ data }: ProjectsProps) => {
         </>
       ),
       tags: project.tags,
-      text: `${project.lastWorkedOn}\n${project.excerpt}`,
+      text: `${project.endDate}\n${project.excerpt}`,
     });
   });
 
