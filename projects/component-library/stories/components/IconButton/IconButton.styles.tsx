@@ -5,7 +5,16 @@ interface IconButtonStylesProps {
   active?: boolean;
 }
 
-const Wrapper = styled.button<IconButtonStylesProps>`
+const Wrapper = styled.div`
+  width: fit-content;
+
+  &:hover button {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+`;
+
+const Button = styled.button<IconButtonStylesProps>`
   aspect-ratio: 1/1;
   border: 0;
   background: var(--color-base);
@@ -62,4 +71,5 @@ const Wrapper = styled.button<IconButtonStylesProps>`
 
 export const IconButtonStyles = {
   Wrapper,
+  Button,
 };

@@ -53,16 +53,18 @@ export const IconButton = ({
 }: IconButtonProps): JSX.Element => {
   const mode = primary ? 'primary' : 'secondary';
   return (
-    <s.Wrapper
-      active={active}
-      type="button"
-      className={[`${size}`, mode].join(' ')}
-      backgroundColor={backgroundColor}
-      {...props}
-      data-tooltip={label}
-      data-tooltip--close={size == 'small' ? 'true' : null}
-    >
-      <span className="icon">{renderIcon(icon)}</span>
+    <s.Wrapper>
+      <s.Button
+        active={active}
+        type="button"
+        className={[`${size}`, mode].join(' ')}
+        backgroundColor={backgroundColor}
+        {...props}
+        data-tooltip={label}
+        data-tooltip--close={size == 'small' ? 'true' : null}
+      >
+        <span className="icon">{renderIcon(icon)}</span>
+      </s.Button>
     </s.Wrapper>
   );
 };

@@ -19,13 +19,15 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
   const mode = primary ? 'primary' : 'secondary';
   return (
-    <s.Button
-      type={type}
-      className={[`${size}`, mode].join(' ')}
-      backgroundColor={backgroundColor}
-      {...props}
-    >
-      {label}
-    </s.Button>
+    <s.Wrapper>
+      <s.Button
+        type={type}
+        className={[`${size}`, mode].join(' ')}
+        backgroundColor={backgroundColor}
+        {...props}
+      >
+        {label}
+      </s.Button>
+    </s.Wrapper>
   );
 };
