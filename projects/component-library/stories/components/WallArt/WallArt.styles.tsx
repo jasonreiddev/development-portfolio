@@ -4,15 +4,22 @@ interface WallArtStylesProps {
   backgroundColor?: string;
 }
 
-export const Wrapper = styled.span<WallArtStylesProps>`
+export const Wrapper = styled.div<WallArtStylesProps>`
   position: relative;
   background: var(--color-base);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
+  overflow: hidden;
+  width: fit-content;
 
   img {
     display: block;
     border-radius: var(--border-radius);
+    transition: transform 0.5s;
+  }
+
+  &:hover img {
+    transform: scale(1.2);
   }
 
   .caption {

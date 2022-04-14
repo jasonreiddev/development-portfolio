@@ -8,7 +8,7 @@ interface CardStylesProps {
   flipped?: boolean;
 }
 
-// TODO Add zoom on hover and make clear which cards flip and which have urls
+// TODO Make clear which cards flip and which have urls
 
 const Container = styled.a<CardStylesProps>`
   font-size: 13px;
@@ -34,6 +34,11 @@ const Container = styled.a<CardStylesProps>`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  &:hover img {
+    transform: scale(1.2);
   }
 
   /* Flip */
@@ -49,6 +54,7 @@ const ContainerInner = styled.div<CardStylesProps>`
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  overflow: hidden;
 
   ${(p) =>
     p.flipped
