@@ -41,7 +41,7 @@ const Container = styled.a<CardStylesProps>`
   &:hover img {
     transform: scale(1.2);
     transition: filter 0.5s;
-    filter: brightness(120%);
+    filter: brightness(80%);
   }
 
   /* Flip */
