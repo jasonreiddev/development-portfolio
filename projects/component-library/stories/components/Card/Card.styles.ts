@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { Device, from } from '../../../../helpers/media';
 
@@ -6,6 +6,7 @@ interface CardStylesProps {
   modifyWidth?: 1 | 2 | 'full';
   canFlip?: boolean;
   flipped?: boolean;
+  wasFlipped?: boolean;
 }
 
 // TODO make clear which cards flip and which have urls
@@ -48,6 +49,15 @@ const Container = styled.a<CardStylesProps>`
   perspective: 200vw;
 `;
 
+const flipAndReset = keyframes`
+  from {
+    transform: rotateX(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 const ContainerInner = styled.div<CardStylesProps>`
   /* Required for storybook */
   min-height: 140px;
@@ -62,6 +72,13 @@ const ContainerInner = styled.div<CardStylesProps>`
       ? `
       transform: rotateX(180deg);
       `
+      : null}
+
+  ${(p) =>
+    p.wasFlipped
+      ? css`
+          animation: ${flipAndReset} 0.6s;
+        `
       : null}
 `;
 
