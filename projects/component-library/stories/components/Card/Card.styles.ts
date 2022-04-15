@@ -8,7 +8,7 @@ interface CardStylesProps {
   flipped?: boolean;
 }
 
-// TODO Make clear which cards flip and which have urls
+// TODO make clear which cards flip and which have urls
 
 const Container = styled.a<CardStylesProps>`
   font-size: 13px;
@@ -39,6 +39,8 @@ const Container = styled.a<CardStylesProps>`
 
   &:hover img {
     transform: scale(1.2);
+    transition: filter 0.5s;
+    filter: brightness(120%);
   }
 
   /* Flip */
@@ -54,7 +56,6 @@ const ContainerInner = styled.div<CardStylesProps>`
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  overflow: hidden;
 
   ${(p) =>
     p.flipped
@@ -100,8 +101,13 @@ const Tag = styled.div`
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background-color: var(--color-primary);
+  background: linear-gradient(to left, var(--color-primary), var(--color-primary-lighten-25));
+  &:hover {
+    transition: filter 0.5s;
+    filter: brightness(120%);
+  }
   border-radius: var(--border-radius);
+  overflow: hidden;
 
   ${(p) =>
     p.canFlip
@@ -133,7 +139,7 @@ const Back = styled(Front)`
       `
       : `pointer-events: none;`}
 
-  background-color: var(--color-secondary);
+  background: var(--color-secondary);
 
   /* Flip */
   transform: rotateX(180deg);
