@@ -26,13 +26,13 @@ const List = styled.ul`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-contrast);
+    background: var(--color-tertiary-o66);
     border-radius: 4px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: ${darken(0.1, 'var(--color-contrast)')};
+    background: ${darken(0.1, 'var(--color-tertiary-o66')};
   }
 `;
 
@@ -77,7 +77,9 @@ const Option = styled.li`
     text-overflow: ellipsis;
   }
 
-  transition: all 0.1s;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: all 0.1s;
+  }
 `;
 
 const NoResults = styled.span`

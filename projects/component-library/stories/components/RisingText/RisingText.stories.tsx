@@ -1,13 +1,13 @@
 import { Story } from '@storybook/react';
 
-import { RisingText, ClampTextProps } from './RisingText';
+import { RisingText, RisingTextProps } from './RisingText';
 
 export default {
   title: 'Components/Rising Text',
   component: RisingText,
 };
 
-const Template: Story<ClampTextProps> = (args) => <RisingText {...args} />;
+const Template: Story<RisingTextProps> = (args) => <RisingText {...args} />;
 
 export const Short = Template.bind({});
 Short.args = {

@@ -32,7 +32,7 @@ const Button = styled.button<IconButtonStylesProps>`
   .icon {
     display: block;
     color: ${(p: IconButtonStylesProps) =>
-      p.active ? 'var(--color-base-bold)' : 'var(--color-contrast)'};
+      p.active ? 'var(--color-contrast)' : 'var(--color-base-bold)'};
 
     svg {
       margin: auto;

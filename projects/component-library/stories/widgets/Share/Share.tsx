@@ -13,11 +13,11 @@ export const Share = ({ text, shareText, shareUrl }: ShareProps): JSX.Element =>
     <s.Wrapper>
       <s.Share
         title="Share via Twitter"
+        target="_blank"
         href={`
           https://twitter.com/intent/tweet?text=${shareText}:&url=${shareUrl}`}
       >
         <MdShare />
-        <br />
         <div>{text}</div>
       </s.Share>
     </s.Wrapper>

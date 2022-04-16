@@ -15,11 +15,15 @@ export const Wrapper = styled.div<WallArtStylesProps>`
   img {
     display: block;
     border-radius: var(--border-radius);
-    transition: transform 0.5s;
   }
 
-  &:hover img {
-    transform: scale(1.2);
+  @media (prefers-reduced-motion: no-preference) {
+    img {
+      transition: transform 0.5s;
+    }
+    &:hover img {
+      transform: scale(1.2);
+    }
   }
 
   .caption {

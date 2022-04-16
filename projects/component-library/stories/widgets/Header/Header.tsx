@@ -57,7 +57,7 @@ export const Header = ({
             return (
               <li key={link.name}>
                 <s.MenuLink href={link.link}>
-                  <RisingText text={link.name} color={'var(--color-base-bold)'} />
+                  <RisingText text={link.name} color={'var(--color-contrast)'} />
                 </s.MenuLink>
               </li>
             );

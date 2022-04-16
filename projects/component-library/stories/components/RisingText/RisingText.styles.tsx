@@ -11,10 +11,14 @@ const Wrapper = styled.span`
 
 const Text = styled.span`
   grid-area: text;
-  transition: clip-path 1000ms;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: clip-path 1s;
+  }
   clip-path: polygon(0% 0%, 100% 0%, 100% 110%, 0% 110%);
   ${Wrapper}:hover & {
-    transition: clip-path 300ms;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: clip-path 0.3s;
+    }
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
   }
 `;
@@ -24,7 +28,6 @@ const RisingText = styled(Text)<RisingTextStylesProps>`
   clip-path: polygon(0% 110%, 100% 110%, 100% 110%, 0% 110%);
   ${Wrapper}:hover & {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 110%);
-    transition: clip-path 300ms;
   }
 `;
 

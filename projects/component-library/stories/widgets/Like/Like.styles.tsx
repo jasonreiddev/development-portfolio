@@ -5,19 +5,37 @@ const Wrapper = styled.div`
   width: 50px;
 `;
 
-const Likes = styled.button`
+const Likes = styled.button<{ active?: boolean }>`
   background: none;
   border: none;
   font-weight: bold;
+  cursor: pointer;
+
   svg {
     font-size: 25px;
     transform: translateY(0%);
-    cursor: pointer;
     margin: auto;
+    margin-bottom: 8px;
   }
+
   div {
     margin: 0;
     height: 20px;
+  }
+
+  .solid-heart {
+    fill: var(--color-primary);
+    ${(p) => (p.active ? ` display: block;` : `display: none;`)};
+    position: absolute;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    svg {
+      transition: transform 0.2s;
+    }
+    &:hover svg {
+      transform: scale(1.1);
+    }
   }
 `;
 

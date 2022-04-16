@@ -35,12 +35,16 @@ const Container = styled.a<CardStylesProps>`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.5s;
+    }
   }
 
   &:hover img {
-    transform: scale(1.2);
-    transition: filter 0.5s;
+    @media (prefers-reduced-motion: no-preference) {
+      transform: scale(1.2);
+    }
+    transition: all 0.5s;
     filter: brightness(80%);
   }
 
@@ -64,7 +68,9 @@ const ContainerInner = styled.div<CardStylesProps>`
   /* Flip */
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.6s;
+  }
   transform-style: preserve-3d;
 
   ${(p) =>
@@ -89,7 +95,7 @@ const Content = styled.div`
   bottom: 0;
   position: absolute;
   width: 100%;
-  background-color: var(--color-base-semi-bold-66);
+  background-color: var(--color-base-semi-bold-o66);
 
   h3 {
     font-weight: var(--font-weight-bold);
@@ -112,15 +118,15 @@ const TagsContainer = styled.div`
 
 const Tag = styled.div`
   padding: 6px;
-  background-color: var(--color-base-semi-bold-66);
+  background-color: var(--color-base-semi-bold-o66);
   pointer-events: all;
   cursor: pointer;
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background: linear-gradient(to left, var(--color-primary), var(--color-primary-lighten-25));
+  background: linear-gradient(to left, var(--color-primary), var(--color-primary-li10));
+  transition: filter 0.5s;
   &:hover {
-    transition: filter 0.5s;
     filter: brightness(120%);
   }
   border-radius: var(--border-radius);
@@ -170,7 +176,6 @@ const BackContent = styled(Content)`
     height: calc(100% - 20px);
   }
   ::-webkit-scrollbar-thumb {
-    border: 0.1rem solid var(--color-contrast);
     background-color: var(--color-primary);
     border-radius: 0.75rem;
   }
