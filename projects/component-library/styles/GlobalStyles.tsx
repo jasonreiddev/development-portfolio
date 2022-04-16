@@ -122,8 +122,12 @@ html, body, #__next {
   width: 100vw;
   height: 100%;
 }
+
 html {
   background-color: var(--color-base);
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth; 
+  }
 }
 
 input {
