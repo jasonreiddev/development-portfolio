@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { from, Device } from '../../../../helpers/media';
 
 const Modal = styled.div<{ active: boolean }>`
-  transition: 0.15s ease-in;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: 0.15s ease-in;
+  }
   position: fixed;
   left: 0;
   right: 0;

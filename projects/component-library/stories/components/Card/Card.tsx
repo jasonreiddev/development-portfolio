@@ -38,6 +38,7 @@ export const Card = ({
   }
 
   const [flipped, setFlipped] = useState<boolean>(false);
+  const [wasFlipped, setWasFlipped] = useState<boolean>(false);
   if (flipContent) {
     url = undefined;
   }
@@ -46,15 +47,17 @@ export const Card = ({
     <s.Container
       href={url}
       modifyWidth={modifyWidth}
+      tabIndex={0}
       onClick={() => {
         if (flipContent) {
           {
+            setWasFlipped(flipped);
             setFlipped(!flipped);
           }
         }
       }}
     >
-      <s.ContainerInner flipped={flipped}>
+      <s.ContainerInner flipped={flipped} wasFlipped={wasFlipped}>
         <s.Front flipped={flipped} canFlip={!!flipContent}>
           {image && <Image src={image} alt={alt} />}
           {tags && (

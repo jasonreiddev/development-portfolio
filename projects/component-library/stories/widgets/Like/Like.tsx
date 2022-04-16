@@ -24,10 +24,9 @@ export const Like = ({ setLikesDBValue, getLikesDBValue, liked }: LikeProps): JS
 
   return (
     <s.Wrapper>
-      <s.Likes title="Leave a Like!" onClick={OnClick}>
-        {hasLiked && <FaHeart />}
-        {!hasLiked && <FaRegHeart />}
-        <br />
+      <s.Likes title="Leave a Like!" onClick={OnClick} active={hasLiked}>
+        <FaHeart className="solid-heart" />
+        <FaRegHeart />
         <div>{typeof localLikes !== 'undefined' ? localLikes : ''}</div>
       </s.Likes>
     </s.Wrapper>

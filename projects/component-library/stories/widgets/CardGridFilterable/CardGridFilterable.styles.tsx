@@ -28,7 +28,7 @@ const Tag = styled.button<CardGridFilterableStylesProps>`
        var(--color-secondary);
         `
       : `
-       var(--color-base-semi-bold-66);
+       var(--color-base-semi-bold-o66);
         `};
 
   @media ${until(Device.Tablet)} {

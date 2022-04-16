@@ -11,11 +11,11 @@ const Wrapper = styled.span`
 const ClampText = styled.span<ClampTextStylesProps>`
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: ${(p: ClampTextStylesProps) => (p.lines ? `${p.lines};` : '1px')};
+  -webkit-line-clamp: ${(p: ClampTextStylesProps) => (p.lines ? `${p.lines};` : '')};
   overflow: hidden;
 `;
 
-export const CustomKerningStyles = {
+export const ClampTextStyles = {
   Wrapper,
   ClampText,
 };

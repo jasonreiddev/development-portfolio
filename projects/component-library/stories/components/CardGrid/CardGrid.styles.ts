@@ -10,7 +10,7 @@ const Container = styled.div<CardGridStylesProps>`
   grid-template-columns: repeat(auto-fit, minmax(${(p) => p.size}px, 1fr));
   grid-auto-rows: ${(p) => p.size}px;
   grid-gap: 10px;
-  padding: 10px;
+  padding: 26px;
 `;
 
 export const CardGridStyles = {

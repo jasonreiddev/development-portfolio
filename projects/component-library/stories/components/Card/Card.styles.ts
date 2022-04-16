@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { Device, from } from '../../../../helpers/media';
 
@@ -6,9 +6,10 @@ interface CardStylesProps {
   modifyWidth?: 1 | 2 | 'full';
   canFlip?: boolean;
   flipped?: boolean;
+  wasFlipped?: boolean;
 }
 
-// TODO Add zoom on hover and make clear which cards flip and which have urls
+// TODO make clear which cards flip and which have urls
 
 const Container = styled.a<CardStylesProps>`
   font-size: 13px;
@@ -34,11 +35,31 @@ const Container = styled.a<CardStylesProps>`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.5s;
+    }
+  }
+
+  &:hover img {
+    @media (prefers-reduced-motion: no-preference) {
+      transform: scale(1.2);
+    }
+    transition: all 0.5s;
+    filter: brightness(80%);
   }
 
   /* Flip */
   background-color: transparent;
   perspective: 200vw;
+`;
+
+const flipAndReset = keyframes`
+  from {
+    transform: rotateX(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 `;
 
 const ContainerInner = styled.div<CardStylesProps>`
@@ -47,7 +68,9 @@ const ContainerInner = styled.div<CardStylesProps>`
   /* Flip */
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.6s;
+  }
   transform-style: preserve-3d;
 
   ${(p) =>
@@ -55,6 +78,13 @@ const ContainerInner = styled.div<CardStylesProps>`
       ? `
       transform: rotateX(180deg);
       `
+      : null}
+
+  ${(p) =>
+    p.wasFlipped
+      ? css`
+          animation: ${flipAndReset} 0.6s;
+        `
       : null}
 `;
 
@@ -65,7 +95,7 @@ const Content = styled.div`
   bottom: 0;
   position: absolute;
   width: 100%;
-  background-color: var(--color-base-semi-bold-66);
+  background-color: var(--color-base-semi-bold-o66);
 
   h3 {
     font-weight: var(--font-weight-bold);
@@ -88,14 +118,19 @@ const TagsContainer = styled.div`
 
 const Tag = styled.div`
   padding: 6px;
-  background-color: var(--color-base-semi-bold-66);
+  background-color: var(--color-base-semi-bold-o66);
   pointer-events: all;
   cursor: pointer;
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background-color: var(--color-primary);
+  background: linear-gradient(to left, var(--color-primary), var(--color-primary-li10));
+  transition: filter 0.5s;
+  &:hover {
+    filter: brightness(120%);
+  }
   border-radius: var(--border-radius);
+  overflow: hidden;
 
   ${(p) =>
     p.canFlip
@@ -127,7 +162,7 @@ const Back = styled(Front)`
       `
       : `pointer-events: none;`}
 
-  background-color: var(--color-secondary);
+  background: var(--color-secondary);
 
   /* Flip */
   transform: rotateX(180deg);
@@ -141,7 +176,6 @@ const BackContent = styled(Content)`
     height: calc(100% - 20px);
   }
   ::-webkit-scrollbar-thumb {
-    border: 0.1rem solid var(--color-contrast);
     background-color: var(--color-primary);
     border-radius: 0.75rem;
   }

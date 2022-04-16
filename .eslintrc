@@ -22,9 +22,9 @@
     "plugin:react/recommended"
   ],
   "rules": {
-    "@next/next/no-html-link-for-pages": ["error", "projects/portfolio/pages/"],
+    "@next/next/no-html-link-for-pages": ["error", "projects/portfolio/"],
     "@typescript-eslint/explicit-function-return-type": [
-      "warn", // because I'm lazy
+      "error",
       {
         "allowHigherOrderFunctions": true,
         "allowExpressions": true

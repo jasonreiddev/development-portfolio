@@ -13,10 +13,24 @@ const MediaLinks = styled.span`
   align-items: flex-end;
   width: 100%;
   font-size: 30px;
+  margin: 0 4px;
+
   svg {
     height: 30px;
     width: 30px;
+    margin: 0 4px;
   }
+
+  @media (prefers-reduced-motion: no-preference) {
+    svg {
+      transition: transform 0.2s;
+    }
+
+    a:hover svg {
+      transform: scale(1.1);
+    }
+  }
+
   a {
     display: flex;
   }

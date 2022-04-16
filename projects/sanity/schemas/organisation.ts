@@ -1,5 +1,11 @@
 import { MdBusiness as icon } from 'react-icons/md';
 
+export interface Organisation {
+  organisation: string;
+  currentEmployer: boolean;
+  slug: string;
+}
+
 export default {
   name: 'organisation',
   title: 'Organisation',

@@ -4,6 +4,15 @@ interface ButtonStylesProps {
   backgroundColor?: string;
 }
 
+const Wrapper = styled.div`
+  width: fit-content;
+
+  &:hover button {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+`;
+
 const Button = styled.button<ButtonStylesProps>`
   font-weight: var(--font-weight-bold);
   border: 0;
@@ -16,11 +25,6 @@ const Button = styled.button<ButtonStylesProps>`
   cursor: pointer;
   box-shadow: var(--box-shadow);
   backface-visibility: hidden;
-
-  &:hover {
-    transform: scale(0.95);
-    box-shadow: none;
-  }
 
   &.primary {
     background-color: ${(p: ButtonStylesProps) =>
@@ -49,5 +53,6 @@ const Button = styled.button<ButtonStylesProps>`
 `;
 
 export const ButtonStyles = {
+  Wrapper,
   Button,
 };

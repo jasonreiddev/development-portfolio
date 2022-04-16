@@ -1,5 +1,6 @@
 import { ToggleDarkMode } from '../../../../helpers/layoutContext';
 import { Button } from '../../components/Button/Button';
+import { RisingText } from '../../components/RisingText/RisingText';
 
 import { HeaderStyles as s } from './Header.styles';
 
@@ -55,7 +56,9 @@ export const Header = ({
             }
             return (
               <li key={link.name}>
-                <s.MenuLink href={link.link}>{link.name ? link.name : link.name}</s.MenuLink>
+                <s.MenuLink href={link.link}>
+                  <RisingText text={link.name} color={'var(--color-contrast)'} />
+                </s.MenuLink>
               </li>
             );
           })}

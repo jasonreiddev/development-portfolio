@@ -1,3 +1,8 @@
+// Hover Images - zoom
+// Hover Button - 3D effect (scale / shadow)
+// Hover other interactive - increase lighten
+// Hover active interactive -underline
+
 import { createGlobalStyle } from 'styled-components';
 
 interface GlobalStylesProps {
@@ -12,28 +17,35 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --border-radius: 15px;
-  --color-primary: rgb(179, 94, 145);
-  --color-secondary: rgb(127, 170, 127);
-  --color-tertiary: rgb(129, 176, 194);
-  --color-tertiary-contrast: rgb(0 95 130);
+
+  --color-primary: hsl(320, 35%, 55%);
+  --color-primary-li10: hsl(320, 35%, 65%);
+
+  --color-secondary: hsl(120, 20%, 55%);
+
+  --color-tertiary: hsl(200, 35%, 55%);
+  --color-tertiary-o66: hsla(200, 35%, 55%, 0.66);
+  --color-tertiary-li10: hsl(200, 35%, 65%);
+  --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
+
   --global-white: rgb(253, 242, 248);
   --color-base: var(--global-white);
   --global-white-semi-bold: rgb(248, 232, 242);
   --color-base-semi-bold: var(--global-white-semi-bold);
-  --global-white-semi-bold-66: rgba(248, 232, 242, 0.66);
-  --color-base-semi-bold-66: var(--global-white-semi-bold-66);
+  --global-white-semi-bold-o66: rgba(248, 232, 242, 0.66);
+  --color-base-semi-bold-o66: var(--global-white-semi-bold-o66);
   --global-white-bold: rgb(255, 255, 255);
   --color-base-bold: var(--global-white-bold);
+  
   --global-black: rgb(32, 32, 32);
   --color-contrast: var(--global-black);
   --global-black-semi-bold: rgb(18, 18, 18);
-  --color-contrast-semi-bold: var(--global-black-bold);
-  --global-black-semi-bold-66: rgba(16, 16, 16, 0.66);
-  --color-contrast-semi-bold-66: var(--global-black-semi-bold-66);
+  --color-contrast-semi-bold: var(--global-black-semi-bold);
+  --global-black-semi-bold-o66: rgba(16, 16, 16, 0.66);
+  --color-contrast-semi-bold-o66: var(--global-black-semi-bold-o66);
   --global-black-bold: rgb(8, 8, 8);
-  --color-contrast-bold: var(--global-black-semi-bold);
+  --color-contrast-bold: var(--global-black-bold);
 
-  --color-base-bold: rgb(255, 255, 255);
   --box-shadow: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073),
     0 -15px 40px -20px rgba(0, 0, 0, 0.2);
@@ -44,16 +56,13 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     ${(p) =>
       p.dark
         ? `
-    --color-secondary: rgb(52, 94, 51);
-    --color-tertiary: rgb(70, 115, 133);
-    --color-tertiary-contrast: rgb(115 165 185);
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);
-    --color-base-semi-bold-66: var(--global-black-semi-bold-66);
+    --color-base-semi-bold-o66: var(--global-black-semi-bold-o66);
     --color-base-bold: var(--global-black-bold);
     --color-contrast: var(--global-white);
     --color-contrast-semi-bold: var(--global-white-semi-bold);
-    --color-contrast-semi-bold-66: var(--global-white-semi-bold-66);
+    --color-contrast-semi-bold-o66: var(--global-white-semi-bold-o66);
     --color-contrast-bold: var(--global-white-bold);
       `
         : null}
@@ -121,8 +130,12 @@ html, body, #__next {
   width: 100vw;
   height: 100%;
 }
+
 html {
   background-color: var(--color-base);
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth; 
+  }
 }
 
 input {
@@ -225,9 +238,16 @@ hr {
 }
    
 ::-webkit-scrollbar-thumb {
-  border: 0.1rem solid var(--color-contrast);
-  background-color: var(--color-tertiary);
+  background-color: var(--color-tertiary-o66);
   border-radius: 0.75rem;
+
+  &:hover{
+    background-color: var(--color-tertiary-li10-o66);
+  }
 }
+
+::selection {
+    background-color: var(--color-tertiary);
+  }
 
 `;

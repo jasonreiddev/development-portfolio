@@ -1,4 +1,4 @@
-import { CustomKerningStyles as s } from './ClampText.styles';
+import { ClampTextStyles as s } from './ClampText.styles';
 
 export interface ClampTextProps {
   text: string;
