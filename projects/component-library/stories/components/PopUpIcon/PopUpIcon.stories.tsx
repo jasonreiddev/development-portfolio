@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { PopUpIcon } from './PopUpIcon';
 
 export default {
-  title: 'Components/PopUpIcon',
+  title: 'Components/Pop-up Icon',
   component: PopUpIcon,
   parameters: {
     layout: 'fullscreen',

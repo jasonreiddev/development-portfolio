@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { BlurredGlow } from './BlurredGlow';
 
 export default {
-  title: 'Components/BlurredGlow',
+  title: 'Components/Blurred Glow',
   component: BlurredGlow,
   parameters: {
     layout: 'fullscreen',
