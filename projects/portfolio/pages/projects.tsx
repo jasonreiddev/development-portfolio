@@ -12,7 +12,7 @@ interface Project extends SchemaProject {
 
 type ProjectsProps = { data: Project[] };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<{ props: ProjectsProps }> => {
   const res = await client.fetch(
     `
     *[_type == "project"]
@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Projects = ({ data }: ProjectsProps) => {
+const Projects = ({ data }: ProjectsProps): JSX.Element => {
   const { updatePageTitle } = useContext(LayoutContext);
   updatePageTitle && updatePageTitle('Projects');
 

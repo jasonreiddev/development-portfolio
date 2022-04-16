@@ -12,7 +12,7 @@ interface Position extends SchemaPosition {
 
 type EmploymentsProps = { data: Position[] };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (): Promise<{ props: EmploymentsProps }> => {
   const res = await client.fetch(
     `
     *[_type == "position"]
@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Employment = ({ data }: EmploymentsProps) => {
+const Employment = ({ data }: EmploymentsProps): JSX.Element => {
   const { updatePageTitle } = useContext(LayoutContext);
   updatePageTitle && updatePageTitle('Employment');
 
