@@ -231,4 +231,8 @@ hr {
   border-radius: 0.75rem;
 }
 
+::selection {
+    background-color: var(--color-tertiary);
+  }
+
 `;
