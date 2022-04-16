@@ -47,6 +47,7 @@ export const Card = ({
     <s.Container
       href={url}
       modifyWidth={modifyWidth}
+      tabIndex={0}
       onClick={() => {
         if (flipContent) {
           {
