@@ -95,6 +95,15 @@ export default {
         maxLength: 100,
       },
     },
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Feature on portfolio homepage',
+      options: {
+        layout: 'checkbox',
+      },
+    },
   ],
   preview: {
     select: {

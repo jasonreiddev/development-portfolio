@@ -3,7 +3,7 @@ import { Card, CardProps } from '../Card/Card';
 
 export interface CardGridProps {
   cards: CardProps[];
-  onTagClick: (text: string) => void;
+  onTagClick?: (text: string) => void;
   size?: number;
 }
 

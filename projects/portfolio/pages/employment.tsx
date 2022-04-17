@@ -5,7 +5,7 @@ import { CardTimeline } from '../../component-library/stories/components/CardTim
 import { CardProps } from '../../component-library/stories/components/Card/Card';
 import { Position as SchemaPosition } from 'projects/sanity/schemas/position';
 
-interface Position extends SchemaPosition {
+export interface Position extends SchemaPosition {
   sortDate: Date;
   dates: string;
 }
@@ -15,7 +15,7 @@ type EmploymentsProps = { data: Position[] };
 export const getStaticProps = async (): Promise<{ props: EmploymentsProps }> => {
   const res = await client.fetch(
     `
-    *[_type == "position"]
+    *[_type == "position" && hideOnEmployment == false]
   `,
   );
   const data = await res;
@@ -39,37 +39,36 @@ const Employment = ({ data }: EmploymentsProps): JSX.Element => {
     return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
   });
   // TODO Calculate Length
-  data.map((position: Position) => {
-    if (!position.hideOnEmployment) {
-      position.dates = `${new Date(position.startDate).toLocaleDateString('en-GB', {
-        month: 'long',
-        year: 'numeric',
-      })} - ${
-        position.endDate == null
-          ? `Present`
-          : `${new Date(position.endDate).toLocaleDateString('en-GB', {
-              month: 'long',
-              year: 'numeric',
-            })}.`
-      }`;
-      Positions.push({
-        title: position.jobTitle,
-        flipContent: (
-          <>
-            {/* TODO Include organisation info */}
-            {/* <h3>{`${position.jobTitle} | ${position.organisation.organisation}`}</h3> */}
-            <h3>{position.jobTitle}</h3>
-            <p>{position.dates}</p>
-            <hr />
-            <br />
-            <p>{position.details}</p>
-          </>
-        ),
-        text: `${position.dates}\n${position.details}`,
-      });
-    }
-  });
+  data.map((position: Position) => Positions.push(mapPositionToCard(position)));
+
   return <>{Positions.length > 0 && <CardTimeline cards={Positions} size={300} />}</>;
 };
+
+export function mapPositionToCard(position: Position): CardProps {
+  position.dates = `${new Date(position.startDate).toLocaleDateString('en-GB', {
+    month: 'long',
+    year: 'numeric',
+  })} - ${
+    position.endDate == null
+      ? `Present`
+      : `${new Date(position.endDate).toLocaleDateString('en-GB', {
+          month: 'long',
+          year: 'numeric',
+        })}.`
+  }`;
+  return {
+    title: position.jobTitle,
+    flipContent: (
+      <>
+        <h3>{position.jobTitle}</h3>
+        <p>{position.dates}</p>
+        <hr />
+        <br />
+        <p>{position.details}</p>
+      </>
+    ),
+    text: `${position.dates}\n${position.details}`,
+  };
+}
 
 export default Employment;
