@@ -32,6 +32,10 @@ export const defaultLayoutProps = {
       name: 'Projects',
       link: '/projects',
     },
+    {
+      name: 'Blog',
+      link: '/blog',
+    },
   ],
   setLikesDBValue: setLikesDBValue,
   getLikesDBValue: getLikesDBValue,
