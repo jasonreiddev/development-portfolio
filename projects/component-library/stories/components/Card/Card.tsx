@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import { useState, useContext } from 'react';
 
 import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
-import { useState } from 'react';
+import { LayoutContext } from 'projects/helpers/layoutContext';
 
 export interface CardProps {
   url?: string;
@@ -43,10 +44,13 @@ export const Card = ({
     url = undefined;
   }
 
+  const { dark } = useContext(LayoutContext);
+
   return (
     <s.Container
       href={url}
       modifyWidth={modifyWidth}
+      dark={dark}
       tabIndex={0}
       onClick={() => {
         if (flipContent) {
@@ -58,7 +62,7 @@ export const Card = ({
       }}
     >
       <s.ContainerInner flipped={flipped} wasFlipped={wasFlipped}>
-        <s.Front flipped={flipped} canFlip={!!flipContent}>
+        <s.Front flipped={flipped} canFlip={!!flipContent} dark={dark}>
           {image && <Image src={image} alt={alt} />}
           {tags && (
             <s.TagsContainer>
@@ -87,7 +91,7 @@ export const Card = ({
           </s.Content>
         </s.Front>
         {flipContent && (
-          <s.Back flipped={flipped} canFlip={!!flipContent}>
+          <s.Back flipped={flipped} canFlip={!!flipContent} dark={dark}>
             <s.BackContent>{flipContent}</s.BackContent>
           </s.Back>
         )}
