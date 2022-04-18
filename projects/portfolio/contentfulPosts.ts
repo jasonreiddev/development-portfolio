@@ -9,8 +9,11 @@ const client = createClient({
   accessToken: `${accessToken}`,
 });
 
-export async function fetchEntries(): Promise<any> {
-  const entries = await client.getEntries();
+export async function fetchEntries(limit?: number): Promise<any> {
+  const entries = await client.getEntries({
+    limit: limit,
+    content_type: 'blogPost',
+  });
   if (entries.items) return entries.items;
 }
 

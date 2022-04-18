@@ -28,13 +28,11 @@ const Blog = ({ data }: BlogProps): JSX.Element => {
   updatePageTitle && updatePageTitle('Blog');
 
   const BlogPosts: CardProps[] = [];
-  data.sort(function (a: any, b: any) {
-    // by desc endDate // TODO add start date
-    a.sortDate = a.endDate == null ? new Date() : a.endDate;
-    b.sortDate = b.endDate == null ? new Date() : b.endDate;
-    return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
-  });
-  // TODO Calculate Length
+  // data.sort(function (a: any, b: any) {
+  //   a.sortDate = a.endDate == null ? new Date() : a.endDate;
+  //   b.sortDate = b.endDate == null ? new Date() : b.endDate;
+  //   return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
+  // });
   data.map((blogPost: any) => BlogPosts.push(mapBlogPostToCard(blogPost)));
 
   return <CardGrid cards={BlogPosts} size={300} />;

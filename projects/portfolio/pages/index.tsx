@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TextCard } from '../../component-library/stories/widgets/TextCard/TextCard';
 import { PageTitle } from '../../component-library/stories/components/PageTitle/PageTitle';
 import { client } from 'projects/helpers/client';
@@ -5,8 +6,10 @@ import { CardProps } from 'projects/component-library/stories/components/Card/Ca
 import { mapProjectToCard, Project } from './projects';
 import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
 import { mapPositionToCard, Position } from './employment';
+import { fetchEntries } from '../contentfulPosts';
+import { mapBlogPostToCard } from './blog';
 
-type HomeProps = { projectData: Project[]; positionData: Position[] };
+type HomeProps = { projectData: Project[]; positionData: Position[]; blogPostData: any };
 
 export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
   let res = await client.fetch(
@@ -23,20 +26,33 @@ export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
   );
   const projectData = await res;
 
+  let blogPostData = '';
+  res = await fetchEntries(3);
+  if (typeof res !== 'undefined') {
+    blogPostData = await res.map((p: any) => {
+      return p.fields;
+    });
+  }
+
   return {
     props: {
       positionData,
       projectData,
+      blogPostData,
     },
   };
 };
 
-const Home = ({ projectData, positionData }: HomeProps): JSX.Element => {
+const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Element => {
   const Positions: CardProps[] = [];
   positionData?.map((position: Position) => Positions.push(mapPositionToCard(position)));
 
   const Projects: CardProps[] = [];
   projectData?.map((project: Project) => Projects.push(mapProjectToCard(project)));
+
+  const BlogPosts: CardProps[] = [];
+  blogPostData?.map((blogPost: any) => BlogPosts.push(mapBlogPostToCard(blogPost)));
+
   return (
     <>
       <PageTitle text="Welcome to my portfolio!" />
@@ -62,6 +78,13 @@ const Home = ({ projectData, positionData }: HomeProps): JSX.Element => {
         <>
           <PageTitle text="Featured Projects" />
           <CardGrid cards={Projects} size={300} />
+        </>
+      )}
+
+      {BlogPosts.length > 0 && (
+        <>
+          <PageTitle text="Recent Blog Posts" />
+          <CardGrid cards={BlogPosts} size={300} />
         </>
       )}
     </>

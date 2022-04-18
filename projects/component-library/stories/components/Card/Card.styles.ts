@@ -153,6 +153,9 @@ const Front = styled.div<CardStylesProps>`
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 `;
 
 const Back = styled(Front)`

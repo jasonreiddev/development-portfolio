@@ -256,6 +256,10 @@ hr {
   }
 }
 
+&::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
 ::selection {
     background-color: var(--color-tertiary);
   }
