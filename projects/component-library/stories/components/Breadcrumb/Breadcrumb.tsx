@@ -5,10 +5,10 @@ import { BreadcrumbStyles as s } from './Breadcrumb.styles';
 
 export interface BreadcrumbProps {
   path: string;
-  siteName: string;
+  siteName?: string;
 }
 
-export const Breadcrumb = ({ path = '', siteName = 'Site' }: BreadcrumbProps): JSX.Element => {
+export const Breadcrumb = ({ path = '', siteName }: BreadcrumbProps): JSX.Element => {
   const [copied, setCopied] = useState(false);
   function copyToClipboard(path: string): void {
     setCopied(true);
@@ -34,9 +34,11 @@ export const Breadcrumb = ({ path = '', siteName = 'Site' }: BreadcrumbProps): J
   return (
     <s.Breadcrumb>
       <s.BreadcrumbGroup>
-        <s.BreadcrumbItem href="/" first={true}>
-          {siteName}
-        </s.BreadcrumbItem>
+        {siteName && (
+          <s.BreadcrumbItem href="/" first={true}>
+            {siteName}
+          </s.BreadcrumbItem>
+        )}
       </s.BreadcrumbGroup>
       {arrayPath.map((item, index) => {
         mapPath = mapPath + '/' + item;

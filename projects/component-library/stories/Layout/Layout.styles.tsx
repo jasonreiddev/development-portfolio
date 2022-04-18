@@ -119,7 +119,6 @@ const Main = styled.main`
     font-weight: 900;
     font-size: 2rem;
     line-height: 1;
-    margin: 6px 0 6px 10px;
   }
 `;
 

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CardProps } from 'projects/component-library/stories/components/Card/Card';
 import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
+import { LayoutContext } from 'projects/helpers/layoutContext';
+import { fetchEntries } from 'projects/portfolio/contentfulPosts';
 import { useContext } from 'react';
-import { LayoutContext } from '../../helpers/layoutContext';
-import { fetchEntries } from '../contentfulPosts';
 
 type BlogProps = { data: any };
 
@@ -26,7 +26,6 @@ export async function getStaticProps(): Promise<any> {
 const Blog = ({ data }: BlogProps): JSX.Element => {
   const { updatePageTitle } = useContext(LayoutContext);
   updatePageTitle && updatePageTitle('Blog');
-  console.log(data);
 
   const BlogPosts: CardProps[] = [];
   data.sort(function (a: any, b: any) {

@@ -12,7 +12,15 @@ const client = createClient({
 export async function fetchEntries(): Promise<any> {
   const entries = await client.getEntries();
   if (entries.items) return entries.items;
-  console.log(`Error getting Entries.`);
+}
+
+export async function fetchEntry(slug: string): Promise<any> {
+  console.log(slug); // TODO use this to get correct data
+  const entries = await client.getEntries({
+    content_type: 'blogPost',
+    'fields.slug[in]': slug,
+  });
+  if (entries.items) return entries.items[0];
 }
 
 export default { fetchEntries };

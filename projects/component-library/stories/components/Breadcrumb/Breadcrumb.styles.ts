@@ -7,6 +7,7 @@ const Breadcrumb = styled.div`
   font-size: 13px;
   flex-wrap: wrap;
   color: var(--color-contrast);
+  margin: 0 35px;
 `;
 
 const BreadcrumbGroup = styled.div`
@@ -31,7 +32,6 @@ const BreadcrumbItem = styled.a<{ first?: boolean }>`
 
 const CopyButton = styled.a`
   font-size: 15px;
-  margin-top: 4px;
   cursor: copy;
   svg {
     color: var(--color-contrast);
