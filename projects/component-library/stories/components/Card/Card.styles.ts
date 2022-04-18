@@ -7,6 +7,7 @@ interface CardStylesProps {
   canFlip?: boolean;
   flipped?: boolean;
   wasFlipped?: boolean;
+  dark?: boolean;
 }
 
 // TODO make clear which cards flip and which have urls
@@ -44,8 +45,8 @@ const Container = styled.a<CardStylesProps>`
     @media (prefers-reduced-motion: no-preference) {
       transform: scale(1.2);
     }
-    transition: all 0.5s;
-    filter: brightness(80%);
+    transition: filter 0.5s;
+    filter: brightness(${(p) => (p.dark ? `120%` : `90%`)});
   }
 
   /* Flip */
@@ -124,10 +125,10 @@ const Tag = styled.div`
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background: linear-gradient(to left, var(--color-primary), var(--color-primary-li10));
+  background: linear-gradient(to left, var(--color-primary), var(--color-primary-ld10));
   transition: filter 0.5s;
   &:hover {
-    filter: brightness(120%);
+    filter: brightness(${(p) => (p.dark ? `120%` : `90%`)});
   }
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -152,6 +153,9 @@ const Front = styled.div<CardStylesProps>`
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 `;
 
 const Back = styled(Front)`

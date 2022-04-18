@@ -1,7 +1,12 @@
-// Hover Images - zoom
-// Hover Button - 3D effect (scale / shadow)
-// Hover other interactive - increase lighten
-// Hover active interactive -underline
+// Hover interaction - Increase Contrast
+// Inactive: Base | Active: Contrast
+
+// Dark-mode:   Base: Black | Contrast: White | Interact: Lighten
+// Light-mode:  Base: White | Contrast: Black | Interact: Darken
+
+// li#num:  Lightness Increase Contrast
+// di#num:  Lightness Decrease Contrast
+// o#num:   Opacity
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -19,14 +24,14 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --border-radius: 15px;
 
   --color-primary: hsl(320, 35%, 55%);
-  --color-primary-li10: hsl(320, 35%, 65%);
+  --color-primary-ld10: hsl(320, 35%, 65%);
 
   --color-secondary: hsl(120, 20%, 55%);
 
   --color-tertiary: hsl(200, 35%, 55%);
   --color-tertiary-o66: hsla(200, 35%, 55%, 0.66);
-  --color-tertiary-li10: hsl(200, 35%, 65%);
-  --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
+  --color-tertiary-li10: hsl(200, 35%, 45%);
+  --color-tertiary-li10-o66: hsla(200, 35%, 45%, 0.66);
 
   --global-white: rgb(253, 242, 248);
   --color-base: var(--global-white);
@@ -56,6 +61,11 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     ${(p) =>
       p.dark
         ? `
+    --color-primary-ld10: hsl(320, 35%, 45%);
+
+    --color-tertiary-li10: hsl(200, 35%, 65%);
+    --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
+
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);
     --color-base-semi-bold-o66: var(--global-black-semi-bold-o66);
@@ -244,6 +254,10 @@ hr {
   &:hover{
     background-color: var(--color-tertiary-li10-o66);
   }
+}
+
+&::-webkit-scrollbar:horizontal {
+  display: none;
 }
 
 ::selection {

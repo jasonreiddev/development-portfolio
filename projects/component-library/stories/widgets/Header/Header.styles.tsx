@@ -85,8 +85,6 @@ const MenuLink = styled.a`
 `;
 
 const MenuActive = styled.h2`
-  font-size: ${clamp({ multiplier: 1 })};
-  line-height: 1;
   margin: 0;
   color: var(--color-contrast);
 `;

@@ -47,10 +47,15 @@ export const Header = ({
       <nav>
         <s.MenuItems>
           {menuLinks.map((link) => {
-            if (typeof window !== 'undefined' && location.pathname == link.link) {
+            if (
+              typeof window !== 'undefined' &&
+              (location.pathname == link.link || location.pathname.startsWith(`${link.link}/`))
+            ) {
               return (
                 <li>
-                  <s.MenuActive>{link.name}</s.MenuActive>
+                  <s.MenuLink href={link.link}>
+                    <s.MenuActive>{link.name}</s.MenuActive>
+                  </s.MenuLink>
                 </li>
               );
             }

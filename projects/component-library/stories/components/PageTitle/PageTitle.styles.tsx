@@ -6,6 +6,12 @@ export const Text = styled.h3`
   margin: 0 35px;
 `;
 
+export const TextSub = styled.h4`
+  font-size: ${clamp({ multiplier: 0.8, initial: '12px' })};
+  margin: 0 35px;
+`;
+
 export const PageTitleStyles = {
   Text,
+  TextSub,
 };
