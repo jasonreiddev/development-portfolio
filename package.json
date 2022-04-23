@@ -20,7 +20,8 @@
     "sn:deploy": "yarn workspace sanity sanity deploy build",
     "hl:lint": "yarn workspace helpers lint",
     "lint": "yarn cl:lint && yarn pf:lint && yarn sn:lint",
-    "lint-parallel": "yarn cl:lint & yarn pf:lint & yarn sn:lint"
+    "lint-parallel": "yarn cl:lint & yarn pf:lint & yarn sn:lint",
+    "prebuild": "generate-build-meta"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.19.0",
@@ -28,6 +29,7 @@
     "eslint-config-next": "12.0.7",
     "eslint-plugin-storybook": "^0.5.5",
     "husky": "4",
+    "react-clear-cache": "^1.4.12",
     "vercel": "^24.0.0"
   }
 }

@@ -8,6 +8,7 @@ import { CardGrid } from 'projects/component-library/stories/components/CardGrid
 import { mapPositionToCard, Position } from './employment';
 import { fetchEntries } from '../contentfulPosts';
 import { mapBlogPostToCard } from './blog';
+import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
 
 type HomeProps = { projectData: Project[]; positionData: Position[]; blogPostData: any };
 
@@ -62,8 +63,8 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
           development career in January of 2019 as an apprentice at Bradford Council and am now a
           support developer at NetConstruct. <br />
           <br />
-          The best place to contact me is via
-          <a href="https://www.linkedin.com/in/jasonreiddev">LinkedIn</a>.
+          The best place to contact me is via&nbsp;
+          <ExternalLink to="https://www.linkedin.com/in/jasonreiddev" text="LinkedIn" />.
         </>
       </TextCard>
 
@@ -87,6 +88,20 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
           <CardGrid cards={BlogPosts} size={300} />
         </>
       )}
+
+      <TextCard fitContent={false}>
+        <>
+          This site was built using:
+          <ul>
+            <li>- Next.js</li>
+            <li>- Styled Components</li>
+            <li>- Storybook</li>
+          </ul>
+          For more information, you can view the&nbsp;
+          <ExternalLink to="https://github.com/jasonreiddev/nextjs" text="project's repository" />
+          &nbsp;on Github.
+        </>
+      </TextCard>
     </>
   );
 };
