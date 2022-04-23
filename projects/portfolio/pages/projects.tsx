@@ -4,6 +4,7 @@ import { client } from '../../helpers/client';
 import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
 import { CardProps } from '../../component-library/stories/components/Card/Card';
 import { Project as SchemaProject } from 'projects/sanity/schemas/project';
+import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
 
 export interface Project extends SchemaProject {
   sortDate: Date;
@@ -62,12 +63,12 @@ export function mapProjectToCard(project: Project): CardProps {
         <p>{project.details}</p>
         {project.repoUrl && (
           <p>
-            <a href={project.repoUrl}>View Repository</a>
+            <ExternalLink to={project.repoUrl} text="View Repository" />
           </p>
         )}
         {project.siteUrl && (
           <p>
-            <a href={project.siteUrl}>View Site</a>
+            <ExternalLink to={project.siteUrl} text="View Site" />
           </p>
         )}
       </>

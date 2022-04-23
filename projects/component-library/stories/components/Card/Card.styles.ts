@@ -120,7 +120,6 @@ const TagsContainer = styled.div`
 const Tag = styled.div`
   padding: 6px;
   background-color: var(--color-base-semi-bold-o66);
-  pointer-events: all;
   cursor: pointer;
 `;
 
