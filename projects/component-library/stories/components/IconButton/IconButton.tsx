@@ -10,6 +10,7 @@ export interface IconButtonProps {
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
   label?: string;
+  ariaLabel: string;
   onClick?: () => void;
 }
 
@@ -49,6 +50,7 @@ export const IconButton = ({
   size = 'medium',
   backgroundColor,
   label,
+  ariaLabel,
   ...props
 }: IconButtonProps): JSX.Element => {
   const mode = primary ? 'primary' : 'secondary';
@@ -62,6 +64,7 @@ export const IconButton = ({
         {...props}
         data-tooltip={label}
         data-tooltip--close={size == 'small' ? 'true' : null}
+        aria-label={ariaLabel}
       >
         <span className="icon">{renderIcon(icon)}</span>
       </s.Button>

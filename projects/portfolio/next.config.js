@@ -8,6 +8,10 @@ const nextConfig = {
   pwa: {
     dest: 'public',
   },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 };
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

@@ -17,6 +17,7 @@ PrimaryMail.args = {
   icon: Icon.Mail,
   primary: true,
   label: 'Mail',
+  ariaLabel: 'Mail',
 };
 
 export const PrimaryMailActive = Template.bind({});
@@ -25,6 +26,7 @@ PrimaryMailActive.args = {
   active: true,
   primary: true,
   label: 'Mail',
+  ariaLabel: 'Mail',
 };
 
 export const PrimaryNone = Template.bind({});
@@ -32,12 +34,14 @@ PrimaryNone.args = {
   icon: Icon.None,
   primary: true,
   label: 'Mail?',
+  ariaLabel: 'Mail?',
 };
 
 export const SecondaryRefresh = Template.bind({});
 SecondaryRefresh.args = {
   icon: Icon.Refresh,
   label: 'Refresh',
+  ariaLabel: 'Refresh',
 };
 
 export const LargeRefreshActive = Template.bind({});
@@ -46,6 +50,7 @@ LargeRefreshActive.args = {
   active: true,
   size: 'large',
   label: 'Refresh',
+  ariaLabel: 'Refresh',
 };
 
 export const SmallRefresh = Template.bind({});
@@ -53,6 +58,7 @@ SmallRefresh.args = {
   icon: Icon.Refresh,
   size: 'small',
   label: 'Refresh',
+  ariaLabel: 'Refresh',
 };
 
 export const Minimum = Template.bind({});

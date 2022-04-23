@@ -14,7 +14,7 @@ import { LayoutContext } from '../../../helpers/layoutContext';
 
 export interface LayoutProps {
   title?: string;
-  pageTitle?: string;
+  description?: string;
   headerTitle?: string;
   menuLinks: Links[];
   getLikesDBValue?: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
@@ -25,6 +25,7 @@ export interface LayoutProps {
 
 export const Layout = ({
   title,
+  description,
   headerTitle,
   menuLinks,
   setLikesDBValue = () => 1,
@@ -38,12 +39,17 @@ export const Layout = ({
   if (pageTitle) {
     title = `${title} / ${pageTitle}`;
   }
+  const { pageDescription } = useContext(LayoutContext);
+  if (pageDescription) {
+    description = `${description}. ${pageDescription}`;
+  }
   const { dark } = useContext(LayoutContext);
 
   return (
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={description}></meta>
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />

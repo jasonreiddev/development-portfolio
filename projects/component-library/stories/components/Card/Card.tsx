@@ -48,7 +48,7 @@ export const Card = ({
 
   return (
     <s.Container
-      href={url}
+      href={url ? url : '#'}
       modifyWidth={modifyWidth}
       dark={dark}
       tabIndex={0}

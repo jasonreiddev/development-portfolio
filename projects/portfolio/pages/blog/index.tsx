@@ -24,8 +24,9 @@ export async function getStaticProps(): Promise<any> {
 }
 
 const Blog = ({ data }: BlogProps): JSX.Element => {
-  const { updatePageTitle } = useContext(LayoutContext);
-  updatePageTitle && updatePageTitle('Blog');
+  const { updatePageTitle, updatePageDescription } = useContext(LayoutContext);
+  updatePageTitle?.('Blog');
+  updatePageDescription?.('Blog posts');
 
   const BlogPosts: CardProps[] = [];
   // data.sort(function (a: any, b: any) {

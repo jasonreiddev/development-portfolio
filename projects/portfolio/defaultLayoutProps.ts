@@ -17,8 +17,9 @@ function setLikesDBValue(value: number): void {
 }
 
 export const defaultLayoutProps = {
-  title: `JR Dev`,
-  headerTitle: `Jason Reid's Dev Portfolio`,
+  title: 'JR Dev',
+  description: "Jason Reid's Development Portfolio",
+  headerTitle: "Jason Reid's Dev Portfolio",
   menuLinks: [
     {
       name: 'Home',

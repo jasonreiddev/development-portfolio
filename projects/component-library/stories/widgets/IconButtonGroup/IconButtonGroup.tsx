@@ -24,26 +24,30 @@ export const IconButtonGroup = ({
           active={true}
           size={iconButtonSize}
           backgroundColor={iconButtonBackgroundColor}
-          label={'Mail'}
+          label="Mail"
+          ariaLabel="Mail"
         />
         <IconButton
           icon={Icon.Refresh}
           size={iconButtonSize}
           backgroundColor={iconButtonBackgroundColor}
-          label={'Refresh'}
+          label="Refresh"
+          ariaLabel="Refresh"
         />
         <IconButton
           icon={Icon.Search}
           primary={true}
           size={iconButtonSize}
           backgroundColor={iconButtonBackgroundColor}
-          label={'Search'}
+          label="Search"
+          ariaLabel="Search"
         />
         <IconButton
           icon={Icon.LogOut}
           size={iconButtonSize}
           backgroundColor={iconButtonBackgroundColor}
-          label={'Log Out'}
+          label="Log Out"
+          ariaLabel="Log Out"
         />
       </s.ButtonWrapper>
     </TextCard>
