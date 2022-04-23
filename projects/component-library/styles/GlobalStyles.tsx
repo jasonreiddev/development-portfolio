@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --color-primary-ld10: hsl(320, 35%, 65%);
 
   --color-secondary: hsl(120, 20%, 55%);
+  --color-secondary-ld40:  hsl(120, 20%, 95%);
 
   --color-tertiary: hsl(200, 35%, 55%);
   --color-tertiary-o66: hsla(200, 35%, 55%, 0.66);
@@ -65,6 +66,8 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
     --color-tertiary-li10: hsl(200, 35%, 65%);
     --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
+
+    --color-secondary-ld40: hsl(120, 20%, 15%);
 
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);
