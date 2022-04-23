@@ -1,11 +1,27 @@
 {
   "name": "Jason Reid's Development Portfolio",
   "short_name": "JR Dev Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#b4649a",
+  "theme_color": "#b4649a",
+  "orientation": "portrait-primary",
   "icons": [
-    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
-  ],
-  "theme_color": "#b35e91",
-  "background_color": "#b35e91",
-  "display": "standalone"
+    {
+      "src": "/images/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

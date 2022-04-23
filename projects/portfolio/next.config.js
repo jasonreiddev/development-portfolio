@@ -5,8 +5,12 @@ const nextConfig = {
     loader: 'akamai',
     path: '',
   },
+  pwa: {
+    dest: 'public',
+  },
 };
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withTM = require('next-transpile-modules')(['component-library', 'helpers']);
-module.exports = withTM(nextConfig);
+const withPWA = require('next-pwa');
+module.exports = withTM(withPWA(nextConfig));
