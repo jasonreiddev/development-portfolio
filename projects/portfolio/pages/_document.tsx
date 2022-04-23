@@ -1,5 +1,6 @@
 import Document, { DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { ClearCacheProvider } from 'react-clear-cache';
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -18,10 +19,10 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: (
-          <>
+          <ClearCacheProvider auto={true}>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
+          </ClearCacheProvider>
         ),
       };
     } finally {

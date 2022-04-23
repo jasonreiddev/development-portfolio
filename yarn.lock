@@ -5681,6 +5681,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@use-it/event-listener@npm:^0.1.2":
+  version: 0.1.7
+  resolution: "@use-it/event-listener@npm:0.1.7"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 6d29f72fd4da0d3a2b015389b646d9b2f7e0ff9d04b2781bad70a81477f7ee3e79256b4abbd4d4bbd9f871d38ca6f7b48b9104e504d176b88f3a149a32fcaf99
+  languageName: node
+  linkType: hard
+
 "@vercel/build-utils@npm:2.15.0":
   version: 2.15.0
   resolution: "@vercel/build-utils@npm:2.15.0"
@@ -15755,6 +15764,7 @@ __metadata:
     eslint-config-next: 12.0.7
     eslint-plugin-storybook: ^0.5.5
     husky: 4
+    react-clear-cache: ^1.4.12
     vercel: ^24.0.0
   languageName: unknown
   linkType: soft
@@ -18453,6 +18463,23 @@ __metadata:
     lodash.flow: ^3.3.0
     pure-color: ^1.2.0
   checksum: 00a12dddafc8a9025cca933b0dcb65fca41c81fa176d1fc3a6a9d0242127042e2c0a604f4c724a3254dd2c6aeb5ef55095522ff22f5462e419641c1341a658e4
+  languageName: node
+  linkType: hard
+
+"react-clear-cache@npm:^1.4.12":
+  version: 1.4.12
+  resolution: "react-clear-cache@npm:1.4.12"
+  dependencies:
+    minimist: ^1.2.5
+    use-persisted-state: ^0.3.0
+    uuid: ^3.3.2
+  peerDependencies:
+    prop-types: ^15.7.2
+    react: ^15.0.0 || ^16.0.0
+    react-dom: ^15.0.0 || ^16.0.0
+  bin:
+    generate-build-meta: bin/cli.js
+  checksum: 1b15d9e481697ba0236a6b635669ad5935f364800d0941bcb1f382e9274ce379d68e99f8831ee8c5168fa088992ffaea8853ed899a0d621af465cc6edb13e7b7
   languageName: node
   linkType: hard
 
@@ -22154,6 +22181,17 @@ __metadata:
     "@types/react":
       optional: true
   checksum: f0cb3a49119e14ed46db8a946b1aa17b838b8834c8a652bde314877ede6057c55b50654a97ee802597a5839c070180195e58ea3a756b7c33db7f540642f0ddea
+  languageName: node
+  linkType: hard
+
+"use-persisted-state@npm:^0.3.0":
+  version: 0.3.3
+  resolution: "use-persisted-state@npm:0.3.3"
+  dependencies:
+    "@use-it/event-listener": ^0.1.2
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0
+  checksum: ab637e526180aca1b487f7da38926b864d4ad524b28176e9e2ce58c441bc49f29c91e324eeb75ad579f8468c17f990793c0fff69f55b138d1be9ed8ddb79ecee
   languageName: node
   linkType: hard
 
