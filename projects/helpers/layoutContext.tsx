@@ -10,6 +10,8 @@ export interface ILayoutContext {
   toggleDark?: () => void;
   pageTitle: string;
   updatePageTitle?: (pageTitle: string) => void;
+  pageDescription: string;
+  updatePageDescription?: (updatePageDescription: string) => void;
 }
 
 // updated from preference on mount
@@ -17,6 +19,7 @@ export interface ILayoutContext {
 const defaultState = {
   dark: true,
   pageTitle: '',
+  pageDescription: '',
 };
 
 export const LayoutContext = createContext<ILayoutContext>(defaultState);
@@ -24,6 +27,7 @@ export const LayoutContext = createContext<ILayoutContext>(defaultState);
 export const LayoutProvider: React.FC = ({ children }) => {
   const [dark, setDark] = useState(defaultState.dark);
   const [pageTitle, setPageTitle] = useState('');
+  const [pageDescription, setPageDescription] = useState('');
 
   const toggleDark = (): void => {
     localStorage.setItem('dark', (!dark).toString());
@@ -32,6 +36,10 @@ export const LayoutProvider: React.FC = ({ children }) => {
 
   const updatePageTitle = (pageTitle: string): void => {
     setPageTitle(pageTitle);
+  };
+
+  const updatePageDescription = (pageDescription: string): void => {
+    setPageDescription(pageDescription);
   };
 
   useEffect(() => {
@@ -55,6 +63,8 @@ export const LayoutProvider: React.FC = ({ children }) => {
         toggleDark,
         pageTitle,
         updatePageTitle,
+        pageDescription,
+        updatePageDescription,
       }}
     >
       {children}
@@ -76,6 +86,7 @@ export const ToggleDarkMode = (): JSX.Element => {
         icon={dark ? Icon.Moon : Icon.Sun}
         size="small"
         active={true}
+        ariaLabel={dark ? 'Use Light Theme' : 'Use Dark Theme'}
       />
     </>
   );

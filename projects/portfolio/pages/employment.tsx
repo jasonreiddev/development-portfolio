@@ -28,8 +28,9 @@ export const getStaticProps = async (): Promise<{ props: EmploymentsProps }> => 
 };
 
 const Employment = ({ data }: EmploymentsProps): JSX.Element => {
-  const { updatePageTitle } = useContext(LayoutContext);
-  updatePageTitle && updatePageTitle('Employment');
+  const { updatePageTitle, updatePageDescription } = useContext(LayoutContext);
+  updatePageTitle?.('Employment');
+  updatePageDescription?.('Employment history');
 
   const Positions: CardProps[] = [];
   data.sort(function (a: Position, b: Position) {

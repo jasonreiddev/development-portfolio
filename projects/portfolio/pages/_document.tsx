@@ -1,4 +1,4 @@
-import Document, { DocumentContext } from 'next/document';
+import Document, { DocumentContext, Html } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { ClearCacheProvider } from 'react-clear-cache';
 
@@ -19,10 +19,12 @@ export default class MyDocument extends Document {
       return {
         ...initialProps,
         styles: (
-          <ClearCacheProvider auto={true}>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </ClearCacheProvider>
+          <Html lang="en">
+            <ClearCacheProvider auto={true}>
+              {initialProps.styles}
+              {sheet.getStyleElement()}
+            </ClearCacheProvider>
+          </Html>
         ),
       };
     } finally {

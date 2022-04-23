@@ -13,6 +13,7 @@
     "@contentful/rich-text-react-renderer": "^15.12.0",
     "contentful": "^9.1.22",
     "next": "12.1.0",
+    "next-pwa": "^5.5.2",
     "next-transpile-modules": "^9.0.0",
     "react": "17.0.2"
   },
