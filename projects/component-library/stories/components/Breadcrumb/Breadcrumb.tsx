@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import { MdCheckBox, MdCopyAll } from 'react-icons/md';
 
@@ -35,9 +36,9 @@ export const Breadcrumb = ({ path = '', siteName }: BreadcrumbProps): JSX.Elemen
     <s.Breadcrumb>
       <s.BreadcrumbGroup>
         {siteName && (
-          <s.BreadcrumbItem href="/" first={true}>
-            {siteName}
-          </s.BreadcrumbItem>
+          <Link href="/" passHref>
+            <s.BreadcrumbItem first={true}>{siteName}</s.BreadcrumbItem>
+          </Link>
         )}
       </s.BreadcrumbGroup>
       {arrayPath.map((item, index) => {
