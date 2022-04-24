@@ -8,15 +8,22 @@ interface CardStylesProps {
   flipped?: boolean;
   wasFlipped?: boolean;
   dark?: boolean;
+  link?: boolean;
 }
 
 // TODO make clear which cards flip and which have urls
 
-const Container = styled.a<CardStylesProps>`
+const Container = styled.button<CardStylesProps>`
   font-size: 13px;
   flex-wrap: wrap;
   color: var(--color-contrast);
+  border: 0;
+  padding: 0;
+  text-align: left;
   position: relative;
+  &[role='link'] {
+    cursor: pointer;
+  }
 
   ${(p) =>
     typeof p.modifyWidth == 'number'
@@ -28,7 +35,6 @@ const Container = styled.a<CardStylesProps>`
       : p.modifyWidth == 'full'
       ? 'grid-column: 1 / -1;'
       : null}
-
   img {
     position: absolute;
     right: 0;
@@ -105,6 +111,14 @@ const Content = styled.div`
   }
 `;
 
+const TitleWrapper = styled.div`
+  display: flex;
+
+  svg {
+    transform: translateY(2px);
+  }
+`;
+
 const TagsContainer = styled.div`
   position: absolute;
   display: flex;
@@ -124,7 +138,14 @@ const Tag = styled.div`
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background: linear-gradient(to left, var(--color-primary), var(--color-primary-ld10));
+  background: linear-gradient(
+    to left,
+    ${(p) =>
+      p.link
+        ? `var(--color-tertiary), var(--color-tertiary-ld10)`
+        : `var(--color-primary), var(--color-primary-ld10)`}
+  );
+
   transition: filter 0.5s;
   &:hover {
     filter: brightness(${(p) => (p.dark ? `120%` : `90%`)});
@@ -174,6 +195,7 @@ const Back = styled(Front)`
 const BackContent = styled(Content)`
   height: 100%;
   overflow-y: auto;
+  background-color: var(--color-secondary-ld40);
   ::-webkit-scrollbar {
     width: 0.5rem;
     height: calc(100% - 20px);
@@ -190,6 +212,7 @@ export const CardStyles = {
   TagsContainer,
   Tag,
   Content,
+  TitleWrapper,
   Front,
   Back,
   BackContent,

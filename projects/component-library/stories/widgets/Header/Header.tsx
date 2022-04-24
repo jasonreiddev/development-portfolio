@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ToggleDarkMode } from '../../../../helpers/layoutContext';
 import { Button } from '../../components/Button/Button';
 import { RisingText } from '../../components/RisingText/RisingText';
@@ -28,9 +29,11 @@ export const Header = ({
 }: HeaderProps): JSX.Element => {
   return (
     <s.Wrapper>
-      <s.Title href="/">
-        <h1>{title}</h1>
-      </s.Title>
+      <Link href="/" passHref>
+        <s.Title>
+          <h1>{title}</h1>
+        </s.Title>
+      </Link>
 
       {(user || onLogin || onCreateAccount) && (
         <div>
@@ -53,17 +56,21 @@ export const Header = ({
             ) {
               return (
                 <li>
-                  <s.MenuLink href={link.link}>
-                    <s.MenuActive>{link.name}</s.MenuActive>
-                  </s.MenuLink>
+                  <Link href={link.link} passHref>
+                    <s.MenuLink>
+                      <s.MenuActive>{link.name}</s.MenuActive>
+                    </s.MenuLink>
+                  </Link>
                 </li>
               );
             }
             return (
               <li key={link.name}>
-                <s.MenuLink href={link.link}>
-                  <RisingText text={link.name} color={'var(--color-contrast)'} />
-                </s.MenuLink>
+                <Link href={link.link} passHref>
+                  <s.MenuLink>
+                    <RisingText text={link.name} color={'var(--color-contrast)'} />
+                  </s.MenuLink>
+                </Link>
               </li>
             );
           })}
