@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useState, useContext } from 'react';
+import Router from 'next/router';
 
 import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
@@ -48,11 +49,14 @@ export const Card = ({
 
   return (
     <s.Container
-      href={url ? url : '#'}
+      role={url ? 'link' : undefined}
       modifyWidth={modifyWidth}
       dark={dark}
       tabIndex={0}
       onClick={() => {
+        if (url != undefined) {
+          Router.push(url);
+        }
         if (flipContent) {
           {
             setWasFlipped(flipped);

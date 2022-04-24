@@ -12,11 +12,16 @@ interface CardStylesProps {
 
 // TODO make clear which cards flip and which have urls
 
-const Container = styled.a<CardStylesProps>`
+const Container = styled.button<CardStylesProps>`
   font-size: 13px;
   flex-wrap: wrap;
   color: var(--color-contrast);
+  border: 0;
+  text-align: left;
   position: relative;
+  &[role='link'] {
+    cursor: pointer;
+  }
 
   ${(p) =>
     typeof p.modifyWidth == 'number'
@@ -28,7 +33,6 @@ const Container = styled.a<CardStylesProps>`
       : p.modifyWidth == 'full'
       ? 'grid-column: 1 / -1;'
       : null}
-
   img {
     position: absolute;
     right: 0;
