@@ -31,6 +31,9 @@ const BreadcrumbItem = styled.a<{ first?: boolean }>`
 `;
 
 const CopyButton = styled.button`
+  background: none;
+  border: 0;
+  padding: 0;
   font-size: 15px;
   cursor: copy;
   svg {

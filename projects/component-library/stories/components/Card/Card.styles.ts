@@ -8,6 +8,7 @@ interface CardStylesProps {
   flipped?: boolean;
   wasFlipped?: boolean;
   dark?: boolean;
+  link?: boolean;
 }
 
 // TODO make clear which cards flip and which have urls
@@ -17,6 +18,7 @@ const Container = styled.button<CardStylesProps>`
   flex-wrap: wrap;
   color: var(--color-contrast);
   border: 0;
+  padding: 0;
   text-align: left;
   position: relative;
   &[role='link'] {
@@ -109,6 +111,16 @@ const Content = styled.div`
   }
 `;
 
+const TitleWrapper = styled.div`
+  * {
+    display: inline;
+  }
+
+  svg {
+    transform: translateY(2px);
+  }
+`;
+
 const TagsContainer = styled.div`
   position: absolute;
   display: flex;
@@ -128,7 +140,14 @@ const Tag = styled.div`
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background: linear-gradient(to left, var(--color-primary), var(--color-primary-ld10));
+  background: linear-gradient(
+    to left,
+    ${(p) =>
+      p.link
+        ? `var(--color-tertiary), var(--color-tertiary-ld10)`
+        : `var(--color-primary), var(--color-primary-ld10)`}
+  );
+
   transition: filter 0.5s;
   &:hover {
     filter: brightness(${(p) => (p.dark ? `120%` : `90%`)});
@@ -195,6 +214,7 @@ export const CardStyles = {
   TagsContainer,
   Tag,
   Content,
+  TitleWrapper,
   Front,
   Back,
   BackContent,

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState, useContext } from 'react';
 import Router from 'next/router';
+import { MdLink } from 'react-icons/md';
 
 import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
@@ -66,7 +67,7 @@ export const Card = ({
       }}
     >
       <s.ContainerInner flipped={flipped} wasFlipped={wasFlipped}>
-        <s.Front flipped={flipped} canFlip={!!flipContent} dark={dark}>
+        <s.Front flipped={flipped} canFlip={!!flipContent} dark={dark} link={!!url}>
           {image && <Image src={image} alt={alt} />}
           {tags && (
             <s.TagsContainer>
@@ -88,9 +89,12 @@ export const Card = ({
             </s.TagsContainer>
           )}
           <s.Content>
-            <h3>
-              <ClampText lines={2} text={title} />
-            </h3>
+            <s.TitleWrapper>
+              {!!url && <MdLink />}
+              <h3>
+                <ClampText lines={2} text={title} />
+              </h3>
+            </s.TitleWrapper>
             {text && <ClampText lines={3} text={text} />}
           </s.Content>
         </s.Front>

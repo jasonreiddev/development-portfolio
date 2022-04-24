@@ -30,6 +30,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --color-secondary-ld40:  hsl(120, 20%, 95%);
 
   --color-tertiary: hsl(200, 35%, 55%);
+  --color-tertiary-ld10: hsl(200, 35%, 65%);
   --color-tertiary-o66: hsla(200, 35%, 55%, 0.66);
   --color-tertiary-li10: hsl(200, 35%, 45%);
   --color-tertiary-li10-o66: hsla(200, 35%, 45%, 0.66);
@@ -64,6 +65,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
         ? `
     --color-primary-ld10: hsl(320, 35%, 45%);
 
+    --color-tertiary-ld10: hsl(200, 35%, 45%);
     --color-tertiary-li10: hsl(200, 35%, 65%);
     --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
 
