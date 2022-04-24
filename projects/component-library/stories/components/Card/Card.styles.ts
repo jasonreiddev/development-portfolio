@@ -112,9 +112,7 @@ const Content = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  * {
-    display: inline;
-  }
+  display: flex;
 
   svg {
     transform: translateY(2px);
