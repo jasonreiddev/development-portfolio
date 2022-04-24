@@ -46,9 +46,11 @@ export const Breadcrumb = ({ path = '', siteName }: BreadcrumbProps): JSX.Elemen
         return (
           <s.BreadcrumbGroup key={`BreadcrumbItem-${index}`}>
             <span>/</span>
-            <s.BreadcrumbItem href={mapPath}>
-              {decodeURIComponent(item).replace(/-/g, ' ').trim()}
-            </s.BreadcrumbItem>
+            <Link href={mapPath} passHref>
+              <s.BreadcrumbItem>
+                {decodeURIComponent(item).replace(/-/g, ' ').trim()}
+              </s.BreadcrumbItem>
+            </Link>
             {arrayPath.length - 1 == index && (
               <s.CopyButton title="Copy to Clipboard" onClick={() => copyToClipboard(path)}>
                 {!copied && <MdCopyAll />}
