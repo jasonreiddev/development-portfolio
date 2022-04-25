@@ -52,9 +52,11 @@ const Title = styled.a`
     }
     width: 0;
   }
-  &:hover:after and (pointer: fine) {
-    width: 100%;
-    left: 0;
+  @media (pointer: fine) {
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
   }
 `;
 
