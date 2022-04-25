@@ -5,6 +5,9 @@ const Wrapper = styled.div`
   color: hsl(0deg 0% 25%);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   background: transparent;
+  margin: 0 26px;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
 `;
 
 const Title = styled.button`
@@ -13,17 +16,18 @@ const Title = styled.button`
   padding: 12px 16px;
   outline-offset: 5px;
   background-color: var(--color-secondary);
-  box-shadow: var(--box-shadow);
   width: 100%;
   border: 0;
   border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 14pt;
 `;
 
 const Content = styled.div<{ active?: boolean }>`
-  background: var(--color-primary);
+  background-color: var(--color-secondary-ldmax);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  padding: 12px 17px;
-  margin: 0 10px;
+  padding: 26px 8px 8px;
+  margin: -16px 0 0;
 
   ${(p) => (p.active ? ` display: block;` : `  display: none;`)}
 `;

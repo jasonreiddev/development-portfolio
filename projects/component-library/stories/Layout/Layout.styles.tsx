@@ -55,8 +55,7 @@ const LoadSpinner = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
-
+  overflow-y: overlay;
   display: grid;
   grid-template-columns: 1fr minmax(150px, 1fr) 1fr;
   grid-template-rows: auto 1fr;
