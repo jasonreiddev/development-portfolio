@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   color: hsl(0deg 0% 25%);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   background: transparent;
+  padding: 0 26px;
 `;
 
 const Title = styled.button`
@@ -17,13 +18,16 @@ const Title = styled.button`
   width: 100%;
   border: 0;
   border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 14pt;
 `;
 
 const Content = styled.div<{ active?: boolean }>`
-  background: var(--color-primary);
+  background-color: var(--color-secondary-ldmax);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  padding: 12px 17px;
-  margin: 0 10px;
+  box-shadow: var(--box-shadow);
+  padding: 26px 8px 8px;
+  margin: -16px 0 0;
 
   ${(p) => (p.active ? ` display: block;` : `  display: none;`)}
 `;

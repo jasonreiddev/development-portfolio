@@ -26,14 +26,14 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --color-primary: hsl(320, 35%, 55%);
   --color-primary-ld10: hsl(320, 35%, 65%);
 
-  --color-secondary: hsl(120, 20%, 55%);
-  --color-secondary-ld40:  hsl(120, 20%, 95%);
+  --color-secondary: hsl(120, 20%, 40%);
+  --color-secondary-ldmax:  hsl(120, 20%, 85%);
 
-  --color-tertiary: hsl(200, 35%, 55%);
-  --color-tertiary-ld10: hsl(200, 35%, 65%);
-  --color-tertiary-o66: hsla(200, 35%, 55%, 0.66);
-  --color-tertiary-li10: hsl(200, 35%, 45%);
-  --color-tertiary-li10-o66: hsla(200, 35%, 45%, 0.66);
+  --color-tertiary: hsl(200, 35%, 35%);
+  --color-tertiary-ld10: hsl(200, 35%, 45%);
+  --color-tertiary-o66: hsla(200, 35%, 35%, 0.66);
+  --color-tertiary-li10: hsl(200, 35%, 25%);
+  --color-tertiary-li10-o66: hsla(200, 35%, 25%, 0.66);
 
   --global-white: rgb(253, 242, 248);
   --color-base: var(--global-white);
@@ -65,11 +65,12 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
         ? `
     --color-primary-ld10: hsl(320, 35%, 45%);
 
+    --color-tertiary: hsl(200, 35%, 55%);
     --color-tertiary-ld10: hsl(200, 35%, 45%);
     --color-tertiary-li10: hsl(200, 35%, 65%);
     --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
 
-    --color-secondary-ld40: hsl(120, 20%, 15%);
+    --color-secondary-ldmax: hsl(120, 20%, 15%);
 
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);

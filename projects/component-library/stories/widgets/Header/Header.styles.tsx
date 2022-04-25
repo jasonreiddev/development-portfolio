@@ -52,7 +52,7 @@ const Title = styled.a`
     }
     width: 0;
   }
-  &:hover:after {
+  &:hover:after and (pointer: fine) {
     width: 100%;
     left: 0;
   }

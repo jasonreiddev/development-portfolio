@@ -2,19 +2,25 @@ import styled from 'styled-components';
 import { Device, until } from '../../../../helpers/media';
 
 interface CardGridFilterableStylesProps {
-  active: boolean;
+  active?: boolean;
+  padding?: boolean;
 }
 
-const Wrapper = styled.span`
+const Wrapper = styled.div`
   overflow: auto;
 `;
 
-const TagsContainer = styled.div`
+const TagsContainer = styled.div<CardGridFilterableStylesProps>`
   display: flex;
   flex-wrap: wrap;
-  padding: 8px;
   gap: 2px;
   overflow: hidden;
+  ${(p) =>
+    p.padding
+      ? `
+      padding: 0 26px;
+        `
+      : null};
 `;
 
 const Tag = styled.button<CardGridFilterableStylesProps>`

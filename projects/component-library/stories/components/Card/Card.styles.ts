@@ -195,7 +195,7 @@ const Back = styled(Front)`
 const BackContent = styled(Content)`
   height: 100%;
   overflow-y: auto;
-  background-color: var(--color-secondary-ld40);
+  background-color: var(--color-secondary-ldmax);
   ::-webkit-scrollbar {
     width: 0.5rem;
     height: calc(100% - 20px);

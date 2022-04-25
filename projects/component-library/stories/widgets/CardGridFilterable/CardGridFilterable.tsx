@@ -67,9 +67,9 @@ export const CardGridFilterable = ({ cards = [], size }: CardGridFilterableProps
     }
   }
 
-  const TagContainer = (): JSX.Element => {
+  const TagContainer = (padding: boolean): JSX.Element => {
     return (
-      <s.TagsContainer>
+      <s.TagsContainer padding={padding}>
         {stateTags.map((tag, index) => (
           <s.Tag
             onClick={() => {
@@ -87,13 +87,13 @@ export const CardGridFilterable = ({ cards = [], size }: CardGridFilterableProps
 
   // Up to minWidth Mobile - Wrap Tags in accordion
   const FalseChildren = (): JSX.Element => {
-    return <Accordion title="Tags">{TagContainer()}</Accordion>;
+    return <Accordion title="Tags">{TagContainer(false)}</Accordion>;
   };
 
   return (
     <s.Wrapper>
       <IfWidth falseChildren={FalseChildren()} minWidth={Device.Tablet}>
-        {TagContainer()}
+        {TagContainer(true)}
       </IfWidth>
       <CardGrid cards={stateCards} size={size} onTagClick={tagClick} />
     </s.Wrapper>
