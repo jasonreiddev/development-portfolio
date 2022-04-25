@@ -116,6 +116,7 @@ const TitleWrapper = styled.div`
 
   svg {
     transform: translateY(2px);
+    margin-right: 2px;
   }
 `;
 

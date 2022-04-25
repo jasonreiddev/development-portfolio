@@ -9,6 +9,7 @@ export const Link = styled.a`
 
   svg {
     transform: translateY(2px);
+    margin-right: 2px;
   }
 
   &:after {
