@@ -28,7 +28,7 @@ export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
   const projectData = await res;
 
   let blogPostData = '';
-  res = await fetchEntries(3);
+  res = await fetchEntries(5);
   if (typeof res !== 'undefined') {
     blogPostData = await res.map((p: any) => {
       return p.fields;
@@ -47,12 +47,15 @@ export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
 const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Element => {
   const Positions: CardProps[] = [];
   positionData?.map((position: Position) => Positions.push(mapPositionToCard(position)));
+  Positions.push({ title: 'Employment History', url: '/employment', fullText: true });
 
   const Projects: CardProps[] = [];
   projectData?.map((project: Project) => Projects.push(mapProjectToCard(project)));
+  Projects.push({ title: 'View all Projects', url: '/projects', fullText: true });
 
   const BlogPosts: CardProps[] = [];
   blogPostData?.map((blogPost: any) => BlogPosts.push(mapBlogPostToCard(blogPost)));
+  BlogPosts.push({ title: 'View all Blog Posts', url: '/blog', fullText: true });
 
   return (
     <>
@@ -70,7 +73,7 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
 
       {Positions.length > 0 && (
         <>
-          <PageTitle text={`Current Position${Positions.length > 1 ? 's' : ''}`} />
+          <PageTitle text={`Current Position${Positions.length > 2 ? 's' : ''}`} />
           <CardGrid cards={Positions} size={300} />
         </>
       )}

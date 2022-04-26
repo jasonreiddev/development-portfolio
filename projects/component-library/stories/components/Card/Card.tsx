@@ -5,7 +5,7 @@ import { MdLink } from 'react-icons/md';
 
 import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
-import { LayoutContext } from 'projects/helpers/layoutContext';
+import { LayoutContext } from '../../../../helpers/layoutContext';
 
 export interface CardProps {
   url?: string;
@@ -17,6 +17,7 @@ export interface CardProps {
   modifyWidth?: 1 | 2 | 'full';
   onTagClick?: (text: string) => void;
   flipContent?: JSX.Element | string;
+  fullText?: boolean;
 }
 
 export const Card = ({
@@ -29,6 +30,7 @@ export const Card = ({
   modifyWidth,
   onTagClick,
   flipContent,
+  fullText,
 }: CardProps): JSX.Element => {
   if (tags != undefined) {
     tags.sort(function (a, b) {
@@ -69,7 +71,7 @@ export const Card = ({
       <s.ContainerInner flipped={flipped} wasFlipped={wasFlipped}>
         <s.Front flipped={flipped} canFlip={!!flipContent} dark={dark} link={!!url}>
           {image && <Image src={image} alt={alt} />}
-          {tags && (
+          {!fullText && tags && (
             <s.TagsContainer>
               {tags.map((tag, index) => (
                 <s.Tag
@@ -88,7 +90,7 @@ export const Card = ({
               ))}
             </s.TagsContainer>
           )}
-          <s.Content>
+          <s.Content fullText={fullText}>
             <s.TitleWrapper>
               {!!url && <MdLink />}
               <h3>
