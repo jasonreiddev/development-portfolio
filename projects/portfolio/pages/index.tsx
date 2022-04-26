@@ -9,6 +9,8 @@ import { mapPositionToCard, Position } from './employment';
 import { fetchEntries } from '../contentfulPosts';
 import { mapBlogPostToCard } from './blog';
 import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
+import { Button } from 'projects/component-library/stories/components/Button/Button';
+import { CardCarousel } from 'projects/component-library/stories/widgets/CardCarousel/CardCarousel';
 
 type HomeProps = { projectData: Project[]; positionData: Position[]; blogPostData: any };
 
@@ -22,7 +24,7 @@ export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
 
   res = await client.fetch(
     `
-    *[_type == "project" && featured == true]
+    *[_type == "project" && featured == true][0..3]
   `,
   );
   const projectData = await res;
@@ -47,7 +49,6 @@ export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
 const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Element => {
   const Positions: CardProps[] = [];
   positionData?.map((position: Position) => Positions.push(mapPositionToCard(position)));
-  Positions.push({ title: 'Employment History', url: '/employment', fullText: true });
 
   const Projects: CardProps[] = [];
   projectData?.map((project: Project) => Projects.push(mapProjectToCard(project)));
@@ -75,20 +76,25 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
         <>
           <PageTitle text={`Current Position${Positions.length > 2 ? 's' : ''}`} />
           <CardGrid cards={Positions} size={300} />
+          <Button
+            label="Employment History"
+            url="/employment"
+            backgroundColor="var(--color-tertiary-ld10)"
+          />
         </>
       )}
 
       {Projects.length > 0 && (
         <>
           <PageTitle text="Featured Projects" />
-          <CardGrid cards={Projects} size={300} />
+          <CardCarousel cards={Projects} />
         </>
       )}
 
       {BlogPosts.length > 0 && (
         <>
           <PageTitle text="Recent Blog Posts" />
-          <CardGrid cards={BlogPosts} size={300} />
+          <CardCarousel cards={BlogPosts} />
         </>
       )}
 

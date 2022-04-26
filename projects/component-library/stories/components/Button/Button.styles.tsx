@@ -6,6 +6,7 @@ interface ButtonStylesProps {
 
 const Wrapper = styled.div`
   width: fit-content;
+  margin: auto;
 
   &:hover button {
     transform: scale(0.95);
@@ -16,11 +17,15 @@ const Wrapper = styled.div`
 const Button = styled.button<ButtonStylesProps>`
   font-weight: var(--font-weight-bold);
   border: 0;
-  display: inline-block;
+  display: flex;
   line-height: 1;
   background: var(--color-base);
   color: var(--color-contrast);
   border-radius: var(--border-radius);
+
+  svg {
+    margin-right: 2px;
+  }
 
   cursor: pointer;
   box-shadow: var(--box-shadow);

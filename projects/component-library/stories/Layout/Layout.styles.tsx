@@ -64,7 +64,7 @@ const Wrapper = styled.div`
     'main main main'
     'aside-left footer aside-right';
 
-  @media ${from(Device.Tablet)} and (orientation: landscape) {
+  @media ${from(Device.Tablet)} {
     overflow: hidden;
     grid-template-rows: auto 1fr 1fr;
     grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
@@ -108,7 +108,7 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: space-between;
 
-  @media ${from(Device.Tablet)} and (orientation: landscape) {
+  @media ${from(Device.Tablet)} {
     overflow-x: visible;
     // for flip cards to not trigger horizontal scroll
     overflow-y: auto;
@@ -142,7 +142,7 @@ const Footer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media ${from(Device.Tablet)} and (orientation: landscape) {
+  @media ${from(Device.Tablet)} {
     display: none;
   }
 `;
@@ -151,7 +151,7 @@ const NestedFooter = styled.footer`
   display: none;
   justify-content: center;
   align-items: flex-end;
-  @media ${from(Device.Tablet)} and (orientation: landscape) {
+  @media ${from(Device.Tablet)} {
     display: flex;
   }
 `;

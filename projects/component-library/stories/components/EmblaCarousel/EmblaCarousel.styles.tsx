@@ -1,17 +1,20 @@
+import { Device, from } from 'projects/helpers/media';
 import styled from 'styled-components';
+
+interface EmblaCarouselStylesProps {
+  slideLength?: number;
+}
 
 export const Wrapper = styled.div`
   position: relative;
-  background-color: #f7f7f7;
-  padding: 20px;
-  max-width: 670px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 26px;
+}
 `;
 
 const Viewport = styled.div`
   overflow: hidden;
   width: 100%;
+  border-radius: var(--border-radius);
 
   &.is-draggable {
     cursor: move;
@@ -34,14 +37,26 @@ const Container = styled.div`
 
 const Slide = styled.div`
   position: relative;
-  min-width: 100%;
   padding-left: 10px;
+
+  min-width: 100%;
+  @media ${from(Device.Tablet)} {
+    min-width: 50%;
+  }
+
+  @media ${from(Device.TabletLarge)} {
+    min-width: 33.3%;
+  }
+
+  @media ${from(Device.ActualDesktop)} {
+    min-width: 25%;
+  }
 `;
 
 const SlideInner = styled.div`
   position: relative;
   overflow: hidden;
-  height: 190px;
+  height: 300px;
 
   & > * {
     height: 100%;
@@ -49,7 +64,7 @@ const SlideInner = styled.div`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.button<EmblaCarouselStylesProps>`
   outline: 0;
   cursor: pointer;
   background-color: transparent;
@@ -74,6 +89,18 @@ const Button = styled.button`
   svg {
     height: 100%;
     width: 100%;
+
+    ${(p) => (p.slideLength && p.slideLength <= 1 ? `display: none;` : null)};
+    @media ${from(Device.Tablet)} {
+      // 50%;
+      ${(p) => (p.slideLength && p.slideLength <= 2 ? `display: none;` : null)};
+    }
+    @media ${from(Device.TabletLarge)} {
+      ${(p) => (p.slideLength && p.slideLength <= 3 ? `display: none;` : null)};
+    }
+    @media ${from(Device.ActualDesktop)} {
+      ${(p) => (p.slideLength && p.slideLength <= 4 ? `display: none;` : null)};
+    }
   }
 `;
 

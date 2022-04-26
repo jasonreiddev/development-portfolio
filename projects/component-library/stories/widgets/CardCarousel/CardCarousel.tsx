@@ -12,7 +12,10 @@ export const CardCarousel = ({ cards = [] }: CardCarouselProps): JSX.Element => 
 
   return (
     <s.Wrapper>
-      <EmblaCarousel slides={slides} />
+      <EmblaCarousel
+        slides={slides}
+        emblaOptions={{ align: 'start', containScroll: 'keepSnaps' }}
+      />
     </s.Wrapper>
   );
 };

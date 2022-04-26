@@ -13,16 +13,17 @@ export interface EmblaCarouselProps {
 interface ButtonProps {
   enabled: boolean;
   onClick: () => void;
+  slideLength: number;
 }
 
-const PrevButton = ({ enabled, onClick }: ButtonProps): JSX.Element => (
-  <s.ButtonPrev onClick={onClick} disabled={!enabled}>
+const PrevButton = ({ enabled, onClick, slideLength }: ButtonProps): JSX.Element => (
+  <s.ButtonPrev onClick={onClick} disabled={!enabled} slideLength={slideLength}>
     <MdNavigateBefore />
   </s.ButtonPrev>
 );
 
-const NextButton = ({ enabled, onClick }: ButtonProps): JSX.Element => (
-  <s.ButtonNext onClick={onClick} disabled={!enabled}>
+const NextButton = ({ enabled, onClick, slideLength }: ButtonProps): JSX.Element => (
+  <s.ButtonNext onClick={onClick} disabled={!enabled} slideLength={slideLength}>
     <MdNavigateNext />
   </s.ButtonNext>
 );
@@ -60,8 +61,8 @@ export const EmblaCarousel = ({ slides, emblaOptions }: EmblaCarouselProps): JSX
           })}
         </s.Container>
       </s.Viewport>
-      <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+      <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} slideLength={slides.length} />
+      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} slideLength={slides.length} />
     </s.Wrapper>
   );
 };
