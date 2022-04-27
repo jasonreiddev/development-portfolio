@@ -31,8 +31,8 @@ export const EmblaCarousel = ({ slides, emblaOptions }: EmblaCarouselProps): JSX
   const [viewportRef, embla] = useEmblaCarousel({ ...emblaOptions });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-  const [displaying, setDisplaying] = useState(100);
-  const [size, setSize] = useState(100);
+  const [displaying, setDisplaying] = useState(1);
+  const [size, setSize] = useState(300);
 
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -50,18 +50,24 @@ export const EmblaCarousel = ({ slides, emblaOptions }: EmblaCarouselProps): JSX
     onSelect();
   }, [embla, onSelect]);
 
-  useEffect(() => {
-    const handleResize = (): void => {
-      if (wrapperRef && wrapperRef.current) {
-        // repeat(auto-fit,minmax(size,1fr))
-        // get size, divide by 300px | round down, get %
-        // e.g. 700px / 300px =  233px  | 2 | 100 / 2 = 50%
-        setDisplaying(Math.floor(wrapperRef.current.offsetWidth / 300));
-        setSize(100 / displaying);
+  const emblaReInit = (): void => {
+    if (wrapperRef && wrapperRef.current && embla) {
+      // repeat(auto-fit,minmax(size,1fr))
+      // get size, divide by 300px | round down, get %
+      // e.g. 700px / 300px =  233px  | 2 | 100 / 2 = 50%
+      const newDisplaying = Math.floor(wrapperRef.current.offsetWidth / 300);
+      const newSize = 100 / newDisplaying;
+      if (newDisplaying !== displaying || newSize !== size) {
+        setDisplaying(newDisplaying);
+        setSize(newSize);
+        embla?.reInit();
       }
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', emblaReInit);
+    emblaReInit();
   }, [wrapperRef]);
 
   return (
