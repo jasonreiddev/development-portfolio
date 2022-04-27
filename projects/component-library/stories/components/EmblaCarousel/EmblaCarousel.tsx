@@ -8,6 +8,8 @@ import { EmblaCarouselStyles as s } from './EmblaCarousel.styles';
 export interface EmblaCarouselProps {
   slides: number[] | string[] | JSX.Element[];
   emblaOptions?: EmblaOptionsType;
+  displaying: number;
+  size: number;
 }
 
 interface ButtonProps {
@@ -27,12 +29,15 @@ const NextButton = ({ enabled, onClick }: ButtonProps): JSX.Element => (
   </s.ButtonNext>
 );
 
-export const EmblaCarousel = ({ slides, emblaOptions }: EmblaCarouselProps): JSX.Element => {
+export const EmblaCarousel = ({
+  slides,
+  emblaOptions,
+  displaying,
+  size,
+}: EmblaCarouselProps): JSX.Element => {
   const [viewportRef, embla] = useEmblaCarousel({ ...emblaOptions });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-  const [displaying, setDisplaying] = useState(1);
-  const [size, setSize] = useState(300);
 
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -49,26 +54,6 @@ export const EmblaCarousel = ({ slides, emblaOptions }: EmblaCarouselProps): JSX
     embla.on('select', onSelect);
     onSelect();
   }, [embla, onSelect]);
-
-  const emblaReInit = (): void => {
-    if (wrapperRef && wrapperRef.current && embla) {
-      // repeat(auto-fit,minmax(size,1fr))
-      // get size, divide by 300px | round down, get %
-      // e.g. 700px / 300px =  233px  | 2 | 100 / 2 = 50%
-      const newDisplaying = Math.floor(wrapperRef.current.offsetWidth / 300);
-      const newSize = 100 / newDisplaying;
-      if (newDisplaying !== displaying || newSize !== size) {
-        setDisplaying(newDisplaying);
-        setSize(newSize);
-        embla?.reInit();
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', emblaReInit);
-    emblaReInit();
-  }, [wrapperRef]);
 
   return (
     <s.Wrapper ref={wrapperRef}>
