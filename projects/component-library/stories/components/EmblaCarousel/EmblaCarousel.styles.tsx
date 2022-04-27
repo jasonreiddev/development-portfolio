@@ -1,13 +1,12 @@
-import { Device, from } from 'projects/helpers/media';
 import styled from 'styled-components';
 
 interface EmblaCarouselStylesProps {
-  slideLength?: number;
+  size?: number;
 }
 
 export const Wrapper = styled.div`
   position: relative;
-  padding: 26px;
+  margin: 26px;
 }
 `;
 
@@ -35,22 +34,11 @@ const Container = styled.div`
   margin-left: -10px;
 `;
 
-const Slide = styled.div`
+const Slide = styled.div<EmblaCarouselStylesProps>`
   position: relative;
   padding-left: 10px;
 
-  min-width: 100%;
-  @media ${from(Device.Tablet)} {
-    min-width: 50%;
-  }
-
-  @media ${from(Device.TabletLarge)} {
-    min-width: 33.3%;
-  }
-
-  @media ${from(Device.ActualDesktop)} {
-    min-width: 25%;
-  }
+  min-width: ${(p) => p.size}%;
 `;
 
 const SlideInner = styled.div`
@@ -64,7 +52,7 @@ const SlideInner = styled.div`
   }
 `;
 
-const Button = styled.button<EmblaCarouselStylesProps>`
+const Button = styled.button`
   outline: 0;
   cursor: pointer;
   background-color: transparent;
@@ -89,26 +77,14 @@ const Button = styled.button<EmblaCarouselStylesProps>`
   svg {
     height: 100%;
     width: 100%;
-
-    ${(p) => (p.slideLength && p.slideLength <= 1 ? `display: none;` : null)};
-    @media ${from(Device.Tablet)} {
-      // 50%;
-      ${(p) => (p.slideLength && p.slideLength <= 2 ? `display: none;` : null)};
-    }
-    @media ${from(Device.TabletLarge)} {
-      ${(p) => (p.slideLength && p.slideLength <= 3 ? `display: none;` : null)};
-    }
-    @media ${from(Device.ActualDesktop)} {
-      ${(p) => (p.slideLength && p.slideLength <= 4 ? `display: none;` : null)};
-    }
   }
 `;
 
 const ButtonPrev = styled(Button)`
-  left: 27px;
+  left: -13px;
 `;
 const ButtonNext = styled(Button)`
-  right: 27px;
+  right: -13px;
 `;
 
 export const EmblaCarouselStyles = {
