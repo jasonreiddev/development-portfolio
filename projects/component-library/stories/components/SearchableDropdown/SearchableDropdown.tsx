@@ -5,14 +5,14 @@ import { InputField } from '../InputField/InputField';
 import { clickOutside } from '../../../../helpers/clickOutside';
 import { SearchableDropdownStyles as s } from './SearchableDropdown.styles';
 
-export type SearchableDropdownProps = {
+export interface SearchableDropdownProps {
   searchFieldCallback(chosenOptions: string[]): void;
   showDropdownOnContainerClick?: boolean;
   values: Array<string>;
   title: string;
   name: string;
   placeholder: string;
-};
+}
 
 export const SearchableDropdown = ({
   searchFieldCallback,

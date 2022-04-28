@@ -1,7 +1,7 @@
 import { EmblaCarousel } from '../../components/EmblaCarousel/EmblaCarousel';
 import { CardCarouselStyles as s } from './CardCarousel.styles';
 import { Card, CardProps } from '../../components/Card/Card';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, createRef } from 'react';
 
 export interface CardCarouselProps {
   cards: CardProps[];
@@ -14,7 +14,7 @@ export const CardCarousel = ({ cards = [] }: CardCarouselProps): JSX.Element => 
   const slides: JSX.Element[] = [];
   cards?.map((card: CardProps, index) => slides.push(<Card {...card} key={`Card${index}`} />));
 
-  const wrapperRef = React.createRef<HTMLInputElement>();
+  const wrapperRef = createRef<HTMLInputElement>();
 
   const calculateSizes = (): void => {
     if (wrapperRef && wrapperRef.current) {

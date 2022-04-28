@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, createRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { EmblaOptionsType } from 'embla-carousel/components/Options';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
@@ -47,7 +47,7 @@ export const EmblaCarousel = ({
     setNextBtnEnabled(embla.canScrollNext());
   }, [embla]);
 
-  const wrapperRef = React.createRef<HTMLInputElement>();
+  const wrapperRef = createRef<HTMLInputElement>();
 
   useEffect(() => {
     if (!embla) return;

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TextCard } from '../../component-library/stories/widgets/TextCard/TextCard';
 import { PageTitle } from '../../component-library/stories/components/PageTitle/PageTitle';
 import { client } from 'projects/helpers/client';
@@ -6,13 +5,18 @@ import { CardProps } from 'projects/component-library/stories/components/Card/Ca
 import { mapProjectToCard, Project } from './projects';
 import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
 import { mapPositionToCard, Position } from './employment';
-import { fetchEntries } from '../contentfulPosts';
+import { BlogPost, fetchEntries } from '../contentfulPosts';
 import { mapBlogPostToCard } from './blog';
 import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
 import { Button } from 'projects/component-library/stories/components/Button/Button';
 import { CardCarousel } from 'projects/component-library/stories/widgets/CardCarousel/CardCarousel';
+import { Entry } from 'contentful';
 
-type HomeProps = { projectData: Project[]; positionData: Position[]; blogPostData: any };
+interface HomeProps {
+  projectData: Project[];
+  positionData: Position[];
+  blogPostData: BlogPost[];
+}
 
 export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
   let res = await client.fetch(
@@ -29,13 +33,10 @@ export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
   );
   const projectData = await res;
 
-  let blogPostData = '';
-  res = await fetchEntries(5);
-  if (typeof res !== 'undefined') {
-    blogPostData = await res.map((p: any) => {
-      return p.fields;
-    });
-  }
+  res = await fetchEntries();
+  const blogPostData = await res.map((p: Entry<BlogPost>) => {
+    return p.fields;
+  });
 
   return {
     props: {
@@ -55,7 +56,7 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
   Projects.push({ title: 'View all Projects', url: '/projects', fullText: true });
 
   const BlogPosts: CardProps[] = [];
-  blogPostData?.map((blogPost: any) => BlogPosts.push(mapBlogPostToCard(blogPost)));
+  blogPostData?.map((blogPost: BlogPost) => BlogPosts.push(mapBlogPostToCard(blogPost)));
   BlogPosts.push({ title: 'View all Blog Posts', url: '/blog', fullText: true });
 
   return (

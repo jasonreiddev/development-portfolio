@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, Ref } from 'react';
 import { MdAccountCircle } from 'react-icons/md';
 
 import { ConversationStyles as s } from './Conversation.styles';
@@ -14,7 +14,7 @@ export interface ConversationProps {
   active: boolean;
   fullWidth: boolean;
   toggleActive: VoidFunction;
-  dropdownRef: React.Ref<HTMLElement>;
+  dropdownRef: Ref<HTMLElement>;
   conversationItemGroups: ConversationItem[][];
 }
 

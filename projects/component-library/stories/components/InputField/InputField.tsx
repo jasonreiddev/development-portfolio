@@ -1,13 +1,13 @@
 import { InputFieldStyles as s } from './InputField.styles';
 
-export type InputFieldProps = {
+export interface InputFieldProps {
   title?: string;
   name: string;
   placeholder?: string;
   type?: string;
   callback?(value: string): void;
   onClick?(): void;
-};
+}
 
 export const InputField = ({
   title,

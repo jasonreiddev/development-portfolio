@@ -1,10 +1,10 @@
 import { LoadingProgressStyles as s } from './LoadingProgress.styles';
 
-export type LoadingProgressProps = {
+export interface LoadingProgressProps {
   progress: number;
   total: number;
   log: Array<string>;
-};
+}
 
 export const LoadingProgress = ({ progress, total, log }: LoadingProgressProps): JSX.Element => {
   const getProgress = (): number => Math.round((progress / total) * 100);

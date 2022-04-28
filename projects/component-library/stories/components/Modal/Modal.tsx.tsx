@@ -1,3 +1,4 @@
+import { Ref } from 'react';
 import { MdClose, MdAccountCircle } from 'react-icons/md';
 
 import { ModalStyles as s } from './Modal.styles';
@@ -15,7 +16,7 @@ export interface ModalProps {
   children?: JSX.Element | string;
   active: boolean;
   toggleActive: VoidFunction;
-  modalRef: React.Ref<HTMLElement>;
+  modalRef: Ref<HTMLElement>;
 }
 
 const renderIcon = (icon: Icon): JSX.Element | undefined => {

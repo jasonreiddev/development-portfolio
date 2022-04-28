@@ -55,7 +55,7 @@ export const Header = ({
               (location.pathname == link.link || location.pathname.startsWith(`${link.link}/`))
             ) {
               return (
-                <li>
+                <li key={link.name}>
                   <Link href={link.link} passHref>
                     <s.MenuLink>
                       <s.MenuActive>{link.name}</s.MenuActive>
