@@ -1,5 +1,5 @@
-import { CardProps } from 'projects/component-library/stories/components/Card/Card';
-import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
+import { CheckboxList } from 'projects/component-library/stories/widgets/CheckboxList/CheckboxList';
+import { TextCard } from 'projects/component-library/stories/widgets/TextCard/TextCard';
 import { LayoutContext } from 'projects/helpers/layoutContext';
 import { TempoEntry, fetchDefaultEntry } from 'projects/portfolio/contentfulTempo';
 import { useContext } from 'react';
@@ -27,15 +27,11 @@ const Tempo = ({ data }: TempoProps): JSX.Element => {
   updatePageTitle?.('Tempo');
   updatePageDescription?.('Tempo string selector');
 
-  const BlogPosts: CardProps[] = [];
-  // data.sort(function (a: any, b: any) {
-  //   a.sortDate = a.endDate == null ? new Date() : a.endDate;
-  //   b.sortDate = b.endDate == null ? new Date() : b.endDate;
-  //   return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
-  // });
-  data.tempoString.map((tempoString: string) => BlogPosts.push({ title: tempoString }));
-
-  return <CardGrid cards={BlogPosts} size={300} />;
+  return (
+    <TextCard fitContent={false}>
+      <CheckboxList items={data.tempoString.map((string) => ({ value: string, checked: false }))} />
+    </TextCard>
+  );
 };
 
 export default Tempo;
