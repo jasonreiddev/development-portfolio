@@ -53,11 +53,21 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
 
   const Projects: CardProps[] = [];
   projectData?.map((project: Project) => Projects.push(mapProjectToCard(project)));
-  Projects.push({ title: 'View all Projects', url: '/projects', fullText: true });
+  Projects.push({
+    title: 'View all Projects',
+    url: '/projects',
+    fullText: true,
+    fullClickable: true,
+  });
 
   const BlogPosts: CardProps[] = [];
   blogPostData?.map((blogPost: BlogPost) => BlogPosts.push(mapBlogPostToCard(blogPost)));
-  BlogPosts.push({ title: 'View all Blog Posts', url: '/blog', fullText: true });
+  BlogPosts.push({
+    title: 'View all Blog Posts',
+    url: '/blog',
+    fullText: true,
+    fullClickable: true,
+  });
 
   return (
     <>
@@ -82,6 +92,7 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
             url="/employment"
             backgroundColor="var(--color-tertiary-ld10)"
           />
+          <br />
         </>
       )}
 

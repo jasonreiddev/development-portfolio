@@ -30,7 +30,7 @@ const Container = styled.div<CardTimelineStylesProps>`
       content: '';
       position: absolute;
       height: 10px;
-      width: 20px;
+      width: 15px;
       background-color: var(--color-secondary);
       right: -15px;
       top: calc(${(p) => p.size / 2}px - 5px);

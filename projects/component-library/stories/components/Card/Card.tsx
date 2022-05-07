@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import { useState, useContext } from 'react';
 import Router from 'next/router';
-import { MdLink } from 'react-icons/md';
 
 import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
 import { LayoutContext } from '../../../../helpers/layoutContext';
+import { Button } from '../Button/Button';
+import { IconButton, Icon } from '../IconButton/IconButton';
 
 export interface CardProps {
   url?: string;
+  ctaText?: string;
   title: string;
   image?: string;
   alt?: string;
@@ -18,10 +20,13 @@ export interface CardProps {
   onTagClick?: (text: string) => void;
   flipContent?: JSX.Element | string;
   fullText?: boolean;
+  // Enabled by default, disable for added buttons, useful for carousels
+  fullClickable?: boolean;
 }
 
 export const Card = ({
   url,
+  ctaText = 'Read more',
   title,
   image,
   alt,
@@ -31,6 +36,7 @@ export const Card = ({
   onTagClick,
   flipContent,
   fullText,
+  fullClickable = false,
 }: CardProps): JSX.Element => {
   if (tags != undefined) {
     tags.sort(function (a, b) {
@@ -44,12 +50,40 @@ export const Card = ({
 
   const [flipped, setFlipped] = useState<boolean>(false);
   const [wasFlipped, setWasFlipped] = useState<boolean>(false);
-  if (flipContent) {
-    url = undefined;
-  }
 
   const { dark } = useContext(LayoutContext);
 
+  const CtaButton = (): JSX.Element => (
+    <>
+      {!url && flipContent && (
+        <IconButton
+          icon={Icon.Flip}
+          size={'small'}
+          ariaLabel="Flip"
+          align={'bottom-right'}
+          onClick={() => {
+            if (flipContent) {
+              {
+                setWasFlipped(flipped);
+                setFlipped(!flipped);
+              }
+            }
+          }}
+        />
+      )}
+      {url && ctaText && (
+        <Button
+          label={ctaText}
+          backgroundColor={'var(--color-tertiary)'}
+          onClick={() => {
+            if (url != undefined) {
+              Router.push(url);
+            }
+          }}
+        />
+      )}
+    </>
+  );
   return (
     <s.Container
       role={url ? 'link' : undefined}
@@ -57,13 +91,15 @@ export const Card = ({
       dark={dark}
       tabIndex={0}
       onClick={() => {
-        if (url != undefined) {
-          Router.push(url);
-        }
-        if (flipContent) {
-          {
-            setWasFlipped(flipped);
-            setFlipped(!flipped);
+        if (fullClickable) {
+          if (url != undefined) {
+            Router.push(url);
+          }
+          if (flipContent) {
+            {
+              setWasFlipped(flipped);
+              setFlipped(!flipped);
+            }
           }
         }
       }}
@@ -92,17 +128,25 @@ export const Card = ({
           )}
           <s.Content fullText={fullText}>
             <s.TitleWrapper>
-              {!!url && <MdLink />}
+              {
+                // todo, add helper function to check if links are external
+                //{!!url && <MdLink />}
+              }
+
               <h3>
                 <ClampText lines={2} text={title} />
               </h3>
             </s.TitleWrapper>
             {text && <ClampText lines={3} text={text} />}
+            {!fullClickable && <CtaButton />}
           </s.Content>
         </s.Front>
         {flipContent && (
           <s.Back flipped={flipped} canFlip={!!flipContent} dark={dark}>
-            <s.BackContent>{flipContent}</s.BackContent>
+            <s.BackContent>
+              {flipContent}
+              {!fullClickable && <CtaButton />}
+            </s.BackContent>
           </s.Back>
         )}
       </s.ContainerInner>

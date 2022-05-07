@@ -68,12 +68,16 @@ export const EmblaCarousel = ({
           })}
         </s.Container>
       </s.Viewport>
-      {displaying < slides.length && (
-        <>
-          <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-          <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
-        </>
-      )}
+
+      {
+        // todo set to '<= slides.length', resolve issue with enabled/disabled incorrectly with multiple
+        displaying <= 1 && (
+          <>
+            <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+            <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+          </>
+        )
+      }
     </s.Wrapper>
   );
 };

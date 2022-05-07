@@ -66,7 +66,7 @@ const Button = styled.button`
   height: 30px;
   justify-content: center;
   align-items: center;
-  fill: #1bcacd;
+  color: var(--color-secondary);
   padding: 0;
 
   &:disabled {
@@ -81,10 +81,10 @@ const Button = styled.button`
 `;
 
 const ButtonPrev = styled(Button)`
-  left: -13px;
+  left: -20px;
 `;
 const ButtonNext = styled(Button)`
-  right: -13px;
+  right: -20px;
 `;
 
 export const EmblaCarouselStyles = {

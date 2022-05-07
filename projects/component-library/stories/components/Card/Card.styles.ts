@@ -104,6 +104,8 @@ const Content = styled.div<CardStylesProps>`
   position: absolute;
   width: 100%;
   background-color: var(--color-base-semi-bold-o66);
+  display: flex;
+  flex-direction: column;
 
   ${(p) =>
     p.fullText
