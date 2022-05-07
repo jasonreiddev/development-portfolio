@@ -1,18 +1,17 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Entry } from 'contentful';
 import { CardProps } from 'projects/component-library/stories/components/Card/Card';
 import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
 import { LayoutContext } from 'projects/helpers/layoutContext';
-import { fetchEntries } from 'projects/portfolio/contentfulPosts';
+import { BlogPost, fetchEntries } from 'projects/portfolio/contentfulPosts';
 import { useContext } from 'react';
 
-type BlogProps = { data: any };
+interface BlogProps {
+  data: BlogPost[];
+}
 
-export async function getStaticProps(): Promise<any> {
+export async function getStaticProps(): Promise<{ props: BlogProps }> {
   const res = await fetchEntries();
-  if (typeof res == 'undefined') {
-    return;
-  }
-  const data = await res.map((p: any) => {
+  const data = await res.map((p: Entry<BlogPost>) => {
     return p.fields;
   });
 
@@ -34,12 +33,12 @@ const Blog = ({ data }: BlogProps): JSX.Element => {
   //   b.sortDate = b.endDate == null ? new Date() : b.endDate;
   //   return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
   // });
-  data.map((blogPost: any) => BlogPosts.push(mapBlogPostToCard(blogPost)));
+  data.map((blogPost: BlogPost) => BlogPosts.push(mapBlogPostToCard(blogPost)));
 
   return <CardGrid cards={BlogPosts} size={300} />;
 };
 
-export function mapBlogPostToCard(blogPost: any): CardProps {
+export function mapBlogPostToCard(blogPost: BlogPost): CardProps {
   blogPost.endDate = new Date(blogPost.publishedDate).toLocaleDateString('en-GB', {
     month: 'long',
     year: 'numeric',

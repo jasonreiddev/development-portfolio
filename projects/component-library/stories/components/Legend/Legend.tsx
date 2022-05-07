@@ -1,8 +1,8 @@
 import { LegendStyles as s } from './Legend.styles';
 
-export type LegendProps = {
+export interface LegendProps {
   level: 'Primary' | 'Secondary' | 'Tertiary';
-};
+}
 
 export const Legend = (): JSX.Element => {
   return (

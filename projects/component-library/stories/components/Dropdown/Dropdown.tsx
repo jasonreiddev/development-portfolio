@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, Ref } from 'react';
 import { MdAccountCircle } from 'react-icons/md';
 
 import { DropdownStyles as s } from './Dropdown.styles';
@@ -15,7 +15,7 @@ export interface DropdownProps {
   fullWidth: boolean;
   expand: boolean;
   toggleActive: VoidFunction;
-  dropdownRef: React.Ref<HTMLElement>;
+  dropdownRef: Ref<HTMLElement>;
   dropdownItemGroups: DropdownItem[][];
 }
 

@@ -1,5 +1,6 @@
 import { MdCircle, MdMail, MdLogout, MdRefresh, MdSearch } from 'react-icons/md';
 import { HiSun, HiMoon } from 'react-icons/hi';
+import { CgEditFlipV } from 'react-icons/cg';
 
 import { IconButtonStyles as s } from './IconButton.styles';
 
@@ -12,6 +13,7 @@ export interface IconButtonProps {
   label?: string;
   ariaLabel: string;
   onClick?: () => void;
+  align?: 'left' | 'center' | 'bottom-right';
 }
 
 export enum Icon {
@@ -22,6 +24,7 @@ export enum Icon {
   Search,
   Sun,
   Moon,
+  Flip,
 }
 
 const renderIcon = (icon: Icon): JSX.Element => {
@@ -40,6 +43,8 @@ const renderIcon = (icon: Icon): JSX.Element => {
       return <HiSun />;
     case Icon.Moon:
       return <HiMoon />;
+    case Icon.Flip:
+      return <CgEditFlipV />;
   }
 };
 
@@ -51,11 +56,12 @@ export const IconButton = ({
   backgroundColor,
   label,
   ariaLabel,
+  align = 'left',
   ...props
 }: IconButtonProps): JSX.Element => {
   const mode = primary ? 'primary' : 'secondary';
   return (
-    <s.Wrapper>
+    <s.Wrapper align={align}>
       <s.Button
         active={active}
         type="button"

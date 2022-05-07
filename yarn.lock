@@ -8727,6 +8727,7 @@ __metadata:
     "@storybook/react": ^6.4.10
     "@types/react": 17.0.38
     "@types/styled-components": ^5.1.19
+    embla-carousel-react: ^6.2.0
     next: 12.0.8-canary.21
     react: ^17.0.2
     react-dom: 17.0.2
@@ -10205,6 +10206,24 @@ __metadata:
     minimalistic-assert: ^1.0.1
     minimalistic-crypto-utils: ^1.0.1
   checksum: d56d21fd04e97869f7ffcc92e18903b9f67f2d4637a23c860492fbbff5a3155fd9ca0184ce0c865dd6eb2487d234ce9551335c021c376cd2d3b7cb749c7d10f4
+  languageName: node
+  linkType: hard
+
+"embla-carousel-react@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "embla-carousel-react@npm:6.2.0"
+  dependencies:
+    embla-carousel: 6.2.0
+  peerDependencies:
+    react: ^17.0.2
+  checksum: 3313cf43c203ace93c4cd7351611511bf9859694f116bb239abd327496131c26c5bbfac9ce025adc5f550bc0c6418dd9effd8c2ee104414e3f9111ee96e90c8f
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:6.2.0":
+  version: 6.2.0
+  resolution: "embla-carousel@npm:6.2.0"
+  checksum: feaca1fa45ea58b34a80c4b0fd9648b014b09f4c9f29aef8a26ecb0a645168ddb9f7ffcc202cc68a9b4c416b271687d308ea63f598765ac44bcbb4e4d5851921
   languageName: node
   linkType: hard
 

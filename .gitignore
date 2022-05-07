@@ -16,3 +16,5 @@ dist/
 projects/portfolio/out/
 
 projects/portfolio/public/sw.js.map
+projects/portfolio/public/sw.js
+projects/portfolio/public/workbox*

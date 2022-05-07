@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, RefObject, Dispatch, SetStateAction } from 'react';
 
 export const clickOutside = (
-  element: React.MutableRefObject<null>,
+  element: RefObject<HTMLElement>,
   initialSetState: boolean,
-): [boolean, React.Dispatch<React.SetStateAction<boolean>>] => {
+): [boolean, Dispatch<SetStateAction<boolean>>] => {
   const [isActive, setIsActive] = useState(initialSetState);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const current: any = element.current;
     const onClick = (event: Event): void => {
       // If the element exists and is clicked outside of
-      if (current !== null && !current.contains(event.target)) {
+      if (element.current !== null && !element.current.contains(event.target as Node)) {
         setIsActive(false);
       }
     };

@@ -3,10 +3,16 @@ import styled from 'styled-components';
 interface IconButtonStylesProps {
   backgroundColor?: string;
   active?: boolean;
+  align?: string;
 }
 
 const Wrapper = styled.div`
   width: fit-content;
+
+  ${(p: IconButtonStylesProps) =>
+    p.align == 'bottom-right' ? 'margin-left: auto; margin-top: auto;' : null};
+
+  ${(p: IconButtonStylesProps) => (p.align == 'center' ? 'margin: auto' : null)};
 
   &:hover button {
     transform: scale(0.95);

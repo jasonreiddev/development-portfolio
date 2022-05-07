@@ -3,11 +3,11 @@ import { MdChevronRight } from 'react-icons/md';
 
 import { SelectStyles as s } from './Select.styles';
 
-export type SelectProps = {
+export interface SelectProps {
   value?: string;
   onChange: ChangeEventHandler<HTMLSelectElement>;
   children?: JSX.Element | string;
-};
+}
 
 export const Select = ({ value, onChange, children }: SelectProps): JSX.Element => {
   const displayedValue = 'Test';

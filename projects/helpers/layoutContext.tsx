@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, FC, useContext, useEffect, useState } from 'react';
 import { defaultLayoutProps } from '../../projects/portfolio/defaultLayoutProps';
 import {
   IconButton,
@@ -24,7 +24,7 @@ const defaultState = {
 
 export const LayoutContext = createContext<ILayoutContext>(defaultState);
 
-export const LayoutProvider: React.FC = ({ children }) => {
+export const LayoutProvider: FC = ({ children }) => {
   const [dark, setDark] = useState(defaultState.dark);
   const [pageTitle, setPageTitle] = useState('');
   const [pageDescription, setPageDescription] = useState('');

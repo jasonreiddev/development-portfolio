@@ -10,7 +10,9 @@ export interface Position extends SchemaPosition {
   dates: string;
 }
 
-type EmploymentsProps = { data: Position[] };
+interface EmploymentsProps {
+  data: Position[];
+}
 
 export const getStaticProps = async (): Promise<{ props: EmploymentsProps }> => {
   const res = await client.fetch(

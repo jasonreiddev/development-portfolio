@@ -1,5 +1,4 @@
 /* eslint-disable*/
-import Link from 'next/link';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { fetchEntries, fetchEntry } from 'projects/portfolio/contentfulPosts';
 import { TextCard } from 'projects/component-library/stories/widgets/TextCard/TextCard';

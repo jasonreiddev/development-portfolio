@@ -9,6 +9,7 @@ interface CardStylesProps {
   wasFlipped?: boolean;
   dark?: boolean;
   link?: boolean;
+  fullText?: boolean;
 }
 
 // TODO make clear which cards flip and which have urls
@@ -95,7 +96,7 @@ const ContainerInner = styled.div<CardStylesProps>`
       : null}
 `;
 
-const Content = styled.div`
+const Content = styled.div<CardStylesProps>`
   width: 100%;
   position: relative;
   padding: 8px;
@@ -103,6 +104,20 @@ const Content = styled.div`
   position: absolute;
   width: 100%;
   background-color: var(--color-base-semi-bold-o66);
+  display: flex;
+  flex-direction: column;
+
+  ${(p) =>
+    p.fullText
+      ? `
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 18pt;`
+      : null};
 
   h3 {
     font-weight: var(--font-weight-bold);
