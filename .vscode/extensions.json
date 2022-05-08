@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "github.github-vscode-theme", // Github Dark
+    "wix.vscode-import-cost",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "esbenp.prettier-vscode",
+    "Gruntfuggly.todo-tree",
+    "ChakrounAnas.turbo-console-log",
+    "jpoissonnier.vscode-styled-components"
+  ]
+}

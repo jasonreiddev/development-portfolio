@@ -33,6 +33,8 @@ All commands in this readme should be executed from the root folder of this repo
 
 `yarn`
 
+<hr/>
+
 ## Component Library
 
 ### Run storybook:
@@ -51,19 +53,27 @@ All commands in this readme should be executed from the root folder of this repo
 
 `cd projects/component-library` - change terminal directory to the workspace.
 
+<hr/>
+
 ## Portfolio
 
 ### Setup Environment variables:
 
-Copy '.env.example' and rename it to '.env.local', use this new file as a template for copying environment variables from Vercel to use locally.
+Copy '.env.example' and rename it to '.env.local', use this new file as a template for copying environment variables from Netlify to use locally.
 
 ### Start development server:
 
 `yarn pf`
 
-### Deploy to Vercel:
+### Content and Hosting:
 
-<code>yarn vercel <span title="optional">--prod</span></code>
+[Netlify](https://app.netlify.com/sites/jasonreiddev/overview)
+
+[Contentful](https://app.contentful.com/spaces/0dlrb1xtuolg/home)
+
+[Sanity](https://jasonreidd.sanity.studio/desk)
+
+[Firestore](https://console.firebase.google.com/project/jasonreid-dev/firestore/)
 
 ### Other Commands:
 
@@ -77,6 +87,8 @@ Copy '.env.example' and rename it to '.env.local', use this new file as a templa
 
 `cd projects/portfolio` - change terminal directory to the workspace.
 
+<hr/>
+
 ## Sanity
 
 ### Start development server:
@@ -85,7 +97,7 @@ Copy '.env.example' and rename it to '.env.local', use this new file as a templa
 
 ### Deploy Sanity:
 
-<code>yarn sn:deploy></code>
+<code>yarn sn:deploy</code>
 
 ### Other Commands:
 
@@ -93,11 +105,15 @@ Copy '.env.example' and rename it to '.env.local', use this new file as a templa
 
 `cd projects/sanity` - change terminal directory to the workspace.
 
+<hr/>
+
 ## Helpers
 
 `yarn hl:lint` - performs lint check on the project.
 
 `cd projects/helpers` - change terminal directory to the workspace.
+
+<hr/>
 
 ## Add Project
 
@@ -125,6 +141,8 @@ Add a .babelrc file to the workspace with the presents set to "next/babel", and 
 </div>
 
 ### Please add scripts to the root package.json and update the readme, following the same structure as the Portfolio and Component Library sections.
+
+<hr/>
 
 ## Other Other Commands
 

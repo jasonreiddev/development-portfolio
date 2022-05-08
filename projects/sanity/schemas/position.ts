@@ -3,7 +3,7 @@ import SalaryInput from '../components/SalaryInput';
 
 export interface Position {
   jobTitle: string;
-  organisation: any;
+  organisation: unknown;
   currentJob: boolean;
   hideOnEmployment: boolean;
   slug: string;
