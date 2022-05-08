@@ -23,11 +23,11 @@ const Container = styled.div<CardTimelineStylesProps>`
 
   @media ${from(Device.Tablet)} {
     grid-template-columns: 1fr 1fr;
-    button:nth-child(even) {
+    ${CardStyles.Container}:nth-child(even) {
       margin-left: 0;
     }
 
-    button:before {
+    ${CardStyles.Container}:before {
       content: '';
       position: absolute;
       height: 10px;
@@ -37,14 +37,14 @@ const Container = styled.div<CardTimelineStylesProps>`
       top: calc(${(p) => p.size / 2}px - 5px);
     }
 
-    button:nth-child(even) {
+    ${CardStyles.Container}:nth-child(even) {
       &:before {
         right: auto;
         left: -15px;
       }
       transform: translateY(calc(${(p) => p.size / 2}px + 5px));
     }
-    button:nth-child(odd) {
+    ${CardStyles.Container}:nth-child(odd) {
       margin-right: 0;
     }
   }
