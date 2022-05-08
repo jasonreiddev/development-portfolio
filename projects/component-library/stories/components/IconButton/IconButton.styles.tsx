@@ -6,20 +6,6 @@ interface IconButtonStylesProps {
   align?: string;
 }
 
-const Wrapper = styled.div`
-  width: fit-content;
-
-  ${(p: IconButtonStylesProps) =>
-    p.align == 'bottom-right' ? 'margin-left: auto; margin-top: auto;' : null};
-
-  ${(p: IconButtonStylesProps) => (p.align == 'center' ? 'margin: auto' : null)};
-
-  &:hover button {
-    transform: scale(0.95);
-    box-shadow: none;
-  }
-`;
-
 const Button = styled.button<IconButtonStylesProps>`
   aspect-ratio: 1/1;
   border: 0;
@@ -72,6 +58,20 @@ const Button = styled.button<IconButtonStylesProps>`
   &.large {
     font-size: 16px;
     padding: 12px 24px;
+  }
+`;
+
+const Wrapper = styled.div`
+  width: fit-content;
+
+  ${(p: IconButtonStylesProps) =>
+    p.align == 'bottom-right' ? 'margin-left: auto; margin-top: auto;' : null};
+
+  ${(p: IconButtonStylesProps) => (p.align == 'center' ? 'margin: auto' : null)};
+
+  &:hover ${Button} {
+    transform: scale(0.95);
+    box-shadow: none;
   }
 `;
 

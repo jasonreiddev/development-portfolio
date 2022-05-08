@@ -12,9 +12,7 @@ interface CardStylesProps {
   fullText?: boolean;
 }
 
-// TODO make clear which cards flip and which have urls
-
-const Container = styled.button<CardStylesProps>`
+const Container = styled.div<CardStylesProps>`
   font-size: 13px;
   flex-wrap: wrap;
   color: var(--color-contrast);
@@ -211,14 +209,18 @@ const Back = styled(Front)`
 const BackContent = styled(Content)`
   height: 100%;
   overflow-y: auto;
-  background-color: var(--color-secondary-ldmax);
+  background-color: var(--color-secondary-ld-max);
   ::-webkit-scrollbar {
     width: 0.5rem;
     height: calc(100% - 20px);
   }
   ::-webkit-scrollbar-thumb {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-o66);
     border-radius: 0.75rem;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-li10-o66);
   }
 `;
 

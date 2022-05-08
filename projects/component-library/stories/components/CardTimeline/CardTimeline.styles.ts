@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Device, from } from '../../../../helpers/media';
+import { CardStyles } from '../Card/Card.styles';
 
 interface CardTimelineStylesProps {
   // Should be 200+ for fitting tags and max content
@@ -14,7 +15,7 @@ const Container = styled.div<CardTimelineStylesProps>`
   position: relative;
   margin-bottom: 30px;
 
-  button {
+  ${CardStyles.Container} {
     max-width: ${(p) => p.size}px;
     margin: 0 auto;
     width: 100%;
