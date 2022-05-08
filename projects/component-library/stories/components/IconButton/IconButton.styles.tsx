@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface IconButtonStylesProps {
   backgroundColor?: string;
+  flipIconY?: boolean;
   active?: boolean;
   align?: string;
 }
@@ -19,17 +20,6 @@ const Button = styled.button<IconButtonStylesProps>`
   &:hover {
     transform: scale(0.95);
     box-shadow: none;
-  }
-
-  .icon {
-    display: block;
-    color: ${(p: IconButtonStylesProps) =>
-      p.active ? 'var(--color-contrast)' : 'var(--color-base-bold)'};
-
-    svg {
-      margin: auto;
-      font-size: 2em;
-    }
   }
 
   &.primary {
@@ -75,7 +65,20 @@ const Wrapper = styled.div`
   }
 `;
 
+const Icon = styled.span`
+  display: block;
+  color: ${(p: IconButtonStylesProps) =>
+    p.active ? 'var(--color-contrast)' : 'var(--color-base-bold)'};
+
+  svg {
+    margin: auto;
+    font-size: 2em;
+    ${(p: IconButtonStylesProps) => (p.flipIconY ? 'transform: scaleY(-1);' : null)}
+  }
+`;
+
 export const IconButtonStyles = {
   Wrapper,
   Button,
+  Icon,
 };

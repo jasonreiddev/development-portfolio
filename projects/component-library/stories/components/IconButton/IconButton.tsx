@@ -6,6 +6,7 @@ import { IconButtonStyles as s } from './IconButton.styles';
 
 export interface IconButtonProps {
   icon: Icon;
+  flipIconY?: boolean;
   active?: boolean;
   primary?: boolean;
   backgroundColor?: string;
@@ -50,6 +51,7 @@ const renderIcon = (icon: Icon): JSX.Element => {
 
 export const IconButton = ({
   icon,
+  flipIconY,
   active = false,
   primary = false,
   size = 'medium',
@@ -72,7 +74,7 @@ export const IconButton = ({
         data-tooltip--close={size == 'small' ? 'true' : null}
         aria-label={ariaLabel}
       >
-        <span className="icon">{renderIcon(icon)}</span>
+        <s.Icon flipIconY={flipIconY}>{renderIcon(icon)}</s.Icon>
       </s.Button>
     </s.Wrapper>
   );
