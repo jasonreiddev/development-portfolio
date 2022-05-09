@@ -53,11 +53,12 @@ export const Card = ({
 
   const { dark } = useContext(LayoutContext);
 
-  const CtaButton = (): JSX.Element => (
+  const CtaButton = ({ flipIcon }: { flipIcon?: boolean }): JSX.Element => (
     <>
       {!url && flipContent && (
         <IconButton
           icon={Icon.Flip}
+          flipIconY={flipIcon}
           size={'small'}
           ariaLabel="Flip"
           align={'bottom-right'}
@@ -145,7 +146,7 @@ export const Card = ({
           <s.Back flipped={flipped} canFlip={!!flipContent} dark={dark}>
             <s.BackContent>
               {flipContent}
-              {!fullClickable && <CtaButton />}
+              {!fullClickable && <CtaButton flipIcon={true} />}
             </s.BackContent>
           </s.Back>
         )}

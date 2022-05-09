@@ -19,10 +19,6 @@ const Wrapper = styled.header`
   nav {
     margin: auto;
   }
-
-  button + button {
-    margin-left: 10px;
-  }
 `;
 
 const Title = styled.a`
@@ -67,7 +63,7 @@ const MenuItems = styled.ul`
   align-items: baseline;
   gap: 0.5em 2em;
 
-  @media ${until(Device.MobileLarge)} {
+  /* @media ${until(Device.MobileLarge)} {
     li > button {
       height: 2em;
       background: unset !important;
@@ -76,7 +72,7 @@ const MenuItems = styled.ul`
       padding: 0 !important;
       transform: translateY(3px);
     }
-  }
+  } */
 `;
 
 const MenuLink = styled.a`

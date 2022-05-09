@@ -24,7 +24,7 @@ const Title = styled.button`
 `;
 
 const Content = styled.div<{ active?: boolean }>`
-  background-color: var(--color-secondary-ldmax);
+  background-color: var(--color-secondary-ld-max);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   padding: 26px 8px 8px;
   margin: -16px 0 0;

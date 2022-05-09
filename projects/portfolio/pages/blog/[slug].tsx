@@ -1,21 +1,31 @@
 /* eslint-disable*/
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { fetchEntries, fetchEntry } from 'projects/portfolio/contentfulPosts';
+import { BlogPost, fetchEntries, fetchEntry } from 'projects/portfolio/contentfulPosts';
 import { TextCard } from 'projects/component-library/stories/widgets/TextCard/TextCard';
 import { PageTitle } from 'projects/component-library/stories/components/PageTitle/PageTitle';
 import { PathBreadcrumb } from 'projects/component-library/stories/widgets/PathBreadcrumb/PathBreadcrumb';
+import { Entry } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
+
+interface BlogProps {
+  postData: BlogPost;
+}
+
+interface BlogParams {
+  slug: string;
+}
 
 export async function getStaticPaths() {
   const res = await fetchEntries();
   if (typeof res == 'undefined') {
     return;
   }
-  const data = await res.map((p: any) => {
+  const data = await res.map((p: Entry<BlogPost>) => {
     return p.fields;
   });
 
-  const paths: { params: { slug: String } }[] = [];
-  data.map((blogPost: any) => paths.push({ params: { slug: blogPost.slug.toString() } }));
+  const paths: { params: BlogParams }[] = [];
+  data.map((blogPost: BlogPost) => paths.push({ params: { slug: blogPost.slug.toString() } }));
 
   return {
     paths: paths,
@@ -23,7 +33,9 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps(
+  params: BlogParams,
+): Promise<{ props: BlogProps } | undefined> {
   const res = await fetchEntry(params.slug);
   if (typeof res == 'undefined') {
     return;
@@ -37,7 +49,7 @@ export async function getStaticProps({ params }: any) {
   };
 }
 
-export default function Post({ postData }: any) {
+export default function Post(postData: BlogPost) {
   return (
     <>
       <PathBreadcrumb />
@@ -49,7 +61,7 @@ export default function Post({ postData }: any) {
         })}`}
       />
       <TextCard>
-        <>{documentToReactComponents(postData.body)}</>
+        <>{documentToReactComponents(postData.body as Document)}</>
       </TextCard>
     </>
   );

@@ -24,10 +24,12 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --border-radius: 15px;
 
   --color-primary: hsl(320, 35%, 55%);
+  --color-primary-o66: hsl(320, 35%, 55%, 0.66);
   --color-primary-ld10: hsl(320, 35%, 65%);
+  --color-primary-li10-o66: hsla(320, 35%, 45%, 0.66);
 
   --color-secondary: hsl(120, 20%, 40%);
-  --color-secondary-ldmax:  hsl(120, 20%, 85%);
+  --color-secondary-ld-max:  hsl(120, 20%, 85%);
 
   --color-tertiary: hsl(200, 35%, 35%);
   --color-tertiary-ld10: hsl(200, 35%, 45%);
@@ -64,13 +66,14 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       p.dark
         ? `
     --color-primary-ld10: hsl(320, 35%, 45%);
+    --color-primary-li10-o66: hsl(320, 35%, 65%, 0.66);
 
     --color-tertiary: hsl(200, 35%, 55%);
     --color-tertiary-ld10: hsl(200, 35%, 45%);
     --color-tertiary-li10: hsl(200, 35%, 65%);
     --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
 
-    --color-secondary-ldmax: hsl(120, 20%, 15%);
+    --color-secondary-ld-max: hsl(120, 20%, 15%);
 
     --color-base: var(--global-black);
     --color-base-semi-bold: var(--global-black-semi-bold);
