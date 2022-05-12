@@ -9,8 +9,6 @@ import { dateDifferenceMonths } from 'projects/helpers/number';
 
 export interface Position extends SchemaPosition {
   sortDate: Date;
-  displayDateFromAndTo: string;
-  durationMonths: number;
 }
 
 interface EmploymentsProps {

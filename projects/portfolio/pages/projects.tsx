@@ -5,10 +5,10 @@ import { CardGridFilterable } from '../../component-library/stories/widgets/Card
 import { CardProps } from '../../component-library/stories/components/Card/Card';
 import { Project as SchemaProject } from 'projects/sanity/schemas/project';
 import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
+import { getLastWorkedOnOrOngoing } from 'projects/helpers/text';
 
 export interface Project extends SchemaProject {
   sortDate: Date;
-  endDate: string;
 }
 
 type ProjectsProps = { data: Project[] };
@@ -46,19 +46,13 @@ const Projects = ({ data }: ProjectsProps): JSX.Element => {
 };
 
 export function mapProjectToCard(project: Project): CardProps {
-  project.endDate =
-    project.lastWorkedOn == null
-      ? `Project Ongoing`
-      : `Project last worked on ${new Date(project.lastWorkedOn).toLocaleDateString('en-GB', {
-          month: 'long',
-          year: 'numeric',
-        })}.`;
+  const lastWorkedOnOrOngoing = `Project ${getLastWorkedOnOrOngoing(project.lastWorkedOn)}`;
   return {
     title: project.projectTitle,
     flipContent: (
       <>
         <h3>{project.projectTitle}</h3>
-        <p>{project.endDate}</p>
+        <p>{lastWorkedOnOrOngoing}</p>
         <hr />
         <br />
         <p>{project.details}</p>
@@ -75,7 +69,7 @@ export function mapProjectToCard(project: Project): CardProps {
       </>
     ),
     tags: project.tags,
-    text: `${project.endDate}\n${project.excerpt}`,
+    text: `${lastWorkedOnOrOngoing}\n${project.excerpt}`,
   };
 }
 

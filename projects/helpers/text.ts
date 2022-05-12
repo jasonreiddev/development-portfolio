@@ -1,11 +1,11 @@
-export const getDateFromAndTo = (startDate: Date, endDate: Date): string => {
+export const getDateFromAndTo = (startDate: Date, endDate?: Date): string => {
   return `${new Date(startDate).toLocaleDateString('en-GB', {
     month: 'long',
     year: 'numeric',
   })} - ${
     endDate == null
       ? `Present`
-      : `${new Date(endDate).toLocaleDateString('en-GB', {
+      : `${endDate.toLocaleDateString('en-GB', {
           month: 'long',
           year: 'numeric',
         })}`
@@ -22,6 +22,15 @@ export const getMonthsAndYears = (months: number): string => {
       monthsRemaining,
     )}`;
   }
+};
+
+export const getLastWorkedOnOrOngoing = (lastWorkedOn?: Date): string => {
+  return lastWorkedOn == null
+    ? `ongoing`
+    : `last worked on ${lastWorkedOn.toLocaleDateString('en-GB', {
+        month: 'long',
+        year: 'numeric',
+      })}.`;
 };
 
 export const getPluralS = (number: number): string => {

@@ -11,6 +11,7 @@ import { ExternalLink } from 'projects/component-library/stories/components/Exte
 import { Button } from 'projects/component-library/stories/components/Button/Button';
 import { CardCarousel } from 'projects/component-library/stories/widgets/CardCarousel/CardCarousel';
 import { Entry } from 'contentful';
+import { getPluralS } from 'projects/helpers/text';
 
 interface HomeProps {
   projectData: Project[];
@@ -85,7 +86,7 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
 
       {Positions.length > 0 && (
         <>
-          <PageTitle text={`Current Position${Positions.length > 2 ? 's' : ''}`} />
+          <PageTitle text={`Current Position${getPluralS(Positions.length)}`} />
           <CardGrid cards={Positions} size={300} />
           <Button
             label="Employment History"
