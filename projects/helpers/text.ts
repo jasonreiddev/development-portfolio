@@ -1,15 +1,5 @@
 export const getDateFromAndTo = (startDate: Date, endDate?: Date): string => {
-  return `${new Date(startDate).toLocaleDateString('en-GB', {
-    month: 'long',
-    year: 'numeric',
-  })} - ${
-    endDate == null
-      ? `Present`
-      : `${endDate.toLocaleDateString('en-GB', {
-          month: 'long',
-          year: 'numeric',
-        })}`
-  }`;
+  return `${getGBDate(startDate)} - ${endDate == null ? `Present` : `${getGBDate(endDate)}`}`;
 };
 
 export const getMonthsAndYears = (months: number): string => {
@@ -25,12 +15,7 @@ export const getMonthsAndYears = (months: number): string => {
 };
 
 export const getLastWorkedOnOrOngoing = (lastWorkedOn?: Date): string => {
-  return lastWorkedOn == null
-    ? `ongoing`
-    : `last worked on ${lastWorkedOn.toLocaleDateString('en-GB', {
-        month: 'long',
-        year: 'numeric',
-      })}.`;
+  return lastWorkedOn == null ? `ongoing` : `last worked on ${getGBDate(lastWorkedOn)}.`;
 };
 
 export const getPluralS = (number: number): string => {
@@ -39,3 +24,15 @@ export const getPluralS = (number: number): string => {
   }
   return '';
 };
+
+export const getGBDate = (date: Date | string): string => {
+  return new Date(date).toLocaleDateString('en-GB', {
+    month: 'long',
+    year: 'numeric',
+  });
+};
+
+export const getGBPound = Intl.NumberFormat('en-GB', {
+  style: 'currency',
+  currency: 'GBP',
+}).format;

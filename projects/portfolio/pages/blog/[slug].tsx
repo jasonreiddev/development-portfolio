@@ -6,6 +6,7 @@ import { PageTitle } from 'projects/component-library/stories/components/PageTit
 import { PathBreadcrumb } from 'projects/component-library/stories/widgets/PathBreadcrumb/PathBreadcrumb';
 import { Entry } from 'contentful';
 import { Document } from '@contentful/rich-text-types';
+import { getGBDate } from 'projects/helpers/text';
 
 interface BlogProps {
   postData: BlogPost;
@@ -53,13 +54,7 @@ export default function Post(postData: BlogPost) {
   return (
     <>
       <PathBreadcrumb />
-      <PageTitle
-        text={postData.title}
-        subTitle={`Posted ${new Date(postData.publishedDate).toLocaleDateString('en-GB', {
-          month: 'long',
-          year: 'numeric',
-        })}`}
-      />
+      <PageTitle text={postData.title} subTitle={`Posted ${getGBDate(postData.publishedDate)}`} />
       <TextCard>
         <>{documentToReactComponents(postData.body as Document)}</>
       </TextCard>

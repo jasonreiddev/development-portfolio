@@ -2,6 +2,7 @@ import { Entry } from 'contentful';
 import { CardProps } from 'projects/component-library/stories/components/Card/Card';
 import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
 import { LayoutContext } from 'projects/helpers/layoutContext';
+import { getGBDate } from 'projects/helpers/text';
 import { BlogPost, fetchEntries } from 'projects/portfolio/contentfulPosts';
 import { useContext } from 'react';
 
@@ -34,10 +35,7 @@ const Blog = ({ data }: BlogProps): JSX.Element => {
 };
 
 export function mapBlogPostToCard(blogPost: BlogPost): CardProps {
-  blogPost.endDate = new Date(blogPost.publishedDate).toLocaleDateString('en-GB', {
-    month: 'long',
-    year: 'numeric',
-  });
+  blogPost.endDate = getGBDate(blogPost.endDate);
   return {
     title: blogPost.title,
     url: `blog/${blogPost.slug}`,

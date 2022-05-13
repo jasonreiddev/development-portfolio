@@ -1,20 +1,16 @@
 import React from 'react';
 import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event';
+import { getGBPound } from 'projects/helpers/text';
 
 function createPatchFrom(value) {
   return PatchEvent.from(value === '' ? unset() : set(Number(value)));
 }
 
-const formatMoney = Intl.NumberFormat('en-GB', {
-  style: 'currency',
-  currency: 'GBP',
-}).format;
-
 export default function PriceInput({ type, value, onChange, inputComponent }) {
   return (
     <div>
       <h2>
-        {type.title} - {value ? formatMoney(value / 100) : ''}
+        {type.title} - {value ? getGBPound(value / 100) : ''}
       </h2>
       <p>{type.description}</p>
       <input
