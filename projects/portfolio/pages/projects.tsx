@@ -1,22 +1,17 @@
 import { useContext } from 'react';
 import { LayoutContext } from '../../helpers/layoutContext';
-import { client } from '../../helpers/client';
+import { client } from '../../helpers/sanityClient';
 import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
 import { CardProps } from '../../component-library/stories/components/Card/Card';
-import { Project as SchemaProject } from 'projects/sanity/schemas/project';
-import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
-import { getLastWorkedOnOrOngoing } from 'projects/helpers/text';
-
-export interface Project extends SchemaProject {
-  sortDate: Date;
-}
+import { Project } from 'projects/sanity/schemas/project';
+import { mapProjectToCard } from 'projects/helpers/mapToCard';
 
 type ProjectsProps = { data: Project[] };
 
 export const getStaticProps = async (): Promise<{ props: ProjectsProps }> => {
   const res = await client.fetch(
     `
-    *[_type == "project"]
+    *[_type == "project"] | order(lastWorkedOn desc)
   `,
   );
   const data = await res;
@@ -34,43 +29,9 @@ const Projects = ({ data }: ProjectsProps): JSX.Element => {
   updatePageDescription?.("Projects I've developed");
 
   const Projects: CardProps[] = [];
-  data.sort(function (a: Project, b: Project) {
-    // by desc lastWorkedOn
-    a.sortDate = a.lastWorkedOn == null ? new Date() : a.lastWorkedOn;
-    b.sortDate = b.lastWorkedOn == null ? new Date() : b.lastWorkedOn;
-    return new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime();
-  });
   data.map((project: Project) => Projects.push(mapProjectToCard(project)));
 
   return <>{Projects.length > 0 && <CardGridFilterable cards={Projects} size={300} />}</>;
 };
-
-export function mapProjectToCard(project: Project): CardProps {
-  const lastWorkedOnOrOngoing = `Project ${getLastWorkedOnOrOngoing(project.lastWorkedOn)}`;
-  return {
-    title: project.projectTitle,
-    flipContent: (
-      <>
-        <h3>{project.projectTitle}</h3>
-        <p>{lastWorkedOnOrOngoing}</p>
-        <hr />
-        <br />
-        <p>{project.details}</p>
-        {project.repoUrl && (
-          <p>
-            <ExternalLink to={project.repoUrl} text="View Repository" />
-          </p>
-        )}
-        {project.siteUrl && (
-          <p>
-            <ExternalLink to={project.siteUrl} text="View Site" />
-          </p>
-        )}
-      </>
-    ),
-    tags: project.tags,
-    text: `${lastWorkedOnOrOngoing}\n${project.excerpt}`,
-  };
-}
 
 export default Projects;

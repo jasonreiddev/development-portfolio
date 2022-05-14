@@ -1,4 +1,5 @@
-import { Asset, createClient, Entry, EntryFields } from 'contentful';
+import { Asset, Entry, EntryFields } from 'contentful';
+import { client } from './client';
 
 interface ContentfulBlogPost {
   title: EntryFields.Text;
@@ -12,14 +13,6 @@ interface ContentfulBlogPost {
 export interface BlogPost extends ContentfulBlogPost {
   endDate: string;
 }
-
-const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
-const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
-
-const client = createClient({
-  space: `${space}`,
-  accessToken: `${accessToken}`,
-});
 
 export async function fetchEntries(limit?: number): Promise<Entry<BlogPost>[]> {
   const entries = await client.getEntries<BlogPost>({

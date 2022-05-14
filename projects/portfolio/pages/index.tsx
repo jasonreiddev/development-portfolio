@@ -1,17 +1,17 @@
 import { TextCard } from '../../component-library/stories/widgets/TextCard/TextCard';
 import { PageTitle } from '../../component-library/stories/components/PageTitle/PageTitle';
-import { client } from 'projects/helpers/client';
+import { client } from 'projects/helpers/sanityClient';
 import { CardProps } from 'projects/component-library/stories/components/Card/Card';
-import { mapProjectToCard, Project } from './projects';
 import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
-import { mapPositionToCard, Position } from './employment';
-import { BlogPost, fetchEntries } from '../contentfulPosts';
-import { mapBlogPostToCard } from './blog';
 import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
 import { Button } from 'projects/component-library/stories/components/Button/Button';
 import { CardCarousel } from 'projects/component-library/stories/widgets/CardCarousel/CardCarousel';
 import { Entry } from 'contentful';
 import { getPluralS } from 'projects/helpers/text';
+import { mapBlogPostToCard, mapPositionToCard, mapProjectToCard } from 'projects/helpers/mapToCard';
+import { BlogPost, fetchEntries } from 'projects/helpers/contentful/blogPost';
+import { Position } from 'projects/sanity/schemas/position';
+import { Project } from 'projects/sanity/schemas/project';
 
 interface HomeProps {
   projectData: Project[];
