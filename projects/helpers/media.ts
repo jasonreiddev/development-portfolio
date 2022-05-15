@@ -46,3 +46,89 @@ export function clamp({
     ${max} * ${multiplier}
   )`;
 }
+
+export interface ColorPairing {
+  base: string;
+  contrast: string;
+  accessible: boolean | 'large';
+}
+
+export const useBase = (colorPair?: ColorPair): string => {
+  return getColorPairing(colorPair ? colorPair : ColorPair.Default).base;
+};
+
+export const useContrast = (colorPair?: ColorPair): string => {
+  return getColorPairing(colorPair ? colorPair : ColorPair.Default).contrast;
+};
+
+export const useMinAccessibleFont = (colorPair?: ColorPair, fontSize = 'inherit'): string => {
+  const accessible = getColorPairing(colorPair ? colorPair : ColorPair.Default).accessible;
+  if (!accessible) {
+    console.error('Non accessible color pairing is being used for text');
+  }
+  return accessible == 'large' ? `max(14pt, ${fontSize})` : fontSize;
+};
+
+export enum ColorPair {
+  Default,
+  DefaultLink,
+  Primary,
+  PrimaryInactive,
+  Secondary,
+  SecondaryInactive,
+  Tertiary,
+  TertiaryInactive,
+}
+
+export const getColorPairing = (colorPair: ColorPair): ColorPairing => {
+  switch (colorPair) {
+    case ColorPair.DefaultLink:
+      return {
+        base: 'var(--color-base)',
+        contrast: 'var(--color-tertiary)',
+        accessible: true,
+      };
+    case ColorPair.Primary:
+      return {
+        base: 'var(--color-primary)',
+        contrast: 'var(--color-contrast)',
+        accessible: 'large',
+      };
+    case ColorPair.PrimaryInactive:
+      return {
+        base: 'var(--color-primary)',
+        contrast: 'var(--color-base)',
+        accessible: 'large',
+      };
+    case ColorPair.Secondary:
+      return {
+        base: 'var(--color-secondary)',
+        contrast: 'var(--color-contrast)',
+        accessible: true,
+      };
+    case ColorPair.SecondaryInactive:
+      return {
+        base: 'var(--color-secondary)',
+        contrast: 'var(--color-base)',
+        accessible: false,
+      };
+    case ColorPair.Tertiary:
+      return {
+        base: 'var(--color-tertiary)',
+        contrast: 'var(--color-contrast)',
+        accessible: true,
+      };
+    case ColorPair.TertiaryInactive:
+      return {
+        base: 'var(--color-tertiary)',
+        contrast: '--color-base)',
+        accessible: false,
+      };
+    default:
+      return {
+        base: 'var(--color-base)',
+        contrast: 'var(--color-contrast)',
+        accessible: true,
+      };
+  }
+};

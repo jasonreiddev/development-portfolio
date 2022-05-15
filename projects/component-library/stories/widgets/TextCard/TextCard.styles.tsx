@@ -1,16 +1,21 @@
+import { ColorPair, useBase, useContrast, useMinAccessibleFont } from '../../../../helpers/media';
 import styled from 'styled-components';
 
 interface TextCardStylesProps {
   fitContent?: boolean;
+  colorPair?: ColorPair;
 }
 
 const Wrapper = styled.div<TextCardStylesProps>`
   margin: 26px;
   padding: 20px;
   border-radius: var(--border-radius);
-  background: var(--color-base);
   box-shadow: var(--box-shadow);
   ${(p: TextCardStylesProps) => (p.fitContent ? `width: fit-content;` : null)};
+
+  background: ${(p: TextCardStylesProps) => useBase(p.colorPair)};
+  color: ${(p: TextCardStylesProps) => useContrast(p.colorPair)};
+  font-size: ${(p: TextCardStylesProps) => useMinAccessibleFont(p.colorPair, '10pt')};
 `;
 
 const Title = styled.h1<TextCardStylesProps>`
