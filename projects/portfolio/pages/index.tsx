@@ -22,14 +22,14 @@ interface HomeProps {
 export const getStaticProps = async (): Promise<{ props: HomeProps }> => {
   let res = await client.fetch(
     `
-    *[_type == "position" && hideOnEmployment == false && currentJob == true]
+    *[_type == "position" && hideOnEmployment == false && currentJob == true] | order(startDate desc)
   `,
   );
   const positionData = await res;
 
   res = await client.fetch(
     `
-    *[_type == "project" && featured == true][0..3]
+    *[_type == "project" && featured == true][0..3] | order(lastWorkedOn desc)
   `,
   );
   const projectData = await res;
