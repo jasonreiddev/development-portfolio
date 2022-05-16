@@ -53,22 +53,6 @@ export interface ColorPairing {
   accessible: boolean | 'large';
 }
 
-export const useBase = (colorPair?: ColorPair): string => {
-  return getColorPairing(colorPair ? colorPair : ColorPair.Default).base;
-};
-
-export const useContrast = (colorPair?: ColorPair): string => {
-  return getColorPairing(colorPair ? colorPair : ColorPair.Default).contrast;
-};
-
-export const useMinAccessibleFont = (colorPair?: ColorPair, fontSize = 'inherit'): string => {
-  const accessible = getColorPairing(colorPair ? colorPair : ColorPair.Default).accessible;
-  if (!accessible) {
-    console.error('Non accessible color pairing is being used for text');
-  }
-  return accessible == 'large' ? `max(14pt, ${fontSize})` : fontSize;
-};
-
 export enum ColorPair {
   Default,
   DefaultLink,
@@ -131,4 +115,28 @@ export const getColorPairing = (colorPair: ColorPair): ColorPairing => {
         accessible: true,
       };
   }
+};
+
+export const useBase = (colorPair?: ColorPair): string => {
+  return getColorPairing(colorPair ? colorPair : ColorPair.Default).base;
+};
+
+export const useContrast = (colorPair?: ColorPair): string => {
+  return getColorPairing(colorPair ? colorPair : ColorPair.Default).contrast;
+};
+
+export const useMinAccessibleFont = (colorPair?: ColorPair, fontSize = 'inherit'): string => {
+  const accessible = getColorPairing(colorPair ? colorPair : ColorPair.Default).accessible;
+  if (!accessible) {
+    console.error('Non accessible color pairing is being used for text');
+  }
+  return accessible == 'large' ? `max(14pt, ${fontSize})` : fontSize;
+};
+
+export const useColorPair = (colorPair?: ColorPair, fontSize = 'inherit'): string => {
+  return `
+  color: ${useContrast(colorPair)};
+  background-color: ${useBase(colorPair)};
+  font-size: ${useMinAccessibleFont(colorPair, fontSize)};
+ `;
 };
