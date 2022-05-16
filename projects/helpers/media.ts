@@ -19,10 +19,14 @@ export function until(size: Device): string {
   return `(max-width: ${size - 1}px)`;
 }
 
-export function between(minWidth: Device | undefined, maxWidth: Device | undefined): string {
+export function between(
+  minWidth: Device | undefined,
+  maxWidth: Device | undefined,
+  styles: string,
+): string {
   typeof minWidth == 'undefined' ? (minWidth = 0) : null;
   if (maxWidth) {
-    return `(min-width: ${minWidth}px) and (max-width: ${maxWidth - 1}px)`;
+    return `@media (min-width: ${minWidth}px) and (max-width: ${maxWidth - 1}px) {${styles}}`;
   }
   return from(minWidth);
 }
