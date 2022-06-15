@@ -1,6 +1,6 @@
 /* eslint-disable*/
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BlogPost, fetchEntries, fetchEntry } from 'projects/portfolio/contentfulPosts';
+import { BlogPost, fetchEntries, fetchEntry } from 'projects/helpers/contentful/blogPost';
 import { TextCard } from 'projects/component-library/stories/widgets/TextCard/TextCard';
 import { PageTitle } from 'projects/component-library/stories/components/PageTitle/PageTitle';
 import { PathBreadcrumb } from 'projects/component-library/stories/widgets/PathBreadcrumb/PathBreadcrumb';
@@ -50,7 +50,7 @@ export async function getStaticProps(
   };
 }
 
-export default function Post(postData: BlogPost) {
+export default function Post({ postData }: BlogProps) {
   return (
     <>
       <PathBreadcrumb />
