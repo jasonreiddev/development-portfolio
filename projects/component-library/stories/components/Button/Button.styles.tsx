@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
+import { ColorPair, useColorPair } from '../../../../helpers/media';
+
 interface ButtonStylesProps {
-  backgroundColor?: string;
+  size?: 'small' | 'medium' | 'large';
+  colorPair?: ColorPair;
 }
 
 const Button = styled.button<ButtonStylesProps>`
@@ -21,30 +24,27 @@ const Button = styled.button<ButtonStylesProps>`
   box-shadow: var(--box-shadow);
   backface-visibility: hidden;
 
-  &.primary {
-    background-color: ${(p: ButtonStylesProps) =>
-      p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
-  }
+  ${(p: ButtonStylesProps) => useColorPair(p.colorPair, '10pt')}
 
-  &.secondary {
-    background-color: ${(p: ButtonStylesProps) =>
-      p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-secondary)'};
-  }
-
-  &.small {
-    font-size: 12px;
-    padding: 10px 16px;
-  }
-
-  &.medium {
-    font-size: 14px;
-    padding: 11px 20px;
-  }
-
-  &.large {
-    font-size: 16px;
-    padding: 12px 24px;
-  }
+  ${(p: ButtonStylesProps) => {
+    switch (p.size) {
+      case 'small': {
+        return `
+        font-size: 12px;
+        padding: 10px 16px;`;
+      }
+      case 'medium': {
+        return `
+        font-size: 14px;
+        padding: 11px 20px;`;
+      }
+      case 'large': {
+        return `
+        font-size: 16px;
+        padding: 12px 24px;`;
+      }
+    }
+  }};
 `;
 
 const Wrapper = styled.div`

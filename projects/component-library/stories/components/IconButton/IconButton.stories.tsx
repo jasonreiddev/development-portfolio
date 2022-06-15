@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { IconButton, IconButtonProps, Icon } from './IconButton';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Icon Button',
@@ -18,6 +19,7 @@ PrimaryMail.args = {
   primary: true,
   label: 'Mail',
   ariaLabel: 'Mail',
+  colorPair: ColorPair.Primary,
 };
 
 export const PrimaryMailActive = Template.bind({});
@@ -27,6 +29,7 @@ PrimaryMailActive.args = {
   primary: true,
   label: 'Mail',
   ariaLabel: 'Mail',
+  colorPair: ColorPair.Primary,
 };
 
 export const PrimaryNone = Template.bind({});
@@ -42,6 +45,7 @@ SecondaryRefresh.args = {
   icon: Icon.Refresh,
   label: 'Refresh',
   ariaLabel: 'Refresh',
+  colorPair: ColorPair.Secondary,
 };
 
 export const LargeRefreshActive = Template.bind({});

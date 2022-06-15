@@ -25,7 +25,7 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-export const CarouselStyles = {
+export const BasicCarouselStyles = {
   Carousel,
   Image,
 };

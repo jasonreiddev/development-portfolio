@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Dropdown, DropdownProps, Icon, DropdownItem } from './Dropdown';
+import { ColorPair } from '../../../../helpers/media';
 
 const access: DropdownItem[] = [
   {
@@ -57,13 +58,17 @@ Actions.args = {
   dropdownItemGroups: dropdownItemGroups,
 };
 
+export const ActionsColor = Template.bind({});
+ActionsColor.args = {
+  ...Actions.args,
+  colorPair: ColorPair.Primary,
+};
+
 export const FullWidth = Template.bind({});
 FullWidth.args = {
-  text: 'Actions',
-  icon: 1,
-  active: true,
+  ...Actions.args,
   fullWidth: true,
-  dropdownItemGroups: dropdownItemGroups,
+  colorPair: ColorPair.Tertiary,
 };
 
 export const Minimum = Template.bind({});

@@ -12,4 +12,4 @@ export default {
 
 const Template: Story = () => <Legend />;
 
-export const Default = Template.bind({});
+export const _Minimum = Template.bind({});

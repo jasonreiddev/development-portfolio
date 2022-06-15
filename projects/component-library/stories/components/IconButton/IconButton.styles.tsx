@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
+import { ColorPair, useColorPair } from '../../../../helpers/media';
+
 interface IconButtonStylesProps {
   backgroundColor?: string;
   flipIconY?: boolean;
   active?: boolean;
   align?: string;
+  size?: 'small' | 'medium' | 'large';
+  colorPair?: ColorPair;
 }
 
 const Button = styled.button<IconButtonStylesProps>`
@@ -17,38 +21,32 @@ const Button = styled.button<IconButtonStylesProps>`
   box-shadow: var(--box-shadow);
   backface-visibility: hidden;
 
+  ${(p: IconButtonStylesProps) => useColorPair(p.colorPair, '10pt')}
+
   &:hover {
     transform: scale(0.95);
     box-shadow: none;
   }
 
-  &.primary {
-    color: var(--color-contrast);
-    background-color: ${(p: IconButtonStylesProps) =>
-      p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-primary)'};
-  }
-
-  &.secondary {
-    color: var(--color-contrast);
-    background-color: ${(p: IconButtonStylesProps) =>
-      p.backgroundColor ? `${p.backgroundColor};` : 'var(--color-secondary)'};
-  }
-
-  &.small {
-    font-size: 12px;
-    padding: 10px 16px;
-    min-width: 50px;
-  }
-
-  &.medium {
-    font-size: 14px;
-    padding: 11px 20px;
-  }
-
-  &.large {
-    font-size: 16px;
-    padding: 12px 24px;
-  }
+  ${(p: IconButtonStylesProps) => {
+    switch (p.size) {
+      case 'small': {
+        return `
+        font-size: 12px;
+        padding: 10px 16px;`;
+      }
+      case 'medium': {
+        return `
+        font-size: 14px;
+        padding: 11px 20px;`;
+      }
+      case 'large': {
+        return `
+        font-size: 16px;
+        padding: 12px 24px;`;
+      }
+    }
+  }};
 `;
 
 const Wrapper = styled.div`

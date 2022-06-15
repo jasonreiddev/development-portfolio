@@ -2,6 +2,7 @@ import { ReactNode, Ref } from 'react';
 import { MdAccountCircle } from 'react-icons/md';
 
 import { ConversationStyles as s } from './Conversation.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export enum Icon {
   None,
@@ -16,6 +17,8 @@ export interface ConversationProps {
   toggleActive: VoidFunction;
   dropdownRef: Ref<HTMLElement>;
   conversationItemGroups: ConversationItem[][];
+  colorPair?: ColorPair;
+  colorPairSentByMe?: ColorPair;
 }
 
 export interface ConversationItem {
@@ -39,6 +42,8 @@ export const Conversation = ({
   fullWidth,
   toggleActive,
   conversationItemGroups,
+  colorPair = ColorPair.Secondary,
+  colorPairSentByMe = ColorPair.Tertiary,
 }: ConversationProps): JSX.Element => {
   return (
     <s.Container fullWidth={fullWidth}>
@@ -55,7 +60,11 @@ export const Conversation = ({
               {index > 0 && <hr />}
               <s.DropdownInner key={`ConversationGroup-${index}`}>
                 {group.map((item, index) => (
-                  <s.ConversationItem sentByMe={item.sentByMe} key={`ConversationItem-${index}`}>
+                  <s.ConversationItem
+                    sentByMe={item.sentByMe}
+                    colorPair={item.sentByMe ? colorPairSentByMe : colorPair}
+                    key={`ConversationItem-${index}`}
+                  >
                     {item.text}
                   </s.ConversationItem>
                 ))}

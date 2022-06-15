@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
+import { ColorPair, useBase } from '../../../../helpers/media';
+
 interface EmblaCarouselStylesProps {
   size?: number;
+  colorPair?: ColorPair;
 }
 
 export const Wrapper = styled.div`
   position: relative;
   margin: 26px;
-}
 `;
 
 const Viewport = styled.div`
@@ -66,7 +68,7 @@ const Button = styled.button`
   height: 30px;
   justify-content: center;
   align-items: center;
-  color: var(--color-secondary);
+  color: ${(p: EmblaCarouselStylesProps) => useBase(p.colorPair)};
   padding: 0;
 
   &:disabled {

@@ -53,6 +53,8 @@ export function clamp({
 
 export interface ColorPairing {
   base: string;
+  // used for gradient
+  baseIncreaseContrast: string;
   contrast: string;
   accessible: boolean | 'large';
 }
@@ -73,48 +75,56 @@ export const getColorPairing = (colorPair: ColorPair): ColorPairing => {
     case ColorPair.DefaultLink:
       return {
         base: 'var(--color-base)',
+        baseIncreaseContrast: 'var(--color-base-bold)',
         contrast: 'var(--color-tertiary)',
         accessible: true,
       };
     case ColorPair.Primary:
       return {
         base: 'var(--color-primary)',
+        baseIncreaseContrast: 'var(--color-primary-li10)',
         contrast: 'var(--color-contrast)',
         accessible: 'large',
       };
     case ColorPair.PrimaryInactive:
       return {
         base: 'var(--color-primary)',
+        baseIncreaseContrast: 'var(--color-primary-ld10)',
         contrast: 'var(--color-base)',
         accessible: 'large',
       };
     case ColorPair.Secondary:
       return {
         base: 'var(--color-secondary)',
+        baseIncreaseContrast: 'var(--color-secondary-li10)',
         contrast: 'var(--color-contrast)',
         accessible: true,
       };
     case ColorPair.SecondaryInactive:
       return {
         base: 'var(--color-secondary)',
+        baseIncreaseContrast: 'var(--color-secondary-ld10)',
         contrast: 'var(--color-base)',
         accessible: false,
       };
     case ColorPair.Tertiary:
       return {
         base: 'var(--color-tertiary)',
+        baseIncreaseContrast: 'var(--color-tertiary-li10)',
         contrast: 'var(--color-contrast)',
         accessible: true,
       };
     case ColorPair.TertiaryInactive:
       return {
         base: 'var(--color-tertiary)',
-        contrast: '--color-base)',
+        baseIncreaseContrast: 'var(--color-tertiary-ld10)',
+        contrast: 'var(--color-base)',
         accessible: false,
       };
     default:
       return {
         base: 'var(--color-base)',
+        baseIncreaseContrast: 'var(--color-base-bold)',
         contrast: 'var(--color-contrast)',
         accessible: true,
       };
@@ -123,6 +133,10 @@ export const getColorPairing = (colorPair: ColorPair): ColorPairing => {
 
 export const useBase = (colorPair?: ColorPair): string => {
   return getColorPairing(colorPair ? colorPair : ColorPair.Default).base;
+};
+
+export const useBaseIncreaseContrast = (colorPair?: ColorPair): string => {
+  return getColorPairing(colorPair ? colorPair : ColorPair.Default).baseIncreaseContrast;
 };
 
 export const useContrast = (colorPair?: ColorPair): string => {

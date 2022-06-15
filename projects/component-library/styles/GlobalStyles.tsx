@@ -26,9 +26,14 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --color-primary: hsl(320, 35%, 55%);
   --color-primary-o66: hsl(320, 35%, 55%, 0.66);
   --color-primary-ld10: hsl(320, 35%, 65%);
+  --color-primary-li10: hsl(320, 35%, 45%);
   --color-primary-li10-o66: hsla(320, 35%, 45%, 0.66);
 
   --color-secondary: hsl(120, 20%, 40%);
+  --color-secondary-o66: hsl(120, 20%, 40%, 0.66);
+  --color-secondary-ld10: hsl(120, 20%, 50%);
+  --color-secondary-li10: hsl(120, 20%, 30%);
+  --color-secondary-li10-o66: hsla(120, 20%, 30%, 0.66);
   --color-secondary-ld-max:  hsl(120, 20%, 85%);
 
   --color-tertiary: hsl(200, 35%, 35%);
@@ -66,6 +71,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       p.dark
         ? `
     --color-primary-ld10: hsl(320, 35%, 45%);
+    --color-primary-li10: hsl(320, 35%, 45%);
     --color-primary-li10-o66: hsl(320, 35%, 65%, 0.66);
 
     --color-tertiary: hsl(200, 35%, 55%);

@@ -1,10 +1,15 @@
+import { ColorPair } from '../../../../helpers/media';
 import { BlurredGlowStyles as s } from './BlurredGlow.styles';
 
-export const BlurredGlow = (): JSX.Element => {
+export interface BlurredGlowProps {
+  colorPair?: ColorPair;
+}
+
+export const BlurredGlow = ({ colorPair }: BlurredGlowProps): JSX.Element => {
   return (
     <s.Wrapper>
-      <s.Blurred />
-      <s.Content />
+      <s.Blurred colorPair={colorPair} />
+      <s.Content colorPair={colorPair} />
     </s.Wrapper>
   );
 };

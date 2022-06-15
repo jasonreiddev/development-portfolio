@@ -2,6 +2,7 @@ import { Ref } from 'react';
 import { MdClose, MdAccountCircle } from 'react-icons/md';
 
 import { ModalStyles as s } from './Modal.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export enum Icon {
   None,
@@ -17,6 +18,7 @@ export interface ModalProps {
   active: boolean;
   toggleActive: VoidFunction;
   modalRef: Ref<HTMLElement>;
+  colorPair?: ColorPair;
 }
 
 const renderIcon = (icon: Icon): JSX.Element | undefined => {
@@ -37,6 +39,7 @@ export const Modal = ({
   active,
   toggleActive,
   modalRef,
+  colorPair = ColorPair.Secondary,
 }: ModalProps): JSX.Element => {
   return (
     <>
@@ -48,16 +51,16 @@ export const Modal = ({
             <span>{openText}</span>
           </div>
         </s.Open>
-        <s.Modal active={active}>
-          <s.CloseContainer>
+        <s.Modal active={active} colorPair={colorPair}>
+          <s.CloseContainer colorPair={colorPair}>
             <s.Close>
               <MdClose onClick={toggleActive} />
             </s.Close>
           </s.CloseContainer>
-          <s.TitleContainer>
+          <s.TitleContainer colorPair={colorPair}>
             <s.Title>{title}</s.Title>
           </s.TitleContainer>
-          <s.Body>
+          <s.Body colorPair={colorPair}>
             <s.SubTitleContainer>
               <h3>{subtitle}</h3>
             </s.SubTitleContainer>

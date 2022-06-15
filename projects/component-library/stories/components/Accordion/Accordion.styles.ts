@@ -18,11 +18,9 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.button<AccordionStylesProps>`
-  color: var(--color-contrast);
   cursor: pointer;
   padding: 12px 16px;
   outline-offset: 5px;
-  background-color: var(--color-secondary);
   width: 100%;
   border: 0;
   border-radius: var(--border-radius);

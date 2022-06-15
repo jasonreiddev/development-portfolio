@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
-import { clamp } from '../../../../helpers/media';
+import { clamp, ColorPair, useColorPair, useContrast } from '../../../../helpers/media';
 
-const Footer = styled.footer`
+interface FooterStylesProps {
+  colorPair?: ColorPair;
+}
+
+const Footer = styled.footer<FooterStylesProps>`
   min-height: 100px;
-  background-color: var(--color-secondary);
   display: flex;
-  color: var(--color-base);
   font-size: ${clamp({ multiplier: 0.5 })};
+
+  ${(p: FooterStylesProps) => useColorPair(p.colorPair, '10pt')}
 `;
 
 const Title = styled.a`
@@ -24,7 +28,7 @@ const Title = styled.a`
   }
 
   a {
-    color: var(--color-contrast);
+    color: ${(p: FooterStylesProps) => useContrast(p.colorPair)};
     text-decoration: none;
   }
 `;

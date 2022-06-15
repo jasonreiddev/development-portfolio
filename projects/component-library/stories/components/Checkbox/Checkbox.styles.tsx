@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { ColorPair, useBase } from '../../../../helpers/media';
 
 interface CheckboxStylesProps {
   checked?: boolean;
+  colorPair?: ColorPair;
 }
 
 const Wrapper = styled.div`
@@ -20,7 +22,7 @@ const StyledCheckbox = styled.div<CheckboxStylesProps>`
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: ${(p) => (p.checked ? 'var(--color-tertiary)' : 'var(--color-base-bold)')};
+  background-color: ${(p) => (p.checked ? useBase(p.colorPair) : 'var(--color-base-bold)')};
   border: 1px solid var(--color-contrast);
   border-radius: 3px;
   transition: all 150ms;

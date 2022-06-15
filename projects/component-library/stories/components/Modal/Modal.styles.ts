@@ -1,11 +1,24 @@
 import styled from 'styled-components';
 
-import { from, Device } from '../../../../helpers/media';
+import {
+  from,
+  Device,
+  ColorPair,
+  useColorPair,
+  useBase,
+  useContrast,
+} from '../../../../helpers/media';
 
-const Modal = styled.div<{ active: boolean }>`
+interface ModalStylesProps {
+  active?: boolean;
+  colorPair?: ColorPair;
+}
+
+const Modal = styled.div<ModalStylesProps>`
   @media (prefers-reduced-motion: no-preference) {
     transition: 0.15s ease-in;
   }
+
   position: fixed;
   left: 0;
   right: 0;
@@ -15,7 +28,7 @@ const Modal = styled.div<{ active: boolean }>`
   max-width: 720px;
   width: min(calc(80% - 10px), calc(80vw - 10px));
   aspect-ratio: 1 / 1;
-  background: var(--color-base);
+  ${(p: ModalStylesProps) => useContrast(p.colorPair)};
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 
@@ -31,7 +44,7 @@ const Modal = styled.div<{ active: boolean }>`
       : null};
 `;
 
-const Mask = styled.div<{ active: boolean }>`
+const Mask = styled.div<ModalStylesProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -54,14 +67,13 @@ const Mask = styled.div<{ active: boolean }>`
       : null}
 `;
 
-const TitleContainer = styled.div`
+const TitleContainer = styled.div<ModalStylesProps>`
   text-align: center;
   padding: 1em 0 0.5em;
-  background-color: var(--color-secondary);
+  ${(p: ModalStylesProps) => useColorPair(p.colorPair, '10pt')};
 `;
 
 const Title = styled.div`
-  color: var(--color-contrast);
   font-weight: bold;
   font-size: 30px;
   @media ${from(Device.Tablet)} {
@@ -69,9 +81,9 @@ const Title = styled.div`
   }
 `;
 
-const CloseContainer = styled.div`
+const CloseContainer = styled.div<ModalStylesProps>`
   text-align: right;
-  background-color: var(--color-secondary);
+  background-color: ${(p: ModalStylesProps) => useBase(p.colorPair)};
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 `;
 
@@ -88,7 +100,8 @@ const Close = styled.div`
 
 const Body = styled.div`
   padding: 1em;
-  background: var(--color-base);
+  background-color: ${(p: ModalStylesProps) => useContrast(p.colorPair)};
+  height: -webkit-fill-available;
 `;
 const SubTitleContainer = styled.div`
   text-align: center;

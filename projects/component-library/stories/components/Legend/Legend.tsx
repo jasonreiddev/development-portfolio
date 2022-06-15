@@ -14,12 +14,12 @@ export const Legend = (): JSX.Element => {
 
       <s.LegendPair>
         <s.Key level={'Secondary'}></s.Key>
-        <s.Title> &lt; Secondary</s.Title>
+        <s.Title>Secondary</s.Title>
       </s.LegendPair>
 
       <s.LegendPair>
         <s.Key level={'Tertiary'}></s.Key>
-        <s.Title>&lt; Tertiary</s.Title>
+        <s.Title>Tertiary</s.Title>
       </s.LegendPair>
     </s.Container>
   );

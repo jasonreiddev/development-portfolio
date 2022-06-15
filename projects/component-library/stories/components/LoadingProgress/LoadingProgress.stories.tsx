@@ -15,15 +15,15 @@ const Template: Story<LoadingProgressProps> = (args) => <LoadingProgress {...arg
 export const Tempo = Template.bind({});
 Tempo.args = {
   log: [
-    'Loading Peabody....',
-    'Loaded Peabody.',
-    'Loading CH & Co....',
-    'Loading WCHT....',
-    'Loaded WCHT.',
-    'Loaded CH & Co.',
+    'Loading HTML....',
+    'Loaded HTML.',
+    'Loading CSS....',
+    'Loaded CSS.',
+    'Loading JavaScript.',
+    'Loaded JavaScript.',
   ],
   progress: 50,
   total: 100,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

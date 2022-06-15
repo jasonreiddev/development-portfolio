@@ -9,7 +9,6 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  background-color: var(--color-base)
   z-index: 3;
   justify-content: center;
   align-items: center;

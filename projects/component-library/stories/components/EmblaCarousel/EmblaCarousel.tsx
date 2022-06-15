@@ -4,27 +4,30 @@ import { EmblaOptionsType } from 'embla-carousel/components/Options';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 
 import { EmblaCarouselStyles as s } from './EmblaCarousel.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export interface EmblaCarouselProps {
   slides: number[] | string[] | JSX.Element[];
   emblaOptions?: EmblaOptionsType;
   displaying: number;
   size: number;
+  colorPairButton?: ColorPair;
 }
 
 interface ButtonProps {
   enabled: boolean;
   onClick: () => void;
+  colorPair: ColorPair;
 }
 
-const PrevButton = ({ enabled, onClick }: ButtonProps): JSX.Element => (
-  <s.ButtonPrev onClick={onClick} disabled={!enabled}>
+const PrevButton = ({ enabled, onClick, colorPair }: ButtonProps): JSX.Element => (
+  <s.ButtonPrev onClick={onClick} disabled={!enabled} colorPair={colorPair}>
     <MdNavigateBefore />
   </s.ButtonPrev>
 );
 
-const NextButton = ({ enabled, onClick }: ButtonProps): JSX.Element => (
-  <s.ButtonNext onClick={onClick} disabled={!enabled}>
+const NextButton = ({ enabled, onClick, colorPair }: ButtonProps): JSX.Element => (
+  <s.ButtonNext onClick={onClick} disabled={!enabled} colorPair={colorPair}>
     <MdNavigateNext />
   </s.ButtonNext>
 );
@@ -34,6 +37,7 @@ export const EmblaCarousel = ({
   emblaOptions,
   displaying,
   size,
+  colorPairButton = ColorPair.Secondary,
 }: EmblaCarouselProps): JSX.Element => {
   const [viewportRef, embla] = useEmblaCarousel({ ...emblaOptions });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
@@ -73,8 +77,8 @@ export const EmblaCarousel = ({
         // todo set to '<= slides.length', resolve issue with enabled/disabled incorrectly with multiple
         displaying <= 1 && (
           <>
-            <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-            <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+            <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} colorPair={colorPairButton} />
+            <NextButton onClick={scrollNext} enabled={nextBtnEnabled} colorPair={colorPairButton} />
           </>
         )
       }

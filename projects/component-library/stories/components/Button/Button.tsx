@@ -1,35 +1,33 @@
 import Router from 'next/router';
 import { MdLink } from 'react-icons/md';
+
 import { ButtonStyles as s } from './Button.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
   type?: 'button' | 'submit' | 'reset' | undefined;
   label: string;
   url?: string;
+  colorPair?: ColorPair;
   onClick?: () => void;
 }
 
 export const Button = ({
-  primary = false,
   size = 'medium',
   type = 'button',
-  backgroundColor,
   label,
   url,
+  colorPair,
   onClick,
   ...props
 }: ButtonProps): JSX.Element => {
-  const mode = primary ? 'primary' : 'secondary';
   return (
     <s.Wrapper>
       <s.Button
         type={type}
-        className={[`${size}`, mode].join(' ')}
-        backgroundColor={backgroundColor}
-        {...props}
+        size={size}
+        colorPair={colorPair}
         onClick={() => {
           if (url != undefined) {
             Router.push(url);
@@ -37,6 +35,7 @@ export const Button = ({
             onClick && onClick();
           }
         }}
+        {...props}
       >
         {!!url && <MdLink />}
         {label}

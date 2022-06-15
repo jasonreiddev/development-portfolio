@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Conversation, ConversationProps, Icon, ConversationItem } from './Conversation';
+import { ColorPair } from '../../../../helpers/media';
 
 const goodMorning: ConversationItem[] = [
   {
@@ -63,6 +64,13 @@ FullWidth.args = {
   active: true,
   fullWidth: true,
   conversationItemGroups: conversationItemGroups,
+};
+
+export const FullWidthColors = Template.bind({});
+FullWidthColors.args = {
+  ...FullWidth.args,
+  colorPair: ColorPair.Primary,
+  colorPairSentByMe: ColorPair.Secondary,
 };
 
 export const Minimum = Template.bind({});

@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { ExternalLink, ExternalLinkProps } from './ExternalLink';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/External Link',
@@ -21,4 +22,10 @@ StoryBook.args = {
   text: 'Welcome to Storybook',
 };
 
-export const Minimum = Template.bind({});
+export const StoryBookColor = Template.bind({});
+StoryBookColor.args = {
+  ...StoryBook.args,
+  colorPair: ColorPair.TertiaryInactive,
+};
+
+export const _Minimum = Template.bind({});

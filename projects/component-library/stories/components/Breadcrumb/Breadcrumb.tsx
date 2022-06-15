@@ -2,14 +2,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { MdCheckBox, MdCopyAll } from 'react-icons/md';
 
+import { ColorPair } from '../../../../helpers/media';
 import { BreadcrumbStyles as s } from './Breadcrumb.styles';
 
 export interface BreadcrumbProps {
   path: string;
   siteName?: string;
+  parentColorPair?: ColorPair;
 }
 
-export const Breadcrumb = ({ path = '', siteName }: BreadcrumbProps): JSX.Element => {
+export const Breadcrumb = ({
+  path = '',
+  siteName,
+  parentColorPair,
+}: BreadcrumbProps): JSX.Element => {
   const [copied, setCopied] = useState(false);
   function copyToClipboard(path: string): void {
     setCopied(true);
@@ -33,11 +39,13 @@ export const Breadcrumb = ({ path = '', siteName }: BreadcrumbProps): JSX.Elemen
   const arrayPath = noParamPath.split('/');
   let mapPath = '';
   return (
-    <s.Breadcrumb>
+    <s.Breadcrumb colorPair={parentColorPair}>
       <s.BreadcrumbGroup>
         {siteName && (
           <Link href="/" passHref>
-            <s.BreadcrumbItem first={true}>{siteName}</s.BreadcrumbItem>
+            <s.BreadcrumbItem first={true} colorPair={parentColorPair}>
+              {siteName}
+            </s.BreadcrumbItem>
           </Link>
         )}
       </s.BreadcrumbGroup>
@@ -47,12 +55,16 @@ export const Breadcrumb = ({ path = '', siteName }: BreadcrumbProps): JSX.Elemen
           <s.BreadcrumbGroup key={`BreadcrumbItem-${index}`}>
             <span>/</span>
             <Link href={mapPath} passHref>
-              <s.BreadcrumbItem>
+              <s.BreadcrumbItem colorPair={parentColorPair}>
                 {decodeURIComponent(item).replace(/-/g, ' ').trim()}
               </s.BreadcrumbItem>
             </Link>
             {arrayPath.length - 1 == index && (
-              <s.CopyButton title="Copy to Clipboard" onClick={() => copyToClipboard(path)}>
+              <s.CopyButton
+                title="Copy to Clipboard"
+                onClick={() => copyToClipboard(path)}
+                colorPair={parentColorPair}
+              >
                 {!copied && <MdCopyAll />}
                 {copied && <MdCheckBox />}
               </s.CopyButton>

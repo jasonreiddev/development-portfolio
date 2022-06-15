@@ -3,6 +3,7 @@ import { HiSun, HiMoon } from 'react-icons/hi';
 import { CgEditFlipV } from 'react-icons/cg';
 
 import { IconButtonStyles as s } from './IconButton.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export interface IconButtonProps {
   icon: Icon;
@@ -15,6 +16,7 @@ export interface IconButtonProps {
   ariaLabel: string;
   onClick?: () => void;
   align?: 'left' | 'center' | 'bottom-right';
+  colorPair?: ColorPair;
 }
 
 export enum Icon {
@@ -53,26 +55,24 @@ export const IconButton = ({
   icon,
   flipIconY,
   active = false,
-  primary = false,
   size = 'medium',
-  backgroundColor,
   label,
   ariaLabel,
   align = 'left',
+  colorPair = ColorPair.Secondary,
   ...props
 }: IconButtonProps): JSX.Element => {
-  const mode = primary ? 'primary' : 'secondary';
   return (
     <s.Wrapper align={align}>
       <s.Button
         active={active}
         type="button"
-        className={[`${size}`, mode].join(' ')}
-        backgroundColor={backgroundColor}
+        size={size}
         {...props}
         data-tooltip={label}
         data-tooltip--close={size == 'small' ? 'true' : null}
         aria-label={ariaLabel}
+        colorPair={colorPair}
       >
         <s.Icon flipIconY={flipIconY}>{renderIcon(icon)}</s.Icon>
       </s.Button>

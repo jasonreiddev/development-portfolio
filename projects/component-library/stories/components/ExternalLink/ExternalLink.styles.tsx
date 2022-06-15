@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
-export const Link = styled.a`
+import { ColorPair, useContrast } from '../../../../helpers/media';
+
+interface ExternalLinkStylesProps {
+  colorPair?: ColorPair;
+}
+
+export const Link = styled.a<ExternalLinkStylesProps>`
   white-space: nowrap;
   display: inline-flex;
-  color: var(--color-tertiary);
+  color: ${(p: ExternalLinkStylesProps) => useContrast(p.colorPair)};
   align-items: baseline;
   position: relative;
 
@@ -20,7 +26,7 @@ export const Link = styled.a`
     height: 2px;
     left: 50%;
     position: absolute;
-    background: var(--color-contrast);
+    background: v ${(p: ExternalLinkStylesProps) => useContrast(p.colorPair)};
     @media (prefers-reduced-motion: no-preference) {
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
     }
@@ -32,7 +38,6 @@ export const Link = styled.a`
       left: 0;
     }
   }
-}
 `;
 
 export const ExternalLinkStyles = {

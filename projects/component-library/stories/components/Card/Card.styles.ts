@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import { Device, from } from '../../../../helpers/media';
+import { ColorPair, useColorPair } from '../../../../helpers/media';
 
 interface CardStylesProps {
   modifyWidth?: 1 | 2 | 'full';
@@ -10,6 +11,7 @@ interface CardStylesProps {
   dark?: boolean;
   link?: boolean;
   fullText?: boolean;
+  colorPair?: ColorPair;
 }
 
 const Container = styled.div<CardStylesProps>`
@@ -152,13 +154,7 @@ const Tag = styled.div`
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background: linear-gradient(
-    to left,
-    ${(p) =>
-      p.link
-        ? `var(--color-tertiary), var(--color-tertiary-ld10)`
-        : `var(--color-primary), var(--color-primary-ld10)`}
-  );
+  ${(p: CardStylesProps) => useColorPair(p.colorPair, '10pt')}
 
   transition: filter 0.5s;
   &:hover {
