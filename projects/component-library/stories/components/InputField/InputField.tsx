@@ -1,4 +1,5 @@
 import { InputFieldStyles as s } from './InputField.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export interface InputFieldProps {
   title?: string;
@@ -7,6 +8,7 @@ export interface InputFieldProps {
   type?: string;
   callback?(value: string): void;
   onClick?(): void;
+  colorPair?: ColorPair;
 }
 
 export const InputField = ({
@@ -16,11 +18,12 @@ export const InputField = ({
   type = 'Text',
   callback,
   onClick,
+  colorPair = ColorPair.Secondary,
 }: InputFieldProps): JSX.Element => {
   return (
     <s.Container>
       {!!title && <s.Title>{title}</s.Title>}
-      <s.Input>
+      <s.Input colorPair={colorPair}>
         <input
           type={type}
           name={name}

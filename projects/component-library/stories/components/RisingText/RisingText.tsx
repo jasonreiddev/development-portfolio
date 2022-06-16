@@ -1,15 +1,19 @@
 import { RisingTextStyles as s } from './RisingText.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export interface RisingTextProps {
   text: string;
-  color?: string;
+  colorPair?: ColorPair;
 }
 
-export const RisingText = ({ text, color }: RisingTextProps): JSX.Element => {
+export const RisingText = ({
+  text,
+  colorPair = ColorPair.Secondary,
+}: RisingTextProps): JSX.Element => {
   return (
     <s.Wrapper>
       <s.Text>{text}</s.Text>
-      <s.RisingText color={color}>{text}</s.RisingText>
+      <s.RisingText colorPair={colorPair}>{text}</s.RisingText>
     </s.Wrapper>
   );
 };

@@ -1,3 +1,5 @@
+import { Story } from '@storybook/react';
+
 import { PathBreadcrumb } from './PathBreadcrumb';
 
 export default {
@@ -8,4 +10,6 @@ export default {
   },
 };
 
-export const Default = (): JSX.Element => <PathBreadcrumb />;
+const Template: Story = (): JSX.Element => <PathBreadcrumb />;
+
+export const _Minimum = Template.bind({});

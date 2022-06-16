@@ -1,15 +1,22 @@
 import styled, { keyframes } from 'styled-components';
 
+import { ColorPair, useBase } from '../../../../helpers/media';
+
+interface PlanetStylesProps {
+  active?: boolean;
+  colorPair?: ColorPair;
+}
+
 const Wrapper = styled.div`
   position: relative;
   width: fit-content;
   padding: 60px;
 `;
 
-const Planet = styled.div`
+const Planet = styled.div<PlanetStylesProps>`
   width: 80px;
   height: 80px;
-  background: var(--color-primary);
+  background: ${(p: PlanetStylesProps) => useBase(p.colorPair)};
   border-radius: 50%;
 `;
 
@@ -22,16 +29,13 @@ const orbit = keyframes`
       }
 `;
 
-const Moon = styled.div`
+const Moon = styled.div<PlanetStylesProps>`
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   margin: auto;
   width: 20px;
   height: 20px;
-  background: var(--color-secondary);
+  background: ${(p: PlanetStylesProps) => useBase(p.colorPair)};
   border-radius: 50%;
 
   transform: rotate(0deg) translateX(80px);

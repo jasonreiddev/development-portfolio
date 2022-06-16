@@ -1,8 +1,21 @@
 import styled from 'styled-components';
+import { TextCardStyles } from '../../widgets/TextCard/TextCard.styles';
 
 interface WallArtStylesProps {
   backgroundColor?: string;
 }
+
+export const ImageWrapper = styled.div<WallArtStylesProps>`
+  overflow: hidden;
+  @media (prefers-reduced-motion: no-preference) {
+    img {
+      transition: transform 0.5s;
+    }
+    &:hover img {
+      transform: scale(1.2);
+    }
+  }
+`;
 
 export const Wrapper = styled.div<WallArtStylesProps>`
   position: relative;
@@ -12,31 +25,14 @@ export const Wrapper = styled.div<WallArtStylesProps>`
   overflow: hidden;
   width: fit-content;
 
-  img {
-    display: block;
-    border-radius: var(--border-radius);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    img {
-      transition: transform 0.5s;
-    }
-    &:hover img {
-      transform: scale(1.2);
-    }
-  }
-
-  .caption {
-    position: absolute;
-    left: 8px;
-    bottom: 8px;
-    text-align: center;
-    padding: 8px;
-    background: var(--color-base);
-    backdrop-filter: blur(10px);
+  ${TextCardStyles.Wrapper} {
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
   }
 `;
 
 export const WallArtStyles = {
   Wrapper,
+  ImageWrapper,
 };

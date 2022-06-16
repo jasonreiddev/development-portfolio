@@ -17,4 +17,4 @@ JustSayingHelloWorld.args = {
   text: 'Hello World!',
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-
-const Wrapper = styled.span`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-`;
+import { ColorPair, useBase } from '../../../../helpers/media';
 
 const MediaLinks = styled.span`
   font-size: 30px;
@@ -19,6 +14,7 @@ const MediaLinks = styled.span`
     height: 30px;
     width: 30px;
     margin: 0 4px;
+    color: ${useBase(ColorPair.Primary)};
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -37,11 +33,11 @@ const MediaLinks = styled.span`
 `;
 
 export const Text = styled.span`
+  display: block;
   text-align: center;
 `;
 
 export const FooterCardStyles = {
-  Wrapper,
   MediaLinks,
   Text,
 };

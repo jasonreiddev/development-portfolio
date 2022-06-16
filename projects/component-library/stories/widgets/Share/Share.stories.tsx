@@ -9,9 +9,9 @@ export default {
 
 const Template: Story<ShareProps> = (args) => <Share {...args} />;
 
-export const Hello = Template.bind({});
-Hello.args = {
-  text: 'Share',
+export const Twitter = Template.bind({});
+Twitter.args = {
+  text: 'Twitter',
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

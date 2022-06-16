@@ -8,9 +8,11 @@ export const ColorPairings = (): JSX.Element => {
       {(Object.keys(ColorPair) as Array<keyof typeof ColorPair>)
         .filter((colorPair) => isNaN(parseInt(colorPair)))
         .map((colorPair) => (
-          <TextCard colorPair={ColorPair[colorPair]} key={colorPair}>
-            {`${colorPair} - (${getColorPairing(ColorPair[colorPair]).accessible})`}
-          </TextCard>
+          <>
+            <TextCard colorPair={ColorPair[colorPair]} key={colorPair}>
+              {`${colorPair} - (${getColorPairing(ColorPair[colorPair]).accessible})`}
+            </TextCard>
+          </>
         ))}
     </s.Wrapper>
   );

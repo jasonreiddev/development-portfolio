@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { InputField, InputFieldProps } from './InputField';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   component: InputField,
@@ -26,6 +27,7 @@ Password.args = {
   name: 'Password',
   placeholder: 'Password...',
   type: 'Password',
+  colorPair: ColorPair.Primary,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ColorPair, useColorPair, useContrast } from '../../../../helpers/media';
+import { ColorPair, useContrast } from '../../../../helpers/media';
 
 interface BreadcrumbStylesProps {
   first?: boolean;
@@ -13,7 +13,6 @@ const Breadcrumb = styled.div<BreadcrumbStylesProps>`
   border: none;
   flex-wrap: wrap;
   margin: 0 35px;
-  ${(p: BreadcrumbStylesProps) => useColorPair(p.colorPair, '10pt')}
 `;
 
 const BreadcrumbGroup = styled.div`

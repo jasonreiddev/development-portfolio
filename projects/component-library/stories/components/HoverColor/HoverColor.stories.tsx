@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { HoverColor, HoverColorProps, Icon } from './HoverColor';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Hover Color',
@@ -21,6 +22,7 @@ Mail.args = {
   text: 'Log Out',
   icon: Icon.Mail,
   date: '12/01/2000',
+  colorPair: ColorPair.Primary,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

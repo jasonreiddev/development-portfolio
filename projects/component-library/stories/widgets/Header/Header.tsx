@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ColorPair } from '../../../../helpers/media';
 import { ToggleDarkMode } from '../../../../helpers/layoutContext';
 import { Button } from '../../components/Button/Button';
 import { RisingText } from '../../components/RisingText/RisingText';
@@ -24,7 +25,7 @@ export const Header = ({
   onLogin,
   onLogout,
   onCreateAccount,
-  menuLinks,
+  menuLinks = [],
   title,
 }: HeaderProps): JSX.Element => {
   return (
@@ -41,8 +42,8 @@ export const Header = ({
             <Button size="small" onClick={onLogout} label="Log out" />
           ) : (
             <>
-              <Button size="small" onClick={onLogin} label="Log in" />
-              <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+              {onLogin && <Button size="small" onClick={onLogin} label="Log in" />}
+              {onCreateAccount && <Button size="small" onClick={onCreateAccount} label="Sign up" />}
             </>
           )}
         </div>
@@ -68,7 +69,7 @@ export const Header = ({
               <li key={link.name}>
                 <Link href={link.link} passHref>
                   <s.MenuLink>
-                    <RisingText text={link.name} color={'var(--color-contrast)'} />
+                    <RisingText text={link.name} colorPair={ColorPair.Primary} />
                   </s.MenuLink>
                 </Link>
               </li>

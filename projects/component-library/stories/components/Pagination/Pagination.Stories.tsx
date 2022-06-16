@@ -1,13 +1,14 @@
 import { Story } from '@storybook/react';
 
 import { Pagination, PaginationProps } from './Pagination';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Pagination',
   component: Pagination,
 };
 
-const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
+const Template: Story<PaginationProps> = (args: PaginationProps) => <Pagination {...args} />;
 
 export const FirstProjectPage = Template.bind({});
 FirstProjectPage.args = {
@@ -23,6 +24,7 @@ LastProjectPage.args = {
   totalCount: 20,
   currentPage: 1,
   base: '/projects',
+  colorPair: ColorPair.Primary,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

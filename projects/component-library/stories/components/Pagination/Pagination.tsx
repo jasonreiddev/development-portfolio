@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 import { PaginationStyles as s } from './Pagination.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export interface PaginationProps {
   pageSize: number;
@@ -9,6 +10,7 @@ export interface PaginationProps {
   currentPage: number;
   showAll?: boolean;
   base?: string;
+  colorPair?: ColorPair;
 }
 
 export const Pagination = ({
@@ -17,6 +19,7 @@ export const Pagination = ({
   currentPage,
   base,
   showAll,
+  colorPair = ColorPair.Secondary,
 }: PaginationProps): JSX.Element => {
   const totalPages = Math.ceil(totalCount / pageSize);
   const prevPage = currentPage - 1;
@@ -26,7 +29,7 @@ export const Pagination = ({
   return (
     <>
       {totalPages > 1 && !showAll && (
-        <s.Wrapper>
+        <s.Wrapper colorPair={colorPair}>
           <Link href={`${!hasPrevPage && `base/}${prevPage}`}`} passHref>
             <AiOutlineLeft />
             <span className="word">Prev</span>

@@ -71,4 +71,4 @@ FullWidth.args = {
   colorPair: ColorPair.Tertiary,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

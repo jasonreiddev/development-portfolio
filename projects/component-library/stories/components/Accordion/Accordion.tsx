@@ -15,8 +15,8 @@ export const Accordion = ({
   title,
   active = false,
   children,
-  colorPair,
-  colorPairContent = ColorPair.Secondary,
+  colorPair = ColorPair.Secondary,
+  colorPairContent = ColorPair.Default,
 }: AccordionProps): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(active);
 

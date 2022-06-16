@@ -8,13 +8,13 @@ import { BreadcrumbStyles as s } from './Breadcrumb.styles';
 export interface BreadcrumbProps {
   path: string;
   siteName?: string;
-  parentColorPair?: ColorPair;
+  colorPair?: ColorPair;
 }
 
 export const Breadcrumb = ({
   path = '',
   siteName,
-  parentColorPair,
+  colorPair = ColorPair.Primary,
 }: BreadcrumbProps): JSX.Element => {
   const [copied, setCopied] = useState(false);
   function copyToClipboard(path: string): void {
@@ -39,11 +39,11 @@ export const Breadcrumb = ({
   const arrayPath = noParamPath.split('/');
   let mapPath = '';
   return (
-    <s.Breadcrumb colorPair={parentColorPair}>
+    <s.Breadcrumb colorPair={colorPair}>
       <s.BreadcrumbGroup>
         {siteName && (
           <Link href="/" passHref>
-            <s.BreadcrumbItem first={true} colorPair={parentColorPair}>
+            <s.BreadcrumbItem first={true} colorPair={colorPair}>
               {siteName}
             </s.BreadcrumbItem>
           </Link>
@@ -55,7 +55,7 @@ export const Breadcrumb = ({
           <s.BreadcrumbGroup key={`BreadcrumbItem-${index}`}>
             <span>/</span>
             <Link href={mapPath} passHref>
-              <s.BreadcrumbItem colorPair={parentColorPair}>
+              <s.BreadcrumbItem colorPair={colorPair}>
                 {decodeURIComponent(item).replace(/-/g, ' ').trim()}
               </s.BreadcrumbItem>
             </Link>
@@ -63,7 +63,7 @@ export const Breadcrumb = ({
               <s.CopyButton
                 title="Copy to Clipboard"
                 onClick={() => copyToClipboard(path)}
-                colorPair={parentColorPair}
+                colorPair={colorPair}
               >
                 {!copied && <MdCopyAll />}
                 {copied && <MdCheckBox />}

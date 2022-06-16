@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
+import { ColorPair, useContrast } from '../../../../helpers/media';
+
 interface RisingTextStylesProps {
-  color?: string;
+  colorPair?: ColorPair;
 }
 
 const Wrapper = styled.span`
@@ -24,7 +26,7 @@ const Text = styled.span`
 `;
 
 const RisingText = styled(Text)<RisingTextStylesProps>`
-  color: ${(p: RisingTextStylesProps) => (p.color ? `${p.color}` : 'var(--color-secondary)')};
+  color: ${(p: RisingTextStylesProps) => useContrast(p.colorPair)};
   clip-path: polygon(0% 110%, 100% 110%, 100% 110%, 0% 110%);
   ${Wrapper}:hover & {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 110%);

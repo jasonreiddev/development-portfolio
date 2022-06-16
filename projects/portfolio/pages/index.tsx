@@ -88,11 +88,7 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
         <>
           <PageTitle text={`Current Position${getPluralS(Positions.length)}`} />
           <CardGrid cards={Positions} size={300} />
-          <Button
-            label="Employment History"
-            url="/employment"
-            backgroundColor="var(--color-tertiary-ld10)"
-          />
+          <Button label="Employment History" url="/employment" />
           <br />
         </>
       )}

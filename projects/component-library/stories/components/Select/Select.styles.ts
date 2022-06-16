@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+import { ColorPair, useColorPair, useBaseIncreaseContrast } from '../../../../helpers/media';
+
+interface SelectStylesProps {
+  active?: boolean;
+  colorPair?: ColorPair;
+}
+
 const Wrapper = styled.div`
   position: relative;
   width: max-content;
@@ -16,9 +23,8 @@ const NativeSelect = styled.select`
   -webkit-appearance: none;
 `;
 
-const PresentationalBit = styled.div`
-  color: Var(--color-primary);
-  background-color: Var(--color-secondary);
+const PresentationalBit = styled.div<SelectStylesProps>`
+  ${(p: SelectStylesProps) => useColorPair(p.colorPair, '10pt')}
   font-size: ${16 / 16}rem;
   padding: 12px 16px;
   padding-right: 52px;
@@ -28,7 +34,7 @@ const PresentationalBit = styled.div`
     outline: 5px auto -webkit-focus-ring-color;
   }
   ${NativeSelect}:hover + & {
-    color: Var(--color-contrast);
+    color: ${(p: SelectStylesProps) => useBaseIncreaseContrast(p.colorPair)};
   }
 `;
 
@@ -38,8 +44,6 @@ const IconWrapper = styled.div`
   bottom: 0;
   right: 10px;
   margin: auto;
-  width: var(--size);
-  height: var(--size);
   pointer-events: none;
 `;
 

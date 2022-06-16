@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   margin: 0 26px;
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
+  overflow: hidden;
 `;
 
 const Title = styled.button<AccordionStylesProps>`
@@ -23,7 +24,6 @@ const Title = styled.button<AccordionStylesProps>`
   outline-offset: 5px;
   width: 100%;
   border: 0;
-  border-radius: var(--border-radius);
   font-weight: bold;
   font-size: 14pt;
 
