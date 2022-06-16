@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
-import { HoverColor, HoverColorProps, Icon } from './HoverColor';
-import { ColorPair } from '../../../../helpers/media';
+import { HoverColor, HoverColorProps } from './HoverColor';
+import { ColorPair, Icon } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Hover Color',

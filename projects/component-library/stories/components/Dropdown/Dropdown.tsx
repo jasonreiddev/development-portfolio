@@ -1,8 +1,7 @@
-import { ReactNode, Ref } from 'react';
-import { MdAccountCircle } from 'react-icons/md';
+import { Ref } from 'react';
 
 import { DropdownStyles as s } from './Dropdown.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair, renderIcon } from '../../../../helpers/media';
 
 export enum Icon {
   None,
@@ -27,15 +26,6 @@ export interface DropdownItem {
   onClick?(): void;
   danger: boolean;
 }
-
-const renderIcon = (icon: Icon): ReactNode => {
-  switch (icon) {
-    case Icon.None:
-      return;
-    case Icon.Account:
-      return <MdAccountCircle />;
-  }
-};
 
 export const Dropdown = ({
   text,

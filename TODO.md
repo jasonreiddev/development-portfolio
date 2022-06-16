@@ -5,8 +5,6 @@ SearchableDropdown story
 
 # TODO - Improvements:
 
-Icon media helper
-
 # TODO - New:
 
 'Full page Widgets'

@@ -1,9 +1,5 @@
-import { MdCircle, MdMail, MdLogout, MdRefresh, MdSearch } from 'react-icons/md';
-import { HiSun, HiMoon } from 'react-icons/hi';
-import { CgEditFlipV } from 'react-icons/cg';
-
 import { IconButtonStyles as s } from './IconButton.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair, renderIcon, Icon } from '../../../../helpers/media';
 
 export interface IconButtonProps {
   icon: Icon;
@@ -18,38 +14,6 @@ export interface IconButtonProps {
   align?: 'left' | 'center' | 'bottom-right';
   colorPair?: ColorPair;
 }
-
-export enum Icon {
-  None,
-  Mail,
-  LogOut,
-  Refresh,
-  Search,
-  Sun,
-  Moon,
-  Flip,
-}
-
-const renderIcon = (icon: Icon): JSX.Element => {
-  switch (icon) {
-    case Icon.None:
-      return <MdCircle />;
-    case Icon.Mail:
-      return <MdMail />;
-    case Icon.LogOut:
-      return <MdLogout />;
-    case Icon.Refresh:
-      return <MdRefresh />;
-    case Icon.Search:
-      return <MdSearch />;
-    case Icon.Sun:
-      return <HiSun />;
-    case Icon.Moon:
-      return <HiMoon />;
-    case Icon.Flip:
-      return <CgEditFlipV />;
-  }
-};
 
 export const IconButton = ({
   icon,

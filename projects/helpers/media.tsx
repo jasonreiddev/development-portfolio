@@ -1,3 +1,7 @@
+import { MdCircle, MdMail, MdLogout, MdRefresh, MdSearch, MdAccountCircle } from 'react-icons/md';
+import { HiSun, HiMoon } from 'react-icons/hi';
+import { CgEditFlipV } from 'react-icons/cg';
+
 export enum Device {
   MobileSmall = 320,
   Mobile = 375,
@@ -170,4 +174,39 @@ export const useColorPair = (colorPair?: ColorPair, fontSize = 'inherit'): strin
   background-color: ${useBase(colorPair)};
   font-size: ${useMinAccessibleFont(colorPair, fontSize)};
  `;
+};
+
+export enum Icon {
+  None,
+  Mail,
+  LogOut,
+  Refresh,
+  Search,
+  Sun,
+  Moon,
+  Flip,
+  Account,
+}
+
+export const renderIcon = (icon: Icon): JSX.Element => {
+  switch (icon) {
+    case Icon.None:
+      return <MdCircle />;
+    case Icon.Mail:
+      return <MdMail />;
+    case Icon.LogOut:
+      return <MdLogout />;
+    case Icon.Refresh:
+      return <MdRefresh />;
+    case Icon.Search:
+      return <MdSearch />;
+    case Icon.Sun:
+      return <HiSun />;
+    case Icon.Moon:
+      return <HiMoon />;
+    case Icon.Flip:
+      return <CgEditFlipV />;
+    case Icon.Account:
+      return <MdAccountCircle />;
+  }
 };

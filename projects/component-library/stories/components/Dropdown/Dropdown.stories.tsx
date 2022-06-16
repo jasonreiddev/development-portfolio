@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
-import { Dropdown, DropdownProps, Icon, DropdownItem } from './Dropdown';
-import { ColorPair } from '../../../../helpers/media';
+import { Dropdown, DropdownProps, DropdownItem } from './Dropdown';
+import { ColorPair, Icon } from '../../../../helpers/media';
 
 const access: DropdownItem[] = [
   {
