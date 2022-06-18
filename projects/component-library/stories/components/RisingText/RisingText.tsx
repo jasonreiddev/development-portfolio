@@ -8,7 +8,7 @@ export interface RisingTextProps {
 
 export const RisingText = ({
   text,
-  colorPair = ColorPair.Secondary,
+  colorPair = ColorPair.Default,
 }: RisingTextProps): JSX.Element => {
   return (
     <s.Wrapper>

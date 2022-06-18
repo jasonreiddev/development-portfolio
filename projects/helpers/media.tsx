@@ -80,65 +80,65 @@ export const getColorPairing = (colorPair: ColorPair): ColorPairing => {
     case ColorPair.DefaultLink:
       return {
         base: 'var(--color-base)',
-        baseIncreaseContrast: 'var(--color-base-bold)',
+        baseIncreaseContrast: 'var(---color-base-li)',
         contrast: 'var(--color-tertiary)',
-        contrastDecreaseContrast: 'var(--color-tertiary-ld10)',
+        contrastDecreaseContrast: 'var(--color-tertiary-ld)',
         accessible: true,
       };
     case ColorPair.Primary:
       return {
         base: 'var(--color-primary)',
-        baseIncreaseContrast: 'var(--color-primary-li10)',
+        baseIncreaseContrast: 'var(--color-primary-li)',
         contrast: 'var(--color-contrast)',
-        contrastDecreaseContrast: 'var(--color-contrast-li10)',
+        contrastDecreaseContrast: 'var(--color-contrast-li)',
         accessible: 'large',
       };
     case ColorPair.PrimaryInactive:
       return {
         base: 'var(--color-primary)',
-        baseIncreaseContrast: 'var(--color-primary-ld10)',
+        baseIncreaseContrast: 'var(--color-primary-ld)',
         contrast: 'var(--color-base)',
-        contrastDecreaseContrast: 'var(--color-tertiary-bold)',
+        contrastDecreaseContrast: 'var(--color-base-li)',
         accessible: 'large',
       };
     case ColorPair.Secondary:
       return {
         base: 'var(--color-secondary)',
-        baseIncreaseContrast: 'var(--color-secondary-li10)',
+        baseIncreaseContrast: 'var(--color-secondary-li)',
         contrast: 'var(--color-contrast)',
-        contrastDecreaseContrast: 'var(--color-tertiary-bold)',
+        contrastDecreaseContrast: 'var(--color-contrast-ld)',
         accessible: true,
       };
     case ColorPair.SecondaryInactive:
       return {
         base: 'var(--color-secondary)',
-        baseIncreaseContrast: 'var(--color-secondary-ld10)',
+        baseIncreaseContrast: 'var(--color-secondary-ld)',
         contrast: 'var(--color-base)',
-        contrastDecreaseContrast: 'var(--color-tertiary-bold)',
+        contrastDecreaseContrast: 'var(--color-base-li)',
         accessible: false,
       };
     case ColorPair.Tertiary:
       return {
         base: 'var(--color-tertiary)',
-        baseIncreaseContrast: 'var(--color-tertiary-li10)',
+        baseIncreaseContrast: 'var(--color-tertiary-li)',
         contrast: 'var(--color-contrast)',
-        contrastDecreaseContrast: 'var(--color-tertiary-bold)',
+        contrastDecreaseContrast: 'var(--color-contrast-ld)',
         accessible: true,
       };
     case ColorPair.TertiaryInactive:
       return {
         base: 'var(--color-tertiary)',
-        baseIncreaseContrast: 'var(--color-tertiary-ld10)',
+        baseIncreaseContrast: 'var(--color-tertiary-ld)',
         contrast: 'var(--color-base)',
-        contrastDecreaseContrast: 'var(--color-tertiary-bold)',
+        contrastDecreaseContrast: 'var(--color-base-li)',
         accessible: false,
       };
     default:
       return {
         base: 'var(--color-base)',
-        baseIncreaseContrast: 'var(--color-base-bold)',
+        baseIncreaseContrast: 'var(---color-base-li)',
         contrast: 'var(--color-contrast)',
-        contrastDecreaseContrast: 'var(--color-tertiary-bold)',
+        contrastDecreaseContrast: 'var(--color-contrast-ld)',
         accessible: true,
       };
   }

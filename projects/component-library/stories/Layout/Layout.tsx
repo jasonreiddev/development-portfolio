@@ -2,7 +2,7 @@ import { FaCode } from 'react-icons/fa';
 import { HiTerminal } from 'react-icons/hi';
 import { IoBrowsers } from 'react-icons/io5';
 
-import { Header, Links } from '../widgets/Header/Header';
+import { HeaderProps, Links } from '../widgets/Header/Header';
 import { Share } from '../widgets/Share/Share';
 import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
@@ -11,12 +11,12 @@ import { Dispatch, SetStateAction, useContext } from 'react';
 import { GlobalStyles } from '../../styles/GlobalStyles';
 import Head from 'next/head';
 import { LayoutContext } from '../../../helpers/layoutContext';
+import { FPHeader } from '../full-page-widgets/Header/FPHeader';
 
 export interface LayoutProps {
-  title?: string;
-  description?: string;
-  headerTitle?: string;
-  menuLinks: Links[];
+  headerProps: HeaderProps;
+  scrollOffset: number;
+  description: string;
   getLikesDBValue?: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
   setLikesDBValue?: (value: number) => void;
   loading?: boolean;
@@ -24,10 +24,9 @@ export interface LayoutProps {
 }
 
 export const Layout = ({
-  title,
+  headerProps,
+  scrollOffset = 0,
   description,
-  headerTitle,
-  menuLinks,
   setLikesDBValue = () => 1,
   getLikesDBValue = async () => {
     0;
@@ -37,7 +36,7 @@ export const Layout = ({
 }: LayoutProps): JSX.Element => {
   const { pageTitle } = useContext(LayoutContext);
   if (pageTitle) {
-    title = `${title} / ${pageTitle}`;
+    headerProps.title = `${headerProps.title} / ${pageTitle}`;
   }
   const { pageDescription } = useContext(LayoutContext);
   if (pageDescription) {
@@ -45,10 +44,12 @@ export const Layout = ({
   }
   const { dark } = useContext(LayoutContext);
 
+  const fullHeight = typeof window !== 'undefined' && location.pathname == '/';
+
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{headerProps.title}</title>
         <meta name="description" content={description}></meta>
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
@@ -81,11 +82,13 @@ export const Layout = ({
           <s.LoadSpinner className="load-spinner" />
         </>
       )}
-      <s.Wrapper className={'mobile-scroll'}>
-        <s.Header>
-          <Header title={headerTitle} menuLinks={menuLinks} />
-        </s.Header>
-        <s.Aside className="aside-left">
+
+      <s.Header>
+        <FPHeader headerProps={headerProps} scrollOffset={scrollOffset} fullHeight={fullHeight} />
+      </s.Header>
+      <s.Wrapper>
+        {children}
+        {/* <s.Aside className="aside-left">
           <Like setLikesDBValue={setLikesDBValue} getLikesDBValue={getLikesDBValue} liked={false} />
         </s.Aside>
         <s.Main>
@@ -97,16 +100,16 @@ export const Layout = ({
         <s.Aside className="aside-right">
           <Share
             text="Share"
-            shareText={`${title} - @jasonreiddev`}
+            shareText={`${headerProps.title} - @jasonreiddev`}
             shareUrl={
               typeof window !== 'undefined' ? location.host + location.pathname : 'jasonreid.dev'
             }
           />
-        </s.Aside>
-        <s.Footer>
-          <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-        </s.Footer>
+        </s.Aside> */}
       </s.Wrapper>
+      <s.Footer>
+        <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
+      </s.Footer>
     </>
   );
 };

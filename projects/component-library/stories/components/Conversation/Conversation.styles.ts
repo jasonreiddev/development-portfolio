@@ -9,7 +9,7 @@ interface ConversationStylesProps {
 }
 
 const Container = styled.div<{ fullWidth: boolean }>`
-  background-color: var(--color-base-bright);
+  background-color: var(--color-base);
   border: 1px solid var(--color-contrast);
   text-align: center;
   height: 100%;

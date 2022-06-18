@@ -22,7 +22,7 @@ const StyledCheckbox = styled.div<CheckboxStylesProps>`
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-color: ${(p) => (p.checked ? useBase(p.colorPair) : 'var(--color-base-bold)')};
+  background-color: ${(p) => (p.checked ? useBase(p.colorPair) : 'var(---color-base-li)')};
   border: 1px solid var(--color-contrast);
   border-radius: 3px;
   transition: all 150ms;

@@ -103,7 +103,7 @@ const Content = styled.div<CardStylesProps>`
   bottom: 0;
   position: absolute;
   width: 100%;
-  background-color: var(--color-base-semi-bold-o66);
+  background-color: var(--color-base-li-o66);
   display: flex;
   flex-direction: column;
 
@@ -149,7 +149,7 @@ const TagsContainer = styled.div`
 
 const Tag = styled.div`
   padding: 6px;
-  background-color: var(--color-base-semi-bold-o66);
+  background-color: var(--color-base-li-o66);
   cursor: pointer;
 `;
 
@@ -216,7 +216,7 @@ const BackContent = styled(Content)`
   }
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-li10-o66);
+    background: var(--color-primary-li-o66);
   }
 `;
 

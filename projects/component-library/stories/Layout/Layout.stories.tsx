@@ -1,6 +1,8 @@
 import { Story } from '@storybook/react';
 
 import { Layout, LayoutProps } from './Layout';
+import * as HeaderStories from '../widgets/Header/Header.stories';
+import { HeaderProps } from '../widgets/Header/Header';
 
 export default {
   title: 'Layout',
@@ -10,30 +12,16 @@ export default {
   component: Layout,
 };
 
-const menuLinks = [
-  {
-    name: '',
-    nameOverrideNav: 'Home',
-    link: '/',
-  },
-  {
-    name: 'Projects',
-    link: '/projects/1',
-  },
-];
-
 const Template: Story<LayoutProps> = (args) => <Layout {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  title: 'Next.js Component Library',
-  menuLinks: menuLinks,
+export const PortfolioLayout = Template.bind({});
+PortfolioLayout.args = {
+  headerProps: HeaderStories.Portfolio.args as HeaderProps,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-  title: 'Next.js Component Library',
-  menuLinks: menuLinks,
+  headerProps: HeaderStories.Portfolio.args as HeaderProps,
   loading: true,
 };
 

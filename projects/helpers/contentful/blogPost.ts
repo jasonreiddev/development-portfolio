@@ -24,7 +24,6 @@ export async function fetchEntries(limit?: number): Promise<Entry<BlogPost>[]> {
 }
 
 export async function fetchEntry(slug: string): Promise<Entry<BlogPost> | undefined> {
-  console.log(slug);
   const entries = await client.getEntries<BlogPost>({
     content_type: 'blogPost',
     'fields.slug[in]': slug,

@@ -22,73 +22,84 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --border-radius: 15px;
+  --spacing-fixed: 60px;
+  --spacing: min(5vw, 60px);
+ 
 
   --color-primary: hsl(320, 35%, 55%);
   --color-primary-o66: hsl(320, 35%, 55%, 0.66);
-  --color-primary-ld10: hsl(320, 35%, 65%);
-  --color-primary-li10: hsl(320, 35%, 45%);
-  --color-primary-li10-o66: hsla(320, 35%, 45%, 0.66);
+  --color-primary-ld: hsl(320, 35%, 65%);
+  --color-primary-li: hsl(320, 35%, 45%);
+  --color-primary-li-o66: hsla(320, 35%, 45%, 0.66);
 
   --color-secondary: hsl(120, 20%, 40%);
   --color-secondary-o66: hsl(120, 20%, 40%, 0.66);
-  --color-secondary-ld10: hsl(120, 20%, 50%);
-  --color-secondary-li10: hsl(120, 20%, 30%);
-  --color-secondary-li10-o66: hsla(120, 20%, 30%, 0.66);
+  --color-secondary-ld: hsl(120, 20%, 50%);
+  --color-secondary-li: hsl(120, 20%, 30%);
+  --color-secondary-li-o66: hsla(120, 20%, 30%, 0.66);
   --color-secondary-ld-max:  hsl(120, 20%, 85%);
 
   --color-tertiary: hsl(200, 35%, 35%);
-  --color-tertiary-ld10: hsl(200, 35%, 45%);
   --color-tertiary-o66: hsla(200, 35%, 35%, 0.66);
-  --color-tertiary-li10: hsl(200, 35%, 25%);
-  --color-tertiary-li10-o66: hsla(200, 35%, 25%, 0.66);
+  --color-tertiary-ld: hsl(200, 35%, 45%);
+  --color-tertiary-li: hsl(200, 35%, 25%);
+  --color-tertiary-li-o66: hsla(200, 35%, 25%, 0.66);
 
-  --global-white: rgb(253, 242, 248);
-  --color-base: var(--global-white);
-  --global-white-semi-bold: rgb(248, 232, 242);
-  --color-base-semi-bold: var(--global-white-semi-bold);
-  --global-white-semi-bold-o66: rgba(248, 232, 242, 0.66);
-  --color-base-semi-bold-o66: var(--global-white-semi-bold-o66);
-  --global-white-bold: rgb(255, 255, 255);
-  --color-base-bold: var(--global-white-bold);
-  
-  --global-black: rgb(32, 32, 32);
-  --color-contrast: var(--global-black);
-  --global-black-semi-bold: rgb(18, 18, 18);
-  --color-contrast-semi-bold: var(--global-black-semi-bold);
-  --global-black-semi-bold-o66: rgba(16, 16, 16, 0.66);
-  --color-contrast-semi-bold-o66: var(--global-black-semi-bold-o66);
-  --global-black-bold: rgb(8, 8, 8);
-  --color-contrast-bold: var(--global-black-bold);
+  --color-white: hsl(320, 0%, 90%);
+  --color-white-o66: hsla(320, 0%, 90%, 0.66);
+  --color-white-ld: hsla(320, 0%, 80%, 0.953);
+  --color-white-li: hsl(320, 0%, 100%);
+  --color-white-li-o66: hsl(320, 0%, 100%, 0.66);
+
+  --color-black: hsl(320, 0%, 20%);
+  --color-black-o66: hsla(320, 0%, 20%, 0.66);
+  --color-black-ld: hsl(320, 0%, 10%);
+  --color-black-li: hsl(320, 0%, 30%);
+  --color-black-li-o66: hsl(320, 0%, 30%, 0.66);
+
+  --color-base: var(--color-white);
+  --color-base-o66: var(--color-white-o66);
+  --color-base-ld:var(--color-white-ld);
+  --color-base-li: var(--color-white-li);
+  --color-base-li-o66: var(--color-white-li-o66);
+
+  --color-contrast: var(--color-black);
+  --color-contrast-o66: var(--color-black-o66);
+  --color-contrast-ld:var(--color-black-ld);
+  --color-contrast-li: var(--color-black-li);
+  --color-contrast-li-o66: var(--color-black-li-o66);
 
   --box-shadow: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073),
     0 -15px 40px -20px rgba(0, 0, 0, 0.2);
-    --box-shadow-no-top: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
+  --box-shadow-no-top: 0 2.7px 1.9px -2px rgba(0, 0, 0, 0.028), 0 6.4px 6.1px -2px rgba(0, 0, 0, 0.046),
     0 12px 13.2px -2px rgba(0, 0, 0, 0.061), 0 21.4px 24.5px -2px rgba(0, 0, 0, 0.073);
-
 
     ${(p) =>
       p.dark
         ? `
-    --color-primary-ld10: hsl(320, 35%, 45%);
-    --color-primary-li10: hsl(320, 35%, 45%);
-    --color-primary-li10-o66: hsl(320, 35%, 65%, 0.66);
+    --color-primary-ld: hsl(320, 35%, 45%);
+    --color-primary-li: hsl(320, 35%, 45%);
+    --color-primary-li-o66: hsl(320, 35%, 65%, 0.66);
 
     --color-tertiary: hsl(200, 35%, 55%);
-    --color-tertiary-ld10: hsl(200, 35%, 45%);
-    --color-tertiary-li10: hsl(200, 35%, 65%);
-    --color-tertiary-li10-o66: hsla(200, 35%, 65%, 0.66);
+    --color-tertiary-ld: hsl(200, 35%, 45%);
+    --color-tertiary-li: hsl(200, 35%, 65%);
+    --color-tertiary-li-o66: hsla(200, 35%, 65%, 0.66);
 
     --color-secondary-ld-max: hsl(120, 20%, 15%);
 
-    --color-base: var(--global-black);
-    --color-base-semi-bold: var(--global-black-semi-bold);
-    --color-base-semi-bold-o66: var(--global-black-semi-bold-o66);
-    --color-base-bold: var(--global-black-bold);
-    --color-contrast: var(--global-white);
-    --color-contrast-semi-bold: var(--global-white-semi-bold);
-    --color-contrast-semi-bold-o66: var(--global-white-semi-bold-o66);
-    --color-contrast-bold: var(--global-white-bold);
+    --color-base: var(--color-black);
+    --color-base-o66: var(--color-black-o66);
+    --color-base-ld:var(--color-black-ld);
+    --color-base-li: var(--color-black-li);
+    --color-base-li-o66: var(--color-black-li-o66);
+
+    --color-contrast: var(--color-white);
+    --color-contrast-o66: var(--color-white-o66);
+    --color-contrast-ld:var(--color-white-ld);
+    --color-contrast-li: var(--color-white-li);
+    --color-contrast-li-o66: var(--color-white-li-o66);
       `
         : null}
 }
@@ -151,7 +162,6 @@ table {
 html, body, #__next {
   padding: 0;
   margin: 0;
-  overflow: hidden;
   width: 100vw;
   height: 100%;
 }
@@ -267,7 +277,7 @@ hr {
   border-radius: 0.75rem;
 
   &:hover{
-    background-color: var(--color-tertiary-li10-o66);
+    background-color: var(--color-tertiary-li-o66);
   }
 }
 

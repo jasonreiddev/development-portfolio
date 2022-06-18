@@ -14,17 +14,25 @@ const menuLinks = [
     link: '/',
   },
   {
+    name: 'Employment',
+    link: '/employment/1',
+  },
+  {
     name: 'Projects',
     link: '/projects/1',
+  },
+  {
+    name: 'Blog',
+    link: '/blog/1',
   },
 ];
 
 const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 
-export const Home = Template.bind({});
-Home.args = {
+export const Portfolio = Template.bind({});
+Portfolio.args = {
   menuLinks: menuLinks,
-  title: 'Home',
+  title: 'Portfolio',
 };
 
 export const Projects = Template.bind({});

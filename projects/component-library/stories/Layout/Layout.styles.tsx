@@ -11,7 +11,7 @@ const SVG = styled.svg`
   z-index: -1;
   transform: unset;
   svg {
-    fill: var(--color-base-semi-bold);
+    fill: var(--color-base-li);
     font-size: 25px;
   }
 `;
@@ -52,52 +52,10 @@ const LoadSpinner = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: overlay;
-  display: grid;
-  grid-template-columns: 1fr minmax(150px, 1fr) 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    'header header header'
-    'main main main'
-    'aside-left footer aside-right';
-
-  @media ${from(Device.Tablet)} {
-    overflow: hidden;
-    grid-template-rows: auto 1fr 1fr;
-    grid-template-columns: minmax(50px, 2fr) minmax(100px, 70vw) minmax(50px, 2fr);
-    grid-template-areas:
-      'header header header'
-      'main main aside-left'
-      ' main main aside-right'
-      'footer footer footer';
-  }
-
-  @media ${from(Device.Desktop)} {
-    overflow: hidden;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      'header header header'
-      'aside-left main aside-right'
-      'footer footer footer';
-  }
-
-  // Static layout from 2560px
-  @media ${from(Device.DesktopXL)} {
-    // 70% of 2560 = 1792
-    // (2560 - 1792) / 2 = 384
-    grid-template-columns: 1fr 384px 1792px 384px 1fr;
-    grid-template-areas:
-      'dead-left header header header dead-right'
-      'dead-left aside-left main aside-right dead-right'
-      'dead-left footer footer footer dead-right';
-  }
-`;
+const Wrapper = styled.div``;
 
 const Header = styled.main`
-  grid-area: header;
+  margin-bottom: var(--spacing-fixed);
   z-index: 1;
 `;
 
@@ -142,18 +100,6 @@ const Footer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  @media ${from(Device.Tablet)} {
-    display: none;
-  }
-`;
-
-const NestedFooter = styled.footer`
-  display: none;
-  justify-content: center;
-  align-items: flex-end;
-  @media ${from(Device.Tablet)} {
-    display: flex;
-  }
 `;
 
 export const LayoutStyles = {
@@ -164,6 +110,5 @@ export const LayoutStyles = {
   Aside,
   Header,
   Main,
-  NestedFooter,
   Footer,
 };

@@ -33,23 +33,24 @@ const Button = styled.button<IconButtonStylesProps>`
       case 'small': {
         return `
         font-size: 12px;
-        padding: 10px 16px;`;
+        padding: 0;`;
       }
       case 'medium': {
         return `
         font-size: 14px;
-        padding: 11px 20px;`;
+        padding: 10px 16px;`;
       }
       case 'large': {
         return `
         font-size: 16px;
-        padding: 12px 24px;`;
+        padding: 15px 24px;`;
       }
     }
   }};
 `;
 
 const Wrapper = styled.div`
+  line-height: 1;
   width: fit-content;
 
   ${(p: IconButtonStylesProps) =>
@@ -66,7 +67,7 @@ const Wrapper = styled.div`
 const Icon = styled.span`
   display: block;
   color: ${(p: IconButtonStylesProps) =>
-    p.active ? 'var(--color-contrast)' : 'var(--color-base-bold)'};
+    p.active ? 'var(--color-contrast)' : 'var(---color-base-li)'};
 
   svg {
     margin: auto;

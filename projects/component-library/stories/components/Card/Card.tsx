@@ -6,8 +6,8 @@ import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
 import { LayoutContext } from '../../../../helpers/layoutContext';
 import { Button } from '../Button/Button';
-import { IconButton, Icon } from '../IconButton/IconButton';
-import { ColorPair } from '../../../../helpers/media';
+import { IconButton } from '../IconButton/IconButton';
+import { ColorPair, Icon } from '../../../../helpers/media';
 
 export interface CardProps {
   url?: string;
