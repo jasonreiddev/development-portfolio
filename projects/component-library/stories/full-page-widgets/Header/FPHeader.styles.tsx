@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import DeskImage from '../../../../portfolio/public/images/fotis-fotopoulos-DuHKoV44prg-unsplash.jpg';
 import { SuperHeaderStyles } from '../../components/SuperHeader/SuperHeader.styles';
 import { HeaderStyles } from '../../widgets/Header/Header.styles';
-import { ColorPair, useBase, useContrast } from '../../../../helpers/media';
+import { ColorPair, useBase, useContrast, clamp } from '../../../../helpers/media';
 import { RisingTextStyles } from '../../components/RisingText/RisingText.styles';
 
 interface FPHeaderStylesProps {
@@ -10,6 +10,15 @@ interface FPHeaderStylesProps {
   scrollOffset?: number;
   fullHeight?: boolean;
 }
+
+const TypingWrapper = styled.div`
+  position: absolute;
+  top: 50vh;
+  padding: var(--spacing);
+  text-shadow: -1px -1px 0 ${useBase(ColorPair.Default)}, 1px -1px 0 ${useBase(ColorPair.Default)},
+    -1px 1px 0 ${useBase(ColorPair.Default)}, 1px 1px 0 ${useBase(ColorPair.Default)};
+  font-size: ${clamp({ multiplier: 2 })};
+`;
 
 const Wrapper = styled.div<FPHeaderStylesProps>`
   height: ${(p: FPHeaderStylesProps) => (p.fullHeight ? `100vh` : `145px`)};
@@ -67,4 +76,5 @@ const HeaderWrapper = styled.div`
 export const FPHeaderStyles = {
   Wrapper,
   HeaderWrapper,
+  TypingWrapper,
 };

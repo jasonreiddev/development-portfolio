@@ -10,8 +10,9 @@ const SVG = styled.svg`
   height: 100%;
   z-index: -1;
   transform: unset;
+  background-color: var(--color-base-ld);
   svg {
-    fill: var(--color-base-li);
+    fill: var(--color-base-o66);
     font-size: 25px;
   }
 `;

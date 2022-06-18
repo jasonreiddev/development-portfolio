@@ -2,7 +2,9 @@ import { Story } from '@storybook/react';
 
 import { FPHeader, FPHeaderProps } from './FPHeader';
 import * as HeaderStories from '../../widgets/Header/Header.stories';
+import * as TypingEffectStories from '../../components/TypingEffect/TypingEffect.stories';
 import { HeaderProps } from '../../widgets/Header/Header';
+import { TypingEffectProps } from '../../components/TypingEffect/TypingEffect';
 
 export default {
   title: 'Full Page Widgets/Header',
@@ -17,6 +19,7 @@ const Template: Story<FPHeaderProps> = (args) => <FPHeader {...args} />;
 export const FPPortfolio = Template.bind({});
 FPPortfolio.args = {
   headerProps: HeaderStories.Portfolio.args as HeaderProps,
+  typingEffectProps: TypingEffectStories.Portfolio.args as TypingEffectProps,
 };
 
 export const FPPortfolioScrolled = Template.bind({});
@@ -25,10 +28,10 @@ FPPortfolioScrolled.args = {
   scrollOffset: 1,
 };
 
-export const overrideHeight = Template.bind({});
-FPPortfolioScrolled.args = {
+export const restrictHeight = Template.bind({});
+restrictHeight.args = {
   ...FPPortfolio.args,
-  overrideHeight: 160px,
+  fullHeight: false,
 };
 
 export const _Minimum = Template.bind({});

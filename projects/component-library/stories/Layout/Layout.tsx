@@ -2,19 +2,20 @@ import { FaCode } from 'react-icons/fa';
 import { HiTerminal } from 'react-icons/hi';
 import { IoBrowsers } from 'react-icons/io5';
 
-import { HeaderProps, Links } from '../widgets/Header/Header';
+import { Links } from '../widgets/Header/Header';
 import { Share } from '../widgets/Share/Share';
 import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
-import { Dispatch, SetStateAction, useContext } from 'react';
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 import { GlobalStyles } from '../../styles/GlobalStyles';
 import Head from 'next/head';
 import { LayoutContext } from '../../../helpers/layoutContext';
-import { FPHeader } from '../full-page-widgets/Header/FPHeader';
+import { FPHeader, FPHeaderProps } from '../full-page-widgets/Header/FPHeader';
+import { useRouter } from 'next/router';
 
 export interface LayoutProps {
-  headerProps: HeaderProps;
+  fpHeaderProps: FPHeaderProps;
   scrollOffset: number;
   description: string;
   getLikesDBValue?: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
@@ -24,7 +25,7 @@ export interface LayoutProps {
 }
 
 export const Layout = ({
-  headerProps,
+  fpHeaderProps,
   scrollOffset = 0,
   description,
   setLikesDBValue = () => 1,
@@ -35,21 +36,27 @@ export const Layout = ({
   children,
 }: LayoutProps): JSX.Element => {
   const { pageTitle } = useContext(LayoutContext);
-  if (pageTitle) {
-    headerProps.title = `${headerProps.title} / ${pageTitle}`;
-  }
   const { pageDescription } = useContext(LayoutContext);
   if (pageDescription) {
     description = `${description}. ${pageDescription}`;
   }
   const { dark } = useContext(LayoutContext);
 
-  const fullHeight = typeof window !== 'undefined' && location.pathname == '/';
+  const [fullHeight, setFullHeight] = useState(true);
+
+  const location = useRouter();
+
+  useEffect(() => {
+    setFullHeight(typeof window !== 'undefined' && location.pathname == '/');
+  }, [location]);
 
   return (
     <>
       <Head>
-        <title>{headerProps.title}</title>
+        <title>
+          {fpHeaderProps.headerProps.title}
+          {pageTitle && ` / ${pageTitle}`}
+        </title>
         <meta name="description" content={description}></meta>
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
@@ -84,7 +91,7 @@ export const Layout = ({
       )}
 
       <s.Header>
-        <FPHeader headerProps={headerProps} scrollOffset={scrollOffset} fullHeight={fullHeight} />
+        <FPHeader {...fpHeaderProps} scrollOffset={scrollOffset} fullHeight={fullHeight} />
       </s.Header>
       <s.Wrapper>
         {children}
