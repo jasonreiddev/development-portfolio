@@ -19,8 +19,8 @@ export const CardCarousel = ({ cards = [] }: CardCarouselProps): JSX.Element => 
   const calculateSizes = (): void => {
     if (wrapperRef && wrapperRef.current) {
       // repeat(auto-fit,minmax(size,1fr))
-      // get size, divide by 300px | round down, get %
-      // e.g. 700px / 300px =  233px  | 2 | 100 / 2 = 50%
+      // get size, divide by 280px | round down, get %
+      // e.g. 700px / 280px =  233px  | 2 | 100 / 2 = 50%
       const newDisplaying = Math.floor(wrapperRef.current.offsetWidth / 300);
       const newSize = 100 / newDisplaying;
       if (newDisplaying !== displaying || newSize !== size) {

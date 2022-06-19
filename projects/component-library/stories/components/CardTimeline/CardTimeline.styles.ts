@@ -56,7 +56,7 @@ const Container = styled.div<CardTimelineStylesProps>`
 const Line = styled.div<CardTimelineStylesProps>`
   display: block;
   position: absolute;
-  top: 0;
+  top: -10px;
   bottom: 0;
   width: 10px;
   margin: calc(${(p) => p.size / 2}px + 5px) calc(50% - 5px) 0;

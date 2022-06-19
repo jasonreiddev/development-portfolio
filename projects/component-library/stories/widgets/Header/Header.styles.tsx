@@ -20,8 +20,8 @@ const Wrapper = styled.header`
 `;
 
 const IconWrapper = styled.a`
-  height: 56px;
-  width: 56px;
+  height: clamp(40px, 10vw, 56px);
+  width: clamp(40px, 10vw, 56px);
   box-shadow: var(--box-shadow);
   background: black;
   border-radius: var(--border-radius);
@@ -36,7 +36,7 @@ const MenuItems = styled.ul`
 `;
 
 const MenuLink = styled.a`
-  font-size: ${clamp({ multiplier: 1 })};
+  font-size: ${clamp({ multiplier: 1, initial: '0.8em' })};
   line-height: 1;
   font-weight: var(--font-weight-bold);
   color: var(---color-base-li);

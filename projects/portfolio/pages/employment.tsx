@@ -33,7 +33,7 @@ const Employment = ({ data }: EmploymentsProps): JSX.Element => {
   const Positions: CardProps[] = [];
   data.map((position: Position) => Positions.push(mapPositionToCard(position)));
 
-  return <>{Positions.length > 0 && <CardTimeline cards={Positions} size={300} />}</>;
+  return <>{Positions.length > 0 && <CardTimeline cards={Positions} size={280} />}</>;
 };
 
 export default Employment;

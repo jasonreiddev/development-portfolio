@@ -56,7 +56,6 @@ const LoadSpinner = styled.div`
 const Wrapper = styled.div``;
 
 const Header = styled.main`
-  margin-bottom: var(--spacing-fixed);
   z-index: 1;
 `;
 

@@ -31,7 +31,7 @@ const Blog = ({ data }: BlogProps): JSX.Element => {
   const BlogPosts: CardProps[] = [];
   data.map((blogPost: BlogPost) => BlogPosts.push(mapBlogPostToCard(blogPost)));
 
-  return <CardGrid cards={BlogPosts} size={300} />;
+  return <CardGrid cards={BlogPosts} size={280} />;
 };
 
 export default Blog;

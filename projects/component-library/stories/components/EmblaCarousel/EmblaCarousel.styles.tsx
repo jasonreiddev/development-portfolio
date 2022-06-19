@@ -45,7 +45,7 @@ const Slide = styled.div<EmblaCarouselStylesProps>`
 const SlideInner = styled.div`
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 280px;
 
   & > * {
     height: 100%;
