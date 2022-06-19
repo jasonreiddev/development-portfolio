@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { ColorPair, useBase } from '../../../../helpers/media';
 
-const Wrapper = styled.span`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+const Wrapper = styled.div`
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
 `;
 
 const MediaLinks = styled.span`
@@ -19,6 +20,7 @@ const MediaLinks = styled.span`
     height: 30px;
     width: 30px;
     margin: 0 4px;
+    color: ${useBase(ColorPair.Primary)};
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -37,6 +39,7 @@ const MediaLinks = styled.span`
 `;
 
 export const Text = styled.span`
+  display: block;
   text-align: center;
 `;
 

@@ -1,11 +1,12 @@
 /* eslint-disable*/
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BlogPost, fetchEntries, fetchEntry } from 'projects/portfolio/contentfulPosts';
+import { BlogPost, fetchEntries, fetchEntry } from 'projects/helpers/contentful/blogPost';
 import { TextCard } from 'projects/component-library/stories/widgets/TextCard/TextCard';
 import { PageTitle } from 'projects/component-library/stories/components/PageTitle/PageTitle';
 import { PathBreadcrumb } from 'projects/component-library/stories/widgets/PathBreadcrumb/PathBreadcrumb';
 import { Entry } from 'contentful';
 import { Document } from '@contentful/rich-text-types';
+import { getGBDate } from 'projects/helpers/text';
 
 interface BlogProps {
   postData: BlogPost;
@@ -49,17 +50,11 @@ export async function getStaticProps(
   };
 }
 
-export default function Post(postData: BlogPost) {
+export default function Post({ postData }: BlogProps) {
   return (
     <>
       <PathBreadcrumb />
-      <PageTitle
-        text={postData.title}
-        subTitle={`Posted ${new Date(postData.publishedDate).toLocaleDateString('en-GB', {
-          month: 'long',
-          year: 'numeric',
-        })}`}
-      />
+      <PageTitle text={postData.title} subTitle={`Posted ${getGBDate(postData.publishedDate)}`} />
       <TextCard>
         <>{documentToReactComponents(postData.body as Document)}</>
       </TextCard>

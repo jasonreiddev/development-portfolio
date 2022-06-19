@@ -2,21 +2,22 @@ import { FaCode } from 'react-icons/fa';
 import { HiTerminal } from 'react-icons/hi';
 import { IoBrowsers } from 'react-icons/io5';
 
-import { Header, Links } from '../widgets/Header/Header';
-import { Share } from '../widgets/Share/Share';
-import { Like } from '../widgets/Like/Like';
+// import { Links } from '../widgets/Header/Header';
+// import { Share } from '../widgets/Share/Share';
+// import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
-import { Dispatch, SetStateAction, useContext } from 'react';
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 import { GlobalStyles } from '../../styles/GlobalStyles';
 import Head from 'next/head';
 import { LayoutContext } from '../../../helpers/layoutContext';
+import { FPHeader, FPHeaderProps } from '../full-page-widgets/Header/FPHeader';
+import { useRouter } from 'next/router';
 
 export interface LayoutProps {
-  title?: string;
-  description?: string;
-  headerTitle?: string;
-  menuLinks: Links[];
+  fpHeaderProps: FPHeaderProps;
+  scrollOffset: number;
+  description: string;
   getLikesDBValue?: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
   setLikesDBValue?: (value: number) => void;
   loading?: boolean;
@@ -24,31 +25,40 @@ export interface LayoutProps {
 }
 
 export const Layout = ({
-  title,
+  fpHeaderProps,
+  scrollOffset = 0,
   description,
-  headerTitle,
-  menuLinks,
-  setLikesDBValue = () => 1,
-  getLikesDBValue = async () => {
-    0;
-  },
+  // setLikesDBValue = () => 1,
+  // getLikesDBValue = async () => {
+  //   0;
+  // },
   loading = false,
   children,
 }: LayoutProps): JSX.Element => {
   const { pageTitle } = useContext(LayoutContext);
-  if (pageTitle) {
-    title = `${title} / ${pageTitle}`;
-  }
   const { pageDescription } = useContext(LayoutContext);
   if (pageDescription) {
     description = `${description}. ${pageDescription}`;
   }
   const { dark } = useContext(LayoutContext);
 
+  const [fullHeight, setFullHeight] = useState(true);
+
+  const location = useRouter();
+
+  useEffect(() => {
+    if (location) {
+      setFullHeight(typeof window !== 'undefined' && location.pathname == '/');
+    }
+  }, [location]);
+
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>
+          {fpHeaderProps.headerProps.title}
+          {pageTitle && ` / ${pageTitle}`}
+        </title>
         <meta name="description" content={description}></meta>
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
@@ -81,11 +91,13 @@ export const Layout = ({
           <s.LoadSpinner className="load-spinner" />
         </>
       )}
-      <s.Wrapper className={'mobile-scroll'}>
-        <s.Header>
-          <Header title={headerTitle} menuLinks={menuLinks} />
-        </s.Header>
-        <s.Aside className="aside-left">
+
+      <s.Header>
+        <FPHeader {...fpHeaderProps} scrollOffset={scrollOffset} fullHeight={fullHeight} />
+      </s.Header>
+      <s.Wrapper>
+        {children}
+        {/* <s.Aside className="aside-left">
           <Like setLikesDBValue={setLikesDBValue} getLikesDBValue={getLikesDBValue} liked={false} />
         </s.Aside>
         <s.Main>
@@ -97,16 +109,16 @@ export const Layout = ({
         <s.Aside className="aside-right">
           <Share
             text="Share"
-            shareText={`${title} - @jasonreiddev`}
+            shareText={`${headerProps.title} - @jasonreiddev`}
             shareUrl={
               typeof window !== 'undefined' ? location.host + location.pathname : 'jasonreid.dev'
             }
           />
-        </s.Aside>
-        <s.Footer>
-          <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
-        </s.Footer>
+        </s.Aside> */}
       </s.Wrapper>
+      <s.Footer>
+        <FooterCard text={`© ${new Date().getFullYear()} Jason Reid`}></FooterCard>
+      </s.Footer>
     </>
   );
 };

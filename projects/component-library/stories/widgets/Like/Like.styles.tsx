@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { ColorPair, useBase } from '../../../../helpers/media';
+
 const Wrapper = styled.div`
   text-align: center;
   width: 50px;
@@ -24,7 +26,7 @@ const Likes = styled.button<{ active?: boolean }>`
   }
 
   .solid-heart {
-    fill: var(--color-primary);
+    fill: ${useBase(ColorPair.Primary)};
     ${(p) => (p.active ? ` display: block;` : `display: none;`)};
     position: absolute;
   }

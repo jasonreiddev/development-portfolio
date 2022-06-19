@@ -1,8 +1,20 @@
 import styled from 'styled-components';
 
-import { Device, from } from '../../../../helpers/media';
+import {
+  Device,
+  from,
+  ColorPair,
+  useBaseIncreaseContrast,
+  useContrast,
+  useContrastDecreaseContrast,
+} from '../../../../helpers/media';
 
-export const Wrapper = styled.div`
+interface PaginationStylesProps {
+  active?: boolean;
+  colorPair?: ColorPair;
+}
+
+export const Wrapper = styled.div<PaginationStylesProps>`
   display: flex;
   align-content: center;
   align-items: center;
@@ -12,18 +24,18 @@ export const Wrapper = styled.div`
   & > * {
     font-weight: bold;
     font-size: 16pt;
-    color: var(--color-primary);
+    color: ${(p: PaginationStylesProps) => useContrast(p.colorPair)};
     padding: 1rem;
     flex: 1;
     text-decoration: none;
     &[aria-current],
     &.current {
-      color: var(--color-secondary);
+      color: ${(p: PaginationStylesProps) => useBaseIncreaseContrast(p.colorPair)};
       cursor: default;
     }
     &[disabled] {
       pointer-events: none;
-      color: var(--color-primary);
+      color: ${(p: PaginationStylesProps) => useContrastDecreaseContrast(p.colorPair)};
     }
   }
 

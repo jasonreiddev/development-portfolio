@@ -8,21 +8,16 @@ interface IfWidthStylesProps {
 
 const IfWidthTrue = styled.div<IfWidthStylesProps>`
   display: none;
-  @media ${(p: IfWidthStylesProps) => {
-      return between(p.minWidth, p.maxWidth);
-    }} {
-    display: block;
-  }
+  ${(p: IfWidthStylesProps) => {
+    return between(p.minWidth, p.maxWidth, `display: block;`);
+  }}
 `;
 
 const IfWidthFalse = styled.div<IfWidthStylesProps>`
   display: block;
-
-  @media ${(p: IfWidthStylesProps) => {
-      return between(p.minWidth, p.maxWidth);
-    }} {
-    display: none;
-  }
+  ${(p: IfWidthStylesProps) => {
+    return between(p.minWidth, p.maxWidth, `display: none;`);
+  }}
 `;
 
 export const IfWidthStyles = {

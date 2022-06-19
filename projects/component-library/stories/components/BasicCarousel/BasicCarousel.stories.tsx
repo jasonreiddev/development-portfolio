@@ -1,13 +1,13 @@
 import { Story } from '@storybook/react';
 
-import { Carousel, CarouselProps } from './Carousel';
+import { BasicCarousel, BasicCarouselProps } from './BasicCarousel';
 
 export default {
-  title: 'Components/Carousel',
-  component: Carousel,
+  title: 'Components/Basic Carousel',
+  component: BasicCarousel,
 };
 
-const Template: Story<CarouselProps> = (args) => <Carousel {...args} />;
+const Template: Story<BasicCarouselProps> = (args) => <BasicCarousel {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -17,4 +17,4 @@ Primary.args = {
   ],
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

@@ -1,4 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+
+import { ColorPair, useBase, useBaseIncreaseContrast } from '../../../../helpers/media';
+
+interface BlurredGlowStylesProps {
+  colorPair?: ColorPair;
+}
 
 const Wrapper = styled.div`
   position: relative;
@@ -6,12 +12,15 @@ const Wrapper = styled.div`
   padding: 60px;
 `;
 
-const Gradient = styled.div`
+const Gradient = styled.div<BlurredGlowStylesProps>`
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-image: linear-gradient(deeppink, red, coral, gold, white);
+  background-image: linear-gradient(
+    ${(p: BlurredGlowStylesProps) => useBase(p.colorPair)},
+    ${(p: BlurredGlowStylesProps) => useBaseIncreaseContrast(p.colorPair)}
+  );
 `;
 
 const Content = styled(Gradient)`

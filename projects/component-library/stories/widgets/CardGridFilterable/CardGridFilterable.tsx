@@ -7,6 +7,7 @@ import { CardGrid } from '../../components/CardGrid/CardGrid';
 import { IfWidth } from '../../components/IfWidth/IfWidth';
 
 import { CardGridFilterableStyles as s } from './CardGridFilterable.styles';
+import { ColorPair } from '../../../../helpers/media';
 
 export interface CardGridFilterableProps {
   cards: CardProps[];
@@ -67,16 +68,17 @@ export const CardGridFilterable = ({ cards = [], size }: CardGridFilterableProps
     }
   }
 
-  const TagContainer = (padding: boolean): JSX.Element => {
+  const TagContainer = (): JSX.Element => {
     return (
-      <s.TagsContainer padding={padding}>
+      <s.TagsContainer>
         {stateTags.map((tag, index) => (
           <s.Tag
+            key={`$all-tag${index}`}
+            active={!!tag.active}
+            colorPair={tag.active ? ColorPair.Primary : ColorPair.PrimaryInactive}
             onClick={() => {
               tagClick(tag.text);
             }}
-            key={`$all-tag${index}`}
-            active={!!tag.active}
           >
             {tag.text}
           </s.Tag>
@@ -87,13 +89,13 @@ export const CardGridFilterable = ({ cards = [], size }: CardGridFilterableProps
 
   // Up to minWidth Mobile - Wrap Tags in accordion
   const FalseChildren = (): JSX.Element => {
-    return <Accordion title="Tags">{TagContainer(false)}</Accordion>;
+    return <Accordion title="Tags">{TagContainer()}</Accordion>;
   };
 
   return (
     <s.Wrapper>
       <IfWidth falseChildren={FalseChildren()} minWidth={Device.Tablet}>
-        {TagContainer(true)}
+        {TagContainer()}
       </IfWidth>
       <CardGrid cards={stateCards} size={size} onTagClick={tagClick} />
     </s.Wrapper>

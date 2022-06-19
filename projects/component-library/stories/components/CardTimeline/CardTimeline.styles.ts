@@ -1,17 +1,20 @@
 import styled from 'styled-components';
+
 import { Device, from } from '../../../../helpers/media';
 import { CardStyles } from '../Card/Card.styles';
+import { ColorPair, useBase } from '../../../../helpers/media';
 
 interface CardTimelineStylesProps {
   // Should be 200+ for fitting tags and max content
   size: number;
+  colorPair?: ColorPair;
 }
 
 const Container = styled.div<CardTimelineStylesProps>`
   display: grid;
   grid-auto-rows: ${(p) => p.size}px;
   grid-gap: 10px 40px;
-  padding: 10px;
+  margin: var(--spacing);
   position: relative;
   margin-bottom: 30px;
 
@@ -32,7 +35,7 @@ const Container = styled.div<CardTimelineStylesProps>`
       position: absolute;
       height: 10px;
       width: 15px;
-      background-color: var(--color-secondary);
+      background-color: ${(p: CardTimelineStylesProps) => useBase(p.colorPair)};
       right: -15px;
       top: calc(${(p) => p.size / 2}px - 5px);
     }
@@ -57,7 +60,7 @@ const Line = styled.div<CardTimelineStylesProps>`
   bottom: 0;
   width: 10px;
   margin: calc(${(p) => p.size / 2}px + 5px) calc(50% - 5px) 0;
-  background-color: var(--color-secondary);
+  background-color: ${(p: CardTimelineStylesProps) => useBase(p.colorPair)};
   margin-bottom: -20px;
   z-index: -1;
 
@@ -66,7 +69,7 @@ const Line = styled.div<CardTimelineStylesProps>`
     position: absolute;
     height: 150px;
     width: 10px;
-    background-color: var(--color-secondary);
+    background-color: ${(p: CardTimelineStylesProps) => useBase(p.colorPair)};
     bottom: -150px;
   }
 
@@ -77,7 +80,7 @@ const Line = styled.div<CardTimelineStylesProps>`
     height: 10px;
     bottom: 0;
     width: 40px;
-    background-color: var(--color-secondary);
+    background-color: ${(p: CardTimelineStylesProps) => useBase(p.colorPair)};
   }
 
   &:nth-child(odd):after {

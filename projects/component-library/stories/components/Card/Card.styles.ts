@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import { Device, from } from '../../../../helpers/media';
+import { ColorPair, useColorPair } from '../../../../helpers/media';
 
 interface CardStylesProps {
   modifyWidth?: 1 | 2 | 'full';
@@ -10,6 +11,7 @@ interface CardStylesProps {
   dark?: boolean;
   link?: boolean;
   fullText?: boolean;
+  colorPair?: ColorPair;
 }
 
 const Container = styled.div<CardStylesProps>`
@@ -101,7 +103,7 @@ const Content = styled.div<CardStylesProps>`
   bottom: 0;
   position: absolute;
   width: 100%;
-  background-color: var(--color-base-semi-bold-o66);
+  background-color: var(--color-base-li-o66);
   display: flex;
   flex-direction: column;
 
@@ -147,18 +149,12 @@ const TagsContainer = styled.div`
 
 const Tag = styled.div`
   padding: 6px;
-  background-color: var(--color-base-semi-bold-o66);
+  background-color: var(--color-base-li-o66);
   cursor: pointer;
 `;
 
 const Front = styled.div<CardStylesProps>`
-  background: linear-gradient(
-    to left,
-    ${(p) =>
-      p.link
-        ? `var(--color-tertiary), var(--color-tertiary-ld10)`
-        : `var(--color-primary), var(--color-primary-ld10)`}
-  );
+  ${(p: CardStylesProps) => useColorPair(p.colorPair, '10pt')}
 
   transition: filter 0.5s;
   &:hover {
@@ -220,7 +216,7 @@ const BackContent = styled(Content)`
   }
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-li10-o66);
+    background: var(--color-primary-li-o66);
   }
 `;
 

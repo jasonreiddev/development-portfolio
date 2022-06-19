@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Card, CardProps } from './Card';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Card',
@@ -45,6 +46,15 @@ Flip.args = {
   ),
 };
 
+export const FlipColors = Template.bind({});
+FlipColors.args = {
+  ...Flip.args,
+  image: undefined,
+  colorPair: ColorPair.Primary,
+  colorPairButton: ColorPair.Secondary,
+  colorPairBack: ColorPair.Tertiary,
+};
+
 export const FullText = Template.bind({});
 FullText.args = {
   url: 'https://jasonreid.dev/',
@@ -55,4 +65,4 @@ FullText.args = {
   fullText: true,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
-import { Planet } from './Planet';
+import { Planet, PlanetProps } from './Planet';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Planet',
@@ -10,6 +11,12 @@ export default {
   },
 };
 
-const Template: Story = () => <Planet />;
+const Template: Story<PlanetProps> = (args: PlanetProps) => <Planet {...args} />;
 
-export const Minimum = Template.bind({});
+export const Color = Template.bind({});
+Color.args = {
+  colorPair: ColorPair.Primary,
+  colorPairMoon: ColorPair.Secondary,
+};
+
+export const _Minimum = Template.bind({});

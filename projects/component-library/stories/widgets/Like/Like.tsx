@@ -4,12 +4,20 @@ import { LikeStyles as s } from './Like.styles';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 export interface LikeProps {
-  getLikesDBValue: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
+  getLikesDBValue:
+    | ((setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>)
+    | (() => void);
   setLikesDBValue: (likes: number) => void;
   liked: boolean;
 }
 
-export const Like = ({ setLikesDBValue, getLikesDBValue, liked }: LikeProps): JSX.Element => {
+export const Like = ({
+  setLikesDBValue,
+  getLikesDBValue = () => {
+    console.log('getLikesDBValue');
+  },
+  liked,
+}: LikeProps): JSX.Element => {
   const [hasLiked, setLiked] = useState(liked);
   const [localLikes, setLocalLikes] = useState(0);
   getLikesDBValue(setLocalLikes);

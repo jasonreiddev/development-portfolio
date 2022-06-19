@@ -9,4 +9,4 @@ export default {
 
 const Template: Story<PostsProps> = (args) => <Posts {...args} />;
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

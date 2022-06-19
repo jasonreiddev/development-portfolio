@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { ProgressBar, ProgressBarProps } from './ProgressBar';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   component: ProgressBar,
@@ -19,12 +20,14 @@ export const None = Template.bind({});
 None.args = {
   progress: 0,
   total: 300,
+  colorPair: ColorPair.Primary,
 };
 
 export const Compete = Template.bind({});
 Compete.args = {
   progress: 100,
   total: 100,
+  colorPair: ColorPair.Secondary,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

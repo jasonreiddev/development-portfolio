@@ -1,7 +1,7 @@
-import { ReactNode, Ref } from 'react';
-import { MdAccountCircle } from 'react-icons/md';
+import { Ref } from 'react';
 
 import { DropdownStyles as s } from './Dropdown.styles';
+import { ColorPair, renderIcon } from '../../../../helpers/media';
 
 export enum Icon {
   None,
@@ -17,6 +17,7 @@ export interface DropdownProps {
   toggleActive: VoidFunction;
   dropdownRef: Ref<HTMLElement>;
   dropdownItemGroups: DropdownItem[][];
+  colorPair?: ColorPair;
 }
 
 export interface DropdownItem {
@@ -25,15 +26,6 @@ export interface DropdownItem {
   onClick?(): void;
   danger: boolean;
 }
-
-const renderIcon = (icon: Icon): ReactNode => {
-  switch (icon) {
-    case Icon.None:
-      return;
-    case Icon.Account:
-      return <MdAccountCircle />;
-  }
-};
 
 export const Dropdown = ({
   text,
@@ -44,10 +36,11 @@ export const Dropdown = ({
   toggleActive,
   dropdownRef,
   dropdownItemGroups,
+  colorPair = ColorPair.Secondary,
 }: DropdownProps): JSX.Element => {
   return (
-    <s.Container fullWidth={fullWidth}>
-      <s.Header hasIcon={icon !== 0}>
+    <s.Container fullWidth={fullWidth} colorPair={colorPair}>
+      <s.Header hasIcon={icon !== 0} colorPair={colorPair}>
         <div onClick={toggleActive}>
           {renderIcon(icon)}
           <span>{text}</span>

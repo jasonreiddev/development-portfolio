@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
-import { Device, from } from '../../../../helpers/media';
+import { Device, from, useContrast } from '../../../../helpers/media';
+import { ColorPair, useColorPair } from '../../../../helpers/media';
 
-const Container = styled.div<{ fullWidth: boolean }>`
-  background-color: var(--color-secondary);
+interface DropdownStylesProps {
+  fullWidth?: boolean;
+  hasIcon?: boolean;
+  colorPair?: ColorPair;
+}
+
+const Container = styled.div<DropdownStylesProps>`
+  ${(p: DropdownStylesProps) => useColorPair(p.colorPair, '10pt')}
   box-shadow: var(--box-shadow);
   text-align: center;
   height: 100%;
@@ -20,13 +27,13 @@ const Container = styled.div<{ fullWidth: boolean }>`
     line-height: 1.5;
     cursor: pointer;
     &.danger {
-      color: red
+      color: red;
       font-weight: bold;
     }
   }
 
   nav {
-    background-color: var(--color-secondary);
+    background-color: inherit;
   }
 `;
 
@@ -64,8 +71,8 @@ const Dropdown = styled.div<{ active: boolean; fullWidth: boolean; expand: boole
       : null}
 `;
 
-const Header = styled.div<{ hasIcon: boolean }>`
-  color: var(--color-contrast);
+const Header = styled.div<DropdownStylesProps>`
+  color: ${(p: DropdownStylesProps) => useContrast(p.colorPair)};
   display: inline-flex;
   align-items: center;
   height: 100%;

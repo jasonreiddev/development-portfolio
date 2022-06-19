@@ -1,7 +1,8 @@
 import { Story } from '@storybook/react';
 import { useState } from 'react';
 
-import { Select } from './Select';
+import { Select, SelectProps } from './Select';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   component: Select,
@@ -11,11 +12,20 @@ export default {
   },
 };
 
-const Template: Story = () => {
+const Template: Story<SelectProps> = (args: SelectProps) => {
   const [value, setValue] = useState('newest');
-  return <Select value={value} onChange={(ev) => setValue(ev.target.value)} />;
+  return <Select {...args} value={value} onChange={(ev) => setValue(ev.target.value)} />;
 };
 
-export const Default = Template.bind({});
+export const HelloWorld = Template.bind({});
+HelloWorld.args = {
+  options: ['Hello', 'World', ':)'],
+};
 
-export const Minimum = Template.bind({});
+export const HelloWorldColor = Template.bind({});
+HelloWorldColor.args = {
+  ...HelloWorld.args,
+  colorPair: ColorPair.Primary,
+};
+
+export const _Minimum = Template.bind({});

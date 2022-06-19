@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { MdArrowLeft, MdArrowRight } from 'react-icons/md';
 
-import { CarouselStyles as s } from './Carousel.styles';
+import { BasicCarouselStyles as s } from './BasicCarousel.styles';
 
 interface Image {
   src: string;
   altText?: string;
 }
 
-export interface CarouselProps {
+export interface BasicCarouselProps {
   images: Image[];
 }
 
-export const Carousel = ({ images }: CarouselProps): JSX.Element => {
+export const BasicCarousel = ({ images }: BasicCarouselProps): JSX.Element => {
   if (images != undefined && images.length > 0) {
     const [current, setCurrent] = useState(0);
     const length = images.length;

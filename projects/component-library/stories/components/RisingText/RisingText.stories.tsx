@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { RisingText, RisingTextProps } from './RisingText';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Rising Text',
@@ -12,7 +13,7 @@ const Template: Story<RisingTextProps> = (args) => <RisingText {...args} />;
 export const Short = Template.bind({});
 Short.args = {
   text: 'Short Text!',
-  color: 'red',
+  colorPair: ColorPair.Primary,
 };
 
 export const Long = Template.bind({});
@@ -20,4 +21,4 @@ Long.args = {
   text: 'Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text. Long text.',
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

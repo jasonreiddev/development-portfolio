@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
 import { Device, from } from '../../../../helpers/media';
+import { ColorPair, useColorPair } from '../../../../helpers/media';
+
+interface ConversationStylesProps {
+  sentByMe?: boolean;
+  colorPair?: ColorPair;
+}
 
 const Container = styled.div<{ fullWidth: boolean }>`
-  background-color: var(--color-base-bright);
+  background-color: var(--color-base);
   border: 1px solid var(--color-contrast);
   text-align: center;
   height: 100%;
@@ -76,7 +82,7 @@ const DropdownInner = styled.div`
   padding: 0;
 `;
 
-const ConversationItem = styled.li<{ sentByMe: boolean }>`
+const ConversationItem = styled.li<ConversationStylesProps>`
   display: block;
   padding: 16px;
   margin: 8px;
@@ -86,17 +92,8 @@ const ConversationItem = styled.li<{ sentByMe: boolean }>`
   max-width: 70%;
   text-align: left;
 
-  ${(p) =>
-    p.sentByMe
-      ? `
-      background: var(--color-tertiary);
-      color: var(--color-base-bright);
-      `
-      : `
-      background: var(--color-base);
-      color: var(--color-contrast);
-      align-self: flex-end;
-  `}
+  ${(p) => (p.sentByMe ? `` : `align-self: flex-end;`)}
+  ${(p: ConversationStylesProps) => useColorPair(p.colorPair, '10pt')}
 `;
 
 export const ConversationStyles = {

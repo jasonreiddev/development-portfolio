@@ -3,12 +3,14 @@ import { clamp } from '../../../../helpers/media';
 
 export const Text = styled.h3`
   font-size: ${clamp({ multiplier: 0.8, initial: '18px' })};
-  margin: 0 35px;
+  margin: var(--spacing);
+  margin-bottom: calc(-0.5 * var(--spacing));
 `;
 
 export const TextSub = styled.h4`
   font-size: ${clamp({ multiplier: 0.8, initial: '12px' })};
-  margin: 0 35px;
+  margin: var(--spacing);
+  margin-bottom: calc(-0.5 * var(--spacing));
 `;
 
 export const PageTitleStyles = {

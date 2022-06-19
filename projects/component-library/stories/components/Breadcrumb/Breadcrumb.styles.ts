@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
-const Breadcrumb = styled.div`
+import { ColorPair, useContrast } from '../../../../helpers/media';
+
+interface BreadcrumbStylesProps {
+  first?: boolean;
+  colorPair?: ColorPair;
+}
+
+const Breadcrumb = styled.div<BreadcrumbStylesProps>`
   display: flex;
   align-items: center;
   border: none;
-  font-size: 13px;
   flex-wrap: wrap;
-  color: var(--color-contrast);
   margin: 0 35px;
 `;
 
@@ -15,9 +20,9 @@ const BreadcrumbGroup = styled.div`
   align-items: center;
 `;
 
-const BreadcrumbItem = styled.a<{ first?: boolean }>`
+const BreadcrumbItem = styled.a<BreadcrumbStylesProps>`
   padding: 0 1em;
-  color: var(--color-contrast);
+  color: ${(p: BreadcrumbStylesProps) => useContrast(p.colorPair)};
   text-decoration: none;
   line-height: 1.5;
   text-transform: capitalize;
@@ -30,14 +35,14 @@ const BreadcrumbItem = styled.a<{ first?: boolean }>`
       : null}
 `;
 
-const CopyButton = styled.button`
+const CopyButton = styled.button<BreadcrumbStylesProps>`
   background: none;
   border: 0;
   padding: 0;
   font-size: 15px;
   cursor: copy;
   svg {
-    color: var(--color-contrast);
+    color: ${(p: BreadcrumbStylesProps) => useContrast(p.colorPair)};
   }
 `;
 

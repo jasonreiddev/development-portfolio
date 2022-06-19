@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import { ToggleDarkMode } from '../../../../helpers/layoutContext';
+import { ColorPair } from '../../../../helpers/media';
+
 import { Button } from '../../components/Button/Button';
 import { RisingText } from '../../components/RisingText/RisingText';
+import icon from '../../../../portfolio/public/images/icon.png';
 
 import { HeaderStyles as s } from './Header.styles';
+import Image from 'next/image';
 
 export interface Links {
   name: string;
@@ -24,15 +27,15 @@ export const Header = ({
   onLogin,
   onLogout,
   onCreateAccount,
-  menuLinks,
+  menuLinks = [],
   title,
 }: HeaderProps): JSX.Element => {
   return (
     <s.Wrapper>
       <Link href="/" passHref>
-        <s.Title>
-          <h1>{title}</h1>
-        </s.Title>
+        <s.IconWrapper>
+          <Image src={icon} alt={title}></Image>
+        </s.IconWrapper>
       </Link>
 
       {(user || onLogin || onCreateAccount) && (
@@ -41,8 +44,8 @@ export const Header = ({
             <Button size="small" onClick={onLogout} label="Log out" />
           ) : (
             <>
-              <Button size="small" onClick={onLogin} label="Log in" />
-              <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+              {onLogin && <Button size="small" onClick={onLogin} label="Log in" />}
+              {onCreateAccount && <Button size="small" onClick={onCreateAccount} label="Sign up" />}
             </>
           )}
         </div>
@@ -50,33 +53,32 @@ export const Header = ({
       <nav>
         <s.MenuItems>
           {menuLinks.map((link) => {
-            if (
-              typeof window !== 'undefined' &&
-              (location.pathname == link.link || location.pathname.startsWith(`${link.link}/`))
-            ) {
+            if (link.name) {
+              if (
+                typeof window !== 'undefined' &&
+                (location.pathname == link.link || location.pathname.startsWith(`${link.link}/`))
+              ) {
+                return (
+                  <li key={link.name}>
+                    <Link href={link.link} passHref>
+                      <s.MenuLink>
+                        <s.MenuActive>{link.name}</s.MenuActive>
+                      </s.MenuLink>
+                    </Link>
+                  </li>
+                );
+              }
               return (
                 <li key={link.name}>
                   <Link href={link.link} passHref>
                     <s.MenuLink>
-                      <s.MenuActive>{link.name}</s.MenuActive>
+                      <RisingText text={link.name} colorPair={ColorPair.Primary} />
                     </s.MenuLink>
                   </Link>
                 </li>
               );
             }
-            return (
-              <li key={link.name}>
-                <Link href={link.link} passHref>
-                  <s.MenuLink>
-                    <RisingText text={link.name} color={'var(--color-contrast)'} />
-                  </s.MenuLink>
-                </Link>
-              </li>
-            );
           })}
-          <li>
-            <ToggleDarkMode />
-          </li>
         </s.MenuItems>
       </nav>
     </s.Wrapper>

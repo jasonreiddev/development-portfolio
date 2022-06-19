@@ -1,12 +1,7 @@
-import { ReactNode, Ref } from 'react';
-import { MdAccountCircle } from 'react-icons/md';
+import { Ref } from 'react';
 
 import { ConversationStyles as s } from './Conversation.styles';
-
-export enum Icon {
-  None,
-  Account,
-}
+import { ColorPair, renderIcon, Icon } from '../../../../helpers/media';
 
 export interface ConversationProps {
   chatName: string;
@@ -16,21 +11,14 @@ export interface ConversationProps {
   toggleActive: VoidFunction;
   dropdownRef: Ref<HTMLElement>;
   conversationItemGroups: ConversationItem[][];
+  colorPair?: ColorPair;
+  colorPairSentByMe?: ColorPair;
 }
 
 export interface ConversationItem {
   text: string;
   sentByMe: boolean;
 }
-
-const renderIcon = (icon: Icon): ReactNode => {
-  switch (icon) {
-    case Icon.None:
-      return;
-    case Icon.Account:
-      return <MdAccountCircle />;
-  }
-};
 
 export const Conversation = ({
   chatName,
@@ -39,6 +27,8 @@ export const Conversation = ({
   fullWidth,
   toggleActive,
   conversationItemGroups,
+  colorPair = ColorPair.Secondary,
+  colorPairSentByMe = ColorPair.Tertiary,
 }: ConversationProps): JSX.Element => {
   return (
     <s.Container fullWidth={fullWidth}>
@@ -55,7 +45,11 @@ export const Conversation = ({
               {index > 0 && <hr />}
               <s.DropdownInner key={`ConversationGroup-${index}`}>
                 {group.map((item, index) => (
-                  <s.ConversationItem sentByMe={item.sentByMe} key={`ConversationItem-${index}`}>
+                  <s.ConversationItem
+                    sentByMe={item.sentByMe}
+                    colorPair={item.sentByMe ? colorPairSentByMe : colorPair}
+                    key={`ConversationItem-${index}`}
+                  >
                     {item.text}
                   </s.ConversationItem>
                 ))}

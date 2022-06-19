@@ -6,7 +6,8 @@ import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
 import { LayoutContext } from '../../../../helpers/layoutContext';
 import { Button } from '../Button/Button';
-import { IconButton, Icon } from '../IconButton/IconButton';
+import { IconButton } from '../IconButton/IconButton';
+import { ColorPair, Icon } from '../../../../helpers/media';
 
 export interface CardProps {
   url?: string;
@@ -22,6 +23,9 @@ export interface CardProps {
   fullText?: boolean;
   // Enabled by default, disable for added buttons, useful for carousels
   fullClickable?: boolean;
+  colorPair?: ColorPair;
+  colorPairButton?: ColorPair;
+  colorPairBack?: ColorPair;
 }
 
 export const Card = ({
@@ -37,6 +41,9 @@ export const Card = ({
   flipContent,
   fullText,
   fullClickable = false,
+  colorPair = ColorPair.Secondary,
+  colorPairButton = ColorPair.Primary,
+  colorPairBack = ColorPair.Tertiary,
 }: CardProps): JSX.Element => {
   if (tags != undefined) {
     tags.sort(function (a, b) {
@@ -59,9 +66,10 @@ export const Card = ({
         <IconButton
           icon={Icon.Flip}
           flipIconY={flipIcon}
-          size={'small'}
+          size={'medium'}
           ariaLabel="Flip"
           align={'bottom-right'}
+          colorPair={colorPairButton}
           onClick={() => {
             if (flipContent) {
               {
@@ -75,7 +83,7 @@ export const Card = ({
       {url && ctaText && (
         <Button
           label={ctaText}
-          backgroundColor={'var(--color-tertiary)'}
+          colorPair={colorPairButton}
           onClick={() => {
             if (url != undefined) {
               Router.push(url);
@@ -106,7 +114,13 @@ export const Card = ({
       }}
     >
       <s.ContainerInner flipped={flipped} wasFlipped={wasFlipped}>
-        <s.Front flipped={flipped} canFlip={!!flipContent} dark={dark} link={!!url}>
+        <s.Front
+          flipped={flipped}
+          canFlip={!!flipContent}
+          dark={dark}
+          link={!!url}
+          colorPair={colorPair}
+        >
           {image && <Image src={image} alt={alt} />}
           {!fullText && tags && (
             <s.TagsContainer>
@@ -143,7 +157,7 @@ export const Card = ({
           </s.Content>
         </s.Front>
         {flipContent && (
-          <s.Back flipped={flipped} canFlip={!!flipContent} dark={dark}>
+          <s.Back flipped={flipped} canFlip={!!flipContent} dark={dark} colorPair={colorPairBack}>
             <s.BackContent>
               {flipContent}
               {!fullClickable && <CtaButton flipIcon={true} />}

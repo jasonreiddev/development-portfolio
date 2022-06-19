@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 import { clamp } from '../../../../helpers/media';
+import { ColorPair, useColorPair } from '../../../../helpers/media';
+
+interface ContactCardStylesProps {
+  colorPair?: ColorPair;
+}
 
 const Card = styled.article`
   min-width: 250px;
@@ -14,6 +19,8 @@ const Card = styled.article`
   margin: auto;
   margin-top: 40px;
   border-radius: var(--border-radius);
+
+  ${(p: ContactCardStylesProps) => useColorPair(p.colorPair, '10pt')}
 
   .avatar {
     display: block;
@@ -36,7 +43,6 @@ const Card = styled.article`
   p {
     font-size: 1rem;
     font-weight: 300;
-    color: hsl(0deg 0% 40%);
   }
 `;
 

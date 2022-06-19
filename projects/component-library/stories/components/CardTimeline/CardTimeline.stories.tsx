@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { CardTimelineProps, CardTimeline } from './CardTimeline';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Card Timeline',
@@ -66,10 +67,17 @@ Cards.args = {
   ],
 };
 
+export const PrimaryCards = Template.bind({});
+PrimaryCards.args = {
+  ...Cards.args,
+  size: 300,
+  colorPair: ColorPair.Primary,
+};
+
 export const LargeCards = Template.bind({});
 LargeCards.args = {
   ...Cards.args,
   size: 300,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

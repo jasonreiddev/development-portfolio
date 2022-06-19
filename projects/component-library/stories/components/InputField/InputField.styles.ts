@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+import { ColorPair, useColorPair, useBaseIncreaseContrast } from '../../../../helpers/media';
+
+interface InputFieldStylesProps {
+  colorPair?: ColorPair;
+}
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,7 +16,7 @@ const Title = styled.span`
   margin-bottom: 5px;
 `;
 
-const Input = styled.div`
+const Input = styled.div<InputFieldStylesProps>`
   position: relative;
 
   input {
@@ -19,9 +25,10 @@ const Input = styled.div`
     border: 1px solid var(--color-contrast);
     border-radius: 5px;
     padding: 0px 10px;
+    ${(p: InputFieldStylesProps) => useColorPair(p.colorPair, '10pt')}
 
     ::placeholder {
-      color: var(--color-primary);
+      color: ${(p: InputFieldStylesProps) => useBaseIncreaseContrast(p.colorPair)};
       font-weight: 500;
     }
   }

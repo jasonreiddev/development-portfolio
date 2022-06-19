@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 
 import Modal, { ModalProps } from './Modal.tsx';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Modal',
@@ -20,4 +21,10 @@ PlaceHolder.args = {
   active: true,
 };
 
-export const Minimum = Template.bind({});
+export const PlaceHolderColor = Template.bind({});
+PlaceHolderColor.args = {
+  ...PlaceHolder.args,
+  colorPair: ColorPair.Primary,
+};
+
+export const _Minimum = Template.bind({});

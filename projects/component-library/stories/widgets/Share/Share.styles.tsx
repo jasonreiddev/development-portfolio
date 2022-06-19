@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+import { ColorPair, useContrast } from '../../../../helpers/media';
+
 const Wrapper = styled.div`
   text-align: center;
   width: 50px;
   font-weight: var(--font-weight-bold);
 
   a {
-    color: var(--color-contrast);
+    color: ${useContrast(ColorPair.Primary)};
   }
 
   svg {

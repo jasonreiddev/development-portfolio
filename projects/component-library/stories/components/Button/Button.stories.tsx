@@ -1,12 +1,13 @@
 import { Story } from '@storybook/react';
 
 import { Button, ButtonProps } from './Button';
+import { ColorPair } from '../../../../helpers/media';
 
 export default {
   title: 'Components/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    colorPair: { control: { type: 'select', options: ColorPair } },
   },
 };
 
@@ -14,12 +15,13 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
+  colorPair: ColorPair.Primary,
   label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  colorPair: ColorPair.Secondary,
   label: 'Button',
 };
 
@@ -35,4 +37,4 @@ Small.args = {
   label: 'Button',
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

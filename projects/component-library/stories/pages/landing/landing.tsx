@@ -1,12 +1,16 @@
 import { Layout } from '../../Layout/Layout';
 import { LandingStyles as s } from './landing.styles';
+import { defaultLayoutProps } from '../../../../portfolio/defaultLayoutProps';
 
 export interface LandingProps {
   storybookUrl?: string;
 }
 
+defaultLayoutProps.fpHeaderProps.headerProps.title = 'Next.js Component Library';
+defaultLayoutProps.fpHeaderProps.headerProps.menuLinks = [];
+
 export const Landing = ({ storybookUrl }: LandingProps): JSX.Element => (
-  <Layout menuLinks={[]} title="Next.js Component Library">
+  <Layout {...defaultLayoutProps}>
     <s.Wrapper>
       <s.Title>Welcome!</s.Title>
       <s.Text>

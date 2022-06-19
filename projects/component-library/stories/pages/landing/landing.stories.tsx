@@ -19,4 +19,4 @@ StorybookUrl.args = {
   storybookUrl: 'http://localhost:6006',
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

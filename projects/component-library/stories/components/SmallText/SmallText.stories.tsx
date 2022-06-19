@@ -19,4 +19,4 @@ World.args = {
   text: 'World',
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

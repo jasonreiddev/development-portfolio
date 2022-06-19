@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { PageTitle, PageTitleProps } from './PageTitle';
 
 export default {
-  title: 'Components/Small Text',
+  title: 'Components/Page Title',
   component: PageTitle,
 };
 
@@ -19,4 +19,4 @@ World.args = {
   text: 'World',
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

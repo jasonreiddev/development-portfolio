@@ -2,28 +2,30 @@ import { Story } from '@storybook/react';
 
 import { SearchableDropdown, SearchableDropdownProps } from './SearchableDropdown';
 
-const callbackFunction = (chosenOptions: string[]): void => {
-  console.info(chosenOptions);
-};
+// const callbackFunction = (chosenOptions: string[]): void => {
+//   console.info(chosenOptions);
+// };
 
 export default {
-  component: SearchableDropdown,
   title: 'Components/Searchable Dropdown',
+  component: SearchableDropdown,
   parameters: {
     layout: 'fullscreen',
   },
 };
 
-const Template: Story<SearchableDropdownProps> = (args) => <SearchableDropdown {...args} />;
+const Template: Story<SearchableDropdownProps> = (args: SearchableDropdownProps) => (
+  <SearchableDropdown {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
-  searchFieldCallback: callbackFunction,
+  // searchFieldCallback: callbackFunction,
 };
 
 export const LotsOfResults = Template.bind({});
 LotsOfResults.args = {
-  searchFieldCallback: callbackFunction,
+  // searchFieldCallback: callbackFunction,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});

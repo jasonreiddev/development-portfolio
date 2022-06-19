@@ -1,4 +1,6 @@
 import { Story } from '@storybook/react';
+import { FPHeaderProps } from '../full-page-widgets/Header/FPHeader';
+import * as FPHeaderStories from '../full-page-widgets/Header/FPHeader.stories';
 
 import { Layout, LayoutProps } from './Layout';
 
@@ -10,31 +12,17 @@ export default {
   component: Layout,
 };
 
-const menuLinks = [
-  {
-    name: '',
-    nameOverrideNav: 'Home',
-    link: '/',
-  },
-  {
-    name: 'Projects',
-    link: '/projects/1',
-  },
-];
-
 const Template: Story<LayoutProps> = (args) => <Layout {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  title: 'Next.js Component Library',
-  menuLinks: menuLinks,
+export const PortfolioLayout = Template.bind({});
+PortfolioLayout.args = {
+  fpHeaderProps: FPHeaderStories.FPPortfolio.args as FPHeaderProps,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-  title: 'Next.js Component Library',
-  menuLinks: menuLinks,
+  fpHeaderProps: FPHeaderStories.FPPortfolio.args as FPHeaderProps,
   loading: true,
 };
 
-export const Minimum = Template.bind({});
+export const _Minimum = Template.bind({});
