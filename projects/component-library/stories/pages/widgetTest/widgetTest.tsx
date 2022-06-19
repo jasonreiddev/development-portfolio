@@ -1,5 +1,6 @@
 import { Layout } from '../../Layout/Layout';
 import { WidgetTestStyles } from './widgetTest.styles';
+import { defaultLayoutProps } from '../../../../portfolio/defaultLayoutProps';
 
 // List all widgets, comment out if not required
 import { CardGridFilterable } from '../../widgets/CardGridFilterable/CardGridFilterable';
@@ -20,8 +21,11 @@ export interface WidgetTestProps {
   text: string;
 }
 
+defaultLayoutProps.fpHeaderProps.headerProps.title = 'Widget Test';
+defaultLayoutProps.fpHeaderProps.headerProps.menuLinks = [];
+
 export const WidgetTest = ({ text }: WidgetTestProps): JSX.Element => (
-  <Layout menuLinks={[]} title="Widget Test">
+  <Layout {...defaultLayoutProps}>
     <WidgetTestStyles>
       <TextCard>
         <>{text}</>

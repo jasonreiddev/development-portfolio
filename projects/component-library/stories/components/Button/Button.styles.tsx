@@ -49,6 +49,7 @@ const Button = styled.button<ButtonStylesProps>`
 
 const Wrapper = styled.div`
   width: fit-content;
+  margin: var(--spacing);
   margin: auto;
 
   &:hover ${Button} {

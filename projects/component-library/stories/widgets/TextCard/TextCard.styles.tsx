@@ -7,7 +7,7 @@ interface TextCardStylesProps {
 }
 
 const Wrapper = styled.div<TextCardStylesProps>`
-  margin: 26px;
+  margin: var(--spacing);
   padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);

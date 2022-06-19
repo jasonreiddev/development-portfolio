@@ -66,7 +66,7 @@ export const Card = ({
         <IconButton
           icon={Icon.Flip}
           flipIconY={flipIcon}
-          size={'small'}
+          size={'medium'}
           ariaLabel="Flip"
           align={'bottom-right'}
           colorPair={colorPairButton}

@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { ColorPair, useBase } from '../../../../helpers/media';
 
+const Wrapper = styled.div`
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+`;
+
 const MediaLinks = styled.span`
   font-size: 30px;
   display: flex;
@@ -38,6 +44,7 @@ export const Text = styled.span`
 `;
 
 export const FooterCardStyles = {
+  Wrapper,
   MediaLinks,
   Text,
 };

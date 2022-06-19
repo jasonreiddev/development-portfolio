@@ -1,4 +1,5 @@
 import { createContext, FC, useContext, useEffect, useState } from 'react';
+
 import { defaultLayoutProps } from '../../projects/portfolio/defaultLayoutProps';
 import { IconButton } from '../../projects/component-library/stories/components/IconButton/IconButton';
 import { Icon } from '../helpers/media';
@@ -11,8 +12,6 @@ export interface ILayoutContext {
   pageDescription: string;
   updatePageDescription?: (updatePageDescription: string) => void;
 }
-
-// updated from preference on mount
 
 const defaultState = {
   dark: true,

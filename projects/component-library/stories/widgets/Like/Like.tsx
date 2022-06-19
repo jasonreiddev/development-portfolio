@@ -4,7 +4,9 @@ import { LikeStyles as s } from './Like.styles';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 export interface LikeProps {
-  getLikesDBValue: (setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>;
+  getLikesDBValue:
+    | ((setLikesFunction: Dispatch<SetStateAction<number>>) => Promise<void>)
+    | (() => void);
   setLikesDBValue: (likes: number) => void;
   liked: boolean;
 }

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   color: hsl(0deg 0% 25%);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   background: transparent;
-  margin: 0 26px;
+  margin: var(--spacing);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   overflow: hidden;

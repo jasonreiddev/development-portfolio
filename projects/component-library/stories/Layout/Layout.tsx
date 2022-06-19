@@ -2,9 +2,9 @@ import { FaCode } from 'react-icons/fa';
 import { HiTerminal } from 'react-icons/hi';
 import { IoBrowsers } from 'react-icons/io5';
 
-import { Links } from '../widgets/Header/Header';
-import { Share } from '../widgets/Share/Share';
-import { Like } from '../widgets/Like/Like';
+// import { Links } from '../widgets/Header/Header';
+// import { Share } from '../widgets/Share/Share';
+// import { Like } from '../widgets/Like/Like';
 import { LayoutStyles as s } from './Layout.styles';
 import { FooterCard } from '../widgets/FooterCard/FooterCard';
 import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
@@ -28,10 +28,10 @@ export const Layout = ({
   fpHeaderProps,
   scrollOffset = 0,
   description,
-  setLikesDBValue = () => 1,
-  getLikesDBValue = async () => {
-    0;
-  },
+  // setLikesDBValue = () => 1,
+  // getLikesDBValue = async () => {
+  //   0;
+  // },
   loading = false,
   children,
 }: LayoutProps): JSX.Element => {
@@ -47,7 +47,9 @@ export const Layout = ({
   const location = useRouter();
 
   useEffect(() => {
-    setFullHeight(typeof window !== 'undefined' && location.pathname == '/');
+    if (location) {
+      setFullHeight(typeof window !== 'undefined' && location.pathname == '/');
+    }
   }, [location]);
 
   return (

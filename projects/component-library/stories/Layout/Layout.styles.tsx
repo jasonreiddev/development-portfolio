@@ -96,11 +96,8 @@ const Aside = styled.aside`
 `;
 
 const Footer = styled.footer`
-  padding: 20px;
+  margin: var(--spacing);
   grid-area: footer;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
 `;
 
 export const LayoutStyles = {

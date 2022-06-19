@@ -14,7 +14,7 @@ const Container = styled.div<CardTimelineStylesProps>`
   display: grid;
   grid-auto-rows: ${(p) => p.size}px;
   grid-gap: 10px 40px;
-  padding: 10px;
+  margin: var(--spacing);
   position: relative;
   margin-bottom: 30px;
 

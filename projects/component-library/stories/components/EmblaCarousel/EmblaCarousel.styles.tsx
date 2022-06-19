@@ -9,7 +9,6 @@ interface EmblaCarouselStylesProps {
 
 export const Wrapper = styled.div`
   position: relative;
-  margin: 26px;
 `;
 
 const Viewport = styled.div`
