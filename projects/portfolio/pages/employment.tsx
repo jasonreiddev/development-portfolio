@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { LayoutContext } from '../../helpers/layoutContext';
-import { client } from '../../helpers/sanityClient';
+import { client } from '../../helpers/sanity/client';
 import { CardTimeline } from '../../component-library/stories/components/CardTimeline/CardTimeline';
 import { CardProps } from '../../component-library/stories/components/Card/Card';
 import { mapPositionToCard } from 'projects/helpers/mapToCard';

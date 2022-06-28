@@ -11,6 +11,3 @@ Re-add like and share buttons
 Skip & loop options for typing effect
 
 # TODO - New:
-
-Add scroll to
-Use scroll to on fpBanner

@@ -96,6 +96,7 @@ const Aside = styled.aside`
 
 const Footer = styled.footer`
   margin: var(--spacing);
+  padding-bottom: calc(var(--spacing) / 2);
   grid-area: footer;
 `;
 
