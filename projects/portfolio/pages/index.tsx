@@ -1,6 +1,6 @@
 import { TextCard } from '../../component-library/stories/widgets/TextCard/TextCard';
 import { PageTitle } from '../../component-library/stories/components/PageTitle/PageTitle';
-import { client } from 'projects/helpers/sanityClient';
+import { client } from 'projects/helpers/sanity/client';
 import { CardProps } from 'projects/component-library/stories/components/Card/Card';
 import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
 import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
@@ -87,9 +87,8 @@ const Home = ({ projectData, positionData, blogPostData }: HomeProps): JSX.Eleme
       {Positions.length > 0 && (
         <>
           <PageTitle text={`Current Position${getPluralS(Positions.length)}`} />
-          <CardGrid cards={Positions} size={300} />
+          <CardGrid cards={Positions} size={280} />
           <Button label="Employment History" url="/employment" />
-          <br />
         </>
       )}
 

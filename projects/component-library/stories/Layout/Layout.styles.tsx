@@ -56,7 +56,6 @@ const LoadSpinner = styled.div`
 const Wrapper = styled.div``;
 
 const Header = styled.main`
-  margin-bottom: var(--spacing-fixed);
   z-index: 1;
 `;
 
@@ -97,6 +96,7 @@ const Aside = styled.aside`
 
 const Footer = styled.footer`
   margin: var(--spacing);
+  padding-bottom: calc(var(--spacing) / 2);
   grid-area: footer;
 `;
 

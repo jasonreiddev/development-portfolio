@@ -73,8 +73,16 @@ const HeaderWrapper = styled.div`
   background-size: cover;
 `;
 
+const ScrollButtonWrapper = styled.div`
+  position: fixed;
+  right: calc(var(--spacing) / 2);
+  bottom: calc(var(--spacing) / 2);
+  z-index: 1;
+`;
+
 export const FPHeaderStyles = {
   Wrapper,
   HeaderWrapper,
   TypingWrapper,
+  ScrollButtonWrapper,
 };

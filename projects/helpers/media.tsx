@@ -1,4 +1,12 @@
-import { MdCircle, MdMail, MdLogout, MdRefresh, MdSearch, MdAccountCircle } from 'react-icons/md';
+import {
+  MdCircle,
+  MdMail,
+  MdLogout,
+  MdRefresh,
+  MdSearch,
+  MdAccountCircle,
+  MdOutlineArrowDownward,
+} from 'react-icons/md';
 import { HiSun, HiMoon } from 'react-icons/hi';
 import { CgEditFlipV } from 'react-icons/cg';
 
@@ -186,6 +194,7 @@ export enum Icon {
   Moon,
   Flip,
   Account,
+  ArrowDown,
 }
 
 export const renderIcon = (icon: Icon): JSX.Element => {
@@ -208,5 +217,7 @@ export const renderIcon = (icon: Icon): JSX.Element => {
       return <CgEditFlipV />;
     case Icon.Account:
       return <MdAccountCircle />;
+    case Icon.ArrowDown:
+      return <MdOutlineArrowDownward />;
   }
 };
