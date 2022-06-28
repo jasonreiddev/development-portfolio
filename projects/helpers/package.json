@@ -6,8 +6,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "algoliasearch": "^4.13.1",
     "firebase": "^9.6.9",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "sanity-algolia": "^1.0.2"
   },
   "devDependencies": {
     "@types/react": "17.0.38"
