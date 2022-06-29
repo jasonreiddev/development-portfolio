@@ -1,6 +1,6 @@
 import algoliasearch, { SearchClient } from 'algoliasearch';
 
-const createAlgoliaClient = (): SearchClient =>
-  algoliasearch(process.env.ALGOLIA_APPLICATION_ID ?? '', process.env.ALGOLIA_ADMIN_API_KEY ?? '');
+const createAlgoliaClient = (applicationId: string, apiKey: string): SearchClient =>
+  algoliasearch(applicationId, apiKey);
 
 export default createAlgoliaClient;

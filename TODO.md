@@ -3,6 +3,7 @@
 Min-width component is broken
 Pagination story
 SearchableDropdown story
+Company missing from 'mapPositionToCard'
 
 # TODO - Improvements:
 
@@ -11,3 +12,15 @@ Re-add like and share buttons
 Skip & loop options for typing effect
 
 # TODO - New:
+
+Add featuredPosition ect to sanity so it can be used in algolia
+Add blog posts to algolia
+Set up environment variables for algolia on vercel & netlify
+Add a 'search' page for algolia
+Add blogs to algolia?
+
+Check webhooks:
+Vercel: Sanity, Contentful
+Netlify: Sanity, Contentful
+algolia: Sanity (Contentful down the line?)
+(add to readme file)
