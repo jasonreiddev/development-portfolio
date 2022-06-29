@@ -70,10 +70,10 @@ export function mapProjectToCard(project: Project): CardProps {
 }
 
 export function mapBlogPostToCard(blogPost: BlogPost): CardProps {
-  blogPost.endDate = getGBDate(blogPost.endDate);
+  blogPost.publishedDate = getGBDate(blogPost.publishedDate);
   return {
     title: blogPost.title,
     url: `blog/${blogPost.slug}`,
-    text: `${blogPost.endDate}\n${blogPost.excerpt}`,
+    text: `${blogPost.publishedDate}\n${blogPost.excerpt}`,
   };
 }

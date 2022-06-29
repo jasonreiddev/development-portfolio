@@ -13,7 +13,9 @@ interface BlogProps {
 }
 
 interface BlogParams {
-  slug: string;
+  params: {
+    slug: string;
+  };
 }
 
 export async function getStaticPaths() {
@@ -25,7 +27,7 @@ export async function getStaticPaths() {
     return p.fields;
   });
 
-  const paths: { params: BlogParams }[] = [];
+  const paths: BlogParams[] = [];
   data.map((blogPost: BlogPost) => paths.push({ params: { slug: blogPost.slug.toString() } }));
 
   return {
@@ -37,7 +39,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(
   params: BlogParams,
 ): Promise<{ props: BlogProps } | undefined> {
-  const res = await fetchEntry(params.slug);
+  const res = await fetchEntry(params.params.slug);
   if (typeof res == 'undefined') {
     return;
   }
@@ -55,7 +57,7 @@ export default function Post({ postData }: BlogProps) {
     <>
       <PathBreadcrumb />
       <PageTitle text={postData.title} subTitle={`Posted ${getGBDate(postData.publishedDate)}`} />
-      <TextCard>
+      <TextCard fitContent={false}>
         <>{documentToReactComponents(postData.body as Document)}</>
       </TextCard>
     </>

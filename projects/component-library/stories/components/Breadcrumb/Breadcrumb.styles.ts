@@ -12,7 +12,7 @@ const Breadcrumb = styled.div<BreadcrumbStylesProps>`
   align-items: center;
   border: none;
   flex-wrap: wrap;
-  margin: 0 35px;
+  margin: calc(0.5 * var(--spacing)) var(--spacing) calc(-0.5 * var(--spacing));
 `;
 
 const BreadcrumbGroup = styled.div`

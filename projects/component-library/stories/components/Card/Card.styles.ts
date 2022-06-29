@@ -124,6 +124,10 @@ const Content = styled.div<CardStylesProps>`
     color: var(--color-contrast-bold);
     margin-bottom: 0.5em;
   }
+
+  button {
+    margin: 0.5em 0 0 0.5em;
+  }
 `;
 
 const TitleWrapper = styled.div`

@@ -3,7 +3,6 @@ import { ColorPair } from '../../../../helpers/media';
 
 import { Button } from '../../components/Button/Button';
 import { RisingText } from '../../components/RisingText/RisingText';
-import icon from '../../../../portfolio/public/images/icon.png';
 
 import { HeaderStyles as s } from './Header.styles';
 import Image from 'next/image';
@@ -34,7 +33,12 @@ export const Header = ({
     <s.Wrapper>
       <Link href="/" passHref>
         <s.IconWrapper>
-          <Image src={icon} alt={title}></Image>
+          <Image
+            src={`${typeof location != 'undefined' ? location.origin : ''}/images/icon.png`}
+            height="60"
+            width="60"
+            alt={title}
+          ></Image>
         </s.IconWrapper>
       </Link>
 
