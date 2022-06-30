@@ -1,5 +1,6 @@
 # TODO - Issues:
 
+Search page, custom hits to remove boilerplate (<div class="ais-Hits"> ect) and just return card component
 Min-width component is broken
 Pagination story
 SearchableDropdown story
@@ -16,8 +17,6 @@ Skip & loop options for typing effect
 Add featuredPosition ect to sanity so it can be used in algolia
 Add blog posts to algolia
 Set up environment variables for algolia on vercel & netlify
-Add a 'search' page for algolia
-Add blogs to algolia?
 
 Check webhooks:
 Vercel: Sanity, Contentful

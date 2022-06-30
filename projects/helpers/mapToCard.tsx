@@ -77,3 +77,9 @@ export function mapBlogPostToCard(blogPost: BlogPost): CardProps {
     text: `${blogPost.publishedDate}\n${blogPost.excerpt}`,
   };
 }
+
+export function mapAlgoliaToCard(portolio: any): CardProps {
+  return {
+    title: portolio.title,
+  };
+}

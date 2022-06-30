@@ -85,6 +85,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@algolia/events@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@algolia/events@npm:4.0.1"
+  checksum: 4f63943f4554cfcfed91d8b8c009a49dca192b81056d8c75e532796f64828cd69899852013e81ff3fff07030df8782b9b95c19a3da0845786bdfe22af42442c2
+  languageName: node
+  linkType: hard
+
 "@algolia/logger-common@npm:4.13.1":
   version: 4.13.1
   resolution: "@algolia/logger-common@npm:4.13.1"
@@ -6639,6 +6646,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"algoliasearch-helper@npm:^3.9.0":
+  version: 3.10.0
+  resolution: "algoliasearch-helper@npm:3.10.0"
+  dependencies:
+    "@algolia/events": ^4.0.1
+  peerDependencies:
+    algoliasearch: ">= 3.1 < 6"
+  checksum: 5b74cbc1d131bea48693457d0fabdad320c99da949b305b81c0363059e99b342aa8c549ed4627fe570b13f7115df57c0cad8c0e97c71923b91d2d3079e29cb97
+  languageName: node
+  linkType: hard
+
 "algoliasearch@npm:^4.13.1, algoliasearch@npm:^4.5.1":
   version: 4.13.1
   resolution: "algoliasearch@npm:4.13.1"
@@ -8883,9 +8901,12 @@ __metadata:
     "@types/styled-components": ^5.1.19
     embla-carousel-react: ^6.2.0
     next: 12.0.8-canary.21
+    query-string: ^7.1.1
     react: ^17.0.2
     react-dom: 17.0.2
     react-icons: ^4.3.1
+    react-instantsearch-core: ^6.29.0
+    react-instantsearch-dom: ^6.29.0
     styled-components: ^5.3.3
     webpack: ^5.70.0
   languageName: unknown
@@ -11676,6 +11697,13 @@ __metadata:
   dependencies:
     to-regex-range: ^5.0.1
   checksum: cc283f4e65b504259e64fd969bcf4def4eb08d85565e906b7d36516e87819db52029a76b6363d0f02d0d532f0033c9603b9e2d943d56ee3b0d4f7ad3328ff917
+  languageName: node
+  linkType: hard
+
+"filter-obj@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "filter-obj@npm:1.1.0"
+  checksum: cf2104a7c45ff48e7f505b78a3991c8f7f30f28bd8106ef582721f321f1c6277f7751aacd5d83026cb079d9d5091082f588d14a72e7c5d720ece79118fa61e10
   languageName: node
   linkType: hard
 
@@ -18971,6 +18999,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"query-string@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "query-string@npm:7.1.1"
+  dependencies:
+    decode-uri-component: ^0.2.0
+    filter-obj: ^1.1.0
+    split-on-first: ^1.0.0
+    strict-uri-encode: ^2.0.0
+  checksum: b227d1f588ae93f9f0ad078c6b811295fa151dc5a160a03bb2bac5fa0e6919cb1daa570aad1d288e77c8e89fde5362ba505b1014e6e793da9b1e885b59a690a6
+  languageName: node
+  linkType: hard
+
 "querystring-es3@npm:^0.2.0":
   version: 0.2.1
   resolution: "querystring-es3@npm:0.2.1"
@@ -19236,7 +19276,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:^3.0.1, react-fast-compare@npm:^3.2.0":
+"react-fast-compare@npm:^3.0.0, react-fast-compare@npm:^3.0.1, react-fast-compare@npm:^3.2.0":
   version: 3.2.0
   resolution: "react-fast-compare@npm:3.2.0"
   checksum: 8ef272c825ae329f61633ce4ce7f15aa5b84e5214d88bc0823880236e03e985a13195befa2c7a4eda7db3b017dc7985729152d88445823f652403cf36c2b86aa
@@ -19327,6 +19367,39 @@ __metadata:
   peerDependencies:
     react: ^16.8.4 || ^17.0.0
   checksum: ca9e4c1fedb94e4e956dd3142838c5a25a9d61375aee5e8a74dd623bae09a263098a93f220e8d84c7fd39e569e1fa4297d363ddbc91b15bca91baeb7281d7f4f
+  languageName: node
+  linkType: hard
+
+"react-instantsearch-core@npm:6.29.0, react-instantsearch-core@npm:^6.29.0":
+  version: 6.29.0
+  resolution: "react-instantsearch-core@npm:6.29.0"
+  dependencies:
+    "@babel/runtime": ^7.1.2
+    algoliasearch-helper: ^3.9.0
+    prop-types: ^15.6.2
+    react-fast-compare: ^3.0.0
+  peerDependencies:
+    algoliasearch: ">= 3.1 < 5"
+    react: ">= 16.3.0 < 19"
+  checksum: b33d35f7dd1a55cde51d65a46ce828520fdd00b5ee33b69b6fa773230aa7ae9b78f0aa293aa547625a2b2b95a0ff96ee6b6b7b6b003b6c1e7d410a56a7833b9e
+  languageName: node
+  linkType: hard
+
+"react-instantsearch-dom@npm:^6.29.0":
+  version: 6.29.0
+  resolution: "react-instantsearch-dom@npm:6.29.0"
+  dependencies:
+    "@babel/runtime": ^7.1.2
+    algoliasearch-helper: ^3.9.0
+    classnames: ^2.2.5
+    prop-types: ^15.6.2
+    react-fast-compare: ^3.0.0
+    react-instantsearch-core: 6.29.0
+  peerDependencies:
+    algoliasearch: ">= 3.1 < 5"
+    react: ">= 16.3.0 < 19"
+    react-dom: ">= 16.3.0 < 19"
+  checksum: 20a6bfa09336f05efd57fa07ee8e0133f0f8654d4d8a0d0a09cee679acd8a8c87dafcca5e7447dfa51fa1409239c94ccbed112414fd967e2cb78beddcbd8d7dc
   languageName: node
   linkType: hard
 
@@ -21151,6 +21224,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"split-on-first@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "split-on-first@npm:1.1.0"
+  checksum: 16ff85b54ddcf17f9147210a4022529b343edbcbea4ce977c8f30e38408b8d6e0f25f92cd35b86a524d4797f455e29ab89eb8db787f3c10708e0b47ebf528d30
+  languageName: node
+  linkType: hard
+
 "split-string@npm:^3.0.1, split-string@npm:^3.0.2":
   version: 3.1.0
   resolution: "split-string@npm:3.1.0"
@@ -21328,6 +21408,13 @@ __metadata:
   version: 1.1.0
   resolution: "strict-uri-encode@npm:1.1.0"
   checksum: 9466d371f7b36768d43f7803f26137657559e4c8b0161fb9e320efb8edba3ae22f8e99d4b0d91da023b05a13f62ec5412c3f4f764b5788fac11d1fea93720bb3
+  languageName: node
+  linkType: hard
+
+"strict-uri-encode@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "strict-uri-encode@npm:2.0.0"
+  checksum: eaac4cf978b6fbd480f1092cab8b233c9b949bcabfc9b598dd79a758f7243c28765ef7639c876fa72940dac687181b35486ea01ff7df3e65ce3848c64822c581
   languageName: node
   linkType: hard
 
