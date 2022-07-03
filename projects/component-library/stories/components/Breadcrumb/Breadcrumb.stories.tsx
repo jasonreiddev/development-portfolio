@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Breadcrumb, BreadcrumbProps } from './Breadcrumb';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Breadcrumb',

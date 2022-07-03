@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 import { AccordionStyles as s } from './Accordion.styles';
 
 export interface AccordionProps {

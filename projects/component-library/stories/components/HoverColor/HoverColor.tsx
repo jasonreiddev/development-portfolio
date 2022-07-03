@@ -1,5 +1,5 @@
 import { HoverColorStyles as s } from './HoverColor.styles';
-import { ColorPair, renderIcon, Icon } from '../../../../helpers/media';
+import { ColorPair, renderIcon, Icon } from 'helpers/media';
 
 export interface HoverColorProps {
   text?: string;

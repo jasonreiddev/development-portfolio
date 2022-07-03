@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { LayoutContext } from '../../helpers/layoutContext';
-import { client } from '../../helpers/sanity/client';
-import { CardGridFilterable } from '../../component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
-import { CardProps } from '../../component-library/stories/components/Card/Card';
-import { Project } from 'projects/sanity/schemas/project';
-import { mapProjectToCard } from 'projects/helpers/mapToCard';
+import { LayoutContext } from 'helpers/layoutContext';
+import { client } from 'helpers/sanity/client';
+import { CardGridFilterable } from 'component-library/stories/widgets/CardGridFilterable/CardGridFilterable';
+import { CardProps } from 'component-library/stories/components/Card/Card';
+import { Project } from 'sanity/schemas/project';
+import { mapProjectToCard } from 'helpers/mapToCard';
 
 type ProjectsProps = { data: Project[] };
 

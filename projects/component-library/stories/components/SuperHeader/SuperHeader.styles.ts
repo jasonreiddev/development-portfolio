@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-import {
-  ColorPair,
-  useColorPair,
-  useContrast,
-  useContrastDecreaseContrast,
-} from '../../../../helpers/media';
+import { ColorPair, useColorPair, useContrast, useContrastDecreaseContrast } from 'helpers/media';
 
 interface SuperHeaderStylesProps {
   colorPair?: ColorPair;

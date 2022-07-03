@@ -1,7 +1,7 @@
 import { SearchIndex } from 'algoliasearch';
 import type { SanityDocumentStub } from '@sanity/client';
 import indexer from 'sanity-algolia';
-import createAlgoliaClient from '../../../helpers/algolia/client';
+import createAlgoliaClient from 'helpers/algolia/client';
 
 const algoliaClient = createAlgoliaClient(
   process.env.ALGOLIA_APPLICATION_ID ?? '',

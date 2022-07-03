@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ColorPair, useColorPair } from '../../../../helpers/media';
+import { ColorPair, useColorPair } from 'helpers/media';
 
 interface FrequentlyAskedQuestionStylesProps {
   active?: boolean;

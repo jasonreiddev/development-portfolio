@@ -1,7 +1,7 @@
 import { MdCheck } from 'react-icons/md';
 
 import { CheckboxStyles as s } from './Checkbox.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface CheckboxProps {
   label: string;

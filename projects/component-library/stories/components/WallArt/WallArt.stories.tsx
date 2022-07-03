@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { WallArt, WallArtProps } from './WallArt';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Wall Art',

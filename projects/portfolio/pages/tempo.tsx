@@ -1,7 +1,7 @@
-import { CheckboxList } from 'projects/component-library/stories/widgets/CheckboxList/CheckboxList';
-import { TextCard } from 'projects/component-library/stories/widgets/TextCard/TextCard';
-import { fetchDefaultEntry, TempoEntry } from 'projects/helpers/contentful/tempoString';
-import { LayoutContext } from 'projects/helpers/layoutContext';
+import { CheckboxList } from 'component-library/stories/widgets/CheckboxList/CheckboxList';
+import { TextCard } from 'component-library/stories/widgets/TextCard/TextCard';
+import { fetchDefaultEntry, TempoEntry } from 'helpers/contentful/tempoString';
+import { LayoutContext } from 'helpers/layoutContext';
 import { useContext } from 'react';
 
 interface TempoProps {

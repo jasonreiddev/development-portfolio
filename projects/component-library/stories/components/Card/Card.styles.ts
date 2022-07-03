@@ -1,7 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { Device, from } from '../../../../helpers/media';
-import { ColorPair, useColorPair } from '../../../../helpers/media';
+import { ColorPair, useColorPair, Device, from } from 'helpers/media';
 
 interface CardStylesProps {
   modifyWidth?: 1 | 2 | 'full';

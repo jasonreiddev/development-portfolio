@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-import {
-  from,
-  Device,
-  ColorPair,
-  useColorPair,
-  useBase,
-  useContrast,
-} from '../../../../helpers/media';
+import { from, Device, ColorPair, useColorPair, useBase, useContrast } from 'helpers/media';
 
 interface ModalStylesProps {
   active?: boolean;

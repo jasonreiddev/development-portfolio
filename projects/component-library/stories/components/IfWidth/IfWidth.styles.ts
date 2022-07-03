@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { between, Device } from '../../../../helpers/media';
+import { between, Device } from 'helpers/media';
 
 interface IfWidthStylesProps {
   minWidth?: Device;

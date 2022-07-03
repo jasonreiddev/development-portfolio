@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app';
-import { LayoutProvider } from '../../helpers/layoutContext';
+import { LayoutProvider } from 'helpers/layoutContext';
 import { defaultLayoutProps } from '../defaultLayoutProps';
 import { useEffect, useState } from 'react';
-import { Layout } from 'projects/component-library/stories/Layout/Layout';
+import { Layout } from 'component-library/stories/Layout/Layout';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const [scrollOffset, setScrollOffset] = useState(0);

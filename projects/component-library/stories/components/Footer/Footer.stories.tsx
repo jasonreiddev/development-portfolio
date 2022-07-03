@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Footer, FooterProps } from './Footer';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   component: Footer,

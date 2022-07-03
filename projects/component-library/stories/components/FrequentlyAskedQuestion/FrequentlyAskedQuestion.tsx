@@ -1,5 +1,5 @@
 import { FrequentlyAskedQuestionStyles as s } from './FrequentlyAskedQuestion.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface FrequentlyAskedQuestionProps {
   question: string;

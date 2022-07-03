@@ -2,7 +2,7 @@ import { Ref } from 'react';
 import { MdClose, MdAccountCircle } from 'react-icons/md';
 
 import { ModalStyles as s } from './Modal.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export enum Icon {
   None,

@@ -1,7 +1,7 @@
 import { ButtonGroupStyles as s } from './IconButtonGroup.styles';
 import { IconButton } from '../../components/IconButton/IconButton';
 import { TextCard } from '../../widgets/TextCard/TextCard';
-import { Icon } from '../../../../helpers/media';
+import { Icon } from 'helpers/media';
 
 export interface IconButtonGroupProps {
   backgroundColor?: string;

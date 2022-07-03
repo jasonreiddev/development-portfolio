@@ -1,6 +1,6 @@
 import { Layout } from '../../Layout/Layout';
 import { WidgetTestStyles } from './widgetTest.styles';
-import { defaultLayoutProps } from '../../../../portfolio/defaultLayoutProps';
+import { defaultLayoutProps } from 'portfolio/defaultLayoutProps';
 
 // List all widgets, comment out if not required
 import { CardGridFilterable } from '../../widgets/CardGridFilterable/CardGridFilterable';

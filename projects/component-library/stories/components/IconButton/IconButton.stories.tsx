@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { IconButton, IconButtonProps } from './IconButton';
-import { ColorPair, Icon } from '../../../../helpers/media';
+import { ColorPair, Icon } from 'helpers/media';
 
 export default {
   title: 'Components/Icon Button',

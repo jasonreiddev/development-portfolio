@@ -1,15 +1,15 @@
-import { Position } from 'projects/sanity/schemas/position';
+import { Position } from 'sanity/schemas/position';
 import {
   getDateFromAndTo,
   getGBDate,
   getLastWorkedOnOrOngoing,
   getMonthsAndYears,
-} from 'projects/helpers/text';
-import { dateDifferenceMonths } from 'projects/helpers/number';
-import { CardProps } from 'projects/component-library/stories/components/Card/Card';
+} from 'helpers/text';
+import { dateDifferenceMonths } from 'helpers/number';
+import { CardProps } from 'component-library/stories/components/Card/Card';
 import { BlogPost } from './contentful/blogPost';
-import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
-import { Project } from 'projects/sanity/schemas/project';
+import { ExternalLink } from 'component-library/stories/components/ExternalLink/ExternalLink';
+import { Project } from 'sanity/schemas/project';
 
 export function mapPositionToCard(position: Position): CardProps {
   const startDate = new Date(position.startDate);

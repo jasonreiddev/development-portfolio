@@ -1,12 +1,12 @@
 /* eslint-disable*/
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BlogPost, fetchEntries, fetchEntry } from 'projects/helpers/contentful/blogPost';
-import { TextCard } from 'projects/component-library/stories/widgets/TextCard/TextCard';
-import { PageTitle } from 'projects/component-library/stories/components/PageTitle/PageTitle';
-import { PathBreadcrumb } from 'projects/component-library/stories/widgets/PathBreadcrumb/PathBreadcrumb';
+import { BlogPost, fetchEntries, fetchEntry } from 'helpers/contentful/blogPost';
+import { TextCard } from 'component-library/stories/widgets/TextCard/TextCard';
+import { PageTitle } from 'component-library/stories/components/PageTitle/PageTitle';
+import { PathBreadcrumb } from 'component-library/stories/widgets/PathBreadcrumb/PathBreadcrumb';
 import { Entry } from 'contentful';
 import { Document } from '@contentful/rich-text-types';
-import { getGBDate } from 'projects/helpers/text';
+import { getGBDate } from 'helpers/text';
 
 interface BlogProps {
   postData: BlogPost;

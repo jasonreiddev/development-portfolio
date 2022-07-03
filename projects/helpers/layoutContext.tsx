@@ -1,8 +1,8 @@
 import { createContext, FC, useContext, useEffect, useState } from 'react';
 
-import { defaultLayoutProps } from '../../projects/portfolio/defaultLayoutProps';
-import { IconButton } from '../../projects/component-library/stories/components/IconButton/IconButton';
-import { Icon } from '../helpers/media';
+import { defaultLayoutProps } from 'portfolio/defaultLayoutProps';
+import { IconButton } from 'component-library/stories/components/IconButton/IconButton';
+import { Icon } from 'helpers/media';
 
 export interface ILayoutContext {
   dark: boolean;

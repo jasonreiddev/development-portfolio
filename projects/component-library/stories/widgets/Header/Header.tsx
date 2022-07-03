@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 import { Button } from '../../components/Button/Button';
 import { RisingText } from '../../components/RisingText/RisingText';

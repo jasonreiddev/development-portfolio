@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Conversation, ConversationProps, ConversationItem } from './Conversation';
-import { ColorPair, Icon } from '../../../../helpers/media';
+import { ColorPair, Icon } from 'helpers/media';
 
 const goodMorning: ConversationItem[] = [
   {

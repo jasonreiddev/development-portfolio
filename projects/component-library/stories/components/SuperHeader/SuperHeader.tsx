@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import { SuperHeaderStyles as s } from './SuperHeader.styles';
-import { ColorPair } from '../../../../helpers/media';
-import { ToggleDarkMode } from '../../../../helpers/layoutContext';
+import { ColorPair } from 'helpers/media';
+import { ToggleDarkMode } from 'helpers/layoutContext';
 
 export interface SuperHeaderProps {
   title: string;

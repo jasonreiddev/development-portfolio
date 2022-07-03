@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { clamp, ColorPair, useColorPair, useContrast } from '../../../../helpers/media';
+import { clamp, ColorPair, useColorPair, useContrast } from 'helpers/media';
 
 interface FooterStylesProps {
   colorPair?: ColorPair;

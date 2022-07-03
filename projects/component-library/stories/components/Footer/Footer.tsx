@@ -2,7 +2,7 @@ import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import Link from 'next/link';
 
 import { FooterStyles as s } from './Footer.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface FooterProps {
   title: string;

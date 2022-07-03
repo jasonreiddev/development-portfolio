@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { SuperHeader, SuperHeaderProps } from './SuperHeader';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   component: SuperHeader,

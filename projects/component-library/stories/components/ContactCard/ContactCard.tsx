@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { ContactCardStyles as s } from './ContactCard.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface ContactCardProps {
   avatarSrc: string;

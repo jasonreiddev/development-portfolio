@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { MdLink } from 'react-icons/md';
 
 import { ExternalLinkStyles as s } from './ExternalLink.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface ExternalLinkProps {
   to: string;

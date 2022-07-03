@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-import { Device, from } from '../../../../helpers/media';
+import { Device, from, ColorPair, useBase } from 'helpers/media';
 import { CardStyles } from '../Card/Card.styles';
-import { ColorPair, useBase } from '../../../../helpers/media';
 
 interface CardTimelineStylesProps {
   // Should be 200+ for fitting tags and max content

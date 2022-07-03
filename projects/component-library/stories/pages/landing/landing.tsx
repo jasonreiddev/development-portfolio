@@ -1,6 +1,6 @@
 import { Layout } from '../../Layout/Layout';
 import { LandingStyles as s } from './landing.styles';
-import { defaultLayoutProps } from '../../../../portfolio/defaultLayoutProps';
+import { defaultLayoutProps } from 'portfolio/defaultLayoutProps';
 
 export interface LandingProps {
   storybookUrl?: string;

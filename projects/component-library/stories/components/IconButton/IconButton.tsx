@@ -1,5 +1,5 @@
 import { IconButtonStyles as s } from './IconButton.styles';
-import { ColorPair, renderIcon, Icon } from '../../../../helpers/media';
+import { ColorPair, renderIcon, Icon } from 'helpers/media';
 
 export interface IconButtonProps {
   icon: Icon;

@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { CardTimelineProps, CardTimeline } from './CardTimeline';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Card Timeline',

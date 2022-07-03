@@ -1,17 +1,17 @@
-import { TextCard } from '../../component-library/stories/widgets/TextCard/TextCard';
-import { PageTitle } from '../../component-library/stories/components/PageTitle/PageTitle';
-import { client } from 'projects/helpers/sanity/client';
-import { CardProps } from 'projects/component-library/stories/components/Card/Card';
-import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
-import { ExternalLink } from 'projects/component-library/stories/components/ExternalLink/ExternalLink';
-import { Button } from 'projects/component-library/stories/components/Button/Button';
-import { CardCarousel } from 'projects/component-library/stories/widgets/CardCarousel/CardCarousel';
+import { TextCard } from 'component-library/stories/widgets/TextCard/TextCard';
+import { PageTitle } from 'component-library/stories/components/PageTitle/PageTitle';
+import { client } from 'helpers/sanity/client';
+import { CardProps } from 'component-library/stories/components/Card/Card';
+import { CardGrid } from 'component-library/stories/components/CardGrid/CardGrid';
+import { ExternalLink } from 'component-library/stories/components/ExternalLink/ExternalLink';
+import { Button } from 'component-library/stories/components/Button/Button';
+import { CardCarousel } from 'component-library/stories/widgets/CardCarousel/CardCarousel';
 import { Entry } from 'contentful';
-import { getPluralS } from 'projects/helpers/text';
-import { mapBlogPostToCard, mapPositionToCard, mapProjectToCard } from 'projects/helpers/mapToCard';
-import { BlogPost, fetchEntries } from 'projects/helpers/contentful/blogPost';
-import { Position } from 'projects/sanity/schemas/position';
-import { Project } from 'projects/sanity/schemas/project';
+import { getPluralS } from 'helpers/text';
+import { mapBlogPostToCard, mapPositionToCard, mapProjectToCard } from 'helpers/mapToCard';
+import { BlogPost, fetchEntries } from 'helpers/contentful/blogPost';
+import { Position } from 'sanity/schemas/position';
+import { Project } from 'sanity/schemas/project';
 
 interface HomeProps {
   projectData: Project[];

@@ -1,5 +1,6 @@
-import { ColorPair, useColorPair } from '../../../../helpers/media';
 import styled from 'styled-components';
+
+import { ColorPair, useColorPair } from 'helpers/media';
 
 interface TextCardStylesProps {
   fitContent?: boolean;

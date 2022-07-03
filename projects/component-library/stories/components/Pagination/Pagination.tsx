@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 import { PaginationStyles as s } from './Pagination.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface PaginationProps {
   pageSize: number;

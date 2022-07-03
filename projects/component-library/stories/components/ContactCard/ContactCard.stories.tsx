@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { ContactCard, ContactCardProps } from './ContactCard';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Contact Card',

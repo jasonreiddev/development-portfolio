@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { BlurredGlow, BlurredGlowProps } from './BlurredGlow';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Blurred Glow',

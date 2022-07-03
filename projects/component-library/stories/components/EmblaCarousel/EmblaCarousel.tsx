@@ -4,7 +4,7 @@ import { EmblaOptionsType } from 'embla-carousel/components/Options';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 
 import { EmblaCarouselStyles as s } from './EmblaCarousel.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface EmblaCarouselProps {
   slides: number[] | string[] | JSX.Element[];

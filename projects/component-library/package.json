@@ -1,7 +1,7 @@
 {
   "name": "component-library",
-  "packageManager": "yarn@3.2.0",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
     "lint": "next lint",
     "dev": "next dev",

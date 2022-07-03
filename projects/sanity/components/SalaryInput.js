@@ -1,6 +1,6 @@
 import React from 'react';
 import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event';
-import { getGBPound } from '../../helpers/text';
+import { getGBPound } from 'helpers/text';
 
 function createPatchFrom(value) {
   return PatchEvent.from(value === '' ? unset() : set(Number(value)));

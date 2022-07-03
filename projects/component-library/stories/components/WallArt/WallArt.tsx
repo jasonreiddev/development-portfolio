@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { TextCard } from '../../widgets/TextCard/TextCard';
 
 import { WallArtStyles as s } from './WallArt.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface WallArtProps {
   src?: string;

@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 import { TextCard, TextCardProps } from './TextCard';
 

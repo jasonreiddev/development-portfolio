@@ -3,7 +3,7 @@ import { SuperHeader } from '../../components/SuperHeader/SuperHeader';
 import { Header, HeaderProps } from '../../widgets/Header/Header';
 import { TypingEffect, TypingEffectProps } from '../../components/TypingEffect/TypingEffect';
 import { IconButton } from '../../components/IconButton/IconButton';
-import { ColorPair, Icon } from '../../../../helpers/media';
+import { ColorPair, Icon } from 'helpers/media';
 import { createRef, useEffect, useState } from 'react';
 
 export interface Links {

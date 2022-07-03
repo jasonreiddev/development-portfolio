@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ColorPair, useBase, useBaseIncreaseContrast } from '../../../../helpers/media';
+import { ColorPair, useBase, useBaseIncreaseContrast } from 'helpers/media';
 
 interface BlurredGlowStylesProps {
   colorPair?: ColorPair;

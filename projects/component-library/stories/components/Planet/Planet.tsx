@@ -1,5 +1,5 @@
 import { PlanetStyles as s } from './Planet.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface PlanetProps {
   colorPair?: ColorPair;

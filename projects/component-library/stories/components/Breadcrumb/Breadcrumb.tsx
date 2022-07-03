@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { MdCheckBox, MdCopyAll } from 'react-icons/md';
 
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 import { BreadcrumbStyles as s } from './Breadcrumb.styles';
 
 export interface BreadcrumbProps {

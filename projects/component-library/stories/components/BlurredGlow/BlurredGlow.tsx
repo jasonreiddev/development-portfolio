@@ -1,4 +1,4 @@
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 import { BlurredGlowStyles as s } from './BlurredGlow.styles';
 
 export interface BlurredGlowProps {

@@ -2,7 +2,7 @@ import Router from 'next/router';
 import { MdLink } from 'react-icons/md';
 
 import { ButtonStyles as s } from './Button.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface ButtonProps {
   size?: 'small' | 'medium' | 'large';

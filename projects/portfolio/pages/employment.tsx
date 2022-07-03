@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { LayoutContext } from '../../helpers/layoutContext';
-import { client } from '../../helpers/sanity/client';
-import { CardTimeline } from '../../component-library/stories/components/CardTimeline/CardTimeline';
-import { CardProps } from '../../component-library/stories/components/Card/Card';
-import { mapPositionToCard } from 'projects/helpers/mapToCard';
-import { Position } from 'projects/sanity/schemas/position';
+import { LayoutContext } from 'helpers/layoutContext';
+import { client } from 'helpers/sanity/client';
+import { CardTimeline } from 'component-library/stories/components/CardTimeline/CardTimeline';
+import { CardProps } from 'component-library/stories/components/Card/Card';
+import { mapPositionToCard } from 'helpers/mapToCard';
+import { Position } from 'sanity/schemas/position';
 
 interface EmploymentsProps {
   data: Position[];

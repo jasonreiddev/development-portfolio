@@ -4,10 +4,10 @@ import Router from 'next/router';
 
 import { CardStyles as s } from './Card.styles';
 import { ClampText } from '../ClampText/ClampText';
-import { LayoutContext } from '../../../../helpers/layoutContext';
+import { LayoutContext } from 'helpers/layoutContext';
 import { Button } from '../Button/Button';
 import { IconButton } from '../IconButton/IconButton';
-import { ColorPair, Icon } from '../../../../helpers/media';
+import { ColorPair, Icon } from 'helpers/media';
 
 export interface CardProps {
   url?: string;

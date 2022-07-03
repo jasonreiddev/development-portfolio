@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { clamp } from '../../../../helpers/media';
-import { ColorPair, useBase } from '../../../../helpers/media';
+import { clamp } from 'helpers/media';
+import { ColorPair, useBase } from 'helpers/media';
 
 const Wrapper = styled.header`
   padding: 0.75em var(--spacing);

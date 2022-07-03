@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Device } from '../../../../helpers/media';
+import { Device } from 'helpers/media';
 import { Accordion } from '../../components/Accordion/Accordion';
 
 import { CardProps } from '../../components/Card/Card';
@@ -7,7 +7,7 @@ import { CardGrid } from '../../components/CardGrid/CardGrid';
 import { IfWidth } from '../../components/IfWidth/IfWidth';
 
 import { CardGridFilterableStyles as s } from './CardGridFilterable.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface CardGridFilterableProps {
   cards: CardProps[];

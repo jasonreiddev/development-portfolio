@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { ProgressBar, ProgressBarProps } from './ProgressBar';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   component: ProgressBar,

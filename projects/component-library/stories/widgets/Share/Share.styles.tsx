@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ColorPair, useContrast } from '../../../../helpers/media';
+import { ColorPair, useContrast } from 'helpers/media';
 
 const Wrapper = styled.div`
   text-align: center;

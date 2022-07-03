@@ -1,4 +1,4 @@
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 import { TextCardStyles as s } from './TextCard.styles';
 
 export interface TextCardProps {

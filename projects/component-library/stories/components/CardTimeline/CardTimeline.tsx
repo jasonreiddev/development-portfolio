@@ -1,6 +1,6 @@
 import { CardTimelineStyles as s } from './CardTimeline.styles';
 import { Card, CardProps } from '../Card/Card';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface CardTimelineProps {
   cards: CardProps[];

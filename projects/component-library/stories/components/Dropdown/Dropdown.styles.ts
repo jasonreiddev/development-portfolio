@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-import { Device, from, useContrast } from '../../../../helpers/media';
-import { ColorPair, useColorPair } from '../../../../helpers/media';
+import { Device, from, useContrast, ColorPair, useColorPair } from 'helpers/media';
 
 interface DropdownStylesProps {
   fullWidth?: boolean;

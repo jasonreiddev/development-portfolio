@@ -7,7 +7,7 @@ import {
   useBaseIncreaseContrast,
   useContrast,
   useContrastDecreaseContrast,
-} from '../../../../helpers/media';
+} from 'helpers/media';
 
 interface PaginationStylesProps {
   active?: boolean;

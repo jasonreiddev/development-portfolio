@@ -1,5 +1,5 @@
-import { InstantSearch } from 'projects/component-library/stories/widgets/InstantSearch/InstantSearch';
-import { LayoutContext } from 'projects/helpers/layoutContext';
+import { InstantSearch } from 'component-library/stories/widgets/InstantSearch/InstantSearch';
+import { LayoutContext } from 'helpers/layoutContext';
 import { useContext } from 'react';
 
 const Search = (): JSX.Element => {

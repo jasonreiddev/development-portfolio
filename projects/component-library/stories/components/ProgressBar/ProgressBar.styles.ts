@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ColorPair, useBase, useContrast } from '../../../../helpers/media';
+import { ColorPair, useBase, useContrast } from 'helpers/media';
 
 interface ProgressBarStylesProps {
   Progress?: number;

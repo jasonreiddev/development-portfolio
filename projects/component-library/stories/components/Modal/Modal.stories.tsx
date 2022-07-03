@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import Modal, { ModalProps } from './Modal.tsx';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Modal',

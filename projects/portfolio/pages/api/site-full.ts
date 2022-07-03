@@ -1,5 +1,5 @@
 import { createIndex, createIndexer } from '../../algolia/indexers/site';
-import { client as sanityClient } from '../../../helpers/sanity/client';
+import { client as sanityClient } from 'helpers/sanity/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type ResponseBody = Record<string, any> & { message: string };

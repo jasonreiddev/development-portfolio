@@ -1,4 +1,4 @@
-import { Device } from '../../../../helpers/media';
+import { Device } from 'helpers/media';
 import { IfWidthStyles as s } from './IfWidth.styles';
 
 export interface IfWidthProps {

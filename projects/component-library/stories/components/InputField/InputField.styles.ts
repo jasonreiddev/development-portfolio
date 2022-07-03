@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ColorPair, useColorPair, useBaseIncreaseContrast } from '../../../../helpers/media';
+import { ColorPair, useColorPair, useBaseIncreaseContrast } from 'helpers/media';
 
 interface InputFieldStylesProps {
   colorPair?: ColorPair;

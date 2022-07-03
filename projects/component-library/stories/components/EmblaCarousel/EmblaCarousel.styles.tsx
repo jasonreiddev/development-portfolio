@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ColorPair, useBase } from '../../../../helpers/media';
+import { ColorPair, useBase } from 'helpers/media';
 
 interface EmblaCarouselStylesProps {
   size?: number;

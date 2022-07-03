@@ -1,9 +1,9 @@
 import { Entry } from 'contentful';
-import { CardProps } from 'projects/component-library/stories/components/Card/Card';
-import { CardGrid } from 'projects/component-library/stories/components/CardGrid/CardGrid';
-import { BlogPost, fetchEntries } from 'projects/helpers/contentful/blogPost';
-import { LayoutContext } from 'projects/helpers/layoutContext';
-import { mapBlogPostToCard } from 'projects/helpers/mapToCard';
+import { CardProps } from 'component-library/stories/components/Card/Card';
+import { CardGrid } from 'component-library/stories/components/CardGrid/CardGrid';
+import { BlogPost, fetchEntries } from 'helpers/contentful/blogPost';
+import { LayoutContext } from 'helpers/layoutContext';
+import { mapBlogPostToCard } from 'helpers/mapToCard';
 import { useContext } from 'react';
 
 interface BlogProps {

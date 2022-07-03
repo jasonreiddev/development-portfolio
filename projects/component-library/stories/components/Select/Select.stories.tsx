@@ -2,7 +2,7 @@ import { Story } from '@storybook/react';
 import { useState } from 'react';
 
 import { Select, SelectProps } from './Select';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   component: Select,

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Device, until, ColorPair, useColorPair } from '../../../../helpers/media';
+import { Device, until, ColorPair, useColorPair } from 'helpers/media';
 
 interface CardGridFilterableStylesProps {
   active?: boolean;

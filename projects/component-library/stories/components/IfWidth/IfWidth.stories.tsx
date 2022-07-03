@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import { Device } from '../../../../helpers/media';
+import { Device } from 'helpers/media';
 
 import { IfWidth, IfWidthProps } from './IfWidth';
 

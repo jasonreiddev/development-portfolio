@@ -1,7 +1,7 @@
 import { Ref } from 'react';
 
 import { ConversationStyles as s } from './Conversation.styles';
-import { ColorPair, renderIcon, Icon } from '../../../../helpers/media';
+import { ColorPair, renderIcon, Icon } from 'helpers/media';
 
 export interface ConversationProps {
   chatName: string;

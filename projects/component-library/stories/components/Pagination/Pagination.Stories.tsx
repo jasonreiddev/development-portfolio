@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Pagination, PaginationProps } from './Pagination';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Pagination',

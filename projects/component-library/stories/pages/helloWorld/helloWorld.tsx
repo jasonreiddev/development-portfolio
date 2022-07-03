@@ -1,7 +1,7 @@
 import { Layout } from '../../Layout/Layout';
 import { HelloWorldStyles as s } from './helloWorld.styles';
 import { TextCard } from '../../widgets/TextCard/TextCard';
-import { defaultLayoutProps } from '../../../../portfolio/defaultLayoutProps';
+import { defaultLayoutProps } from 'portfolio/defaultLayoutProps';
 
 export interface HelloWorldProps {
   text?: string;

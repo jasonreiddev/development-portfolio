@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-import { clamp } from '../../../../helpers/media';
-import { ColorPair, useColorPair } from '../../../../helpers/media';
+import { ColorPair, useColorPair, clamp } from 'helpers/media';
 
 interface ContactCardStylesProps {
   colorPair?: ColorPair;

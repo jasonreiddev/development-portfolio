@@ -2,7 +2,7 @@ import { ChangeEventHandler } from 'react';
 import { MdChevronRight } from 'react-icons/md';
 
 import { SelectStyles as s } from './Select.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface SelectProps {
   value?: string;

@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
-import { LayoutProps } from '../component-library/stories/Layout/Layout';
+import { LayoutProps } from 'component-library/stories/Layout/Layout';
 const docRef = doc(firestore, 'likes', `${process.env.NEXT_PUBLIC_FIREBASE_LIKE_DOC_ID}`);
-import { firestore } from '../helpers/useFirebase';
+import { firestore } from 'helpers/useFirebase';
 import { doc, getDoc, setDoc } from '@firebase/firestore';
-import { HeaderProps } from '../component-library/stories/widgets/Header/Header';
-import { FPHeaderProps } from 'projects/component-library/stories/full-page-widgets/Header/FPHeader';
+import { HeaderProps } from 'component-library/stories/widgets/Header/Header';
+import { FPHeaderProps } from 'component-library/stories/full-page-widgets/Header/FPHeader';
 
 async function getLikesDBValue(setLikesFunction: Dispatch<SetStateAction<number>>): Promise<void> {
   getDoc(docRef).then((result) => {

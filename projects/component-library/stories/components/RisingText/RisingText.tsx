@@ -1,5 +1,5 @@
 import { RisingTextStyles as s } from './RisingText.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface RisingTextProps {
   text: string;

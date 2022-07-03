@@ -12,10 +12,10 @@ import { BasicDoc, Hit } from 'react-instantsearch-core';
 import type { SearchState } from 'react-instantsearch-core';
 
 import { InstantSearchStyles as s } from './InstantSearch.styles';
-import createAlgoliaClient from '../../../../helpers/algolia/client';
-import { renderIcon, Icon } from '../../../../helpers/media';
+import createAlgoliaClient from 'helpers/algolia/client';
+import { renderIcon, Icon } from 'helpers/media';
 import { CardGrid } from '../../components/CardGrid/CardGrid';
-import { mapAlgoliaToCard } from 'projects/helpers/mapToCard';
+import { mapAlgoliaToCard } from 'helpers/mapToCard';
 import { Card } from '../../components/Card/Card';
 
 const algoliaClient = createAlgoliaClient(

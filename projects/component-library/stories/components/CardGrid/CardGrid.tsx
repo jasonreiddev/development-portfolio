@@ -5,7 +5,7 @@ export interface CardGridProps {
   cards?: CardProps[];
   onTagClick?: (text: string) => void;
   size?: number;
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 export const CardGrid = ({

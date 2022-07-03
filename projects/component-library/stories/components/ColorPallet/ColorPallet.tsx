@@ -1,5 +1,5 @@
 import { ColorPalletStyles as s } from './ColorPallet.styles';
-import { ColorPair, getColorPairing } from '../../../../helpers/media';
+import { ColorPair, getColorPairing } from 'helpers/media';
 import { TextCard } from '../../widgets/TextCard/TextCard';
 
 export const ColorPairings = (): JSX.Element => {

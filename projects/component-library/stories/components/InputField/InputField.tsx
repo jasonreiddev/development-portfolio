@@ -1,5 +1,5 @@
 import { InputFieldStyles as s } from './InputField.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface InputFieldProps {
   title?: string;

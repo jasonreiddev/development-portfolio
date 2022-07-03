@@ -1,7 +1,7 @@
 import { Ref } from 'react';
 
 import { DropdownStyles as s } from './Dropdown.styles';
-import { ColorPair, renderIcon } from '../../../../helpers/media';
+import { ColorPair, renderIcon } from 'helpers/media';
 
 export enum Icon {
   None,

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { ColorPair, useBase } from '../../../../helpers/media';
+import { ColorPair, useBase } from 'helpers/media';
 
 interface PlanetStylesProps {
   active?: boolean;

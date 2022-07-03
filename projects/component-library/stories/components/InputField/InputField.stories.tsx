@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { InputField, InputFieldProps } from './InputField';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   component: InputField,

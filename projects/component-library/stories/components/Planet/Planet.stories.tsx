@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 
 import { Planet, PlanetProps } from './Planet';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export default {
   title: 'Components/Planet',

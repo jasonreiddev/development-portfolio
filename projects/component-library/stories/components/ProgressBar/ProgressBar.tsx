@@ -1,5 +1,5 @@
 import { ProgressBarStyles as s } from './ProgressBar.styles';
-import { ColorPair } from '../../../../helpers/media';
+import { ColorPair } from 'helpers/media';
 
 export interface ProgressBarProps {
   progress?: number;
